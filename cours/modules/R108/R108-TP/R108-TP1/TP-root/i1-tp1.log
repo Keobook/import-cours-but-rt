@@ -1,0 +1,12 @@
+cd  ~
+ls -l -a
+rm -r
+mkdir -p /tmp/rt1/xyz/public_html/docs /tmp/rt1/xyz/public_html/images
+mkdir -p /tmp/rt1/xyz/programmes/java /tmp/rt1/xyz/programmes/php /tmp/rt1/xyz/programmes/langage_c
+touch /tmp/rt1/xyz/public_html/index.htm /tmp/rt1/xyz/programmes/java/TP.java /tmp/rt1/xyz/programmes/langage_c/a.c
+nano /tmp/rt1/xyz/public_html/index.htm
+	<h1>Bonjour !!!</h1>
+cat /tmp/rt1/xyz/public_html/index.htm
+cp -R /tmp/rt1/xyz/programmes/* /tmp/rt1/xyz/public_html/images/
+cp -R /tmp/rt1/xyz/programmes/* /tmp/rt1/xyz/public_html/docs/
+ls -a -l -R /tmp/rt1/xyz/public_html/docs/

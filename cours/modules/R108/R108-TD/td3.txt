@@ -1,0 +1,77 @@
+ R108-TD3: Shell/Linux Commands
+
+
+1/
+  Gestion mémoire
+  // des processus
+  // des disques
+  // des Entrées/Sorties
+
+2/
+  Automatiser des tâches
+3/
+  echo et/ou cat (Que pour le contenu de fichiers)
+4/
+  PWD
+5/
+  commande > fichier renvoie la sortie standard vers fichier en remplaçant le contenu, si existant.
+  commande >> fichier renvoie la sortie standard vers fichier en ajoutant au contenu déjà présent, si existant.
+6/
+  ls expression:
+    - * <= chaine de caractères
+    - ? <= un caractère
+    - [ab] <= Qui contient a ou b
+    - [a-d] <= Qui contient a,b,c ou d
+7/
+  chmod sert à gérer les droits de fichiers/dossiers
+    - chmod u+x fichier
+    - chmod 777 fichier
+
+  où  | u | g | o | <- u: User (Utilisateur), g: Group (Groupe/Organisation), o: Others (Autres)
+      |---|---|---|
+      | 7 | 7 | 7 |
+      |421|421|421|
+      |||||||||||||
+      |rwx|rwx|rwx|
+      |111|111|111|
+
+
+TD 2:
+
+Ex1:
+  Options de ls:
+    -l: format liste affichage détaillé
+    -t: tri par date
+    -a: y compris les fichiers cachés
+    -R: de manière récursive
+    -r: inversé
+
+Ex2:
+  touch fichier1
+  mkdir rep1 && touch rep1/fichier2
+  mkdir rep1/rep2 && touch rep1/rep2/fichier3
+
+Ex3:
+  Supposément, on est dans le répertoire utilisateur.
+  mkdir -p test/pub test/bin
+  chmod 755 test test/pub && chmod 771 test/bin
+  cd test && touch doc.txt && cp doc.txt pub/doc.txt
+  cd bin && cat ../pub/doc.txt
+  cd ../ && ls -R
+  rm *p & rm */*p
+
+Ex4:
+  B, D, E
+
+Ex5:
+  ls annee4*
+  ls annee4?
+  ls annee[!0-9]
+  ls *ana*
+
+Ex6:
+  1/
+    mv toto titi <= On renomme le fichier
+    cp toto titi <= On copie le fichier sous un autre nom
+
+  2/ cp [*4-*1] /temp

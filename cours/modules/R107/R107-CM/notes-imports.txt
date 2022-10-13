@@ -1,0 +1,6 @@
+enumerate() = renvoie une énumération avec un indice (dans un tuple)
+reversed() = renvoie une énumération à l'envers
+map()
+zip() = aggrégation d'éléments
+pow() = Calcul à la puissance et le modulo en argv
+divmod() = diviseur + modulo

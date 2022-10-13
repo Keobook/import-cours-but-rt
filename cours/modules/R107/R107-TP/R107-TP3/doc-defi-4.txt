@@ -1,0 +1,33 @@
+Défi 4 - Fourchelangue
+Vous parlez Fourchelangue ?
+
+En ce moment Harry fait des rêves inquiétants et il arrive même qu'il
+parle Fourchelangue pendant son sommeil.
+
+Le Fourchelangue n'est finalement pas très difficile à comprendre :
+chaque « syllabe » Fourchelangue correspond à un caractère.
+La correspondance est donnée dans la table suivante (on remarque que I
+et J d'une part, et U et V d'autre part se prononcent de la même manière
+en Fourchelangue) :
+
+HFH FFH SHS SHH SSH FHF FSS HFF HHH SFS FFS FHS SSF
+ A   B   C   D   E   F   G   H   IJ  K   L   M   N
+FHH HHF SFF FSF FSH HHS FFF SSS HFS SHF SFH
+ O   P   Q   R   S   T   UV  W   X   Y   Z
+
+La syllabe HS permet de séparer les mots.
+
+À titre d'exemple, BONJOUR HARRY se dit, en Fourchelangue :
+
+FFHFHHSSFHHHFHHFFFFSFHSHFFHFHFSFFSFSHF
+
+Ron a réussi à noter ce que Harry a dit la nuit dernière (c'est indiqué
+en entrée du problème). Il demande votre aide pour comprendre le contenu
+du message car il craint que certaines personnes ne soient en danger.
+
+Indiquez les noms des personnes qui courent un danger pour valider le défi.
+
+
+Entrées du problème :
+
+FHSFHHSSFHSSHSHFFSSHFSFHSSSFHFHFSSFFFHHHSSFHHHHSSHHSSHFHSHFHHHHSSFHSSSHFSHHHSHSFFFSSFHSFSSFSFHFHSSFSHHHSHHHFHHFFFFSFHSHHFFHHFFFFSFHSSSFFHHFFFFSHHSSHSHFHFSFHSSSFFHHFFFFSHHSHFHFFSFFSFHHSSFFSHHSSSHSSFFHFHHHSSFHSHHFFHHFFFFFFFHHHHHFSFHSSSFFHHFFFFSHHSFHHSHSSHSFFFHHFSSHFSFHSSHHSSHHSSHSSSHFSHHSHHSFSFFHHHHHFSHHSHHHFSSSSFFHHFFHFFSSSHFSHHSHHSFSFHFHHHHHHSFSFSSHFSHHSSSHHHSHSFFSFHHFSFFSHSFFFFFSSHHSHHSHFFSSHFHHSHHHFHFSFSHHHSHFHFFSHFHFSHHHSFHHFSFHSSSHHHSHSSHSFHHFSFFHSHFHSHSHSSSFSSHHSSSFFHHFFFFSHHSFSSSSHSSFSSHFSFFHHSSFHHSHSHHFFFSFFFFSHHSSSFFHHFFFFSHHSSSFFHHFFFFSHHSFHHSHSSHSFFFHHFSSHFSFFHHSSFFSHHSSHHSSHFSHHSHFHFFFHHSFSFSSHFSH

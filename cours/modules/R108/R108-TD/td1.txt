@@ -1,0 +1,5 @@
+R108-TD1
+
+mkdir -p ./toto/tata ./toto/titi
+mkdir -p ./tata/tata
+mkdir -p ./titi/tata
