@@ -1,25 +1,61 @@
 # SAÉ 16 - En quoi la technologie est-elle au service de l'art ?
 
-Chers étudiants de 1ère année de Bachelor,
+## Énoncé
 
-Je veux tout d'abord vous rappeler que votre présence au Festival du Fantastique est obligatoire a minima le samedi 8 octobre toute la journée. C'est pour cela que vous n'avez pas cours le lundi 10 octobre, pour pouvoir vous reposer.
+> Dans le cadre de l'enseignement appelé SAE16 qui comptabilise 14 points de coefficient au S1,\
+> j'attends de vous la production d'un dossier personnel argumenté par des exemples répondant à la question :
+>
+> En quoi la technologie est-elle au service des arts ?
+>
+> Votre participation au Festival du Fantastique vous aidera facilement à trouver plusieurs exemples pertinents à cette question.\
+> Vous pourrez justifier ces exemples à l'aide de photos, vidéos, interviews, etc. pourvu qu'ils soient votre production.\
+> Toutes les formes d'arts sont concernées par l'exercice, toutes les formes de technologie également.\
+> J'attends de vous une démarche PERSONNELLE donc ce dossier doit être rédigé à la première personne (J'ai vu, j'ai rencontré,\
+> telle personne m'a expliqué, ...) et doit obligatoirement s'appuyer sur des exemples vécus personnellement en lien avec le Festival du Fantastique.\
+> J'attends également de vous un retour sur vos ressentis et les émotions éprouvées dans les exemples artistiques que vous avez vécu.
+>
+> Ce travail nous sera utile pour comprendre ce qui est attendu dans le cours SAE16.\
+> Il sera noté et comptera dans la moyenne du S1.
+>
+> Vous l'avez compris, ce dossier est OBLIGATOIRE pour tous et devra être rendu sur moodle, cours SAE16, avant le 16 octobre.
 
-Comme le directeur l'a expliqué l'organisation du Festival a aussi besoin de vous, voir le mail du directeur pour participer (points bonus à la clé).
+## Le Plan
 
-Par ailleurs, pour ma part, dans le cadre de l'enseignement appelé SAE16 qui comptabilise 14 points de coefficient au S1, j'attends de vous la production d'un dossier personnel argumenté par des exemples répondant à la question :
+### I/ La technologie, non comme un domaine mais un comme un outil
 
-En quoi la technologie est-elle au service des arts ?
+#### A/ La technologie, complément de l'art ?
 
-Votre participation au Festival du Fantastique vous aidera facilement à trouver plusieurs exemples pertinents à cette question. Vous pourrez justifier ces exemples à l'aide de photos, vidéos, interviews, etc. pourvu qu'ils soient votre production. Toutes les formes d'arts sont concernées par l'exercice, toutes les formes de technologie également. J'attends de vous une démarche PERSONNELLE donc ce dossier doit être rédigé à la première personne (J'ai vu, j'ai rencontré, telle personne m'a expliqué, ...) et doit obligatoirement s'appuyer sur des exemples vécus personnellement en lien avec le Festival du Fantastique. J'attends également de vous un retour sur vos ressentis et les émotions éprouvées dans les exemples artistiques que vous avez vécu.
+### II/ La technologie comme un secteur d'une économie
 
-Ce travail nous sera utile pour comprendre ce qui est attendu dans le cours SAE16. Il sera noté et comptera dans la moyenne du S1.
+#### A/ L'art en tant que plus technologique
 
-Je sais que des étudiants ont déjà demandé une autorisation d'absence exceptionnelle pour ce samedi. Nous n'en donnerons pas. Pour les absents le 8/10 le dossier reste obligatoire et la journée du lundi 10 octobre leur permettra de venir travailler à l'IUT leur dossier. Pour eux il sera certainement difficile de prendre des photos etc., ils devront s'appuyer sur les éléments glanés sur les réseaux sociaux et le web. Ils citeront obligatoirement leur source.
+## 1ère tentative
 
-Vous l'avez compris, ce dossier est OBLIGATOIRE pour tous et devra être rendu sur moodle, cours SAE16, avant le 16 octobre.
+Avant de pouvoir répondre à la question posée sur la manière dont la technologie peut être au service des arts, nous devons d'abord définir l'aspect technologique dont on parle.
+La technologie est un terme qui englobe différents aspects actuels ou en développement tel que le savoir-faire, les outils et les connaissances.
+Sachant que la technologie est un terme qui englobe tous les domaines, bien plus que le numérique, l'industriel ou autres.
+Ainsi, au risque de me retrouver hors sujet, je préfère me centrer sur le domaine du numérique et de l'électronique afin de couvrir que ce soit la partie logicielle (software) ou la partie matérielle (hardware) car bien que l'on fasse une différentiation entre les deux, ils sont complémentaires.
+Cela me permettant par extension de pouvoir exprimer certaines idées avec des exemples concrets, difficiles sinon.
 
-Je vous souhaite une bonne semaine.
+Premièrement, il est nécessaire de garder à l'esprit que le numérique, comparé à d'autres, est un domaine qui est jeune et en pleine expansion tant bien sur un plan
+économique que sur un plan social et technologique.
+Maintenant, que cela est dit, on peut finalement se pencher sur la question.
 
-Bien cordialement,
+Si l'on considère le numérique comme un outil au service de tout autres domaines et non comme un domaine à part entière, ce serait ainsi un moyen mis à disposition
+de chacun, les arts n'en ferait pas exception. On peut bien le voir, que ce soit dans le domaine de l'art physique comme l'art digital.
+Prenons l'exemple de l'art physique, l'art que l'on connait tous, que l'on peut trouver dans des musés ou bien au festival du fantastique de Béziers.
+De simples masques, figure immuables, ont pu être augmentés grâce à un simple micro-controlleur du style Arduino ou Raspberry Pi et quelques capteurs.
 
-Philippe PUJAS
+<div
+style="display: flex; justify-content: space-between; column-gap: 10%; width: 30%; height: 30%; min-width: 20%">
+    <img src="./src/mask/IMG_20221008_170948.jpg">
+    <div>
+        Là où un simple masque aurait déjà eu sa place au festival par l'entiereté extérieur la mérite encore plus grâce à un simple écran LCD/LED/OLED/AMOLED de la taille
+de deux pouces (voir trois) et d'un simple petit programme qui tourne en fond. Ici, je peux dire que le software et le hardware font pair et permettent ensemble d'obtenir un résultat que seule cette combinaison peut rendre possible.
+    </div>
+    <img src="./src/mask/IMG_20221008_171330.jpg">
+    <div>
+        D'une autre manière, ce masque est le parfait exemple où la technologie et le numérique en particulier ne fait qu'aider l'art où des inscriptions s'affichent
+        que lorsqu'il est exposé à de la lumière bleue (déclenchement controlé par un Raspberry Pi), difficilement reconaissables sur cette photo mais bien présents sur le masque. Ainsi, de manière directe, seulement le hardware aide l'art en permettant différentes facettes d'une même oeuvre d'être découvertes au fur et à mesure.
+    </div>
+</div>
