@@ -39,10 +39,9 @@ Cela me permettant par extension de pouvoir exprimer certaines idées avec des e
 
 Premièrement, il est nécessaire de garder à l'esprit que le numérique, comparé à d'autres, est un domaine qui est jeune et en pleine expansion tant bien sur un plan
 économique que sur un plan social et technologique.
-Maintenant, que cela est dit, on peut finalement se pencher sur la question.
 
 Si l'on considère le numérique comme un outil au service de tout autres domaines et non comme un domaine à part entière, ce serait ainsi un moyen mis à disposition
-de chacun, les arts n'en ferait pas exception. On peut bien le voir, que ce soit dans le domaine de l'art physique comme l'art digital.
+de chacun, les arts n'en ferait pas exception. On peut le constater, que ce soit dans le domaine de l'art physique comme l'art digital.
 Prenons l'exemple de l'art physique, l'art que l'on connait tous, que l'on peut trouver dans des musés ou bien au festival du fantastique de Béziers.
 De simples masques, figure immuables, ont pu être augmentés grâce à un simple micro-controlleur du style Arduino ou Raspberry Pi et quelques capteurs.
 
@@ -51,11 +50,21 @@ style="display: flex; justify-content: space-between; column-gap: 10%; width: 30
     <img src="./src/mask/IMG_20221008_170948.jpg">
     <div>
         Là où un simple masque aurait déjà eu sa place au festival par l'entiereté extérieur la mérite encore plus grâce à un simple écran LCD/LED/OLED/AMOLED de la taille
-de deux pouces (voir trois) et d'un simple petit programme qui tourne en fond. Ici, je peux dire que le software et le hardware font pair et permettent ensemble d'obtenir un résultat que seule cette combinaison peut rendre possible.
+de deux pouces (voir trois) et d'un simple petit programme qui tourne en fond. Permettant à ce masque de passer d'un simple objet à un objet animé avec un oeil nous faisant plus penser à un être vivant plus qu'à une création artificielle.
+Ici, je peux dire que le software et le hardware font pair et permettent ensemble d'obtenir un résultat que seule cette combinaison peut rendre possible.
     </div>
     <img src="./src/mask/IMG_20221008_171330.jpg">
     <div>
-        D'une autre manière, ce masque est le parfait exemple où la technologie et le numérique en particulier ne fait qu'aider l'art où des inscriptions s'affichent
+        D'une autre manière, ce masque est le parfait exemple où la technologie, et le numérique en particulier, ne fait qu'aider l'art où des inscriptions s'affichent
         que lorsqu'il est exposé à de la lumière bleue (déclenchement controlé par un Raspberry Pi), difficilement reconaissables sur cette photo mais bien présents sur le masque. Ainsi, de manière directe, seulement le hardware aide l'art en permettant différentes facettes d'une même oeuvre d'être découvertes au fur et à mesure.
     </div>
 </div>
+
+Mais le numérique peut être reconnu comme étant un domaine et non un outil, où la combinaison numérique-art n'est plus une interaction entre deux mais devient un plus du numérique.
+Je n'ai pas trouvé d'exemple parlant durant le festival du fantastique mais j'ai eu la possibilité ces dernières années de voir de l'art créé grâce à la technologie.
+
+Un premier exemple, plutôt récent est l'exemple de la vidéo de [melodysheep](https://www.melodysheep.com/) intitulée [Binary Dreams](https://www.youtube.com/watch?v=ViGcwiW7rfY), où une intelligence artificielle a été utilisée afin de créer des images, mais ce n'est pas le seul exemple, beaucoup d'autres oeuvres existent.
+On peut parler des NFTs, ou des autres arts numériques que ce soit les jeux vidéos, qui n'auraient pu exister sans numérique, qui poussent à chaque génération les limites de ce qui est possible en terme de technique, de contenu ou de qualité, les films et autres vidéos, créées grâce à des caméras puis modifiées par des logiciels de montage, sans oublier ce qu'est le VFX.
+
+Que l'on parle d'intelligence artificielle avec du machine learning ou deep learning, de matériel comme des micro-controlleurs ou des deux comme avec des robots intelligents,
+l'art est possible de naitre en chacune des parties de ce qu'est la technologie ou plus précisément du numérique.
