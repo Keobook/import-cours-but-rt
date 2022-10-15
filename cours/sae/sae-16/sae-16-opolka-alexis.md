@@ -64,7 +64,7 @@ Mais le numérique peut être reconnu comme étant un domaine et non un outil, o
 Je n'ai pas trouvé d'exemple parlant durant le festival du fantastique mais j'ai eu la possibilité ces dernières années de voir de l'art créé grâce à la technologie.
 
 Un premier exemple, plutôt récent est l'exemple de la vidéo de [melodysheep](https://www.melodysheep.com/) intitulée [Binary Dreams](https://www.youtube.com/watch?v=ViGcwiW7rfY), où une intelligence artificielle a été utilisée afin de créer des images, mais ce n'est pas le seul exemple, beaucoup d'autres oeuvres existent.
-On peut parler des NFTs, ou des autres arts numériques que ce soit les jeux vidéos, qui n'auraient pu exister sans numérique, qui poussent à chaque génération les limites de ce qui est possible en terme de technique, de contenu ou de qualité, les films et autres vidéos, créées grâce à des caméras puis modifiées par des logiciels de montage, sans oublier ce qu'est le VFX.
+On peut parler des NFTs, ou des autres arts numériques que ce soit les jeux vidéos, qui n'auraient pu exister sans le numérique, qui poussent à chaque génération les limites de ce qui est possible en terme de technique, de contenu ou de qualité, les films et autres vidéos, créées grâce à des caméras puis modifiées par des logiciels de montage, sans oublier ce qu'est le VFX.
 
 Que l'on parle d'intelligence artificielle avec du machine learning ou deep learning, de matériel comme des micro-controlleurs ou des deux comme avec des robots intelligents,
 l'art est possible de naitre en chacune des parties de ce qu'est la technologie ou plus précisément du numérique.
