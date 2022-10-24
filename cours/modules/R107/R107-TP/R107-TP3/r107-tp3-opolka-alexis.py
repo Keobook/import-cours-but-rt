@@ -412,8 +412,3 @@ print("The next three codes are:", codecabine(64224, 3))
 ### Defi 6 - Goldbach
 print(f"The goldbach of {gb1} is:", goldbach(gb1))
 print(f"The goldbach of {gb2} is:", goldbach(gb2, 1))
-
-
-
-print(translateToFourchelangue("BASTIEN"))
-print(translateToFourchelangue("MAELYS"))
