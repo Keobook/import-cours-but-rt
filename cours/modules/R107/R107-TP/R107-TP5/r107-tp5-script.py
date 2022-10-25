@@ -54,7 +54,7 @@ def showBoard(board, show_index=False):
     for i in range(0, len(board[0])):
       ### If first letter, automatically add a space in order to re-caliber the ouput
       if i == 0:
-        print(" ", end="")
+        print(" ", end=" ")
       print(alphabet[i], end=" ")
     print("")
   for y in range(0, len(board)):
@@ -73,7 +73,7 @@ def showBoardColored(board, show_index=False):
     for i in range(0, len(board[0])):
       ### If first letter, automatically add a space in order to re-caliber the ouput
       if i == 0:
-        print(" ", end="")
+        print(" ", end=" ")
       print(alphabet[i], end=" ")
     print("")
   for y in range(0, len(board)):
@@ -335,6 +335,174 @@ def hardWriteShipData(data, board, axis, start_cell, clean_board=True, old_start
 
   return cboard
 
+
+def verifHorizontal(grille, pos, taille):
+  """Une fonction pour vérifier si on peut placer un bateau horizontallement.
+
+  Args
+  ---
+    `grille`, list: La grille de jeu
+    `pos`, tuple | list: Un tuple/Une liste de deux éléments ayant les coords x et y de la cellule
+    `taille`, int: Un entier qui donne la taille du bateau à placer
+
+  Returns
+  ---
+    Boolean: True if it's ok, False otherwise
+  """
+
+  if pos[1]+taille < len(grille[pos[0]]):
+    return True
+  return False
+
+
+def verifVertical(grille, pos, taille):
+  """Une fonction pour vérifier si on peut placer un bateau horizontallement.
+
+  Args
+  ---
+    `grille`, list: La grille de jeu
+    `pos`, tuple | list: Un tuple/Une liste de deux éléments ayant les coords x et y de la cellule
+    `taille`, int: Un entier qui donne la taille du bateau à placer
+
+  Returns
+  ---
+    Boolean: True if it's ok, False otherwise
+  """
+
+  if pos[0]+taille < len(grille):
+    return True
+  return False
+
+def verifOtherShips(board, ship, start_cell, axis, debug=False):
+  global ship_data
+  # We copy the object as we're iterating with it, in order to not break the supposedly good structure
+  test_board = board.copy()
+  shipd = ship_data[ship]
+
+  ship_over = False
+  ship_touchy = False
+
+  if debug:
+    print(f"DATA: board: {board}, ship: {ship}, start_cell: {start_cell}, axis: {axis}, shipd: {shipd}, (ship_over, ship_touchy): ({ship_over}, {ship_touchy})")
+
+  ### The test of overlapping
+  ### We suppose this test came as the last and as such, we're not verifying once again the size
+  for i in range(0, shipd[0]):
+    if axis == "v":
+      if board[start_cell[0]+i][start_cell[1]][0] == "-":
+        continue
+      else:
+        ship_over = True
+        break
+    elif axis == "h":
+      if board[start_cell[0]][start_cell[1]+i][0] != "-":
+        ship_over = True
+        break
+
+  ### The test of Area of no-touch
+  if axis == "v":
+    ### Y-1
+    for i in range(0, shipd[0]):
+      if debug:
+        print("I:", i, board[start_cell[0]-1][start_cell[1]+i], True if board[start_cell[0]-1][start_cell[1]+i][0] == "-" else False, (start_cell[0], start_cell[1]), (start_cell[0]-1, start_cell[1]+i))
+      if board[start_cell[0]][start_cell[1]+i][0] != "-":
+        ship_touchy = True
+        #break
+
+
+    ### Y+1
+    for i in range(0, shipd[0]):
+      if debug:
+        print("I:", i, board[start_cell[0]+1][start_cell[1]+i], True if board[start_cell[0]+1][start_cell[1]+i][0] == "-" else False, (start_cell[0], start_cell[1]), (start_cell[0]+1, start_cell[1]+i))
+      if board[start_cell[0]+1+i][start_cell[1]][0] != "-":
+        ship_touchy = True
+        #break
+
+    ### X-1
+    for i in range(0, 3):
+      if debug:
+        print("I:", i, board[start_cell[0]+i][start_cell[1]-1],
+              True if board[start_cell[0]+i][start_cell[1]-1][0] == "-" else False)
+      if board[start_cell[0]][start_cell[1]-1+i][0] != "-":
+        ship_touchy = True
+        #break
+
+    ### X+1
+    for i in range(0, 3):
+      if debug:
+        print("I:", i, board[start_cell[0]+i][start_cell[1]+1],
+              True if board[start_cell[0]+i][start_cell[1]+1][0] == "-" else False)
+      if board[start_cell[0]][start_cell[1]+1+i][0] != "-":
+        ship_touchy = True
+        #break
+
+  elif axis == "h":
+    for i in range(0, 3):
+      if debug:
+        print("I:", i, board[start_cell[0]+i-1][start_cell[1]],
+              True if board[start_cell[0]-1+i][start_cell[1]][0] == "-" else False)
+      if board[start_cell[0]-1+i][start_cell[1]][0] != "-":
+        ship_touchy = True
+        break
+
+    for i in range(0, 3):
+      if debug:
+        print("I:", i, board[start_cell[0]+1+i][start_cell[1]],
+              True if board[start_cell[0]+1+i][start_cell[1]][0] == "-" else False)
+      if board[start_cell[0]+1+i][start_cell[1]][0] != "-":
+        ship_touchy = True
+        break
+
+    for i in range(0, shipd[0]):
+      if debug:
+        print("I:", i, board[start_cell[0]+i][start_cell[1]-1],
+              True if board[start_cell[0]+i][start_cell[1]-1][0] == "-" else False)
+      if board[start_cell[0]+i][start_cell[1]-1][0] != "-":
+        ship_touchy = True
+        break
+
+    for i in range(0, shipd[0]):
+      if debug:
+        print("I:", i, board[start_cell[0]+i][start_cell[1]+1],
+              True if board[start_cell[0]+i][start_cell[1]+1][0] == "-" else False)
+      if board[start_cell[0]+i][start_cell[1]+1][0] != "-":
+        ship_touchy = True
+        break
+
+  if debug:
+    print(f"Ship_Over: {ship_over}, Ship_Touchy: {ship_touchy}")
+  if ship_over:  # If we're overlapping, ofc we're touching the ships
+    return False
+
+  if ship_touchy:
+    return False
+
+  return True
+
+
+def placedShip(ship_name, start_cell, axis, board):
+  global ship_data
+
+  cases_to_place, letter_to_place = ship_data[ship_name]
+  start_cell_y, start_cell_x = getCoordonnees(start_cell)
+  if axis.lower() == "v":
+    if verifVertical(board, (start_cell_y, start_cell_x), cases_to_place):
+      if verifOtherShips(board, ship_name, (start_cell_y, start_cell_x), axis):
+        for i in range(0, cases_to_place):
+          board[start_cell_y+i][start_cell_x] = letter_to_place
+      else:
+        return KeyError("Another ship is in proximity or over one of the cells used")
+    else:
+      return IndexError("The cell is too much near the border to be placed vertically")
+  elif axis.lower() == "h":
+    if start_cell_x+cases_to_place < len(board[start_cell_y]):
+      for i in range(0, cases_to_place):
+        board[start_cell_y][start_cell_x+i] = letter_to_place
+    else:
+      return IndexError("The cell is too much near the border to be placed horizontally")
+  else:
+    return KeyError("We can't find any other axis than v or h")
+
 ###////////////////////////////////////////////////////////////////////////////////////:
 ###
 ### Initiations of variables
@@ -346,15 +514,30 @@ alphabet = ["A", "B", "C", "D", "E",
             "M", "N", "O", "P", "Q", "R", "S",
             "T", "U", "V", "W", "X", "Y", "Z"]
 
+ship_data = {
+    "carrier": (4, "P"),
+    "cruisers": (3, "C"),
+    "torpedo-boat": (2, "T"),
+    "submarine": (1, "S")
+}
+
 main_board = createBoard(10, 8)
 data_type = ("P", "C", "T", "S")
 letter_to_highlight = ("#", "on_blue")
 #liveModifications(main_board, True)
-ship_list = ["carrier", "cruisers", "cruisers", "torpedo-boat",
-             "torpedo-boat", "torpedo-boat", "submarine", "submarine", "submarine", "submarine"]
-ships = 0
-while ships < 10:
-  if ships == 0:
-    main_board, ships = placeShip(ship_list[ships], main_board, ships)
-  else:
-    main_board, ships = placeShip(ship_list[ships], main_board, ships, False)
+#ship_list = ["carrier", "cruisers", "cruisers", "torpedo-boat",
+#             "torpedo-boat", "torpedo-boat", "submarine", "submarine", "submarine", "submarine"]
+#ships = 0
+#while ships < 10:
+#  if ships == 0:
+#    main_board, ships = placeShip(ship_list[ships], main_board, ships)
+#  else:
+#    main_board, ships = placeShip(ship_list[ships], main_board, ships, False)
+
+my_board = createBoard(10, 8)
+placedShip("carrier", "B2", "h", my_board)
+placedShip("cruisers", "F3", "v", my_board)
+showBoard(my_board, True)
+print("VérifBoard:", verifOtherShips(my_board, "submarine", getCoordonnees("F5"), "v"))
+print("VérifBoard:", verifOtherShips(my_board, "cruisers", getCoordonnees("F3"), "v", True))
+showBoard(my_board, True)
