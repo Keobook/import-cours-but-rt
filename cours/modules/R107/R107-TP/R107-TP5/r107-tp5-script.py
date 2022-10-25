@@ -7,16 +7,12 @@
 ###
 ###////////////////////////////////////////////////////////////////////////////////////:
 
-from curses import KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_UP
 from os import (
   system,
   name as os_name
 )
 from importlib import import_module
 from datetime import datetime
-from threading import main_thread
-from time import sleep
-
 
 try:
   import termcolor
