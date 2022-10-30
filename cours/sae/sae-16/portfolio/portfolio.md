@@ -46,3 +46,5 @@ Critères d'évaluation:
 - Explication
 
 Soutenance de portfolio: 28,29,30 juin 2023
+
+Être capable d'expliquer comment on a travaillé, si on a réussi ou non.
