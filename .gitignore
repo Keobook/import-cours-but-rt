@@ -2,72 +2,23 @@
 ## Directories
 imports/
 */imports/*
+cours/modules/R111/R111-TD/out/test/*
 
 ## Files
 ~$*.*
-
+.~lock.*.*
 
 ## Here is the entire repository of the VS files used on a projet in C++
 
+## Folders
 .vs/
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.exe
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.exe.recipe
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.ilk
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.log
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.obj
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.pdb
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.vcxproj.FileListAbsolute.txt
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/vc143.idb
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/vc143.pdb
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.tlog/CL.command.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.tlog/CL.read.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.tlog/CL.write.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.tlog/code-sample-cpp.lastbuildstate
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.tlog/link.command.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.tlog/link.read.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/code-sample-cpp.tlog/link.write.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.exe
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.exe.recipe
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.iobj
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.ipdb
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.log
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.obj
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.pdb
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.vcxproj.FileListAbsolute.txt
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/vc143.pdb
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.tlog/CL.command.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.tlog/CL.read.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.tlog/CL.write.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.tlog/code-sample-cpp.lastbuildstate
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.tlog/code-sample-cpp.write.1u.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.tlog/link.command.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.tlog/link.read.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/Release/code-sample-cpp.tlog/link.write.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.exe
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.exe.recipe
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.ilk
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.log
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.obj
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.pdb
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.vcxproj.FileListAbsolute.txt
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/vc143.idb
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/vc143.pdb
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.tlog/CL.command.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.tlog/CL.read.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.tlog/CL.write.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.tlog/code-sample-cpp.lastbuildstate
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.tlog/link.command.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.tlog/link.read.1.tlog
-cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/code-sample-cpp.tlog/link.write.1.tlog
+cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/*
+cours/modules/R111/R111-TD/src/code-sample-cpp/Release/*
+cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/*
+
+## Files
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.sln
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.vcxproj
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.vcxproj.filters
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.vcxproj.user
-
-
-cours/modules/R111/R111-TD/out/test/PRESENTATION-OPOLKA-ALEXIS-BREATH.mp4
-cours/modules/R111/R111-TD/out/test/PRESENTATION-OPOLKA-ALEXIS-FLOW.mp4
-cours/modules/R111/R111-TD/out/test/PRESENTATION-OPOLKA-ALEXIS-FOCUS.mp4
-cours/modules/R111/R111-TD/out/test/PRESENTATION-OPOLKA-ALEXIS-MOVING-MEDITATIONS.mp4
-cours/modules/R111/R111-TD/out/test/PRESENTATION-OPOLKA-ALEXIS-QUIET-MIND.mp4
 
