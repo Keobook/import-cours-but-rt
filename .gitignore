@@ -4,8 +4,8 @@
 cours/modules/R111/R111-TD/out/test/*
 
 ## Files
-~$*.* ## Temporary file
-.~lock.*.* ## Temporary file
+~$*.*
+.~lock.*.*
 
 ## Here is the entire repository of the VS files used on a projet in C++
 
