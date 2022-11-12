@@ -7,6 +7,8 @@ cours/modules/R111/R111-TD/out/test/*
 ## Files
 ~$*.*
 .~lock.*.*
+*.save
+*.log
 
 ## Here is the entire repository of the VS files used on a projet in C++
 
