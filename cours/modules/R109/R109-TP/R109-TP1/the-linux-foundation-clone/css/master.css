@@ -1,0 +1,129 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+main {
+  margin: 4vmin;
+}
+
+header {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-top: 10em;
+  padding-bottom: 10em;
+}
+
+#header-content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 38%;
+  flex-flow: row wrap;
+}
+
+header img {
+  position: relative;
+  height: 10vmin;
+  float: left;
+}
+header #Title {
+  position: relative;
+  font-size: 6vmin;
+  font-family: CenturyGothic;
+  color: #003E69;
+  display: inline-block;
+  width: 0;
+  line-height: 7vmin;
+}
+header #Title #spanned-title {
+  font-size: 12vmin;
+  font-family: CenturyGothicBold;
+  font-weight: bolder;
+  font-display: block;
+}
+
+#subtitle {
+  padding: 2vmin;
+  color: #ffffff;
+  background-color: #5CB7E7;
+  border-bottom: 1vmin solid #003E69;
+  font-family: CenturyGothic;
+  font-size: 4vmin;
+  margin-bottom: 3vmin;
+}
+
+#subtitle:before {
+  content: "»";
+  position: sticky;
+  left: 0px;
+  margin-right: 1vmin;
+  font-family: CenturyGothic;
+}
+
+#about {
+  color: #ffffff;
+  font-family: CenturyGothic;
+  background-color: #808284;
+  padding: 4vmin;
+  margin-bottom: 10vmin;
+  border-radius: 0px 0px 0px 20px;
+  -webkit-border-radius: 0px 0px 0px 20px;
+  -moz-border-radius: 0px 0px 0px 20px;
+  -ms-border-radius: 0px 0px 0px 20px;
+  -o-border-radius: 0px 0px 0px 20px;
+}
+#about #about-header {
+  font-size: 6vmin;
+  font-family: CenturyGothicBold;
+  text-align: left;
+}
+#about #about-about {
+  font-size: 3vmin;
+}
+
+#about #about-date {
+  text-align: left;
+  margin-top: 4vmin;
+  margin-bottom: 4vmin;
+}
+
+#about #about-break {
+  color: #003E69;
+}
+
+#about #about-legal {
+  margin-top: 2em;
+  text-align: right;
+  padding: 5px;
+  width: 50%;
+  height: fit-content;
+  display: block;
+  direction: rtl;
+}
+#about #about-legal-content {
+  display: inline-block;
+  width: max-content;
+}
+
+#flex-about {
+  display: flex;
+  justify-content: end;
+}
+
+@font-face {
+  font-family: CenturyGothicBold;
+  src: url("../src/fonts/CenturyGothic-Bold.ttf");
+}
+
+@font-face {
+  font-family: CenturyGothic;
+  src: url("../src/fonts/CenturyGothic.ttf");
+}
+
+
+@media screen and (width < 942px) {
+  #header-content {
+  width: 50%;
+}
+}
