@@ -1,0 +1,65 @@
+html {
+  background-color:#145661
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin: 3%;
+}
+h1 {
+  text-align: center;
+}
+h2, li {
+  color: #0aadad;
+}
+span {
+  font-weight: bold;
+}
+
+p > span {
+  text-decoration: underline;
+}
+
+table tr > th + th +th , table tr > td + td + td {
+  text-align: center;
+}
+
+
+/* Index.html */
+body ul {
+  text-align: center;
+  font-size: 24px;
+  margin-left: -60px;
+  color: inherit;
+}
+
+body ul li {
+  padding-top: 10px;
+  list-style-type: none;
+  color: inherit;
+}
+body ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ListeX */
+#backroll > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#backroll > a:hover {
+  text-decoration: underline;
+}
