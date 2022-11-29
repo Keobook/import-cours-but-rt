@@ -1,8 +1,10 @@
 {
   "editor.tabSize": 2,
-  "workbench.colorTheme": "Cyberpunk 2077 rebuild",
-  "workbench.iconTheme": "eq-material-theme-icons-darker",
+  "editor.fontSize": 12,
+  "window.zoomLevel": -2,
+  "workbench.colorTheme": "Andromeda",
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",
-  "git.path": "C:\\CentauProgs\\Git\\"
+  "git.path": "C:\\CentauProgs\\Git\\",
 }
