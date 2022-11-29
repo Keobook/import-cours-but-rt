@@ -1,5 +1,7 @@
 {
   "editor.tabSize": 2,
-  "superBG.disable": false,
-  "superBG.url": "https://www.crunchyroll.com/fr/watch/GVWU0PKXZ/meeting-the-goblins",
+  "workbench.colorTheme": "Cyberpunk 2077 rebuild",
+  "workbench.iconTheme": "eq-material-theme-icons-darker",
+  "keyboard.layout": "fr",
+  "dateTime.timeZone": "Europe/Paris",
 }
