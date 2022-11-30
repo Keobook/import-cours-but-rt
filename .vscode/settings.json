@@ -7,4 +7,5 @@
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",
   "git.path": "C:\\CentauProgs\\Git\\",
+  "terminal.external.windowsExec": "C:\\CentauProgs\\Git\\git-bash.exe"
 }
