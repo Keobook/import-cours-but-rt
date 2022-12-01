@@ -1,4 +1,4 @@
-# import-cours-but-rt1
+# import-cours-BUT-RT1
 
 ## What's this repo?
 
