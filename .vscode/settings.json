@@ -1,11 +1,9 @@
 {
   "editor.tabSize": 2,
-  "editor.fontSize": 12,
+  "editor.fontSize": 16,
   "window.zoomLevel": -2,
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Tokyo Night Light",
   "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",
-  "git.path": "C:\\CentauProgs\\Git\\",
-  "terminal.external.windowsExec": "C:\\CentauProgs\\Git\\git-bash.exe"
 }

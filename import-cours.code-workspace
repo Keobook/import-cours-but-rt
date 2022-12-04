@@ -1,0 +1,36 @@
+{
+  "folders": [
+    {
+      "path": "./",
+      "name": "Import-Cours-BUT-RT1"
+    },
+    {
+      "path": "./cours/sae/sae-14/portfolio-presentation/www/alexis-opolka.github.io/",
+      "name": "Web portfolio"
+    }
+  ],
+  "settings": {
+    "files.autoSave": "off",
+    "editor.fontSize": 18,
+    "editor.tabSize": 2,
+    // The font can be found here: https://fonts.google.com/specimen/Pacifico
+    "editor.fontFamily": "./.vscode/Pacifico-Regular.ttf",
+    // Terminal panel
+    "terminal.integrated.fontSize": 10,
+
+    "window.zoomLevel": -1,
+    "dateTime.timeZone": "Europe/Paris",
+    "keyboard.layout": "fr",
+
+    "workbench.colorTheme": "Andromeda",
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  },
+  "extensions": {
+    "recommendations": [],
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [],
+    "compounds": []
+  }
+}
