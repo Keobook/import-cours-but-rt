@@ -14,7 +14,7 @@
     "editor.fontSize": 18,
     "editor.tabSize": 2,
     // The font can be found here: https://fonts.google.com/specimen/Pacifico
-    "editor.fontFamily": "./.vscode/Pacifico-Regular.ttf",
+    "editor.fontFamily": " 'Pacifico Regular' Consolas, 'Courier New', monospace",
     // Terminal panel
     "terminal.integrated.fontSize": 10,
 
