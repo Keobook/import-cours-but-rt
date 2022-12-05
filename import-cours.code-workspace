@@ -16,7 +16,7 @@
     // The font can be found here: https://fonts.google.com/specimen/Pacifico
     "editor.fontFamily": " 'Pacifico Regular' Consolas, 'Courier New', monospace",
     // Terminal panel
-    "terminal.integrated.fontSize": 10,
+    "terminal.integrated.fontSize": 14,
 
     "window.zoomLevel": -1,
     "dateTime.timeZone": "Europe/Paris",
