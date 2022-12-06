@@ -7,6 +7,10 @@
     {
       "path": "./cours/sae/sae-14/portfolio-presentation/www/alexis-opolka.github.io/",
       "name": "Web portfolio"
+    },
+    {
+      "path": "./cours/sae/sae-14/portfolio-presentation/ideas/generative-3d-art/",
+      "name": "Generative 3d art"
     }
   ],
   "settings": {
