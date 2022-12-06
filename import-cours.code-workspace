@@ -22,7 +22,7 @@
     "dateTime.timeZone": "Europe/Paris",
     "keyboard.layout": "fr",
 
-    "workbench.colorTheme": "Andromeda",
+    "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
   },
   "extensions": {
