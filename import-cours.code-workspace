@@ -15,10 +15,10 @@
   ],
   "settings": {
     "files.autoSave": "off",
-    "editor.fontSize": 18,
+    "editor.fontSize": 20,
     "editor.tabSize": 2,
     // The font can be found here: https://fonts.google.com/specimen/Pacifico
-    "editor.fontFamily": " 'Pacifico Regular' Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
     // Terminal panel
     "terminal.integrated.fontSize": 14,
 
@@ -26,7 +26,7 @@
     "dateTime.timeZone": "Europe/Paris",
     "keyboard.layout": "fr",
 
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Shibuya",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
   },
   "extensions": {
