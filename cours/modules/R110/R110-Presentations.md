@@ -18,6 +18,8 @@ be a member of CPTPP
 
 free trade agreement with the US, but not signed yet
 
+<hr>
+
 ## Thibault Garcia - Evolution of WI-FI norms (IEEE 802.11)
 
 IEEE: Institute of Electrical and Electronic Engineers
@@ -34,6 +36,8 @@ Wifi6 features: Multiuser MIMO (Multiple Input Multiple Output)
     OFDMA
     TWT (Target Wake Time)
     Beamforming: We point the electromagnetics signal towards the devices in question
+
+<hr>
 
 ## Simon Dornier - Linus Torvalds
 
@@ -52,6 +56,8 @@ His awards:
 Millenium Technology Award, 2012 by the Finnisch Award
 Computer Pioneer Award by the IEEE
 
+<hr>
+
 ## Maxime - The History of the Internet
 
 Half of the planet is connected
@@ -66,3 +72,49 @@ During the Cold war bon the idea of interconnected network
 Who was behind the creation of ARPANET
 California Research Institute +
 The first buyer on the Internet
+
+<hr>
+
+## Syrine Belkhadi (?) - Canada: A pole of attraction for foreign students
+
+colonial immigration -> economic immigration
+
+### Immigration policy favouring integration
+
+Canada has an immigration that is highly appreciated
+PTPD: Work permit for young students
+
+### Quality and international reputation of university institutions
+
+The most recognised in the world due to several factors
+Ranks 2nd amongst the most popular to foreign students
+1.8 million jobs for graduates
+
+Canadians known for their openmindness
+
+### Multicultural policy
+
+Bilingual country english majority and french minority
+it aims eliminating racism and discrimination
+
+<hr>
+
+## Lucas Simpol - ENIAC
+
+Electronic Numerical Integrator And Computer by John William Mauchly
+automate calculations, 1945
+
+27 Ton
+18 000 Vacuum tubes
+70 000 Resistors
+average of 40,000 operations/second
+357 multiplications/second
+38 divisions/second
+
+x2 every 18/24 months
+
+1961: first interactive computer
+1973: first personal computer
+
+Harvard architecture: More expensive
+Von Neumann architecture: More popular and nearly everything you'll see in a personal computer nowadays.
