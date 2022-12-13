@@ -5,7 +5,7 @@
 |  Marque                                |        Acome      |         Acome     |         Acome        |         Acome         |    Xeilom     |      Xeilom       |
 | Référence                              | 200 UU 4P LSON-FR | 450 FU 4P LSOH-FR | 1000 FF-44P LSOH-FRI | 1500 SF-S 4P LSO U-FP | MK 7100-I CPX | UC Future C22 ... |
 | Fréquence Max                          | 200 MHz           | 450 MHz           | 1000 MHz             | 1500 MHz              | 1200 MHz      | 2000 MHz          |
-| Débit                                  | 1 Gbit/s          | 2.5 Gbit/s        | 10 Gbit/s            | 10 Gbit/s             | ?             | ?                 |
+| Débit                                  | 1 Gbit/s          | 2.5 Gbit/s        | 10 Gbit/s            | 10 Gbit/s             | N/A           | N/A               |
 | Résistance                             |                   |                   |                      |                       |               |                   |
 | Atténuation en dB                      |                   |                   |                      |                       |               |                   |
 | NVP (Nominal Velocity of Propagation)  |                   |                   |                      |                       |               |                   |
@@ -14,6 +14,8 @@ Plus le cable est long, plus il y a de l'atténuation, etc.\
 La résistance est mesurée en Ohmmètre.\
 Résistance en boucle (sinon multiplier par 2), souvent donnée en Ohmkilomètre\
 atténuation en dB/km
+
+<hr>
 
 ## DSXI
 
