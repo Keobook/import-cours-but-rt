@@ -118,3 +118,38 @@ x2 every 18/24 months
 
 Harvard architecture: More expensive
 Von Neumann architecture: More popular and nearly everything you'll see in a personal computer nowadays.
+
+## Matéo Touliou - Silicon Valley
+
+Its name is from the silicon material
+Digital entreprises
+19th century exploited by the spanish for the soil in order to raise cattle and farming
+production of computer chips
+GPD equivalent to Chile (Chili)
+Challenged by Bangalore or Paris-Saclay cluster
+
+## Wallid - Story of Apple
+
+### Steve Jobs + his carrer
+
+born: february 24, 1955
+Die: October 5, 2011 (56 years)
+CEO of apple and President of Pixar
+Fortune: $7 Billions (2011)
+
+### Tim Cook
+
+born: 1/09/1960
+New CEO of Apple
+Fortune: 1.8 Billion
+
+### Their first computer
+
+1976: Apple-I
+1977: Apple-II
+
+## Marouan - Internet
+
+ 
+
+## Nathan - Ireland
