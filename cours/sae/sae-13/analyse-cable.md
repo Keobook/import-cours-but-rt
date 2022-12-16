@@ -62,6 +62,12 @@ sur le bouton "définir valeur de référence" ensuite suivé les instrucion le 
 
 mise en place des diférente information a propo du projet
 
+<figure>
+  <img src="./src/img/dsxi/ecran-accueil.jpg"
+        alt="Ecran-acceuil" width="300px">
+  <figcaption>L'écran d'acceuil du DSXI</figcaption>
+</figure>
+
 Avant tout changement, vérifié que le projet n'ai pas déja enregisté,
 si il est déjà enregisté vérifié toute les information,
 si il n'est pas enregisté *(fleche 1)* appuié le la fleche,
@@ -76,6 +82,8 @@ si n'est pas enregistré, appuié sur le bouton "nouveau projet".
         alt="Parametrage" width="300px">
   <figcaption>Paramétrage du DSXI</figcaption>
 </figure>
+
+La flèche 2 corespond a la configuration du cable
 
 <figure>
   <img src="./src/img/dsxi/certification-correct.jpg"
@@ -118,8 +126,8 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 | NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0006.png "NEXT @ Remote (dB)")      | Next correspond a la puissance cumulée de paraphonies du cable *(mesure de la perturbation d'une paire sur une autre)*. Sur le graphique on peut voir diffréntes courbes qui représentent la perte en dB de chacune des paires, la courbe rouge représente la valeur minimal de perturbation que l'on peut admettre. Pour ce test on peut voir que sur la basse fréquence il y a plus de perte qu'en haute féquence. <br> Le cable peut être certifié car on ne passe pas en dessous de la valeur de référence.
 | ACR-F (dB)            | ![test-page-img-05](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0007.png "ACR-F (dB)")              | ACR-F est le rapport entre l'atténuation et la diaphonie au  niveau du coté distant, selon le schéma apparant, nous avons des piques a certains moment, cela signifiant que l'on a une absorption supérieur à cette fréquence, ce qui est ce que l'on veut. <br> Vu que tout est positif, on cherche la valeur la plus haute, donc plus on a une grande valeur mieux c'est.
 | ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0008.png "ACR-F @ Remote (dB)")     | Si l'ACR-F est le rapport entre l'atténuation et la diaphonie, l'ACR-F @ Remote est le rapport entre l'atténuation et la diaphonie capturé par l'unité distante. L'on peut voir que le relevé est très proche de celui capturé par l'unité principale voir même identique. <br> Cela signifie qu'il y a aucun problème au niveau du cable sur cet instance précise, où l'on a les mêmes données en début de ligne qu'en fin de câble.  
-| ACR-N (dB)            | ![test-page-img-07](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0009.png "ACR-N (dB)")              |
-| ACR-N @ Remote (dB)   | ![test-page-img-08](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0010.png "ACR-N @ Remote (dB)")     |
+| ACR-N (dB)            | ![test-page-img-07](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0009.png "ACR-N (dB)")              | l'ARC-N est le rapport entre l'atténuation et la diaphonie. sur se grafique on peut voir plusieurs courbe représentant chaqu'une des paires, la courbe rouge represente la valeur maximale de le peut admettre, le fait que la coubre soit inverersé signifié que les résultats obtenue sont négatif. sur le grafique on peut voir que le courbe sont au dessous des norme physique donc selon se test il est certifiable.
+| ACR-N @ Remote (dB)   | ![test-page-img-08](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0010.png "ACR-N @ Remote (dB)")     | l'ARC-N est le rapport entre l'atténuation et la diaphonie du cumule des puissance. sur se grafique on peut voir plusieurs courbe représentant chaqu'une des paires, la courbe rouge represente la valeur maximale de le peut admettre, le fait que la coubre soit inverersé signifié que les résultats obtenue sont négatif.  L'effet combiné de ces deux paramètres est un très bon indicateur de la qualité de transmission réelle du lien. Cet effet combiné est caractérisé par le rapport d'atténuation sur la diaphonie proche de l'extrémité (ACR-N). ACR-N est presque analogue à la définition du rapport signal sur bruit. sur se grafique on peut en déduite que le cable peut etre certifié car aucune des paires ne passe au dessous de la valeur maximal que l'on a donnée.
 | RL (dB)               | ![test-page-img-09](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0011.png "RL (dB)")                 |
 | RL @ Remote (dB)      | ![test-page-img-10](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0012.png "RL @ Remote (dB)")        |
 
