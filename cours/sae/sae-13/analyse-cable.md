@@ -46,19 +46,19 @@ Avant de mettre en route l'appareil, vérifier dans le sac que l'ensemble est co
 
 ### utilisation
 
-démardé les 2 aparreil en appuis le bouton "power" puis laisser-les démarré.
+démarer les 2 aparreil en appuis le bouton "power" puis laisser-les démarré.
 
 avant de réalisé un test de ligne il faut mettre le valeur de référence. Pour cela il faut branché les apareil celon l'un des branchement de la figure 1. Une fois fait, sur l'accueil du menus appuisé sur le bouton option puis sur apuis sur le bouton "définir valeur de référence" ensuite suivé les instrucion le l'unité principale.\
 ![procedure_de_test](./src/procedure_de_test.png)
 
-![ecran_accueil](./src/img/ecran_accueil.jpg)
-... mise en place des paramettre
+mise en place des diférente information a propo du projet
+![ecran_accueil](./src/img/dsxi/ecran-accueil.jpg)
 
 pour faire le test, il suffit d'appuit sur l'un des bouton test de l'unité central ou le bouton de l'unité distance. on fois appuié sur le bouton attendre.
 
 ![test_OK.png](./src/img/dsxi/dsxi_test_OK)
 
-Une fois sur le rapport de test donné par l'appareil *(voir figure 2)* vous pouvez accédé dans la pr
+un fois sur le rapport de test donné par l'appareil *(voir figure 4)* vous pouvez accédé dans la pr 
 
 ## Certification du cable
 
