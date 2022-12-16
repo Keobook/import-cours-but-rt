@@ -1,5 +1,10 @@
 # Rapport d'activité - Alexis Opolka, Lucas Simpol
 
+Information: Chaques test certification a été effectuée deux fois,
+elles sont présentes en annexe à la fin du rapport d'activité.
+
+## Spécificités du cable
+
 Cable: 7 - F/FTP Cat.6a 550 MHz 4P LSOH-FR TOURET 500m IVOIRE
 
 Vendu par le fabriquant par 500m mais est disponible en plus petite taille.
@@ -81,7 +86,13 @@ la fleche 2 corespond a la configuration du cable
 un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
 vous pouvez accéder à plusieurs tests effectués par le DSXI.
 
-on fois vos test terminer vous pouvez les récupéré sur un ordinateur disposent du logiciel LinkWare, pour cela : branché l'appareil avec le cable USB AB / USB A a votre ordinateur et ouvert le logiciel. ouveré l'onglé file, sélectionné l'onglé "import from" puis sélectionné votre appareil. a partir de la fenettre qui souffre vous pouvez soit choisir quelle élément vous voulé importé ou tout importé.
+on fois vos test terminer vous pouvez les récupéré sur un ordinateur
+disposent du logiciel LinkWare, pour cela :  
+branché l'appareil avec le cable USB A  vers micro-USB B a votre ordinateur
+et ouvert le logiciel.  
+Ouvrez l'onglet file, sélectionné l'onglé "import from" puis sélectionné votre appareil.  
+A partir de la fenêtre qui souffre vous pouvez soit choisir quelle
+élément vous voulé importé ou tout importé.
 
 ## Certification du cable
 
@@ -117,5 +128,23 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 ### Liaison permanente entre le SR du 2e étage et la salle B207 de l'IUT de Béziers
 
 s
+
+## Annexes
+
+### 1er test sur le cable 7
+
+![1st-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "1er test sur le cable 7")
+
+### 2e test sur le cable 7
+
+![2nd-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_4.png "2e test sur le cable 7")
+
+### 1er test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
+
+![1st-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/Rapport-de-test-SIMPOL_OPOLKA_cable_iut_Page_3.png "1er test sur la liaison permanente de l'IUT")
+
+### 2e test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
+
+![2nd-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/Rapport-de-test-SIMPOL_OPOLKA_cable_iut_Page_4.png "2e test sur la liaison permanente de l'IUT")
 
 ## Copyright Alexis Opolka, Lucas Simol &copy; 2022 - All Rights Reserved
