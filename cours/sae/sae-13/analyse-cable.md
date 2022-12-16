@@ -82,9 +82,9 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 
 | Catégorie             | Image                                                                                                                                    | Analyse        |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------|
-| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0003.png "Wire Map")                |
+| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0003.png "Wire Map")                | grace a image on pour vérifier si le cable est cablé corectement sur les prise femelle, on peut voir aussi il une des paire est casé car elle ne s'affichera pas. 
 | Insertion loss (dB)   | ![test-page-img-02](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0004.png "Insertion loss (dB)")     |
-| NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0005.png "NEXT (dB)")               |
+| NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0005.png "NEXT (dB)")               | vgfgfg
 | NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0006.png "NEXT @ Remote (dB)")      |
 | ACR-F (dB)            | ![test-page-img-05](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0007.png "ACR-F (dB)")              |
 | ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0008.png "ACR-F @ Remote (dB)")     |
