@@ -73,9 +73,9 @@ si n'est pas enregistré, appuié sur le bouton "nouveau projet".
 </figure>
 
 <figure>
-  <img src="./src/img/dsxi/dsxi_test_OK"
-        alt="Parametrage" width="100%">
-  <figcaption>test_OK.png</figcaption>
+  <img src="./src/img/dsxi/certification-correct.jpg"
+        alt="certification-correct" width="300px">
+  <figcaption>certification correcte</figcaption>
 </figure>
 
 un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
@@ -99,7 +99,7 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 
 | Catégorie             | Image                                                                                                                                    | Analyse        |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------|
-| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0003.png "Wire Map")                | grace a image on pour vérifier si le cable est cablé corectement sur les prise femelle, on peut voir aussi il une des paire est casé car elle ne s'affichera pas. 
+| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0003.png "Wire Map")                | Grâce a image on pour vérifier si le cable est cablé corectement sur les prise femelle, on peut voir aussi il une des paire est casé car elle ne s'affichera pas. 
 | Insertion loss (dB)   | ![test-page-img-02](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0004.png "Insertion loss (dB)")     | représente la perte de dB sur les différente paire. la ligne rouge représent la limite maximale de perte que l'on peu admettre. la dexième ligne, n'est pas une ligne mais plusieur, elle représente la perte de chaque paire de cable en fonction de la féquence. sur se test on peut voir que le test est valide car on ne dépasse pas la limite maximal fixé donc sur se test le cable est valide
 | NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0005.png "NEXT (dB)")               | Next corespond a la paradiaphonie du cable *(mesure de la perturbation d'une paire sur une autre)*. sur le grafique on peut voir diffrénte courde qui représente la perte en dB de chaqu'une des paire, la courbe rouge représente la valeur minimal de perturbation que l'on peut abmettre. Pour se test on peut voir qu'a basse féquence il y a plus de perte que lorsque qu'on n'ai a haute féquence. le cable peut est certifier car on ne passe pas en dessous de la valeur de référence.
 | NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0006.png "NEXT @ Remote (dB)")      |
