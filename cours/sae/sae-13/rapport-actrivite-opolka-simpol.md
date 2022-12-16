@@ -33,7 +33,7 @@ LSOH-FR: Low Smoke "Zero" Halogen Retardateur de flamme
 | ![logo-3](./src/img/logos/logo_3.png) | avertissement : consultez la documentation destinée a l'utilisateur.                |
 | &nbsp;                                | &nbsp;                                                                              |
 
-<hr>
+<div style="page-break-after: always"></div>
 
 ## Mode D'emploi
 
@@ -62,6 +62,8 @@ sur le bouton "définir valeur de référence" ensuite suivez les instrucions de
   <img src="./src/img/procedure_de_test.png" alt="Procedure de test" width="300px">
   <figcaption>La procédure de test</figcaption>
 </figure>
+
+<div style="page-break-after: always"></div>
 
 #### mise en place des différentes informations à propos du projet
 
@@ -101,6 +103,8 @@ on fois vos test terminer vous pouvez les récupéré sur un ordinateur disposen
 branché l'appareil avec le cable USB A vers micro-USB B a votre ordinateur et ouvert le logiciel.  
 Ouvrez l'onglet file, sélectionné l'onglet "import from" puis sélectionné votre appareil.  
 A partir de la fenêtre qui souffre vous pouvez soit choisir quel élément vous voulé importé ou tout importé.
+
+<div style="page-break-after: always"></div>
 
 ## Certification du cable n°7
 
@@ -147,7 +151,7 @@ Avec les autoriations nous avons pu procédé au test du cable (liaison permanen
 Les résultats obtenus sont sensiblement les mêmes que pour le cable imposé.  
 Grace au test nous pouvons dire que le cable installé pour relier la salle est certifiable et certifié, tout comme le cable imposé.
 
-<hr>
+<div style="page-break-after: always"></div>
 
 ## Annexes
 
@@ -155,13 +159,19 @@ Grace au test nous pouvons dire que le cable installé pour relier la salle est 
 
 ![1st-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "1er test sur le cable 7")
 
+<div style="page-break-after: always"></div>
+
 ### Annexe 2 - 2e test sur le cable 7
 
 ![2nd-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_4.png "2e test sur le cable 7")
 
+<div style="page-break-after: always"></div>
+
 ### Annexe 3 - 1er test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
 
 ![1st-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/Rapport-de-test-SIMPOL_OPOLKA_cable_iut_Page_3.png "1er test sur la liaison permanente de l'IUT")
+
+<div style="page-break-after: always"></div>
 
 ### Annexe 4 - 2e test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
 
@@ -169,4 +179,4 @@ Grace au test nous pouvons dire que le cable installé pour relier la salle est 
 
 ## Copyright Alexis Opolka, Lucas Simpol &copy; 2022 - All Rights Reserved
 
-Ces tests on été effectué avec des DSXI, appareils de certification frabiqués par FLUKE Networks &reg; .
+Ces tests on été effectué avec des DSXI, appareils de certification frabiqués par FLUKE Networks &reg;.
