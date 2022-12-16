@@ -81,7 +81,7 @@ si n'est pas enregistré, appuié sur le bouton "nouveau projet".
 un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
 vous pouvez accéder à plusieurs tests effectués par le DSXI.
 
-on fois vos test terminer vous pouvez les récupéré sur un ordinateur disposent du logiciel LinkWare, pour cela : branché l'appareil avec le cable USB AB / USB A a votre ordinateur et ouvert le logiciel. ouveré l'onglé file, sélectionné l'onglé "import from" puis sélectionné votre appareil. a partir de la fenettre qui souffre vous pouvez soit choisi r quelle élément vous voulé importé ou tout importé
+on fois vos test terminer vous pouvez les récupéré sur un ordinateur disposent du logiciel LinkWare, pour cela : branché l'appareil avec le cable USB AB / USB A a votre ordinateur et ouvert le logiciel. ouveré l'onglé file, sélectionné l'onglé "import from" puis sélectionné votre appareil. a partir de la fenettre qui souffre vous pouvez soit choisir quelle élément vous voulé importé ou tout importé.
 
 ## Certification du cable
 
