@@ -167,6 +167,6 @@ Grace au test nous pouvons dire que le cable installé pour relier la salle est 
 
 ![2nd-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/Rapport-de-test-SIMPOL_OPOLKA_cable_iut_Page_4.png "2e test sur la liaison permanente de l'IUT")
 
-## Copyright Alexis Opolka, Lucas Simol &copy; 2022 - All Rights Reserved
+## Copyright Alexis Opolka, Lucas Simpol &copy; 2022 - All Rights Reserved
 
 Ces tests on été effectué avec des DSXI, appareils de certification frabiqués par FLUKE Networks &reg; .
