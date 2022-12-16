@@ -64,8 +64,8 @@ mise en place des diférente information a propo du projet
 
 <figure>
   <img src="./src/img/dsxi/ecran-accueil.jpg"
-        alt="Ecran-acceuil" width="300px">
-  <figcaption>L'écran d'acceuil du DSXI</figcaption>
+        alt="Ecran-accueil" width="300px">
+  <figcaption>L'écran d'accueil du DSXI</figcaption>
 </figure>
 
 Avant tout changement, vérifié que le projet n'ai pas déja enregisté,
