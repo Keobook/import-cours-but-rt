@@ -56,7 +56,10 @@ avant de réalisé un test de ligne il faut mettre le valeur de référence. Pou
 ... mise en place des paramettre
 
 pour faire le test, il suffit d'appuit sur l'un des bouton test de l'unité central ou le bouton de l'unité distance. on fois appuié sur le bouton attendre. 
-![test_OK.png](./src/dsxi-tests/test_OK.png) *figure 2*/ 
+![test_OK.png](./src/img/dsxi/dsxi_test_OK)
+
+*figure 2*
+
 un fois sur le rapport de test donné par l'appareil *(voir figure 2)* vous pouvez accédé dans la pr 
 
 ## Certification du cable
