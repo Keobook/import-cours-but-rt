@@ -68,22 +68,23 @@ mise en place des diférente information a propo du projet
   <figcaption>L'écran d'accueil du DSXI</figcaption>
 </figure>
 
-Avant tout changement, vérifié que le projet n'ai pas déja enregisté,
-si il est déjà enregisté vérifié toute les information,
-si il n'est pas enregisté *(fleche 1)* appuié le la fleche,
-vous changerait de page (*image 3*),
-pour changé de projet appuié sur le bouton "modifier projet",
-vous changerai a nous de page, parcouré la liste,
-si votre projet a déjà enregistré il vous suffit de le sélectionné,
-si n'est pas enregistré, appuié sur le bouton "nouveau projet".  
+#### Avant tous tests
 
-<figure>
-  <img src="./src/img/dsxi/para_projets.jpg"
-        alt="Parametrage" width="300px">
-  <figcaption>Paramétrage du DSXI</figcaption>
-</figure>
-
-La flèche 2 corespond a la configuration du cable
+1. vérifier que le projet n'ait pas déjà été enregistré
+    1. S'il est déjà enregistré, vérifier toutes les informations
+    1. S'il n'est pas déjà enregistré, appuyer sur la flèche *(flèche 1)*,  
+      vous changerez de page *(voir Paramétrage du DSXI)*. <figure> <img src="./src/img/dsxi/para_projets.jpg" alt="Parametrage" width="300px"> <figcaption>Paramétrage du DSXI</figcaption></figure>
+      Pour changer de projet, appuyez sur le bouton "modifier projet".  
+      Vous arriverez sur la page où tous les projets enregistrés sont listés.
+        1. Votre projet a déjà été enregistré: il vous suffit de le sélectionner.
+        1. Votre projet n'est pas enregistré: appuyez sur le bouton "nouveau projet" puis entrez le nom de votre projet.
+        1. Paramétrer le câble:
+            1. Appuyer sur l'onglet désigné par la flèche 2 *(voir paramétrage du DSXI)*
+            1. Une liste déroulante s'affiche avec les différents câbles possibles:
+                1. Votre câble apparaît: le sélectionner
+                1. Votre câble n'apparaît pas: Recherchez-le par fabriquant
+1. Le paramétrage étant fini, revenir à l'accueil, pour cela appuyez sur le bouton physique **"HOME"**.
+1. Vous pouvez maintenant effectuer le test.
 
 <figure>
   <img src="./src/img/dsxi/certification-correct.jpg"
