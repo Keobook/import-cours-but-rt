@@ -28,7 +28,7 @@ LSOH-FR: Low Smoke "Zero" Halogen Retardateur de flamme
 | ![logo-3](./src/img/logos/logo_3.png) |avertissement : consultez la documentation destinée a l'utilisateur.                 |
 | &nbsp;                                | &nbsp;                                                                              |
 
-<hr>cyfc
+<hr>
 
 ## Mode D'emploi
 
@@ -53,6 +53,7 @@ avant de réalisé un test de ligne il faut mettre le valeur de référence. Pou
 
 *figure 1*
 
+![ecran_accueil](./src/img/ecran_accueil.jpg)
 ... mise en place des paramettre
 
 pour faire le test, il suffit d'appuit sur l'un des bouton test de l'unité central ou le bouton de l'unité distance. on fois appuié sur le bouton attendre. 
