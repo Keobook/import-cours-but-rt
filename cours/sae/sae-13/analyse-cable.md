@@ -34,15 +34,15 @@ LSOH-FR: Low Smoke "Zero" Halogen Retardateur de flamme
 
 Avant de mettre en route l'appareil, vérifier dans le sac que l'ensemble est complet, cela comprend:
 
-- 1 unité principale
-- 1 unité distante
-- 2 cordon de charge
-- 2 adaptateurs de lien permannent (pour prise femelle)
-- 2 adaptateurs de canau
-- 1 cordon de référence
-- 2 pairs d'écouteurs
-- 1 cable USB AB / USB A
-- 1 mode d'emploi
+- <span style="color: orange">1</span> unité principale
+- <span style="color: orange">1</span> unité distante
+- <span style="color: orange">2</span> cordon de charge
+- <span style="color: orange">2</span> adaptateurs de lien permannent (pour prise femelle)
+- <span style="color: orange">2</span> adaptateurs de canau
+- <span style="color: orange">1</span> cordon de référence
+- <span style="color: orange">2</span> pairs d'écouteurs
+- <span style="color: orange">1</span> cable USB AB / USB A
+- <span style="color: orange">1</span> mode d'emploi
 
 ### utilisation
 
@@ -57,13 +57,29 @@ sur le bouton "définir valeur de référence" ensuite suivé les instrucion le 
 
 mise en place des diférente information a propo du projet
 
-avant tout changement, vérifié que le projet n'ai pas déja enregisté, si il est déjà enregisté vérifié toute les information, si il n'est pas enregisté *(fleche 1)* appuié le la fleche, vous changerait de page (*image 3*), pour changé de projet appuié sur le bouton "modifier projet", vous changerai a nous de page, parcouré la liste, si votre projet a déjà enregistré il vous suffit de le sélectionné, si n'est pas enregistré, appuié sur le bouton "nouveau projet".  
-![para_projets](./src/img/dsxi/para_projets.jpg)
+Avant tout changement, vérifié que le projet n'ai pas déja enregisté,
+si il est déjà enregisté vérifié toute les information,
+si il n'est pas enregisté *(fleche 1)* appuié le la fleche,
+vous changerait de page (*image 3*),
+pour changé de projet appuié sur le bouton "modifier projet",
+vous changerai a nous de page, parcouré la liste,
+si votre projet a déjà enregistré il vous suffit de le sélectionné,
+si n'est pas enregistré, appuié sur le bouton "nouveau projet".  
 
-![test_OK.png](./src/img/dsxi/dsxi_test_OK)
+<figure>
+  <img src="./src/img/dsxi/para_projets.jpg"
+        alt="Parametrage" width="300px">
+  <figcaption>Paramétrage du DSXI</figcaption>
+</figure>
+
+<figure>
+  <img src="./src/img/dsxi/dsxi_test_OK"
+        alt="Parametrage" width="100%">
+  <figcaption>test_OK.png</figcaption>
+</figure>
 
 un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
-vous pouvez accéder... (TODO: A compléter)
+vous pouvez accéder à plusieurs tests effectués par le DSXI.
 
 ## Certification du cable
 
@@ -75,8 +91,8 @@ vous pouvez accéder... (TODO: A compléter)
 
 ### Les informations qui sautent aux yeux
 
-Au dessus le d'encadré bleu on peut voir que le cable testé est OK,
-on le voie grace l'encadré vert avec la coche.
+Au dessus de l'encadré bleu on peut voir que le cable testé est OK,
+on le voit grace à l'encadré vert avec la coche.
 Dans l'encadré bleu on peut voir les infomation du cables et les information des l'appareil.  
 
 ### L'analyse des courbes
