@@ -110,4 +110,10 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 | RL (dB)               | ![test-page-img-09](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0011.png "RL (dB)")                 |
 | RL @ Remote (dB)      | ![test-page-img-10](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0012.png "RL @ Remote (dB)")        |
 
+## Autre certifications
+
+### Liaison permanente entre le SR du 2e étage et la salle B207 de l'IUT de Béziers
+
+s
+
 ## Copyright Alexis Opolka, Lucas Simol &copy; 2022 - All Rights Reserved
