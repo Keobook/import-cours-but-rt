@@ -81,6 +81,14 @@ si n'est pas enregistré, appuié sur le bouton "nouveau projet".
 un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
 vous pouvez accéder à plusieurs tests effectués par le DSXI.
 
+on fois vos test terminer vous pouvez les récupéré sur un ordinateur
+disposent du logiciel LinkWare, pour cela :  
+branché l'appareil avec le cable USB A  vers micro-USB B a votre ordinateur
+et ouvert le logiciel.  
+Ouvrez l'onglet file, sélectionné l'onglé "import from" puis sélectionné votre appareil.  
+A partir de la fenêtre qui souffre vous pouvez soit choisir quelle
+élément vous voulé importé ou tout importé.
+
 ## Certification du cable
 
 ![Cable-Certification](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "Certification du cable")
@@ -109,5 +117,11 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 | ACR-N @ Remote (dB)   | ![test-page-img-08](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0010.png "ACR-N @ Remote (dB)")     |
 | RL (dB)               | ![test-page-img-09](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0011.png "RL (dB)")                 |
 | RL @ Remote (dB)      | ![test-page-img-10](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0012.png "RL @ Remote (dB)")        |
+
+## Autre certifications
+
+### Liaison permanente entre le SR du 2e étage et la salle B207 de l'IUT de Béziers
+
+s
 
 ## Copyright Alexis Opolka, Lucas Simol &copy; 2022 - All Rights Reserved
