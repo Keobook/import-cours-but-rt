@@ -75,17 +75,17 @@ un fois sur le rapport de test donné par l'appareil *(voir figure 2)* vous pouv
 Au dessus le d'encadré bleu on peut voir que le cable testé est OK, on le voie grace l'encadré vert avec la coche.\
 Dans l'encadré bleu on peut voir les infomation du cables et les information des l'appareil.
 
-| Catégorie             | Image                                                                    | Analyse        |
-|-----------------------|--------------------------------------------------------------------------|----------------|
-| Wire Map              | ![test-page-img-01](./src/dsxi-tests/test_Page_1_Image_0003.png)         |
-| Insertion loss (dB)   | ![test-page-img-02](./src/dsxi-tests/test_Page_1_Image_0004.png)         |
-| NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/test_Page_1_Image_0005.png)         |
-| NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/test_Page_1_Image_0006.png)         |
-| ACR-F (dB)            | ![test-page-img-05](./src/dsxi-tests/test_Page_1_Image_0007.png)         |
-| ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/test_Page_1_Image_0008.png)         |
-| ACR-N (dB)            | ![test-page-img-07](./src/dsxi-tests/test_Page_1_Image_0009.png)         |
-| ACR-N @ Remote (dB)   | ![test-page-img-08](./src/dsxi-tests/test_Page_1_Image_0010.png)         |
-| RL (dB)               | ![test-page-img-09](./src/dsxi-tests/test_Page_1_Image_0011.png)         |
-| RL @ Remote (dB)      | ![test-page-img-10](./src/dsxi-tests/test_Page_1_Image_0012.png)         |
+| Catégorie             | Image                                                                                                                                    | Analyse        |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------|
+| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0003.png "Wire Map")                |
+| Insertion loss (dB)   | ![test-page-img-02](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0004.png "Insertion loss (dB)")     |
+| NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0005.png "NEXT (dB)")               |
+| NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0006.png "NEXT @ Remote (dB)")      |
+| ACR-F (dB)            | ![test-page-img-05](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0007.png "ACR-F (dB)")              |
+| ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0008.png "ACR-F @ Remote (dB)")     |
+| ACR-N (dB)            | ![test-page-img-07](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0009.png "ACR-N (dB)")              |
+| ACR-N @ Remote (dB)   | ![test-page-img-08](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0010.png "ACR-N @ Remote (dB)")     |
+| RL (dB)               | ![test-page-img-09](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0011.png "RL (dB)")                 |
+| RL @ Remote (dB)      | ![test-page-img-10](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0012.png "RL @ Remote (dB)")        |
 
 ## Copyright Alexis Opolka, Lucas Simol &copy; 2022 - All Rights Reserved
