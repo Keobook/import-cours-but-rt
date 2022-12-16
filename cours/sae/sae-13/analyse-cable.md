@@ -58,7 +58,6 @@ mise en place des diférente information a propo du projet
 pour mettre le non de projet *(flechet 1)* appuié le la fleche, vous changerait de page, si votre projet a déjà enregistré il vous suffit de le sélectionné, si n'est pas enregistré, appuié sur le bouton 
 ![para_projets](./src/img/dsxi/para_projets.jpg)
 
-pour faire le test, il suffit d'appuit sur l'un des bouton test de l'unité central ou le bouton de l'unité distance. on fois appuié sur le bouton attendre. 
 ![test_OK.png](./src/img/dsxi/dsxi_test_OK)
 
 
