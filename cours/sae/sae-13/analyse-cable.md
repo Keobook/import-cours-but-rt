@@ -52,9 +52,12 @@ avant de réalisé un test de ligne il faut mettre le valeur de référence. Pou
 ![procedure_de_test](./src/procedure_de_test.png)
 
 mise en place des diférente information a propo du projet
-![ecran_accueil](./src/img/dsxi/ecran-accueil.jpg)
 
-pour faire le test, il suffit d'appuit sur l'un des bouton test de l'unité central ou le bouton de l'unité distance. on fois appuié sur le bouton attendre.
+<figure>
+    <img src="./src/img/dsxi/ecran-accueil.jpg"
+         alt="Albuquerque, New Mexico" width="300px" height="300px">
+    <figcaption>pour faire le test, il suffit d'appuit sur l'un des bouton test de l'unité central ou le bouton de l'unité distance. on fois appuié sur le bouton attendre.</figcaption>
+</figure>
 
 ![test_OK.png](./src/img/dsxi/dsxi_test_OK)
 
