@@ -28,7 +28,7 @@ LSOH-FR: Low Smoke "Zero" Halogen Retardateur de flamme
 | ![logo-3](./src/img/logos/logo_3.png) |avertissement : consultez la documentation destinée a l'utilisateur.                 |
 | &nbsp;                                | &nbsp;                                                                              |
 
-<hr>
+<hr>cyfc
 
 ## Mode D'emploi
 
