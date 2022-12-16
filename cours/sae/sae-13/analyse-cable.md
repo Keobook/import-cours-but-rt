@@ -74,8 +74,8 @@ si n'est pas enregistré, appuié sur le bouton "nouveau projet".
 
 <figure>
   <img src="./src/img/dsxi/certification-correct.jpg"
-        alt="Parametrage" width="100%">
-  <figcaption>test_OK.png</figcaption>
+        alt="certification-correct" width="300px">
+  <figcaption>certification correcte</figcaption>
 </figure>
 
 un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
