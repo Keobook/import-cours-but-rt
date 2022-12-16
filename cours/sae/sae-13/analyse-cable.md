@@ -137,7 +137,11 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 
 ### Liaison permanente entre le SR du 2e étage et la salle B207 de l'IUT de Béziers
 
-s
+Pour la troisième partie nous avons choisie de faire un teste sur l'un des cable de qui relie l'une des salle de l'iut au switch d'étage. 
+Pour cela nous avons demendé les autorisation au pole maintenance pour débranché la salle B207. 
+Avec les autoristaion nous avons pus prosédé au test du cable. 
+Les résultat obtenue sont sensiblement les mêmes que pour le cable imposé. 
+Grace au test nous pourvons dire que le cable installé pour relié la salle est certifier 
 
 <hr>
 
