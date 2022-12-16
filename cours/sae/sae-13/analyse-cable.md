@@ -55,7 +55,8 @@ avant de réalisé un test de ligne il faut mettre le valeur de référence. Pou
 mise en place des diférente information a propo du projet
 ![ecran_accueil](./src/img/dsxi/ecran-accueil.jpg)
 
-pour mettre le non de projet *(flechet 1)* appuié le la fleche, vous changerait de page, si votre projet a déjà enregistré il vous suffit de le sélectionné, si n'est pas enregistré, appuié sur le bouton 
+
+avant tout changement, vérifié que le projet n'ai pas déja enregisté, si il est déjà enregisté vérifié toute les information, si il n'est pas enregisté *(fleche 1)* appuié le la fleche, vous changerait de page (*image 3*), pour changé de projet appuié sur le bouton "modifier projet", vous changerai a nous de page, parcouré la liste, si votre projet a déjà enregistré il vous suffit de le sélectionné, si n'est pas enregistré, appuié sur le bouton "nouveau projet".  
 ![para_projets](./src/img/dsxi/para_projets.jpg)
 
 ![test_OK.png](./src/img/dsxi/dsxi_test_OK)
