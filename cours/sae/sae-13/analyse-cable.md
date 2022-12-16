@@ -67,7 +67,7 @@ un fois sur le rapport de test donné par l'appareil *(voir figure 4)* vous pouv
 
 ## Certification du cable
 
-![test-page-1](./src/dsxi-tests/test_Page_1.png)
+![Cable-Certification](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "Certification du cable")
 
 <hr>
 
