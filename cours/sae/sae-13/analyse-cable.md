@@ -25,7 +25,7 @@ LSOH-FR: Low Smoke "Zero" Halogen Retardateur de flamme
 |---------------------------------------|-------------------------------------------------------------------------------------|
 | ![logo-1](./src/img/logos/logo_1.png) | avertissement : risque d'incendie, d'électrocution ou de dommage corporels.         |
 | ![logo-2](./src/img/logos/logo_2.png) | avertissement : risque de dommage ou de destruction de l'équipement ou du logiciel. |
-| ![logo-3](./src/img/logos/logo_3.png) |avertissement : consultez la documentation destinée a l'utilisateur.                 |
+| ![logo-3](./src/img/logos/logo_3.png) | avertissement : consultez la documentation destinée a l'utilisateur.                |
 | &nbsp;                                | &nbsp;                                                                              |
 
 <hr>
@@ -34,38 +34,56 @@ LSOH-FR: Low Smoke "Zero" Halogen Retardateur de flamme
 
 Avant de mettre en route l'appareil, vérifier dans le sac que l'ensemble est complet, cela comprend:
 
-- 1 unité principale
-- 1 unité distante
-- 2 cordon de charge
-- 2 adaptateurs de lien permannent (pour prise femelle)
-- 2 adaptateurs de canau
-- 1 cordon de référence
-- 2 pairs d'écouteurs
-- 1 cable USB AB / USB A
-- 1 mode d'emploi
+- <span style="color: orange">1</span> unité principale
+- <span style="color: orange">1</span> unité distante
+- <span style="color: orange">2</span> cordon de charge
+- <span style="color: orange">2</span> adaptateurs de lien permannent (pour prise femelle)
+- <span style="color: orange">2</span> adaptateurs de canau
+- <span style="color: orange">1</span> cordon de référence
+- <span style="color: orange">2</span> pairs d'écouteurs
+- <span style="color: orange">1</span> cable USB AB / USB A
+- <span style="color: orange">1</span> mode d'emploi
 
 ### utilisation
 
-démardé les 2 aparreil en appuis le bouton "power" puis laisser-les démarré.
+démarer les 2 aparreil en appuis le bouton "power" puis laisser-les démarré.
 
-avant de réalisé un test de ligne il faut mettre le valeur de référence. Pour cela il faut branché les apareil celon l'un des branchement de la figure 1. Une fois fait, sur l'accueil du menus appuisé sur le bouton option puis sur apuis sur le bouton "définir valeur de référence" ensuite suivé les instrucion le l'unité principale.\
+avant de réalisé un test de ligne il faut mettre le valeur de référence.
+Pour cela il faut branché les apareil celon l'un des branchement de la figure 1.
+Une fois fait, sur l'accueil du menus appuisé sur le bouton option puis sur apuis
+sur le bouton "définir valeur de référence" ensuite suivé les instrucion le l'unité principale.
+
 ![procedure_de_test](./src/procedure_de_test.png)
 
-*figure 1*
+mise en place des diférente information a propo du projet
 
-![ecran_accueil](./src/img/ecran_accueil.jpg)
-... mise en place des paramettre
+Avant tout changement, vérifié que le projet n'ai pas déja enregisté,
+si il est déjà enregisté vérifié toute les information,
+si il n'est pas enregisté *(fleche 1)* appuié le la fleche,
+vous changerait de page (*image 3*),
+pour changé de projet appuié sur le bouton "modifier projet",
+vous changerai a nous de page, parcouré la liste,
+si votre projet a déjà enregistré il vous suffit de le sélectionné,
+si n'est pas enregistré, appuié sur le bouton "nouveau projet".  
 
-pour faire le test, il suffit d'appuit sur l'un des bouton test de l'unité central ou le bouton de l'unité distance. on fois appuié sur le bouton attendre. 
-![test_OK.png](./src/img/dsxi/dsxi_test_OK)
+<figure>
+  <img src="./src/img/dsxi/para_projets.jpg"
+        alt="Parametrage" width="300px">
+  <figcaption>Paramétrage du DSXI</figcaption>
+</figure>
 
-*figure 2*
+<figure>
+  <img src="./src/img/dsxi/dsxi_test_OK"
+        alt="Parametrage" width="100%">
+  <figcaption>test_OK.png</figcaption>
+</figure>
 
-un fois sur le rapport de test donné par l'appareil *(voir figure 2)* vous pouvez accédé dans la pr 
+un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
+vous pouvez accéder à plusieurs tests effectués par le DSXI.
 
 ## Certification du cable
 
-![test-page-1](./src/dsxi-tests/test_Page_1.png)
+![Cable-Certification](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "Certification du cable")
 
 <hr>
 
@@ -73,14 +91,17 @@ un fois sur le rapport de test donné par l'appareil *(voir figure 2)* vous pouv
 
 ### Les informations qui sautent aux yeux
 
-Au dessus le d'encadré bleu on peut voir que le cable testé est OK, on le voie grace l'encadré vert avec la coche.\
-Dans l'encadré bleu on peut voir les infomation du cables et les information des l'appareil.
+Au dessus de l'encadré bleu on peut voir que le cable testé est OK,
+on le voit grace à l'encadré vert avec la coche.
+Dans l'encadré bleu on peut voir les infomation du cables et les information des l'appareil.  
+
+### L'analyse des courbes
 
 | Catégorie             | Image                                                                                                                                    | Analyse        |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------|
-| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0003.png "Wire Map")                |
-| Insertion loss (dB)   | ![test-page-img-02](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0004.png "Insertion loss (dB)")     |
-| NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0005.png "NEXT (dB)")               |
+| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0003.png "Wire Map")                | grace a image on pour vérifier si le cable est cablé corectement sur les prise femelle, on peut voir aussi il une des paire est casé car elle ne s'affichera pas. 
+| Insertion loss (dB)   | ![test-page-img-02](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0004.png "Insertion loss (dB)")     | représente la perte de dB sur les différente paire. la ligne rouge représent la limite maximale de perte que l'on peu admettre. la dexième ligne, n'est pas une ligne mais plusieur, elle représente la perte de chaque paire de cable en fonction de la féquence. sur se test on peut voir que le test est valide car on ne dépasse pas la limite maximal fixé donc sur se test le cable est valide
+| NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0005.png "NEXT (dB)")               | vgfgfg
 | NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0006.png "NEXT @ Remote (dB)")      |
 | ACR-F (dB)            | ![test-page-img-05](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0007.png "ACR-F (dB)")              |
 | ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0008.png "ACR-F @ Remote (dB)")     |
