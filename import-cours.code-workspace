@@ -17,6 +17,9 @@
     "files.autoSave": "off",
     "editor.fontSize": 20,
     "editor.tabSize": 2,
+    "diffEditor.wordWrap": "off",
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 1,
     // The font can be found here: https://fonts.google.com/specimen/Pacifico
     "editor.fontFamily": "Consolas, 'Courier New', monospace",
     // Terminal panel
@@ -26,7 +29,7 @@
     "dateTime.timeZone": "Europe/Paris",
     "keyboard.layout": "fr",
 
-    "workbench.colorTheme": "Shibuya",
+    "workbench.colorTheme": "Nord",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
   },
   "extensions": {
