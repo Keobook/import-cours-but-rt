@@ -1,5 +1,10 @@
 # Rapport d'activité - Alexis Opolka, Lucas Simpol
 
+Information: Chaques test certification a été effectuée deux fois,
+elles sont présentes en annexe à la fin du rapport d'activité.
+
+## Spécificités du cable
+
 Cable: 7 - F/FTP Cat.6a 550 MHz 4P LSOH-FR TOURET 500m IVOIRE
 
 Vendu par le fabriquant par 500m mais est disponible en plus petite taille.
@@ -123,5 +128,7 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 ### Liaison permanente entre le SR du 2e étage et la salle B207 de l'IUT de Béziers
 
 s
+
+## Annexes
 
 ## Copyright Alexis Opolka, Lucas Simol &copy; 2022 - All Rights Reserved
