@@ -25,7 +25,7 @@ LSOH-FR: Low Smoke "Zero" Halogen Retardateur de flamme
 |---------------------------------------|-------------------------------------------------------------------------------------|
 | ![logo-1](./src/img/logos/logo_1.png) | avertissement : risque d'incendie, d'électrocution ou de dommage corporels.         |
 | ![logo-2](./src/img/logos/logo_2.png) | avertissement : risque de dommage ou de destruction de l'équipement ou du logiciel. |
-| ![logo-3](./src/img/logos/logo_3.png) |avertissement : consultez la documentation destinée a l'utilisateur.                 |
+| ![logo-3](./src/img/logos/logo_3.png) | avertissement : consultez la documentation destinée a l'utilisateur.                |
 | &nbsp;                                | &nbsp;                                                                              |
 
 <hr>
@@ -48,12 +48,14 @@ Avant de mettre en route l'appareil, vérifier dans le sac que l'ensemble est co
 
 démarer les 2 aparreil en appuis le bouton "power" puis laisser-les démarré.
 
-avant de réalisé un test de ligne il faut mettre le valeur de référence. Pour cela il faut branché les apareil celon l'un des branchement de la figure 1. Une fois fait, sur l'accueil du menus appuisé sur le bouton option puis sur apuis sur le bouton "définir valeur de référence" ensuite suivé les instrucion le l'unité principale.\
+avant de réalisé un test de ligne il faut mettre le valeur de référence.
+Pour cela il faut branché les apareil celon l'un des branchement de la figure 1.
+Une fois fait, sur l'accueil du menus appuisé sur le bouton option puis sur apuis
+sur le bouton "définir valeur de référence" ensuite suivé les instrucion le l'unité principale.
+
 ![procedure_de_test](./src/procedure_de_test.png)
 
-
 mise en place des diférente information a propo du projet
-![ecran_accueil](./src/img/dsxi/ecran-accueil.jpg)
 
 
 avant tout changement, vérifié que le projet n'ai pas déja enregisté, si il est déjà enregisté vérifié toute les information, si il n'est pas enregisté *(fleche 1)* appuié le la fleche, vous changerait de page (*image 3*), pour changé de projet appuié sur le bouton "modifier projet", vous changerai a nous de page, parcouré la liste, si votre projet a déjà enregistré il vous suffit de le sélectionné, si n'est pas enregistré, appuié sur le bouton "nouveau projet".  
@@ -61,9 +63,8 @@ avant tout changement, vérifié que le projet n'ai pas déja enregisté, si il 
 
 ![test_OK.png](./src/img/dsxi/dsxi_test_OK)
 
-
-
-un fois sur le rapport de test donné par l'appareil *(voir figure 4)* vous pouvez accédé dans la pr 
+un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
+vous pouvez accéder... (TODO: A compléter)
 
 ## Certification du cable
 
@@ -75,8 +76,9 @@ un fois sur le rapport de test donné par l'appareil *(voir figure 4)* vous pouv
 
 ### Les informations qui sautent aux yeux
 
-Au dessus le d'encadré bleu on peut voir que le cable testé est OK, on le voie grace l'encadré vert avec la coche.\
-Dans l'encadré bleu on peut voir les infomation du cables et les information des l'appareil.
+Au dessus le d'encadré bleu on peut voir que le cable testé est OK,
+on le voie grace l'encadré vert avec la coche.
+Dans l'encadré bleu on peut voir les infomation du cables et les information des l'appareil.  
 
 | Catégorie             | Image                                                                                                                                    | Analyse        |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------|
