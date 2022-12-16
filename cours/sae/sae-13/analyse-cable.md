@@ -1,7 +1,7 @@
 # Rapport d'activité - Alexis Opolka, Lucas Simpol
 
-Information: Chaques test certification a été effectuée deux fois,
-elles sont présentes en annexe à la fin du rapport d'activité.
+Information: Chaques test de certification a été effectué deux fois,
+ils sont présents en annexe à la fin du rapport d'activité.
 
 ## Spécificités du cable
 
@@ -51,20 +51,22 @@ Avant de mettre en route l'appareil, vérifier dans le sac que l'ensemble est co
 
 ### utilisation
 
-démarer les 2 aparreil en appuis le bouton "power" puis laisser-les démarré.
+Démarer les 2 appareils en appuyant le bouton "power" puis laissez-les démarrer.
 
-avant de réalisé un test de ligne il faut mettre le valeur de référence.
-Pour cela il faut branché les apareil celon l'un des branchement de la figure 1.
-Une fois fait, sur l'accueil du menus appuisé sur le bouton option puis sur apuis
-sur le bouton "définir valeur de référence" ensuite suivé les instrucion le l'unité principale.
-
-![procedure_de_test](./src/procedure_de_test.png)
-
-mise en place des diférente information a propo du projet
+Avant de réaliser un test de certification sur la ligne, il faut définir la valeur de référence.  
+Pour cela il faut brancher les appareils selon l'un des branchements de *la procédure de test*.  
+Une fois fait, sur l'accueil du menu appuyez sur le bouton option puis
+sur le bouton "définir valeur de référence" ensuite suivez les instrucions de l'unité principale.
 
 <figure>
-  <img src="./src/img/dsxi/ecran-accueil.jpg"
-        alt="Ecran-accueil" width="300px">
+  <img src="./src/img/procedure_de_test.png" alt="Procedure de test" width="300px">
+  <figcaption>La procédure de test</figcaption>
+</figure>
+
+#### mise en place des différentes informations à propos du projet
+
+<figure>
+  <img src="./src/img/dsxi/ecran-accueil.jpg" alt="Ecran-accueil" width="300px">
   <figcaption>L'écran d'accueil du DSXI</figcaption>
 </figure>
 
@@ -95,17 +97,16 @@ mise en place des diférente information a propo du projet
 un fois sur le rapport de test donné par l'appareil *(voir figure 4)*
 vous pouvez accéder à plusieurs tests effectués par le DSXI.
 
-on fois vos test terminer vous pouvez les récupéré sur un ordinateur
-disposent du logiciel LinkWare, pour cela :  
-branché l'appareil avec le cable USB A  vers micro-USB B a votre ordinateur
-et ouvert le logiciel.  
-Ouvrez l'onglet file, sélectionné l'onglé "import from" puis sélectionné votre appareil.  
-A partir de la fenêtre qui souffre vous pouvez soit choisir quelle
-élément vous voulé importé ou tout importé.
+on fois vos test terminer vous pouvez les récupéré sur un ordinateur disposent du logiciel LinkWare, pour cela :  
+branché l'appareil avec le cable USB A vers micro-USB B a votre ordinateur et ouvert le logiciel.  
+Ouvrez l'onglet file, sélectionné l'onglet "import from" puis sélectionné votre appareil.  
+A partir de la fenêtre qui souffre vous pouvez soit choisir quel élément vous voulé importé ou tout importé.
 
-## Certification du cable
+## Certification du cable n°7
 
-![Cable-Certification](./src/dsxi-tests/img/designated-cable/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "Certification du cable")
+***Se référer aux annexes 1 et 2***
+
+![Cable-Certification](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "Certification du cable")
 
 <hr>
 
@@ -126,7 +127,7 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 | NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0005.png "NEXT (dB)")               | Next correspond a la paradiaphonie du cable *(mesure de la perturbation d'une paire sur une autre)*. <br> Sur le graphique on peut voir différentes courbes qui représentent la perte en dB de chacune des paires, la courbe rouge représente la valeur minimale de perturbation que l'on peut admettre. <br> Pour ce test on peut voir que sur la basse fréquence il y a plus de perte qu'en haute féquence. <br> Le cable peut être certifié car on ne passe pas en dessous de la valeur de référence.
 | NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0006.png "NEXT @ Remote (dB)")      | Next correspond a la puissance cumulée de paraphonies du cable *(mesure de la perturbation d'une paire sur une autre)*. Sur le graphique on peut voir diffréntes courbes qui représentent la perte en dB de chacune des paires, la courbe rouge représente la valeur minimal de perturbation que l'on peut admettre. Pour ce test on peut voir que sur la basse fréquence il y a plus de perte qu'en haute féquence. <br> Le cable peut être certifié car on ne passe pas en dessous de la valeur de référence.
 | ACR-F (dB)            | ![test-page-img-05](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0007.png "ACR-F (dB)")              | ACR-F est le rapport entre l'atténuation et la diaphonie au  niveau du coté distant, selon le schéma apparant, nous avons des piques a certains moment, cela signifiant que l'on a une absorption supérieur à cette fréquence, ce qui est ce que l'on veut. <br> Vu que tout est positif, on cherche la valeur la plus haute, donc plus on a une grande valeur mieux c'est.
-| ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0008.png "ACR-F @ Remote (dB)")     | Si l'ACR-F est le rapport entre l'atténuation et la diaphonie, l'ACR-F @ Remote est le rapport entre l'atténuation et la diaphonie capturé par l'unité distante. L'on peut voir que le relevé est très proche de celui capturé par l'unité principale voir même identique. <br> Cela signifie qu'il y a aucun problème au niveau du cable sur cet instance précise, où l'on a les mêmes données en début de ligne qu'en fin de câble. 
+| ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0008.png "ACR-F @ Remote (dB)")     | Si l'ACR-F est le rapport entre l'atténuation et la diaphonie, l'ACR-F @ Remote est le rapport entre l'atténuation et la diaphonie capturé par l'unité distante. L'on peut voir que le relevé est très proche de celui capturé par l'unité principale voir même identique. <br> Cela signifie qu'il y a aucun problème au niveau du cable sur cet instance précise, où l'on a les mêmes données en début de ligne qu'en fin de câble.
 | ACR-N (dB)            | ![test-page-img-07](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0009.png "ACR-N (dB)")              | l'ARC-N est le rapport entre l'atténuation et la diaphonie. sur se grafique on peut voir plusieurs courbe représentant chaqu'une des paires, la courbe rouge represente la valeur maximale de le peut admettre, le fait que la coubre soit inverersé signifié que les résultats obtenue sont négatif. sur le grafique on peut voir que le courbe sont au dessous des norme physique donc selon se test il est certifiable.
 | ACR-N @ Remote (dB)   | ![test-page-img-08](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0010.png "ACR-N @ Remote (dB)")     | l'ARC-N est le rapport entre l'atténuation et la diaphonie. sur se grafique on peut voir plusieurs courbe représentant chaqu'une des paires, la courbe rouge represente la valeur maximale de le peut admettre, le fait que la coubre soit inverersé signifié que les résultats obtenue sont négatif. sur le grafique on peut voir que le courbe sont au dessous des norme physique donc selon se test il est certifiable. vue par le module distant
 | RL (dB)               | ![test-page-img-09](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0011.png "RL (dB)")                 | RL est corespond a la puissance resus par rapport a la puissance émie. le rapport et deux fois athénuation + réfléction en but de cable
@@ -138,30 +139,34 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 
 ### Liaison permanente entre le SR du 2e étage et la salle B207 de l'IUT de Béziers
 
-Pour la troisième partie nous avons choisie de faire un teste sur l'un des cable de qui relie l'une des salle de l'iut au switch d'étage. 
-Pour cela nous avons demendé les autorisation au pole maintenance pour débranché la salle B207. 
-Avec les autoristaion nous avons pus prosédé au test du cable. 
-Les résultat obtenue sont sensiblement les mêmes que pour le cable imposé. 
-Grace au test nous pourvons dire que le cable installé pour relié la salle est certifier 
+***Se référer aux annexes 3 et 4***
+
+Pour la troisième partie nous avons choisie de faire un teste sur l'un des cable qui relie l'une des salle de l'iut (B207) au switch d'étage.  
+Pour cela nous avons demandé les autorisations au pôle maintenance et à Mr. Pujas pour débrancher la salle B207 et ouvrir l'armoire de brassage.  
+Avec les autoriations nous avons pu procédé au test du cable (liaison permanente).  
+Les résultats obtenus sont sensiblement les mêmes que pour le cable imposé.  
+Grace au test nous pouvons dire que le cable installé pour relier la salle est certifiable et certifié, tout comme le cable imposé.
 
 <hr>
 
 ## Annexes
 
-### 1er test sur le cable 7
+### Annexe 1 - 1er test sur le cable 7
 
 ![1st-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "1er test sur le cable 7")
 
-### 2e test sur le cable 7
+### Annexe 2 - 2e test sur le cable 7
 
 ![2nd-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_4.png "2e test sur le cable 7")
 
-### 1er test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
+### Annexe 3 - 1er test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
 
 ![1st-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/Rapport-de-test-SIMPOL_OPOLKA_cable_iut_Page_3.png "1er test sur la liaison permanente de l'IUT")
 
-### 2e test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
+### Annexe 4 - 2e test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
 
 ![2nd-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/Rapport-de-test-SIMPOL_OPOLKA_cable_iut_Page_4.png "2e test sur la liaison permanente de l'IUT")
 
 ## Copyright Alexis Opolka, Lucas Simol &copy; 2022 - All Rights Reserved
+
+Ces tests on été effectué avec des DSXI, appareils de certification frabiqués par FLUKE Networks &reg; .
