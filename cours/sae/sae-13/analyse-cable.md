@@ -51,17 +51,17 @@ démarer les 2 aparreil en appuis le bouton "power" puis laisser-les démarré.
 avant de réalisé un test de ligne il faut mettre le valeur de référence. Pour cela il faut branché les apareil celon l'un des branchement de la figure 1. Une fois fait, sur l'accueil du menus appuisé sur le bouton option puis sur apuis sur le bouton "définir valeur de référence" ensuite suivé les instrucion le l'unité principale.\
 ![procedure_de_test](./src/procedure_de_test.png)
 
-*figure 1*
 
 mise en place des diférente information a propo du projet
 ![ecran_accueil](./src/img/dsxi/ecran-accueil.jpg)
-*figure 2*
 
+pour mettre le non de projet *(flechet 1)* appuié le la fleche, vous changerait de page, si votre projet a déjà enregistré il vous suffit de le sélectionné, si n'est pas enregistré, appuié sur le bouton 
+![para_projets](./src/img/dsxi/para_projets.jpg)
 
 pour faire le test, il suffit d'appuit sur l'un des bouton test de l'unité central ou le bouton de l'unité distance. on fois appuié sur le bouton attendre. 
 ![test_OK.png](./src/img/dsxi/dsxi_test_OK)
 
-*figure 4*
+
 
 un fois sur le rapport de test donné par l'appareil *(voir figure 4)* vous pouvez accédé dans la pr 
 
