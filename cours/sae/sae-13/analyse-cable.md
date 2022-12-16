@@ -57,7 +57,6 @@ sur le bouton "définir valeur de référence" ensuite suivé les instrucion le 
 
 mise en place des diférente information a propo du projet
 
-
 avant tout changement, vérifié que le projet n'ai pas déja enregisté, si il est déjà enregisté vérifié toute les information, si il n'est pas enregisté *(fleche 1)* appuié le la fleche, vous changerait de page (*image 3*), pour changé de projet appuié sur le bouton "modifier projet", vous changerai a nous de page, parcouré la liste, si votre projet a déjà enregistré il vous suffit de le sélectionné, si n'est pas enregistré, appuié sur le bouton "nouveau projet".  
 ![para_projets](./src/img/dsxi/para_projets.jpg)
 
@@ -79,6 +78,8 @@ vous pouvez accéder... (TODO: A compléter)
 Au dessus le d'encadré bleu on peut voir que le cable testé est OK,
 on le voie grace l'encadré vert avec la coche.
 Dans l'encadré bleu on peut voir les infomation du cables et les information des l'appareil.  
+
+### L'analyse des courbes
 
 | Catégorie             | Image                                                                                                                                    | Analyse        |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------|
