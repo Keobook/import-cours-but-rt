@@ -110,7 +110,7 @@ A partir de la fenêtre qui souffre vous pouvez soit choisir quel élément vous
 
 ***Se référer aux annexes 1 et 2***
 
-![Cable-Certification](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "Certification du cable")
+![Cable-Certification](./src/dsxi-tests/img/designated-cable/pages/designated-cable-page-3.png "Certification du cable")
 
 <hr>
 
@@ -126,16 +126,16 @@ Dans l'encadré bleu on peut voir les infomation du cables et les information de
 
 | Catégorie             | Image                                                                                                                                                   | Analyse        |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
-| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0003.png "Wire Map")                | Grâce a l'image on peu vérifier si le cable est cablé corectement sur les prise femelle, on peut voir aussi il une des paire est casé car elle ne s'affichera pas.
-| Insertion loss (dB)   | ![test-page-img-02](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0004.png "Insertion loss (dB)")     | représente la perte de dB sur les différente paire. La ligne rouge représente la limite maximale de perte que l'on peut admettre. <br> La dexième ligne, n'est pas une ligne mais plusieurs, elle représente la perte de chaque paire de cable en fonction de la féquence. Sur ce test on peut voir que le test est valide car on ne dépasse pas la limite maximale fixé donc sur ce test le cable est valide.
-| NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0005.png "NEXT (dB)")               | Next correspond a la paradiaphonie du cable *(mesure de la perturbation d'une paire sur une autre)*. <br> Sur le graphique on peut voir différentes courbes qui représentent la perte en dB de chacune des paires, la courbe rouge représente la valeur minimale de perturbation que l'on peut admettre. <br> Pour ce test on peut voir que sur la basse fréquence il y a plus de perte qu'en haute féquence. <br> Le cable peut être certifié car on ne passe pas en dessous de la valeur de référence.
-| NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0006.png "NEXT @ Remote (dB)")      | Next correspond a la puissance cumulée de paraphonies du cable *(mesure de la perturbation d'une paire sur une autre)*. Sur le graphique on peut voir diffréntes courbes qui représentent la perte en dB de chacune des paires, la courbe rouge représente la valeur minimal de perturbation que l'on peut admettre. Pour ce test on peut voir que sur la basse fréquence il y a plus de perte qu'en haute féquence. <br> Le cable peut être certifié car on ne passe pas en dessous de la valeur de référence.
-| ACR-F (dB)            | ![test-page-img-05](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0007.png "ACR-F (dB)")              | ACR-F est le rapport entre l'atténuation et la diaphonie au  niveau du coté distant, selon le schéma apparant, nous avons des piques a certains moment, cela signifiant que l'on a une absorption supérieur à cette fréquence, ce qui est ce que l'on veut. <br> Vu que tout est positif, on cherche la valeur la plus haute, donc plus on a une grande valeur mieux c'est.
-| ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0008.png "ACR-F @ Remote (dB)")     | Si l'ACR-F est le rapport entre l'atténuation et la diaphonie, l'ACR-F @ Remote est le rapport entre l'atténuation et la diaphonie capturé par l'unité distante. L'on peut voir que le relevé est très proche de celui capturé par l'unité principale voir même identique. <br> Cela signifie qu'il y a aucun problème au niveau du cable sur cet instance précise, où l'on a les mêmes données en début de ligne qu'en fin de câble.
-| ACR-N (dB)            | ![test-page-img-07](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0009.png "ACR-N (dB)")              | l'ARC-N est le rapport entre l'atténuation et la diaphonie. sur se grafique on peut voir plusieurs courbe représentant chaqu'une des paires, la courbe rouge represente la valeur maximale de le peut admettre, le fait que la coubre soit inverersé signifié que les résultats obtenue sont négatif. sur le grafique on peut voir que le courbe sont au dessous des norme physique donc selon se test il est certifiable.
-| ACR-N @ Remote (dB)   | ![test-page-img-08](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0010.png "ACR-N @ Remote (dB)")     | l'ARC-N est le rapport entre l'atténuation et la diaphonie. sur se grafique on peut voir plusieurs courbe représentant chaqu'une des paires, la courbe rouge represente la valeur maximale de le peut admettre, le fait que la coubre soit inverersé signifié que les résultats obtenue sont négatif. sur le grafique on peut voir que le courbe sont au dessous des norme physique donc selon se test il est certifiable. vue par le module distant
-| RL (dB)               | ![test-page-img-09](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0011.png "RL (dB)")                 | RL est corespond a la puissance resus par rapport a la puissance émie. le rapport et deux fois athénuation + réfléction en but de cable
-| RL @ Remote (dB)      | ![test-page-img-10](./src/dsxi-tests/img/designated-cable/graphes/page-3/Rapport-de-test-SIMPOL_OPOLKA_Page_3_Image_0012.png "RL @ Remote (dB)")        | RL est corespond a la puissance resus par rapport a la puissance émie. le rapport et deux fois athénuation + réfléction en but de cable vue par le module distant
+| Wire Map              | ![test-page-img-01](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-wire-map.png "Wire Map")                | Grâce a l'image on peu vérifier si le cable est cablé corectement sur les prise femelle, on peut voir aussi il une des paire est casé car elle ne s'affichera pas.
+| Insertion loss (dB)   | ![test-page-img-02](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-insetion-loss.png "Insertion loss (dB)")     | représente la perte de dB sur les différente paire. La ligne rouge représente la limite maximale de perte que l'on peut admettre. <br> La dexième ligne, n'est pas une ligne mais plusieurs, elle représente la perte de chaque paire de cable en fonction de la féquence. Sur ce test on peut voir que le test est valide car on ne dépasse pas la limite maximale fixé donc sur ce test le cable est valide.
+| NEXT (dB)             | ![test-page-img-03](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-next.png "NEXT (dB)")               | Next correspond a la paradiaphonie du cable *(mesure de la perturbation d'une paire sur une autre)*. <br> Sur le graphique on peut voir différentes courbes qui représentent la perte en dB de chacune des paires, la courbe rouge représente la valeur minimale de perturbation que l'on peut admettre. <br> Pour ce test on peut voir que sur la basse fréquence il y a plus de perte qu'en haute féquence. <br> Le cable peut être certifié car on ne passe pas en dessous de la valeur de référence.
+| NEXT @ Remote (dB)    | ![test-page-img-04](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-next-at-remote.png "NEXT @ Remote (dB)")      | Next correspond a la puissance cumulée de paraphonies du cable *(mesure de la perturbation d'une paire sur une autre)*. Sur le graphique on peut voir diffréntes courbes qui représentent la perte en dB de chacune des paires, la courbe rouge représente la valeur minimal de perturbation que l'on peut admettre. Pour ce test on peut voir que sur la basse fréquence il y a plus de perte qu'en haute féquence. <br> Le cable peut être certifié car on ne passe pas en dessous de la valeur de référence.
+| ACR-F (dB)            | ![test-page-img-05](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-acr-f.png "ACR-F (dB)")              | ACR-F est le rapport entre l'atténuation et la diaphonie au  niveau du coté distant, selon le schéma apparant, nous avons des piques a certains moment, cela signifiant que l'on a une absorption supérieur à cette fréquence, ce qui est ce que l'on veut. <br> Vu que tout est positif, on cherche la valeur la plus haute, donc plus on a une grande valeur mieux c'est.
+| ACR-F @ Remote (dB)   | ![test-page-img-06](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-acr-f-at-remote.png "ACR-F @ Remote (dB)")     | Si l'ACR-F est le rapport entre l'atténuation et la diaphonie, l'ACR-F @ Remote est le rapport entre l'atténuation et la diaphonie capturé par l'unité distante. L'on peut voir que le relevé est très proche de celui capturé par l'unité principale voir même identique. <br> Cela signifie qu'il y a aucun problème au niveau du cable sur cet instance précise, où l'on a les mêmes données en début de ligne qu'en fin de câble.
+| ACR-N (dB)            | ![test-page-img-07](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-acr-n.png "ACR-N (dB)")              | l'ARC-N est le rapport entre l'atténuation et la diaphonie. sur se grafique on peut voir plusieurs courbe représentant chaqu'une des paires, la courbe rouge represente la valeur maximale de le peut admettre, le fait que la coubre soit inverersé signifié que les résultats obtenue sont négatif. sur le grafique on peut voir que le courbe sont au dessous des norme physique donc selon se test il est certifiable.
+| ACR-N @ Remote (dB)   | ![test-page-img-08](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-acr-n-at-remote.png "ACR-N @ Remote (dB)")     | l'ARC-N est le rapport entre l'atténuation et la diaphonie. sur se grafique on peut voir plusieurs courbe représentant chaqu'une des paires, la courbe rouge represente la valeur maximale de le peut admettre, le fait que la coubre soit inverersé signifié que les résultats obtenue sont négatif. sur le grafique on peut voir que le courbe sont au dessous des norme physique donc selon se test il est certifiable. vue par le module distant
+| RL (dB)               | ![test-page-img-09](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-rl.png "RL (dB)")                 | RL est corespond a la puissance resus par rapport a la puissance émie. le rapport et deux fois athénuation + réfléction en but de cable
+| RL @ Remote (dB)      | ![test-page-img-10](./src/dsxi-tests/img/designated-cable/graphes/page-3/designated-cable-page-3-rl-at-remote.png "RL @ Remote (dB)")        | RL est corespond a la puissance resus par rapport a la puissance émie. le rapport et deux fois athénuation + réfléction en but de cable vue par le module distant
 
 <hr>
 
@@ -157,25 +157,25 @@ Grace au test nous pouvons dire que le cable installé pour relier la salle est 
 
 ### Annexe 1 - 1er test sur le cable 7
 
-![1st-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_3.png "1er test sur le cable 7")
+![1st-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/designated-cable-page-3.png "1er test sur le cable 7")
 
 <div style="page-break-after: always"></div>
 
 ### Annexe 2 - 2e test sur le cable 7
 
-![2nd-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/Rapport-de-test-SIMPOL_OPOLKA_Page_4.png "2e test sur le cable 7")
+![2nd-test-designated-cable](./src/dsxi-tests/img/designated-cable/pages/designated-cable-page-4.png "2e test sur le cable 7")
 
 <div style="page-break-after: always"></div>
 
 ### Annexe 3 - 1er test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
 
-![1st-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/Rapport-de-test-SIMPOL_OPOLKA_cable_iut_Page_3.png "1er test sur la liaison permanente de l'IUT")
+![1st-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/permanent-link-page-3.png "1er test sur la liaison permanente de l'IUT")
 
 <div style="page-break-after: always"></div>
 
 ### Annexe 4 - 2e test sur la liaison permanente de l'IUT (SR du 2e étage -> B207)
 
-![2nd-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/Rapport-de-test-SIMPOL_OPOLKA_cable_iut_Page_4.png "2e test sur la liaison permanente de l'IUT")
+![2nd-test-permanent-link](./src/dsxi-tests/img/permanent-link/pages/permanent-link-page-4.png "2e test sur la liaison permanente de l'IUT")
 
 ## Copyright Alexis Opolka, Lucas Simpol &copy; 2022 - All Rights Reserved
 
