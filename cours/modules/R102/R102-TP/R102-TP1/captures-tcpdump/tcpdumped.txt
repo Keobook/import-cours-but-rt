@@ -1,0 +1,27 @@
+17:15:20.910821 STP 802.1w, Rapid STP, Flags [Learn, Forward, Agreement], bridge-id 8000.40:f4:ec:f7:c6:6b.803d, length 36
+17:15:22.378345 IP 10.213.1.1.39678 > 10.255.255.200.53: 42893+ [1au] A? www.lewifi.fr. (42)
+17:15:22.378639 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [S], seq 703798342, win 64240, options [mss 1460,sackOK,TS val 3644255076 ecr 0,nop,wscale 10], length 0
+17:15:22.378887 IP 10.255.255.200.53 > 10.213.1.1.39678: 42893 1/0/1 A 163.172.28.221 (58)
+17:15:22.378902 IP 10.213.1.1 > 10.255.255.200: ICMP 10.213.1.1 udp port 39678 unreachable, length 94
+17:15:22.394416 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [S.], seq 3027482713, ack 703798343, win 65160, options [mss 1460,sackOK,TS val 895107659 ecr 3644255076,nop,wscale 7], length 0
+17:15:22.394454 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [.], ack 1, win 63, options [nop,nop,TS val 3644255092 ecr 895107659], length 0
+17:15:22.396101 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [P.], seq 1:694, ack 1, win 63, options [nop,nop,TS val 3644255094 ecr 895107659], length 693
+17:15:22.411893 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [.], ack 694, win 504, options [nop,nop,TS val 895107676 ecr 3644255094], length 0
+17:15:22.414127 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [P.], seq 1:261, ack 694, win 504, options [nop,nop,TS val 895107678 ecr 3644255094], length 260
+17:15:22.414141 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [.], ack 261, win 63, options [nop,nop,TS val 3644255112 ecr 895107678], length 0
+17:15:22.414482 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [P.], seq 694:774, ack 261, win 63, options [nop,nop,TS val 3644255112 ecr 895107678], length 80
+17:15:22.415004 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [P.], seq 774:1356, ack 261, win 63, options [nop,nop,TS val 3644255113 ecr 895107678], length 582
+17:15:22.430131 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [.], ack 774, win 504, options [nop,nop,TS val 895107694 ecr 3644255112], length 0
+17:15:22.430635 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [P.], seq 261:564, ack 774, win 504, options [nop,nop,TS val 895107695 ecr 3644255112], length 303
+17:15:22.430887 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [.], ack 1356, win 501, options [nop,nop,TS val 895107695 ecr 3644255113], length 0
+17:15:22.435958 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [P.], seq 564:1621, ack 1356, win 501, options [nop,nop,TS val 895107700 ecr 3644255113], length 1057
+17:15:22.435976 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [.], ack 1621, win 63, options [nop,nop,TS val 3644255133 ecr 895107695], length 0
+17:15:22.456288 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [P.], seq 1356:1898, ack 1621, win 63, options [nop,nop,TS val 3644255154 ecr 895107695], length 542
+17:15:22.472655 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [.], ack 1898, win 501, options [nop,nop,TS val 895107736 ecr 3644255154], length 0
+17:15:22.476642 IP 163.172.28.221.443 > 10.213.1.1.56850: Flags [P.], seq 1621:1824, ack 1898, win 501, options [nop,nop,TS val 895107741 ecr 3644255154], length 203
+17:15:22.524117 IP 10.213.1.1.56850 > 163.172.28.221.443: Flags [.], ack 1824, win 63, options [nop,nop,TS val 3644255222 ecr 895107741], length 0
+17:15:22.910795 STP 802.1w, Rapid STP, Flags [Learn, Forward, Agreement], bridge-id 8000.40:f4:ec:f7:c6:6b.803d, length 36
+17:15:24.425885 IP 64.233.167.189.443 > 10.213.1.1.36086: Flags [P.], seq 149774223:149774274, ack 193594388, win 413, options [nop,nop,TS val 2617457542 ecr 439084859], length 51
+17:15:24.468115 IP 10.213.1.1.36086 > 64.233.167.189.443: Flags [.], ack 51, win 94, options [nop,nop,TS val 439113754 ecr 2617457542], length 0
+17:15:24.910790 STP 802.1w, Rapid STP, Flags [Learn, Forward, Agreement], bridge-id 8000.40:f4:ec:f7:c6:6b.803d, length 36
+
