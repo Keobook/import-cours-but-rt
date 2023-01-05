@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+#coding=utf8
+
 ### This library was made during for an SAE (SAE-15)
 ### It simply contains three functions:
 ###
@@ -30,5 +33,5 @@ def sigma(_list: list):
 
   return _sigma
 
-def plot():
+def plot(_list: list):
   ...
