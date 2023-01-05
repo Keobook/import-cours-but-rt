@@ -10,10 +10,10 @@
 | Atténuation en dB                      |                   |                   |                      |                       |               |                   |
 | NVP (Nominal Velocity of Propagation)  |                   |                   |                      |                       |               |                   |
 
-Plus le cable est long, plus il y a de l'atténuation, etc.\
-La résistance est mesurée en Ohmmètre.\
-Résistance en boucle (sinon multiplier par 2), souvent donnée en Ohmkilomètre\
-atténuation en dB/km
+Plus le cable est long, plus il y a de l'atténuation, etc.  
+La résistance est mesurée en Ohmmètre.  
+Résistance en boucle (sinon multiplier par 2), souvent donnée en Ohmkilomètre  
+Atténuation en dB/km
 
 <hr>
 
@@ -28,14 +28,32 @@ outils/definition de référence
 A rendre le 16/01 et contient:
 
 - Relater le mode d'emploi
+
 - Compréhension du rapport de test
   - Explication macro
   - Signification de la certification
   - Signification sur le batiment
   - Explication micro
+
 - Autres tests sur le cable ou avec le certificateur
   - Mesures de résistance (TPs de R104)
   - Mesures liées à la propagation (R105)
   - Mesures d'atténuation
   - Certification d'un cable coaxial
   - Certification d'une connexion permanente du batiment
+
+## Points importants de la SAE-13
+
+Transmission:
+
+- Impédence caractéristique (&ohm;)
+- Adaptation d'impédence (bouchon)
+- Longueur du câble
+- Réflexion - coeff. de réflexion = return loss
+- Résistance du câble (&ohm;)
+- On peut aussi faire de la POE (Power Over Ethernet)
+- Diaphonie
+
+A[dB] = 10log Pe/Ps  
+      = 20log Ve/Vs
+
