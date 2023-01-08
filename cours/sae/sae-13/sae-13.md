@@ -25,7 +25,7 @@ outils/definition de référence
 
 ## Rapport d'activité
 
-A rendre le 16/01 et contient:
+A rendre le 16/12 et contient:
 
 - Relater le mode d'emploi
 
@@ -56,4 +56,3 @@ Transmission:
 
 A[dB] = 10log Pe/Ps  
       = 20log Ve/Vs
-
