@@ -9,6 +9,7 @@
 ### - plot(): creates a graphical representation of data given in a list of integers / float
 
 import math as m
+import matplotlib.pyplot as plt
 
 def moyenne(_list: list):
   nbr = len(_list)
@@ -33,5 +34,10 @@ def sigma(_list: list):
 
   return _sigma
 
-def plot(_list: list):
-  ...
+def plot(_ylist: list, _xlist: list):
+  """
+  _ylist <list>: The list used on the Y axis of the plot
+  _xlist <list>: The list used on the X axis of the plot
+  """
+  fig, ax = plt.subplot()
+  ax.plot(_ylist, _xlist)
