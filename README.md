@@ -23,6 +23,14 @@ As this repository uses submodules, when trying to clone the repository use this
   git clone --recursive https://github.com/alexis-opolka/import-cours-but-rt1.git
   ```
 
+After having successfully cloned the repository, you might not see all the files such as PDFs, it's normal, as we use GIT LFS you need to pull the remaining files.
+
+```sh
+git lfs pull
+```
+
+Now you're ready to code ! Happy to count you onboard ! :smile:
+
 ## Legal notice and caution to contributors
 
 This repository was made in order to store school documents during my year of bachelor and help my comrades with the ressources acessible online.  
