@@ -1,4 +1,4 @@
-# import-cours-BUT-RT1
+# import-cours-BUT-RT
 
 ## What's this repo?
 
@@ -14,13 +14,13 @@ As this repository uses submodules, when trying to clone the repository use this
 - using SSH:
 
   ```sh
-  git clone --recursive git@github.com:alexis-opolka/import-cours-but-rt1.git
+  git clone --recursive git@github.com:alexis-opolka/import-cours-but-rt.git
   ```
 
 - using HTTPS:
 
   ```sh
-  git clone --recursive https://github.com/alexis-opolka/import-cours-but-rt1.git
+  git clone --recursive https://github.com/alexis-opolka/import-cours-but-rt.git
   ```
 
 After having successfully cloned the repository, you might not see all the files such as PDFs, it's normal, as we use GIT LFS you need to pull the remaining files.
@@ -33,12 +33,12 @@ Now you're ready to code ! Happy to count you onboard ! :smile:
 
 ## Legal notice and caution to contributors
 
-This repository was made in order to store school documents during my year of bachelor and help my comrades with the ressources acessible online.  
+This repository was made in order to store school documents during my bachelor and help my comrades with the ressources acessible online.  
 Following this, it's important to be sure to respect any copyright / license linked to any media sent / stored in this repository.  
 
 ### If you're the holder of the copyright of a document stored in this repository
 
-If the copyright / license is not respected, please either open an [issue](https://github.com/alexis-opolka/import-cours-but-rt1/issues) or contact me [here](mailto:alexis-opolka.pro@protonmail.com)
+If the copyright / license is not respected, please either open an [issue](https://github.com/alexis-opolka/import-cours-but-rt/issues) or contact me [here](mailto:alexis-opolka.pro@protonmail.com)
 
 ### If you're a contributor and uploaded a document under a certain copyright or license
 
@@ -48,6 +48,6 @@ As the maintainer I think every copyright, license or contribution should be lis
 
 | Nature | file / folder in question | holder (on the date of upload) |
 |--------|---------------------------|--------------------------------|
-| Copyright | [/cours/sae/sae-13/src/](https://github.com/alexis-opolka/import-cours-but-rt1/tree/master/cours/sae/sae-13/src/) | [Fluke Networks](https://www.flukenetworks.com/) |
+| Copyright | [/cours/sae/sae-13/src/](https://github.com/alexis-opolka/import-cours-but-rt/tree/master/cours/sae/sae-13/src/) | [Fluke Networks](https://www.flukenetworks.com/) |
 
 ### Copyright &copy; 2022-2023 Alexis Opolka (Centaurus) - All Rights Reserved
