@@ -7,6 +7,22 @@ The repository used to store all my classes and class-related documents such as 
 It also uses [GIT LFS](https://git-lfs.com/) (Large File Storage) system but the storage is not unlimited.
 If you add binary files, please do only if it's under ~100 mB per file.
 
+## Install and setup
+
+As this repository uses submodules, when trying to clone the repository use this command:
+
+- using SSH:
+
+  ```sh
+  git clone --recursive git@github.com:alexis-opolka/import-cours-but-rt1.git
+  ```
+
+- using HTTPS:
+
+  ```sh
+  git clone --recursive https://github.com/alexis-opolka/import-cours-but-rt1.git
+  ```
+
 ## Legal notice and caution to contributors
 
 This repository was made in order to store school documents during my year of bachelor and help my comrades with the ressources acessible online.  
