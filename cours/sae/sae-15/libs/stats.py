@@ -11,7 +11,10 @@
 import math as m
 import matplotlib.pyplot as plt
 
-def moyenne(_list: list):
+def moyenne(_list: list) -> int | float:
+  """
+  _list <list>: A list of elements from where we compte the mean returned
+  """
   nbr = len(_list)
   _sum = 0
   for i in range(0, len(_list)):
@@ -20,7 +23,10 @@ def moyenne(_list: list):
 
   return _sum / nbr
 
-def sigma(_list: list):
+def sigma(_list: list) -> int | float:
+  """
+  _list <list>: A list of elements from where we compute the sigma returned
+  """
   ### 1/n∑(xi − moy(x))**2
   nbr = len(_list)
   _moyenne = moyenne(_list)
@@ -34,10 +40,17 @@ def sigma(_list: list):
 
   return _sigma
 
-def plot(_ylist: list, _xlist: list):
+
+def plot(_ylist: list, _xlist: list, _ylabel: str = None, _xlabel: str = None) -> None:
   """
   _ylist <list>: The list used on the Y axis of the plot
   _xlist <list>: The list used on the X axis of the plot
+  _ylabel <str>: The label on the Y axis
+  _xlabel <str>: The label on the X axis
   """
-  fig, ax = plt.subplot()
-  ax.plot(_ylist, _xlist)
+  fig, ax = plt.subplots()
+  ax.plot(_xlist, _ylist)
+  if not _xlabel == None:
+    ax.set_xlabel(_xlabel)
+  if not _ylabel == None:
+    ax.set_ylabel(_ylabel)
