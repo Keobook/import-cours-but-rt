@@ -29,7 +29,7 @@
     "dateTime.timeZone": "Europe/Paris",
     "keyboard.layout": "fr",
 
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
   },
   "extensions": {
