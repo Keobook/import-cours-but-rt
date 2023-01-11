@@ -31,6 +31,7 @@
 
     "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
+    "liveServer.settings.multiRootWorkspaceName": "Import-Cours-BUT-RT1",
   },
   "extensions": {
     "recommendations": [],
