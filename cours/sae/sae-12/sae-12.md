@@ -7,7 +7,10 @@ Virtual Box
 ## A savoir
 
 - LAN: Local Area Network
-- DHCP: Dynamic Host Configuration Protocol
+- DHCP: Dynamic Host Configuration Protocol  
   Le DHCP est une faille de sécurité assez importante dans un réseau.
 
 - Netplan: `/etc/netplan`
+
+- Rendus
+  - Markdown + PDF
