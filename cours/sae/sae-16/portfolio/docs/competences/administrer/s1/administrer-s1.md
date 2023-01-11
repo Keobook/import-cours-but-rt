@@ -4,8 +4,6 @@
 
 ### En communiquant avec des clients et les différents acteurs impliqués
 
-
-
 ### En choisissant les solutions et technologies adaptées
 
 Lors de multiples occasions, j'ai eu à décider quelle technologie à utiliser, plusieurs exemples me viennent à l'esprit.  
