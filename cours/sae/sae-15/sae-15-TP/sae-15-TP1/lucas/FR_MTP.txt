@@ -1,8 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?> 
+<?xml version='1.0' encoding='UTF-8'?>
 <park>
-	<DateTime>2022-08-01T15:32:58</DateTime>
-	<Name>COME</Name>
-	<Status>Open</Status>
-	<Free>0174</Free>
-	<Total>0774</Total>
+  <DateTime>2023-01-11T10:48:19.893985100</DateTime>
+  <Name>POLY</Name>
+  <Status>Open</Status>
+  <Free>976</Free>
+  <Total>1911</Total>
+  <DisplayOpenIf>-1</DisplayOpenIf>
 </park>
