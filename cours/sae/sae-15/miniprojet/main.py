@@ -6,7 +6,7 @@ import json
 import os
 
 def checkDirIsPresent(directory: str, if_not_create: bool = False):
-  if os.path.exists(os.path.abspath("./")+directory) == False:
+  if os.path.exists(os.path.abspath("./")+directory[1:]) == False:
     if if_not_create:
       if os.name == "nt":
         _dir = directory.replace('/', '\\')
@@ -42,8 +42,6 @@ def requestThenWrite(request: str, _dir: str = None):
   if _dir == None:
     if os.name == "nt":
       _dir = "./in/stats"
-    elif os.name == "posix":
-      _dir = "in/stats"
 
   response = requests.get(request)
   filename = response.url.strip().split("/")[-1]
