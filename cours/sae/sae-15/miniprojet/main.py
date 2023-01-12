@@ -40,7 +40,10 @@ def requestThenReturnAsFileObject(request: str):
 
 def requestThenWrite(request: str, _dir: str = None):
   if _dir == None:
-    _dir = "./in/stats"
+    if os.name == "nt":
+      _dir = "./in/stats"
+    elif os.name == "posix":
+      _dir = "in/stats"
 
   response = requests.get(request)
   filename = response.url.strip().split("/")[-1]
@@ -117,7 +120,7 @@ def isCSVHeaderPresentIfNotWrite(filename : str, csv_header: str):
 
 def requestThenWriteDataHistory(request: str, type: str, data: str, _dir: str = None):
   if _dir == None:
-    _dir = "/in/stats/csv"
+    _dir = "./in/stats/csv"
 
   response = requests.get(request)
 
