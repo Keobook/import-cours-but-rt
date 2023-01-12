@@ -15,6 +15,8 @@ def checkDirIsPresent(directory: str, if_not_create: bool = False):
       os.system(f"mkdir {_dir}")
       if checkDirIsPresent(directory):
        print(f"checkDirIsPresent: The directory '{directory}' has been successfully created")
+  else:
+    pass
 
   return True
 
@@ -115,7 +117,7 @@ def isCSVHeaderPresentIfNotWrite(filename : str, csv_header: str):
 
 def requestThenWriteDataHistory(request: str, type: str, data: str, _dir: str = None):
   if _dir == None:
-    _dir = "./in/stats/csv"
+    _dir = "/in/stats/csv"
 
   response = requests.get(request)
 
