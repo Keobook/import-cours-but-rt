@@ -1,18 +1,28 @@
 import os
+import subprocess
 import importlib
 from io import StringIO, BytesIO
 import time
 
 try:
-  print(importlib.import_module("lxml"))
+  importlib.import_module("lxml")
 except:
   print("lxml is not installed, installing it now...")
+  if subprocess.check_output("whereis pip", shell=True, text=True).strip().split(":")[-1].replace("\n", "") == "":
+    os.system("sudo apt install -y pip")
+
   os.system("pip install lxml")
 
-if importlib.import_module("requests") == None:
+try:
+  importlib.import_module("requests")
+except:
+  print("requests is not installed, installing it now...")
   os.system("pip install requests")
 
-if importlib.import_module("json") == None:
+try:
+  importlib.import_module("json")
+except:
+  print("json is not installed, installing it now...")
   os.system("pip install json")
 
 from lxml import etree
@@ -174,11 +184,8 @@ def requestThenWriteDataHistory(request: str, type: str, data: str, _dir: str = 
 
     elif data == "tram":
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "course,stop_code,stop_id,stop_name,route_short_name,trip_headsign,direction_id,departure_time,is_theorical,delay_sec,dest_ar_code,course_sae")
-      loaded_data = response.text.strip().split("\n")
-      if len(loaded_data) > 0:
-        print("Data:", len(response.text), response.text)
-      else:
-        print("No data")
+      with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
+        fout.write(response.text + "\n")
 
     print("GET: ", _file, " - ", response.status_code, " - ", response.reason, " - ", "parsed successfully")
 
@@ -201,10 +208,6 @@ database = [
   [
     "TAM_MMM_TpsReel.csv",
   ],
-  ### Comptage vélos + piétons - Parser not done - To parse every day
-  [
-    "MMM_MMM_GeolocCompteurs.csv"
-  ],
   ### Agenda de la journée - Parser not done - To parse every day
   [
     "opendata-export-agenda-json"
@@ -213,7 +216,11 @@ database = [
 
 start_timestamp = int(time.time())
 jump = 0
-time_to_run = 60
+second = 1
+minute = 60
+hour = 3600
+day = 86400
+time_to_run = 604800
 last_time_parsed = {
   "parking": 0, ### Every minute
   "velib_status": 0, ### Every minute
@@ -223,46 +230,57 @@ last_time_parsed = {
   "agenda": 0 ### Every 12 hours
 }
 try:
-  print("Timestamp as of start:", start_timestamp)
+  print("Timestamp as of start:", start_timestamp, "Time to run:", time_to_run)
 
-  while getCurrentDateTime() <= start_timestamp+time_to_run-10:
+  while getCurrentDateTime() <= start_timestamp+time_to_run:
     while getCurrentDateTime() == start_timestamp+jump:
       for i in range(0, len(database)):
         ### TODO: Add a condition to check the last time parsed
-        if i == 0:
-          for j in range(0, len(database[i])):
-            _link = f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}"
-            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
-            requestThenWriteDataHistory(_link, "XML", "parking")
-        elif i == 1:
-          for j in range(0, len(database[i])):
-            _link = f"https://montpellier-fr-smoove.klervi.net/gbfs/en/{database[i][j]}"
-            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
-            if j == 0:
-              _type = "info"
-            elif j == 1:
-              _type = "status"
-            requestThenWriteDataHistory(_link, "JSON", f"velib_{_type}")
+        if i == 0: ### Parkings Voitures
+          if last_time_parsed["parking"] == 0 or last_time_parsed["parking"]+minute <= getCurrentDateTime():
+            for j in range(0, len(database[i])):
+              _link = f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}"
+              print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
+              requestThenWriteDataHistory(_link, "XML", "parking")
 
-        elif i == 2:
-          for j in range(0, len(database[i])):
-            _link = f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}"
-            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
-            requestThenWriteDataHistory(_link, "CSV", "tram")
+            last_time_parsed["parking"] = getCurrentDateTime()
 
-        elif i == 3:
-          for j in range(0, len(database[i])):
-            _link = f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}"
-            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
-            requestThenWriteDataHistory(_link, "CSV", "comptage")
+        elif i == 1: ### Vélos status / Vélos infos
+            for j in range(0, len(database[i])):
+              _link = f"https://montpellier-fr-smoove.klervi.net/gbfs/en/{database[i][j]}"
+              print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
 
-        elif i == 4:
-          for j in range(0, len(database[i])):
-            _link = f"https://www.montpellier3m.fr/{database[i][j]}"
-            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
-            requestThenWriteDataHistory(_link, "JSON", "agenda")
+              if j == 0: ### Vélos infos
+                _type = "info"
+                if last_time_parsed["velib_status"] == 0 or last_time_parsed["velib_status"]+minute <= getCurrentDateTime():
+                  requestThenWriteDataHistory(_link, "JSON", f"velib_{_type}")
+                  last_time_parsed["velib_status"] = getCurrentDateTime()
 
-      jump += 10
+              elif j == 1: ### Vélos status
+                _type = "status"
+                if last_time_parsed["velib_info"] == 0 or last_time_parsed["velib_info"]+(12*hour) <= getCurrentDateTime():
+                  requestThenWriteDataHistory(_link, "JSON", f"velib_{_type}")
+                  last_time_parsed["velib_status"] = getCurrentDateTime()
+
+        elif i == 2: ### Vélos tram
+          if last_time_parsed["tram"] == 0 or last_time_parsed["tram"]+minute <= getCurrentDateTime():
+            for j in range(0, len(database[i])):
+              _link = f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}"
+              print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
+              requestThenWriteDataHistory(_link, "CSV", "tram")
+
+          last_time_parsed["tram"] = getCurrentDateTime()
+
+        elif i == 4: ### Agenda de la journée
+          if last_time_parsed["agenda"] == 0 or last_time_parsed["agenda"]+(12*hour) <= getCurrentDateTime():
+            for j in range(0, len(database[i])):
+              _link = f"https://www.montpellier3m.fr/{database[i][j]}"
+              print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
+              requestThenWriteDataHistory(_link, "JSON", "agenda")
+
+            last_time_parsed["agenda"] = getCurrentDateTime()
+
+      jump += minute
       print(f"\nOur current jump: {jump}, our limit jump: {time_to_run}")
   print("Timestamp as of end:", int(time.time()), " - ", "Our scheme has been respected" if int(time.time())-start_timestamp == time_to_run else "Our scheme hasn't been respected")
 
