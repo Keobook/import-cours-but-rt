@@ -150,6 +150,11 @@ def requestThenWriteDataHistory(request: str, type: str, data: str, _dir: str = 
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
         fout.write(parseJSONData(response.text, type="info") + "\n")
 
+    elif data == "tram":
+      isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "course,stop_code,stop_id,stop_name,route_short_name,trip_headsign,direction_id,departure_time,is_theorical,delay_sec,dest_ar_code,course_sae")
+      with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
+        fout.write(response.text + "\n")
+
     print("GET: ", _file, " - ", response.status_code, " - ", response.reason, " - ", "parsed successfully")
 
 
