@@ -112,7 +112,11 @@ def parseXMLData(parking: str):
 
 def parseJSONData(response_data: str, type: str):
   ### type: "status" / "info" / "agenda"
-  json_loaded = json.loads(response_data)
+  try:
+    json_loaded = json.loads(response_data)
+  except json.decoder.JSONDecodeError:
+    print("Error while parsing JSON data", response_data)
+    return None
   returned_data = ""
   if type == "info":
     data = json_loaded["data"]
@@ -202,7 +206,7 @@ def requestThenWriteDataHistory(request: str, type: str, data: str, _dir: str = 
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "course,stop_code,stop_id,stop_name,route_short_name,trip_headsign,direction_id,departure_time,is_theorical,delay_sec,dest_ar_code,course_sae")
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
         fout.write(response.text + "\n")
-    
+
     elif data == "agenda":
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "event_id,titre,vignette_src,field_date,description,field_communes,field_lieu,field_access,field_thematique,x,y,url")
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
@@ -302,7 +306,7 @@ try:
 
     jump += minute
     print(f"\nOur current jump: {jump}, our limit jump: {time_to_run}")
-    time.sleep(60)
+    time.sleep(120)
   print("Timestamp as of end:", int(time.time()), " - ", "Our scheme has been respected" if int(time.time())-start_timestamp == time_to_run else "Our scheme hasn't been respected")
 
 except KeyboardInterrupt:
