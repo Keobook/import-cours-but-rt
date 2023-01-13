@@ -1,9 +1,31 @@
-from lxml import etree
-from io import StringIO, BytesIO
-import requests
-import time
-import json
 import os
+import importlib
+from io import StringIO, BytesIO
+import time
+
+try:
+  print(importlib.import_module("lxml"))
+except:
+  print("lxml is not installed, installing it now...")
+  os.system("pip install lxml")
+
+if importlib.import_module("requests") == None:
+  os.system("pip install requests")
+
+if importlib.import_module("json") == None:
+  os.system("pip install json")
+
+from lxml import etree
+import requests
+import json
+
+
+def getCurrentDateTime():
+  return int(time.time())
+
+
+def getCurrentFormattedDateTime():
+  return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 def checkDirIsPresent(directory: str, if_not_create: bool = False):
   if os.path.exists(os.path.abspath("./")+directory[1:]) == False:
@@ -152,8 +174,11 @@ def requestThenWriteDataHistory(request: str, type: str, data: str, _dir: str = 
 
     elif data == "tram":
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "course,stop_code,stop_id,stop_name,route_short_name,trip_headsign,direction_id,departure_time,is_theorical,delay_sec,dest_ar_code,course_sae")
-      with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
-        fout.write(response.text + "\n")
+      loaded_data = response.text.strip().split("\n")
+      if len(loaded_data) > 0:
+        print("Data:", len(response.text), response.text)
+      else:
+        print("No data")
 
     print("GET: ", _file, " - ", response.status_code, " - ", response.reason, " - ", "parsed successfully")
 
@@ -197,40 +222,49 @@ last_time_parsed = {
   "comptage": 0, ### Every day
   "agenda": 0 ### Every 12 hours
 }
-print("Timestamp as of start:", start_timestamp)
+try:
+  print("Timestamp as of start:", start_timestamp)
 
-while int(time.time()) <= start_timestamp+time_to_run-10:
-  while int(time.time()) == start_timestamp+jump:
-    for i in range(0, len(database)):
-      ### TODO: Add a condition to check the last time parsed
-      if i == 0:
-        for j in range(0, len(database[i])):
-          print(f"Request: {i}:{j}, {database[i][j]}", end=" ")
-          requestThenWriteDataHistory(f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}", "XML", "parking")
-      elif i == 1:
-        for j in range(0, len(database[i])):
-          print(f"Request: {i}:{j}, {database[i][j]}", end=" ")
-          if j == 0:
-            _type = "info"
-          elif j == 1:
-            _type = "status"
-          requestThenWriteDataHistory(f"https://montpellier-fr-smoove.klervi.net/gbfs/en/{database[i][j]}", "JSON", f"velib_{_type}")
+  while getCurrentDateTime() <= start_timestamp+time_to_run-10:
+    while getCurrentDateTime() == start_timestamp+jump:
+      for i in range(0, len(database)):
+        ### TODO: Add a condition to check the last time parsed
+        if i == 0:
+          for j in range(0, len(database[i])):
+            _link = f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}"
+            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
+            requestThenWriteDataHistory(_link, "XML", "parking")
+        elif i == 1:
+          for j in range(0, len(database[i])):
+            _link = f"https://montpellier-fr-smoove.klervi.net/gbfs/en/{database[i][j]}"
+            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
+            if j == 0:
+              _type = "info"
+            elif j == 1:
+              _type = "status"
+            requestThenWriteDataHistory(_link, "JSON", f"velib_{_type}")
 
-      elif i == 2:
-        for j in range(0, len(database[i])):
-          print(f"Request: {i}:{j}, {database[i][j]}", end=" ")
-          requestThenWriteDataHistory(f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}", "CSV", "tram")
+        elif i == 2:
+          for j in range(0, len(database[i])):
+            _link = f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}"
+            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
+            requestThenWriteDataHistory(_link, "CSV", "tram")
 
-      elif i == 3:
-        for j in range(0, len(database[i])):
-          print(f"Request: {i}:{j}, {database[i][j]}", end=" ")
-          requestThenWriteDataHistory(f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}", "CSV", "comptage")
+        elif i == 3:
+          for j in range(0, len(database[i])):
+            _link = f"https://data.montpellier3m.fr/sites/default/files/ressources/{database[i][j]}"
+            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
+            requestThenWriteDataHistory(_link, "CSV", "comptage")
 
-      elif i == 4:
-        for j in range(0, len(database[i])):
-          print(f"Request: {i}:{j}, {database[i][j]}", end=" ")
-          requestThenWriteDataHistory(f"https://www.montpellier3m.fr/{database[i][j]}", "JSON", "agenda")
+        elif i == 4:
+          for j in range(0, len(database[i])):
+            _link = f"https://www.montpellier3m.fr/{database[i][j]}"
+            print(f"Request: {i}:{j}, {database[i][j]} - [{getCurrentFormattedDateTime()}/{getCurrentDateTime()}] - {_link}", end=" ")
+            requestThenWriteDataHistory(_link, "JSON", "agenda")
 
-    jump += 10
-    print(f"\nOur current jump: {jump}, our limit jump: {time_to_run}")
-print("Timestamp as of end:", int(time.time()), " - ", "Our scheme has been respected" if int(time.time())-start_timestamp == time_to_run else "Our scheme hasn't been respected")
+      jump += 10
+      print(f"\nOur current jump: {jump}, our limit jump: {time_to_run}")
+  print("Timestamp as of end:", int(time.time()), " - ", "Our scheme has been respected" if int(time.time())-start_timestamp == time_to_run else "Our scheme hasn't been respected")
+
+except KeyboardInterrupt:
+  print("\n\x1b[31m KeyboardInterrupted - Exiting \x1b[0m \n")
