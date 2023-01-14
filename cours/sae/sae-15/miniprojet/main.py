@@ -34,8 +34,8 @@ def getCurrentDateTime():
   return int(time.time())
 
 
-def getCurrentFormattedDateTime():
-  return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+def getCurrentFormattedDateTime(separator=" "):
+  return time.strftime(f"%Y-%m-%d{separator}%H:%M:%S", time.localtime())
 
 def checkDirIsPresent(directory: str, if_not_create: bool = False):
   if os.path.exists(os.path.abspath("./")+directory[1:]) == False:
@@ -107,7 +107,7 @@ def parseXMLData(parking: str):
   places = int(tree.xpath("Total")[0].text)
   name = tree.xpath("Name")[0].text
 
-  state = f"{name},{date},{opened},{free_places},{places}"
+  state = f"{name},{date},{getCurrentFormattedDateTime('T')},{opened},{free_places},{places}"
 
   # On nettoie notre fichier temporaire - Garbage Collector
   os.remove("temp-file.log")
@@ -192,7 +192,7 @@ def requestThenWriteDataHistory(request: str, type: str, data: str, _dir: str = 
   if checkDirIsPresent(_dir, if_not_create=True):
 
     if data == "parking":
-      isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "name,date,opened,free_places,places")
+      isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "name,date,export_date,opened,free_places,places")
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
         fout.write(str(parseXMLData(response.text)) + "\n")
 
