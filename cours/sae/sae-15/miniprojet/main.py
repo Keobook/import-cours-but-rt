@@ -99,7 +99,7 @@ def parseXMLData(parking: str):
     tree = etree.parse("temp-file.log")
   except:
     print("Error while parsing XML data", parking)
-    return None
+    return "None"
   # Condition tertiaire afin d'avoir une valeur boulléenne
   date = tree.xpath("DateTime")[0].text
   opened = True if tree.xpath("Status")[0].text.lower() == "open" else False
@@ -120,7 +120,7 @@ def parseJSONData(response_data: str, type: str):
     json_loaded = json.loads(response_data)
   except json.decoder.JSONDecodeError:
     print("Error while parsing JSON data", response_data)
-    return None
+    return "None"
   returned_data = ""
   if type == "info":
     data = json_loaded["data"]
