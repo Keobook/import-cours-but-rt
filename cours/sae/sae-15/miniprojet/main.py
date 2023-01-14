@@ -99,7 +99,7 @@ def parseXMLData(parking: str):
     tree = etree.parse("temp-file.log")
   except:
     print("Error while parsing XML data", parking)
-    return "None"
+    return None
   # Condition tertiaire afin d'avoir une valeur boulléenne
   date = tree.xpath("DateTime")[0].text
   opened = True if tree.xpath("Status")[0].text.lower() == "open" else False
@@ -120,7 +120,7 @@ def parseJSONData(response_data: str, type: str):
     json_loaded = json.loads(response_data)
   except json.decoder.JSONDecodeError:
     print("Error while parsing JSON data", response_data)
-    return "None"
+    return None
   returned_data = ""
   if type == "info":
     data = json_loaded["data"]
@@ -194,27 +194,27 @@ def requestThenWriteDataHistory(request: str, type: str, data: str, _dir: str = 
     if data == "parking":
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "name,date,opened,free_places,places")
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
-        fout.write(parseXMLData(response.text) + "\n")
+        fout.write(str(parseXMLData(response.text)) + "\n")
 
     elif data == "velib_status":
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "id,date,nbr_available,nbr_disabled,docks_available,is_installed,is_renting,is_returning")
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
-        fout.write(parseJSONData(response.text, type="status") + "\n")
+        fout.write(str(parseJSONData(response.text, type="status")) + "\n")
 
     elif data == "velib_info":
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "id,name,places,lat,lon")
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
-        fout.write(parseJSONData(response.text, type="info") + "\n")
+        fout.write(str(parseJSONData(response.text, type="info")) + "\n")
 
     elif data == "tram":
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "course,stop_code,stop_id,stop_name,route_short_name,trip_headsign,direction_id,departure_time,is_theorical,delay_sec,dest_ar_code,course_sae")
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
-        fout.write(response.text + "\n")
+        fout.write(str(response.text) + "\n")
 
     elif data == "agenda":
       isCSVHeaderPresentIfNotWrite(f"{_dir}/{filename}", "event_id,titre,vignette_src,field_date,description,field_communes,field_lieu,field_access,field_thematique,x,y,url")
       with open(f"{_dir}/{filename}", "at", encoding="utf-8") as fout:
-        fout.write(parseJSONData(response.text, type="agenda") + "\n")
+        fout.write(str(parseJSONData(response.text, type="agenda")) + "\n")
 
     print("GET: ", _file, " - ", response.status_code, " - ", response.reason, " - ", "parsed successfully")
 
@@ -245,6 +245,7 @@ database = [
 
 start_timestamp = int(time.time())
 jump = 0
+time_to_step = 120
 second = 1
 minute = 60
 hour = 3600
@@ -308,9 +309,9 @@ try:
 
           last_time_parsed["agenda"] = getCurrentDateTime()
 
-    jump += minute
+    jump += time_to_step
     print(f"\nOur current jump: {jump}, our limit jump: {time_to_run}")
-    time.sleep(120)
+    time.sleep(time_to_step)
   print("Timestamp as of end:", int(time.time()), " - ", "Our scheme has been respected" if int(time.time())-start_timestamp == time_to_run else "Our scheme hasn't been respected")
 
 except KeyboardInterrupt:
