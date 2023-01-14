@@ -95,7 +95,11 @@ def parseXMLData(parking: str):
   # Création d'un fichier temporaire
   with open("temp-file.log", "wt", encoding="utf-8") as f_temp:
     f_temp.write(parking)
-  tree = etree.parse("temp-file.log")
+  try:
+    tree = etree.parse("temp-file.log")
+  except:
+    print("Error while parsing XML data", parking)
+    return None
   # Condition tertiaire afin d'avoir une valeur boulléenne
   date = tree.xpath("DateTime")[0].text
   opened = True if tree.xpath("Status")[0].text.lower() == "open" else False
