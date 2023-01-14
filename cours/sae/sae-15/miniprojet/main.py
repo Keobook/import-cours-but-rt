@@ -245,7 +245,7 @@ database = [
 
 start_timestamp = int(time.time())
 jump = 0
-time_to_step = 120
+time_to_step = 60
 second = 1
 minute = 60
 hour = 3600
