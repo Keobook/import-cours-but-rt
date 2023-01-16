@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-f670da36-0c61-4336-a72f-fd574ac932d9" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 52.29">
+  <defs>
+    <clipPath id="uuid-94416231-1fe5-495f-bd54-df1f0cbfa672">
+      <rect width="100" height="52.29" rx="1.61" ry="1.61" style="fill: none;"/>
+    </clipPath>
+  </defs>
+  <g id="uuid-520227ef-c64e-460b-a118-321fb941d762" data-name="Calque 1">
+    <g style="clip-path: url(#uuid-94416231-1fe5-495f-bd54-df1f0cbfa672);">
+      <image width="800" height="533" transform="scale(.12 .1)" xlink:href="../PNG/french.png"/>
+    </g>
+  </g>
+</svg>
