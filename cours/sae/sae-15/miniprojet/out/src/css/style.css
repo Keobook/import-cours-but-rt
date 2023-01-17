@@ -1,0 +1,50 @@
+/* applique sur l'ensemble de la page*/ 
+
+body {
+  background-color: white;
+  font-family: "calibri";
+}
+a {
+  text-decoration: none;
+  color :black;
+  
+}
+a:hover {
+  color : blue
+}
+
+/* fin applique sur l'ensemble de la page*/
+
+/* applique sur l'ensemble de section*/
+.page_title {
+  text-align: center;
+  font-size: 250%;
+  font-weight: bolder;
+  
+}
+/* fin applique sur l'ensemble de section*/
+
+/* bar de navigation rapide */
+.bar_nav_rapide{
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 150%;
+}
+.barnav_elem {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+
+}
+/* fin css bar de navigation rapide*/
+.part_title {
+  text-align: center;
+  font-size:150%;
+  font-weight: bold;
+}
+
+.page_end_credit {
+  text-align: center;
+}
