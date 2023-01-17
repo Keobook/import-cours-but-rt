@@ -9,3 +9,7 @@
 [submodule "cours/sae/sae-12/sae12-full-admin-right-alexis-opolka"]
 	path = cours/sae/sae-12/sae12-full-admin-right-alexis-opolka
 	url = https://github.com/IUT-Beziers/sae12-full-admin-right-alexis-opolka.git
+
+[submodule "cours/sae/sae-12/SAE12"]
+	path = cours/sae/sae-12/SAE12
+	url = https://github.com/alexis-opolka/SAE12.git
