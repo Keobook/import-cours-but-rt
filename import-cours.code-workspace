@@ -15,6 +15,10 @@
     {
       "path": "./cours/sae/sae-12/sae12-full-admin-right-alexis-opolka",
       "name": "SAE-12"
+    },
+    {
+      "path": "./cours/sae/sae-12/SAE12/",
+      "name": "SAE-12 Directives"
     }
   ],
   "settings": {
