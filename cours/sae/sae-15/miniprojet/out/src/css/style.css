@@ -15,14 +15,14 @@ a:hover {
 
 /* fin applique sur l'ensemble de la page*/
 
-/* applique sur l'ensemble de section*/
+/* applique sur les titre de l'ensemble de section*/
 .page_title {
   text-align: center;
   font-size: 250%;
   font-weight: bolder;
   
 }
-/* fin applique sur l'ensemble de section*/
+/* fin applique sur les titre de l'ensemble de section*/
 
 /* bar de navigation rapide */
 .bar_nav_rapide{
