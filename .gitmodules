@@ -5,3 +5,7 @@
 [submodule "cours/sae/sae-14/portfolio-presentation/ideas/generative-3d-art"]
 	path = cours/sae/sae-14/portfolio-presentation/ideas/generative-3d-art
 	url = https://github.com/alexis-opolka/generative-3d-art.git
+
+[submodule "cours/sae/sae-12/sae12-full-admin-right-alexis-opolka"]
+	path = cours/sae/sae-12/sae12-full-admin-right-alexis-opolka
+	url = https://github.com/iutbeziers/sae12-full-admin-right-alexis-opolka.git
