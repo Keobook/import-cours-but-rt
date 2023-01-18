@@ -11,6 +11,14 @@
     {
       "path": "./cours/sae/sae-14/portfolio-presentation/ideas/generative-3d-art/",
       "name": "Generative 3d art"
+    },
+    {
+      "path": "./cours/sae/sae-12/sae12-full-admin-right-alexis-opolka",
+      "name": "SAE-12"
+    },
+    {
+      "path": "./cours/sae/sae-12/SAE12/",
+      "name": "SAE-12 Directives"
     }
   ],
   "settings": {
