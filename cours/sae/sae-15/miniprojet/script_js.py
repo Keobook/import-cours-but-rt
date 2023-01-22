@@ -69,11 +69,18 @@ print(timestamp_to_date_time)
 
 
 
+# velib_infos = info[f"{i}"]
+#p.field()....
+# p.field("name", velib_infos[0])
+# p.filed("position", (velib_infos[2], velib_infos[3]))
 
 
+info[f"{i}"]
 
 
-
+info = {
+  "1": ("Rue Jules Ferry - Gare Saint-Roch","12","43.605366","3.881346")
+}
 
 idexe = ("rue","nombre","latittude","longitude")
 id001 = ("Rue Jules Ferry - Gare Saint-Roch","12","43.605366","3.881346")
