@@ -6,4 +6,15 @@
   "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",
+  "github.copilot.advanced": {
+    "enabled": true,
+    "showInContextMenu": true,
+    "showInStatusBar": true,
+    "showInEditor": true,
+    "showInEditorContextMenu": true,
+    "showInEditorHover": true,
+    "showInEditorTab": true,
+    "showInEditorTitle": true,
+    "showInEditorTitleMenu": true,
+  },
 }
