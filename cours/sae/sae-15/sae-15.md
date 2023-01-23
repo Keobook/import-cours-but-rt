@@ -80,3 +80,11 @@ def surfaceDisque(r):
   return pi*(r**2)
 
 ```
+
+## Miniprojet
+
+Pour avoir les données de ce miniprojet, il faut prendre le dépôt GitHub:
+
+```HTTPS
+https://github.com/alexis-opolka/SAE-15-DATA.git
+```
