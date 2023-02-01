@@ -75,3 +75,60 @@
 | Kind regards     | Best     |
 | Yours faithfully | Hugs     |
 |                  | Love     |
+
+## 8 - Verb forms
+
+### A - 
+
+| Content | Summary | time                           |
+| :------ | :------ | :----------------------------- |
+| 1.      | b)      | present simple                 |
+| 2.      | d)      | present continuous             |
+| 3.      | f)      | [have] + pp => present perfect |
+| 4.      | c)      | present perfect continuous     |
+| 5.      | a)      | prétérite (= "past simple")    |
+| 6.      | e)      | past continuous                |
+
+
+### B -
+
+| Present simple | Present continuous | Present Perfect          | Past simple      |
+| -------------- | ------------------ | ------------------------ | ---------------- |
+| at the moment  | at the moment      | already (Br)             | already (Us)     |
+| every friday   |                    | just (Br)                | in the old days  |
+| nowadays       | nowadays           | not ... yet (Br)         | just             |
+| once a year    | right now          | over the last few months | last week        |
+| right now      |                    | since                    | not ... yet (Us) |
+|                |                    | so far this year         | when I was young |
+
+- I've written 10 letters <= résultat (On s'intéresse au résultat)
+- I've been writing all night <= Activité (On s'intéresse à l'activité)
+
+### C - 
+
+- recruit
+- I'm planning
+- need
+- have always been able to => bilan
+- are operating
+- have fallen
+- means
+- hope
+
+## 9 - Sentence building
+
+### A - 
+
+The word order is: How - Where - When
+
+1. You may remember me. We exchange business cards at the Trade Fair last week.
+2. Our advertising campaign is going well. We should consider extending it until June.
+3. I am writing to ask about the availability of rooms on July. I need a single room for three nights.
+4. I am going to see my parents next weekend. I haven't seen them for a long time.
+
+### B -
+
+1. I am writing to let you know that I am coming to visit your offices in Moscow nect month.
+2. This will be part of a visit that I am making to all our subsidiaries in Eastern Europe.
+3. I will take the opportunity to consult with you about our strategic plan which we have been working on for some time for Eastern Europe.
+4. I would also like to visit our production facility while I am in Moscow and if there is time some of the local suppliers to that facility as well.
