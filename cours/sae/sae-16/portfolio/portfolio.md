@@ -4,7 +4,7 @@
 
 Formation basée sur une **Approche Par Compétence** (APC).
 
-Une compétence est un "savoir-agir complexe prenant appui sur la *mobilisation* et la *combinaison efficaces* d'une *variété* de *ressources* à l'intérieur d'une *famille de situatio (Tardif J.)
+Une compétence est un "savoir-agir" complexe prenant appui sur la *mobilisation* et la *combinaison efficaces* d'une *variété* de *ressources* à l'intérieur d'une *famille de situatio (Tardif J.)
 
 5 blocs de compétences:
 
@@ -50,3 +50,18 @@ Soutenance de portfolio: 28,29,30 juin 2023
 Être capable d'expliquer comment on a travaillé, si on a réussi ou non.
 
 
+## SAEs
+
+- Quels sont les blocs de compétence concernés
+- Quelle est la situation professionnelle
+- Dans cette situation
+  - En quoi j'ai agi avec qualité ?
+  - En quoi je n'ai pas agi avec qualité ? Comment m'améliorer ?
+  - Qu'est-ce que j'ai appris ?
+  - Qu'est-ce qui m'a manqué ?
+
+- SAE 11: Sensibilisation interne
+- SAE 12: Conception de réseaux, création de documentation, collaboration
+- SAE 13: certifier des cables avant l'installation de la suite d'équipements
+- SAE 14: Prise de RDV avec quelqu'un du métier, recherche d'emploi, recherche de collaborateurs
+- SAE 15: Voir si une solution est viable, en faire un rapport présentable
