@@ -132,3 +132,63 @@ The word order is: How - Where - When
 2. This will be part of a visit that I am making to all our subsidiaries in Eastern Europe.
 3. I will take the opportunity to consult with you about our strategic plan which we have been working on for some time for Eastern Europe.
 4. I would also like to visit our production facility while I am in Moscow and if there is time some of the local suppliers to that facility as well.
+
+## 22 - Commercial: Customer / supplier sequence
+
+### A -
+
+- 6 -> A
+- 5 -> B
+- 4 -> C
+- 3 -> F
+- 2 -> D
+- 1 -> E
+
+1. 6 / 4 / 1 => An order / An inquiry / A complaint
+2. 5 / 3 / 2 => A receipt / A quotation / An invoice
+
+### B -
+
+1. makes an inquiry -> sends information
+2. requests a quotation -> gives the quotation
+3. makes an order -> sends an invoice
+4. makes a payment -> sends a receipt
+5. makes a complaint -> solves the issue
+
+### C -
+
+1b - 2a - 3f - 4d - 5c - 6h - 7e - 8g
+
+### D -
+
+1. supply
+2. advertisement
+3. acknowledge: reconnaitre
+  1. Acknowledge of receipt: accusé de réception
+4. value for money
+5. standard
+6. terms
+7. apologize
+8. remind
+
+## 26 - Job Application
+
+### A -
+
+1. b
+
+
+### C -
+
+1. to - on - in - for
+2. as
+3. for
+4. as
+5. on
+6. to - from
+7.  of - at
+8.  for - in
+9.  in
+10. at (or for)
+11. as
+12. for
