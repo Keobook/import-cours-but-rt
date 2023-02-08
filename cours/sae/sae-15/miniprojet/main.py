@@ -1,75 +1,95 @@
+### Importations
 import os
 import subprocess
 import importlib
 from io import StringIO, BytesIO
 import time
 
+### Un check pour s'assurer d'avoir certains modules supplémentaires
 try:
   importlib.import_module("lxml")
 except:
   print("lxml is not installed, installing it now...")
+  ### On vérifie si pip est installé
   if subprocess.check_output("whereis pip", shell=True, text=True).strip().split(":")[-1].replace("\n", "") == "":
-    os.system("sudo apt install -y pip")
-
+    ### Si pip n'est pas installé, on l'installe
+    if os.name == "nt":
+      ### Si on a un OS Windows
+      os.system("py -3 -m ensurepip")
+    else:
+      ### SI on a un OS Unix/Linux/MacOS
+      os.system("sudo apt install -y pip")
   os.system("pip install lxml")
+  from lxml import etree
 
 try:
   importlib.import_module("requests")
 except:
   print("requests is not installed, installing it now...")
   os.system("pip install requests")
+  import requests
 
 try:
   importlib.import_module("json")
 except:
   print("json is not installed, installing it now...")
   os.system("pip install json")
-
-from lxml import etree
-import requests
-import json
+  import json
 
 
+### Fonction pour avoir la date actuelle (nbr de sec.)
+### On est sur le timestamp
 def getCurrentDateTime():
   return int(time.time())
 
-
+### On crée une fonction pour avoir la date actuelle formatée
+### du format "AAAA-MM-JJ HH:MM:SS"
 def getCurrentFormattedDateTime(separator=" "):
   return time.strftime(f"%Y-%m-%d{separator}%H:%M:%S", time.localtime())
 
+### Une fonction pour vérifier si un dossier est présent
+### Si il n'est pas présent, on le crée
 def checkDirIsPresent(directory: str, if_not_create: bool = False):
+  ### On vérifie si le dossier est présent
   if os.path.exists(os.path.abspath("./")+directory[1:]) == False:
+    ### Si il n'est pas présent, on le crée
     if if_not_create:
+      ### On adapte le chemin pour les plateformes Windows
       if os.name == "nt":
         _dir = directory.replace('/', '\\')
+      ### Vu que le système Unix/Linux est déjà
+      ### adapté à la manière d'écrire un chemin courant ('dossier/fichier')
+      ### On ne fait que pointer la nouvelle variable à l'ancienne.
       elif os.name == "posix":
         _dir = directory
       os.system(f"mkdir {_dir}")
+      ### Check si le dossier a bien été créé
       if checkDirIsPresent(directory):
        print(f"checkDirIsPresent: The directory '{directory}' has been successfully created")
   else:
     pass
-
+  ### Si tout se passe bien, on renvoie vraie
   return True
 
 
+### Utilise la requête donnée puis imprime le résultat
 def requestThenPrint(request: str):
   response = requests.get(request)
   print(response.text)
 
-
+### Utilise la requête donnée puis retourne le résultat
 def requestThenReturn(request: str):
   response = requests.get(request)
   return response.text
 
-
+### Utilise la requête donnée puis retourne le résultat sous forme de fichier
 def requestThenReturnAsFileObject(request: str):
   response = requests.get(request)
   response_text = response.text
   _file = BytesIO(bytes(response_text, encoding="utf-8"))
   return _file
 
-
+### Utilise la requête donnée puis écrit le résultat dans un fichier
 def requestThenWrite(request: str, _dir: str = None):
   if _dir == None:
     if os.name == "nt":
