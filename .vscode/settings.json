@@ -1,8 +1,8 @@
 {
   "editor.tabSize": 2,
   "editor.fontSize": 20,
-  "window.zoomLevel": 0,
-  "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+  "window.zoomLevel": -1,
+  "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
   "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",

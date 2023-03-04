@@ -37,9 +37,12 @@
     "dateTime.timeZone": "Europe/Paris",
     "keyboard.layout": "fr",
 
-    "workbench.colorTheme": "Cyberpunk 2077 rebuild",
+    "workbench.colorTheme": "Hacker X - Blue Hacker Theme",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "liveServer.settings.multiRootWorkspaceName": "Import-Cours-BUT-RT1",
+    "githubPullRequests.ignoredPullRequestBranches": [
+      "main"
+    ],
   },
   "extensions": {
     "recommendations": [],
