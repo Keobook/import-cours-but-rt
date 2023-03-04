@@ -1,0 +1,56 @@
+/*
+  The "master" version, deprived of all the TP-specific stuff.
+  This is the filed used for the index file.
+*/
+
+body {
+  background-color: #B5DFC9;
+  text-align: center;
+}
+
+h1 {
+  color: maroon;
+  text-align: center;
+  font-size: 350%;
+  margin: 0;
+  padding: 5px;
+}
+
+a {
+  margin-right: 0.5vmin;
+}
+
+main {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 50%;
+  font-size: 150%;
+}
+
+/* Center <ul> and <li> elements
+  on the page, and make them
+  appear as a list of links.
+
+*/
+
+ul {
+  text-align: left;
+  list-style-type: none;
+  margin: 1.2vmin;
+  padding: 0;
+}
+li {
+  margin: 0.8vmin;
+  padding: 0;
+}
+
+/* The .description class used to describe what the links redirects to
+  It should be displayed in a smaller font, and in a different color.
+  A color that is near the background color of the body
+*/
+
+.description {
+  font-size: 0.8em;
+  color: #3c3e3d;
+  margin-left: 5%;
+}

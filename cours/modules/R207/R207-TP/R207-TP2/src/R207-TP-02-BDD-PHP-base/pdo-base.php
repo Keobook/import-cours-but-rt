@@ -12,8 +12,12 @@
 <body>
   <?php
     // On initialise les variables
-    $seasonToShow = $_GET['res'];
-    if($seasonToShow == null) $seasonToShow = 1;
+    if (empty($_GET['res'])) {
+      $seasonToShow = 1;
+    } else {
+      $seasonToShow = $_GET['res'];
+    }
+
     $tables = array(1 => 'equipes', 2 => 'equipes17_UEFA', 3 => 'equipes17_F1', 4 => 'equipes14_UEFA');
     $titres = array(1 => 'Ligue1 2018-2019', 2 => 'UEFA 2017-2018', 3 => 'Ligue1 2017-2018', 4 => 'UEFA 2014-2015');
 
