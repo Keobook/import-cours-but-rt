@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<racine>
+  <eleve name="John DOE">
+    <note matiere="math">14</note>
+    <note matiere="math">13</note>
+    <note matiere="math">12</note>
+    <note matiere="physique">12</note>
+    <note matiere="physique">15</note>
+    <note matiere="français">17</note>
+    <note matiere="français">15</note>
+    <note matiere="math">11</note>
+    <note matiere="math">9</note>
+    <note matiere="math">12</note>
+    <note matiere="physique">13</note>
+    <note matiere="physique">15</note>
+    <note matiere="français">12</note>
+    <note matiere="français">10</note>
+    <note matiere="math">8</note>
+    <note matiere="math">10</note>
+    <note matiere="math">9</note>
+    <note matiere="physique">11</note>
+    <note matiere="physique">9</note>
+    <note matiere="français">15</note>
+    <note matiere="français">16</note>
+  </eleve>
+  <eleve name="Jean DUPONT">
+    <note matiere="math">14</note>
+    <note matiere="math">13</note>
+    <note matiere="math">12</note>
+    <note matiere="physique">12</note>
+    <note matiere="physique">15</note>
+    <note matiere="français">17</note>
+    <note matiere="français">15</note>
+    <note matiere="math">11</note>
+    <note matiere="math">9</note>
+    <note matiere="math">12</note>
+    <note matiere="physique">13</note>
+    <note matiere="physique">15</note>
+    <note matiere="français">12</note>
+    <note matiere="français">10</note>
+    <note matiere="math">8</note>
+    <note matiere="math">10</note>
+    <note matiere="math">9</note>
+    <note matiere="physique">11</note>
+    <note matiere="physique">9</note>
+    <note matiere="français">15</note>
+    <note matiere="français">16</note>
+  </eleve>
+  <eleve name="Alice MARTIN">
+    <note matiere="math">14</note>
+    <note matiere="math">13</note>
+    <note matiere="math">12</note>
+    <note matiere="physique">12</note>
+    <note matiere="physique">15</note>
+    <note matiere="français">17</note>
+    <note matiere="français">15</note>
+    <note matiere="math">11</note>
+    <note matiere="math">9</note>
+    <note matiere="math">12</note>
+    <note matiere="physique">13</note>
+    <note matiere="physique">15</note>
+    <note matiere="français">12</note>
+    <note matiere="français">10</note>
+    <note matiere="math">8</note>
+    <note matiere="math">10</note>
+    <note matiere="math">9</note>
+    <note matiere="physique">11</note>
+    <note matiere="physique">9</note>
+    <note matiere="français">15</note>
+    <note matiere="français">16</note>
+  </eleve>
+</racine>
