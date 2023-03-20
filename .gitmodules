@@ -14,6 +14,9 @@
 	path = cours/sae/sae-12/SAE12
 	url = https://github.com/alexis-opolka/SAE12.git
 
+[submodule "cours/modules/R208/R208-TP/--force"]
+	path = cours/modules/R208/R208-TP/--force
+	url = git@github.com:IUT-Beziers/tp2-json-alexis-opolka.git
 [submodule "cours/modules/R208/R208-TP/tp2-json-alexis-opolka"]
 	path = cours/modules/R208/R208-TP/tp2-json-alexis-opolka
 	url = git@github.com:IUT-Beziers/tp2-json-alexis-opolka.git
