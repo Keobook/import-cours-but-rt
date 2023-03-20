@@ -1,0 +1,25 @@
+lease {
+  ### L'interface sur laquelle l'adresse IP est attribuée
+  interface "eno1";
+  ### L'adresse IP en question
+  fixed-address 10.213.1.1;
+  filename "gpxelinux.0";
+  ### Le masque de sous-réseaux de l'adresse IP
+  option subnet-mask 255.255.0.0;
+  ### L'adresse IP de la passerelle
+  options routers 10.213.255.254;
+  ### Le temps du bail DHCP, en secondes
+  option dhcp-lease-time 60000;
+  option dhcp-message-type 5;
+  ### L'adresse du serveur DNS
+  option domain-name-servers 10.255.255.200;
+  option dhcp-server-identifier 10.255.255.1;
+  ### Le FQDN associé au réseau
+  option domain-name "iutbeziers.fr";
+  ### Quand l'adresse IP sera à renouvelé
+  renew 5 2023/03/17 15:52:17;
+  ### Quand l'adresse IP ne sera plus jumelée à l'adresse MAC
+  rebind 5 2023/03/17 23:33:39;
+  ### Quand le bail expirera
+  expire 6 2023/03/18 01:38:39;
+}
