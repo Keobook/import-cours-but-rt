@@ -1,0 +1,41 @@
+{
+  "timestamp": 1550562092.12,         (le moment de l'annonce, le 19
+                                      février 2019 à 07:41:32 UTC,
+				      comme on peut le voir avec 'date -u --date=@1550562092.12')
+  "peer": "2001:7f8:20:101::208:223", (le voisin BGP du routeur RIS)
+  "peer_asn": "20764",                (le numéro de système autonome
+                                      dudit voisin)
+  "host": "rrc13",                    (l'identité du routeur RIS qui a
+                                      vu l'annonce)
+  "type": "UPDATE",                   
+  "path": [                           (le chemin d'AS - Autonomous
+                                      System, système autonome - : l'AS d'origine est le 33047)
+    20764,
+    8359,
+    6327,
+    16696,
+    33047
+  ],
+  "community": [                       (les communautés BGP attachées
+                                       à l'annonce)
+                                       souvent représenté par x:y , où x est le numéro d’AS (1-65535) et y une valeur propre à l’AS (1-65535)
+    [
+      6327,
+      1405
+    ],
+    [
+      6327,
+      41030
+    ]
+  ],
+  "origin": "igp",
+  "announcements": [                   (l'annonce elle-même, pour le
+                                        préfixe d'adresses IP 2a03:8160:14::/48)
+    {
+      "next_hop": "2001:7f8:20:101::208:223",
+      "prefixes": [
+        "2a03:8160:14::/48"
+      ]
+    }
+  }
+}
