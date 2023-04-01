@@ -1,0 +1,371 @@
+[
+  {
+    "_index": "packets-1970-01-01",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame_raw": [
+          "b07b25269ad93c5282ea5bd2080600010800060400013c5282ea5bd20acb00660000000000000acb0501",
+          0,
+          42,
+          0,
+          1
+        ],
+        "frame": {
+          "frame.encap_type_raw": [
+            "",
+            0,
+            0,
+            0,
+            13
+          ],
+          "frame.time_raw": [
+            "",
+            0,
+            0,
+            0,
+            24
+          ],
+          "frame.offset_shift_raw": [
+            "",
+            0,
+            0,
+            0,
+            25
+          ],
+          "frame.time_epoch_raw": [
+            "",
+            0,
+            0,
+            0,
+            25
+          ],
+          "frame.time_delta_raw": [
+            "",
+            0,
+            0,
+            0,
+            25
+          ],
+          "frame.time_delta_displayed_raw": [
+            "",
+            0,
+            0,
+            0,
+            25
+          ],
+          "frame.time_relative_raw": [
+            "",
+            0,
+            0,
+            0,
+            25
+          ],
+          "frame.number_raw": [
+            "",
+            0,
+            0,
+            0,
+            7
+          ],
+          "frame.len_raw": [
+            "",
+            0,
+            0,
+            0,
+            7
+          ],
+          "frame.cap_len_raw": [
+            "",
+            0,
+            0,
+            0,
+            7
+          ],
+          "frame.marked_raw": [
+            "",
+            0,
+            0,
+            0,
+            2
+          ],
+          "frame.ignored_raw": [
+            "",
+            0,
+            0,
+            0,
+            2
+          ],
+          "frame.protocols_raw": [
+            "",
+            0,
+            0,
+            0,
+            26
+          ]
+        },
+        "eth_raw": [
+          "b07b25269ad93c5282ea5bd20806",
+          0,
+          14,
+          0,
+          1
+        ],
+        "eth": {
+          "eth.dst_raw": [
+            "b07b25269ad9",
+            0,
+            6,
+            0,
+            29
+          ],
+          "eth.dst_tree": {
+            "eth.dst_resolved_raw": [
+              "b07b25269ad9",
+              0,
+              6,
+              0,
+              26
+            ],
+            "eth.dst.oui_raw": [
+              "b07b25",
+              0,
+              3,
+              0,
+              6
+            ],
+            "eth.dst.oui_resolved_raw": [
+              "b07b25269ad9",
+              0,
+              6,
+              0,
+              26
+            ],
+            "eth.addr_raw": [
+              "b07b25269ad9",
+              0,
+              6,
+              0,
+              29
+            ],
+            "eth.addr_resolved_raw": [
+              "b07b25269ad9",
+              0,
+              6,
+              0,
+              26
+            ],
+            "eth.addr.oui_raw": [
+              "b07b25",
+              0,
+              3,
+              0,
+              6
+            ],
+            "eth.addr.oui_resolved_raw": [
+              "b07b25269ad9",
+              0,
+              6,
+              0,
+              26
+            ],
+            "eth.dst.lg_raw": [
+              "0",
+              0,
+              3,
+              131072,
+              2
+            ],
+            "eth.lg_raw": [
+              "0",
+              0,
+              3,
+              131072,
+              2
+            ],
+            "eth.dst.ig_raw": [
+              "0",
+              0,
+              3,
+              65536,
+              2
+            ],
+            "eth.ig_raw": [
+              "0",
+              0,
+              3,
+              65536,
+              2
+            ]
+          },
+          "eth.src_raw": [
+            "3c5282ea5bd2",
+            6,
+            6,
+            0,
+            29
+          ],
+          "eth.src_tree": {
+            "eth.src_resolved_raw": [
+              "3c5282ea5bd2",
+              6,
+              6,
+              0,
+              26
+            ],
+            "eth.src.oui_raw": [
+              "3c5282",
+              6,
+              3,
+              0,
+              6
+            ],
+            "eth.src.oui_resolved_raw": [
+              "3c5282ea5bd2",
+              6,
+              6,
+              0,
+              26
+            ],
+            "eth.addr_raw": [
+              "3c5282ea5bd2",
+              6,
+              6,
+              0,
+              29
+            ],
+            "eth.addr_resolved_raw": [
+              "3c5282ea5bd2",
+              6,
+              6,
+              0,
+              26
+            ],
+            "eth.addr.oui_raw": [
+              "3c5282",
+              6,
+              3,
+              0,
+              6
+            ],
+            "eth.addr.oui_resolved_raw": [
+              "3c5282ea5bd2",
+              6,
+              6,
+              0,
+              26
+            ],
+            "eth.src.lg_raw": [
+              "0",
+              6,
+              3,
+              131072,
+              2
+            ],
+            "eth.lg_raw": [
+              "0",
+              6,
+              3,
+              131072,
+              2
+            ],
+            "eth.src.ig_raw": [
+              "0",
+              6,
+              3,
+              65536,
+              2
+            ],
+            "eth.ig_raw": [
+              "0",
+              6,
+              3,
+              65536,
+              2
+            ]
+          },
+          "eth.type_raw": [
+            "0806",
+            12,
+            2,
+            0,
+            5
+          ]
+        },
+        "arp_raw": [
+          "00010800060400013c5282ea5bd20acb00660000000000000acb0501",
+          14,
+          28,
+          0,
+          1
+        ],
+        "arp": {
+          "arp.hw.type_raw": [
+            "0001",
+            14,
+            2,
+            0,
+            5
+          ],
+          "arp.proto.type_raw": [
+            "0800",
+            16,
+            2,
+            0,
+            5
+          ],
+          "arp.hw.size_raw": [
+            "06",
+            18,
+            1,
+            0,
+            4
+          ],
+          "arp.proto.size_raw": [
+            "04",
+            19,
+            1,
+            0,
+            4
+          ],
+          "arp.opcode_raw": [
+            "0001",
+            20,
+            2,
+            0,
+            5
+          ],
+          "arp.src.hw_mac_raw": [
+            "3c5282ea5bd2",
+            22,
+            6,
+            0,
+            29
+          ],
+          "arp.src.proto_ipv4_raw": [
+            "0acb0066",
+            28,
+            4,
+            0,
+            32
+          ],
+          "arp.dst.hw_mac_raw": [
+            "000000000000",
+            32,
+            6,
+            0,
+            29
+          ],
+          "arp.dst.proto_ipv4_raw": [
+            "0acb0501",
+            38,
+            4,
+            0,
+            32
+          ]
+        }
+      }
+    }
+  }
+]
