@@ -3,6 +3,7 @@
 imports/
 */imports/*
 cours/modules/R111/R111-TD/out/test/*
+test/*
 
 ## Files
 ~$*.*
@@ -11,6 +12,12 @@ cours/modules/R111/R111-TD/out/test/*
 *.log
 save*-*-*.txt
 *.out
+### LaTeX files - to be ignored
+*.aux
+*.fdb_latexmk
+*.fls
+*.gz
+
 ## Here is the entire repository of the VS files used on a projet in C++
 
 ## Folders
@@ -19,6 +26,7 @@ cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/*
 cours/modules/R111/R111-TD/src/code-sample-cpp/Release/*
 cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/*
 
+## Repository-wide absolute paths of files to be ignored
 ## Files
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.sln
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.vcxproj
