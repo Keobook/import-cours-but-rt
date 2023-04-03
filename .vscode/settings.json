@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "editor.fontSize": 20,
   "window.zoomLevel": -1,
-  "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
+  "workbench.colorTheme": "Andromeda",
   "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",
@@ -17,4 +17,5 @@
     "showInEditorTitle": true,
     "showInEditorTitleMenu": true,
   },
+  "liveServer.settings.CustomBrowser": "chrome"
 }
