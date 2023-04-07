@@ -1,22 +1,31 @@
+### GIT Submodules
+###
+### Web portfolio + class unrelated submodules
+
 [submodule "cours/sae/sae-14/portfolio-presentation/www/alexis-opolka.github.io"]
 	path = cours/sae/sae-14/portfolio-presentation/www/alexis-opolka.github.io
-	url = https://github.com/alexis-opolka/alexis-opolka.github.io.git
+	url = git@github.com:alexis-opolka/alexis-opolka.github.io.git
 
 [submodule "cours/sae/sae-14/portfolio-presentation/ideas/generative-3d-art"]
 	path = cours/sae/sae-14/portfolio-presentation/ideas/generative-3d-art
-	url = https://github.com/alexis-opolka/generative-3d-art.git
+	url = git@github.com:alexis-opolka/generative-3d-art.git
 
-[submodule "cours/sae/sae-12/sae12-full-admin-right-alexis-opolka"]
-	path = cours/sae/sae-12/sae12-full-admin-right-alexis-opolka
-	url = https://github.com/IUT-Beziers/sae12-full-admin-right-alexis-opolka.git
+### Ressources-related submodules
 
-[submodule "cours/sae/sae-12/SAE12"]
-	path = cours/sae/sae-12/SAE12
-	url = https://github.com/alexis-opolka/SAE12.git
-
-[submodule "cours/modules/R208/R208-TP/--force"]
-	path = cours/modules/R208/R208-TP/--force
-	url = git@github.com:IUT-Beziers/tp2-json-alexis-opolka.git
 [submodule "cours/modules/R208/R208-TP/tp2-json-alexis-opolka"]
 	path = cours/modules/R208/R208-TP/tp2-json-alexis-opolka
 	url = git@github.com:IUT-Beziers/tp2-json-alexis-opolka.git
+
+### SAE-related submodules
+
+[submodule "cours/sae/sae-12/sae12-full-admin-right-alexis-opolka"]
+	path = cours/sae/sae-12/sae12-full-admin-right-alexis-opolka
+	url = git@github.com:IUT-Beziers/sae12-full-admin-right-alexis-opolka.git
+
+[submodule "cours/sae/sae-12/SAE12"]
+	path = cours/sae/sae-12/SAE12
+	url = git@github.com:alexis-opolka/SAE12.git
+
+[submodule "cours/sae/sae-21/"]
+	path = cours/sae/sae-21/
+	url = git@github.com:alexis-opolka/sae-21.git
