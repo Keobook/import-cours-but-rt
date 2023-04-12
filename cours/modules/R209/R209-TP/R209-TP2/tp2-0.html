@@ -122,7 +122,7 @@ $(document).ready(function(){
       // We take the parent of the currently holding span
       // - which is also a span- and put it before the clicked
       // empty space
-      $($(`#${srcID}`)).insertBefore(this).parent()
+      $(`#${srcID}`).insertBefore(this).parent()
 
       // Then we take the empty space and put it where the proposition was
       $(temporarySrcParent).html(this)
