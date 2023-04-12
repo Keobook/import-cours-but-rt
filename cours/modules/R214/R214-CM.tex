@@ -1,0 +1,47 @@
+\documentclass{report}
+
+\begin{document}
+  \title{Cours de R214}
+  \author{Alexis Opolka}
+  \date{\today}
+  \maketitle
+
+  \part{Cours magistraux}
+
+  \chapter{Dérivation}
+  \chapter{Limites et équivalents}
+  \chapter{Intégration}
+
+    Primitive:
+
+    \underline{Def:} Soit f(x) et F(x) deux fonctions.
+
+    On a:
+
+    f(x) est \underline{la} dérivée de F(x)
+    F(x) est \underline{une} primitive de f(x)
+
+    [Caution] F(x) + 2, F(x) - 5, ...
+    sont aussi des primitives de f(x)
+
+    Primitive de $\frac{1}{x} \ln{|x|}$
+
+    \underline{Exemple 1:}
+
+    a/ $f(x) = 4x + 3 => F(x) = 2x^2 + 3x + k, k \in \Re$ \\
+    b/ $f(x) = \frac{1}{2x - 3} => F(x) = \frac{1}{2} \ln{2x-3} + k$
+      car ($\ln{2x-3})' =\frac{2}{2x-3}$ \footnote{($\ln{u(x)})' = \frac{u'(x)}{u(x)}$}
+
+    \underline{Etape 1 :} Réduction
+    \underline{Exemple 2:}
+
+    f(x) = $\frac{x^3-1}{x^2-2x+1} = \frac{(x-1)(x^2 +x +1)}{(x-1)^2} = $
+
+
+    Division euclidiènne
+
+    x^3 +1 / x-1
+    x^2 => x^3 -x^2 => x^2 + 1
+    x => x^2 - x => x + 1
+    1 => x - 1 => 2
+\end{document}
