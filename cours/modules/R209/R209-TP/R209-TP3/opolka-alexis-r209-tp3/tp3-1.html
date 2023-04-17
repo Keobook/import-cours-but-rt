@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TP3-1 OpenStreetMap</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="./css/master.css"/>
+  <link rel="stylesheet" href="leaflet-1.7.1/leaflet.css"/>
+  <!--script src="jquery-3.6.0.min.js"></script-->
+</head>
+<body>
+  <h1>Carte de Béziers</h1>
+  Position GPS: &nbsp;<span id="current-position"></span>
+  <div class="btn-nav">
+    <button id="save-pts" class="btn btn-primary">Sauvegarder les points</button>
+    <button id="del-points" class="btn btn-warning">Supprimer les points</button>
+    <button id="wipe-mess" class="btn btn-danger">Effacer les messages</button>
+  </div>
+  <div class="flex">
+    <div id="map" class="box"></div>
+    <div class="box">
+      <textarea name="" id="text-points"></textarea>
+    </div>
+  </div>
+  <script src="leaflet-1.7.1/leaflet.js"></script>
+  <script type="text/javascript">
+  function initMap() {
+    let mapOptions = {center: iut, zoom: 17};
+    let layerOptions = {attribution: '(c) OpenStreetMap France', minZoom: 1, maxZoom: 20};
+    map = new L.map('map',mapOptions);
+    let layer = new L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',layerOptions);
+    map.addLayer(layer);
+    L.marker(iut).addTo(map)
+      .bindPopup("IUT de Béziers <br> <img src='./src/img/logoIUT-100x50.png'> <br> <a href='https://iutbeziers.fr/'>Site web</a>")
+    for (let i = 0; i < pts.length; i++) {
+      var tempIcon = L.icon({
+        iconUrl: "./src/img/cbMkrRed.png",
+        iconSize: [25, 41],
+        iconAnchor: [12, 0],
+      })
+
+      L.marker(pts[i]["loc"], {icon: tempIcon, title: pts[i]["msg"]}).addTo(map).bindPopup(pts[i]["msg"]);
+    }
+
+    var markerHolder = L.layerGroup();
+    var coordsHistory = L.layerGroup();
+    var lastLine = null;
+
+    map.on("click", function(evt){
+
+      document.getElementById("current-position").innerHTML = evt.latlng;
+
+      const userIcon = L.icon({
+        iconUrl: "./src/img/cbMkrGreen.png",
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [0, -35]
+      })
+
+      userMarker = L.marker(evt.latlng, {icon: userIcon, draggable: true})
+        .bindPopup(evt.latlng.toString())
+        .on("dragend", function(evt){
+          var currLatLng = evt.target.getLatLng();
+          let popup = evt.target.getPopup();
+          popup.setContent(currLatLng.toString());
+
+          let coords = [
+            [currLatLng.lat, currLatLng.lng],
+            [iut.lat, iut.lng],
+          ]
+
+          if (lastLine != null){
+            coordsHistory.removeLayer(lastLine);
+          }
+
+          var polyline = L.polyline(coords, {color: "red"});
+          console.log(popup.openPopup(), popup.setContent(currLatLng.toString() + `, ${Math.floor((currLatLng.distanceTo(iut) / 1000) * 100) / 100} km`))
+          let currPopup = popup.setContent(currLatLng.toString() + `, ${Math.floor((currLatLng.distanceTo(iut)/ 1000)*100) / 100} km`)
+          currPopup.update();
+          currPopup.openOn(map)
+          console.log(currPopup.isOpen());
+
+          coordsHistory.addLayer(polyline);
+          lastLine = polyline;
+          coordsHistory.addTo(map);
+        })
+        .on("drag", function(evt){
+          document.getElementById("current-position").innerHTML = evt.latlng;
+        })
+      markerHolder.addLayer(userMarker);
+      markerHolder.addTo(map);
+    })
+
+    document.getElementById("save-pts").addEventListener("click", ()=> {
+      var structuredText = "";
+      i = 0;
+      markerHolder.eachLayer(function(layer){
+        let latlng = layer.getLatLng();
+        let data = {
+          "lat": latlng.lat,
+          "lng": latlng.lng,
+        }
+        let tempText = "Point #" + i + " " + JSON.stringify(data);
+        structuredText += tempText + "\n"
+        i++;
+      })
+      if (i > 1 || i == 0) {
+        var pointsConjugated = " points...";
+      } else {
+        var pointsConjugated = " point...";
+      }
+      structuredText = "Sauvegarde de " + i + pointsConjugated + "\n" + structuredText;
+      document.getElementById("text-points").innerHTML = structuredText;
+    })
+
+    document.getElementById("del-points").addEventListener("click", ()=> {
+      markerHolder.eachLayer(function(layer){
+        markerHolder.removeLayer(layer);
+      })
+      if (lastLine != null) {
+        coordsHistory.removeLayer(lastLine);
+        lastLine = null;
+      }
+    })
+
+    document.getElementById("wipe-mess").addEventListener("click", ()=> {
+      document.getElementById("text-points").innerHTML = "";
+    })
+
+
+    L.control.scale().addTo(map);
+  }
+
+  var iut = new L.latLng(43.346831, 3.222286)
+  var map = null;
+  let pts = [
+    {
+      loc: new L.latLng(43.341636, 3.217471),
+      msg: "La statue de Paul Riquet"
+    },
+    {
+      loc: new L.latLng(43.343938, 3.228736),
+      msg: "Les arènes"
+    },
+    {
+      loc: new L.latLng(43.353019, 3.227778),
+      msg: "Le chateau d'eau"
+    }
+  ]
+
+  window.onload = function(){
+    initMap();
+  };
+</script>
+</body>
+</html>
