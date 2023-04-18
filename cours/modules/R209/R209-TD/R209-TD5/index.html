@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R209-TD5 - Memory</title>
+  <link rel="stylesheet" href="css/master.css">
+  <script src="./js/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+  <div class="menu">
+    Colonnes:
+    <input type="radio" name="col" value="4" selected="true"> 4
+    <input type="radio" name="col" value="5" id=""> 5
+    <input type="radio" name="col" value="6" id=""> 6
+    <input type="radio" name="col" value="7" id=""> 7
+    <button id="new-btn">Nouvelle partie</button>
+  </div>
+  <div id="grille">
+    <div class="left-side">
+      <div class="cell">
+        <img src="./src/img/img0.png" alt="Une image \shrug">
+      </div>
+      <div class="cell">
+        <img src="./src/img/img0.png" alt="Une image \shrug">
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="cell">
+        <img src="./src/img/img0.png" alt="Une image \shrug">
+      </div>
+      <div class="cell">
+        <img src="./src/img/img0.png" alt="Une image \shrug">
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(document).ready(function(){
+    $("#new-btn").on("click", function(){
+      const choice = $("input:radio").filter(":checked").val();
+
+      if (choice != undefined) {
+        // On vide d'abord notre grille
+        $("#grille").empty();
+
+        // 4 lignes à chaque fois
+        for (let i = 0; i < 4; i++) {
+          let line = $("<div>").addClass("line");
+          for (let j = 0; j < choice; j++) {
+            let column = $("<div>").addClass("cell");
+            line.append(column);
+          }
+          $("#grille").append(line);
+        };
+        // Après avoir créé le tableau, on le remplit aléatoirement
+        let tab = new Array(4*choice);
+        let i = 1
+
+        for (let k = 0; k < 4*choice; k++) {
+          tab[k] = i%(2*choice);
+          i++;
+        }
+        tab.sort(() => Math.random()-0.5)
+        console.log(tab.toString());
+
+        i = 0;
+        $("div.cell").each((element) => {
+          $(element).html(`<img src="./src/img/img${tab[i++]}.png" />`)
+        });
+      }
+    })
+  });
+</script>
+</html>

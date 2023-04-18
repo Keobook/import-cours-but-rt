@@ -1,0 +1,49 @@
+
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.center {
+  text-align: center;
+}
+
+div {
+  padding: 2px;
+}
+
+input {
+  vertical-align: middle;
+}
+
+.menu {
+  width: 800px;
+  text-align: center;
+  margin: 10px auto 10px auto;
+  background-color: #1a1a1a;
+}
+
+#grille {
+  display: table;
+  margin: auto;
+  border: thin solid blue;
+}
+.cell {
+  margin: 0;
+  display: flex;
+  border: thin solid red;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: 1;
+  min-width: 94px;
+  min-height: 94px;
+}
+
+.line {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-grow: 1;
+}
