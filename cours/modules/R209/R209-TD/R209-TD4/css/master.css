@@ -5,4 +5,18 @@ body {
 
 #work-root {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+
+#logs {
+  margin-top: 2%;
+  width: max-content + 100px;
+  height: max-content + 8%;
+  max-width: 90%;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

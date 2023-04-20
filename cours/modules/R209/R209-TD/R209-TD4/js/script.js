@@ -7,9 +7,9 @@ $("#start-btn").on("click", function(){
   if ($(this).html() == "Start") {
     $(this).html("Stop");
     if ($("#reverse").is(":checked")) {
-      intervalID = setInterval(decrementChrono, 20)
+      intervalID = setInterval(decrementChrono, chronoInterval, chronoInterval)
     } else {
-      intervalID = setInterval(incrementChrono, 20);
+      intervalID = setInterval(incrementChrono, chronoInterval, chronoInterval);
     }
     console.log("intervalID: ",intervalID)
   } else {
@@ -27,10 +27,20 @@ $("#reset-btn").on("click", function(){
     intervalID = null;
     $("#start-btn").html("Start");
   }
+  // On either case, we reset to 0 our chronometer
+  chronoValue = 0;
+  // Then we wipe the logs off the log area
+  $("#logs").html("");
 })
 
 $("#save-btn").on("click", function(){
-  $("#logs").append($("#chronometre").text()+"<br>");
+  let chronoFinal = new Date();
+  chronoFinal.setTime(chronoValue);
+  let chronoFinalDisplayed = `${String(chronoFinal.getHours()).padStart(2, "0")}:${String(chronoFinal.getMinutes()).padStart(2, "0")}:${String(chronoFinal.getSeconds()).padStart(2, "0")}:${String(chronoFinal.getMilliseconds()).padStart(3, "0")}`;
+
+  console.log(chronoValue, chronoFinal.getTime());
+
+  $("#logs").append($("#chronometre").text() + "(Chronomètre: " + chronoFinalDisplayed +") <br>");
 })
 
 // Definition of Functions
@@ -52,13 +62,15 @@ function setupDateContent(){
   $("#ms").text(milliseconds);
 }
 
-function incrementChrono(){
+function incrementChrono(valueToIncrement){
+
   var hour = Number($("#h").html());
   var minute = Number($("#m").html());
   var second = Number($("#s").html());
   var milliseconds = Number($("#ms").html());
 
-  milliseconds += 10;
+  // Increment our display
+  milliseconds += valueToIncrement;
 
   if (milliseconds >= 1000){
     milliseconds -= 1000;
@@ -73,20 +85,24 @@ function incrementChrono(){
     hour += 1;
   }
 
+  // Increment our real chronometer
+  chronoValue = incrementChronoValue(chronoValue, chronoInterval)
 
-  String($("#ms").text(milliseconds)).padStart(2, "0");
-  String($("#s").text(second)).padStart(2, "0");
-  String($("#m").text(minute)).padStart(2, "0");
-  String($("#h").text(hour)).padStart(2, "0");
+  $("#ms").text(String(milliseconds).padStart(3, "0"));
+  $("#s").text(String(second).padStart(2, "0"));
+  $("#m").text(String(minute).padStart(2, "0"));
+  $("#h").text(String(hour).padStart(2, "0"));
 }
 
-function decrementChrono(){
+function decrementChrono(valueToDecrement){
+
   var hour = Number($("#h").html());
   var minute = Number($("#m").html());
   var second = Number($("#s").html());
   var milliseconds = Number($("#ms").html());
 
-  milliseconds -= 10;
+  // Decrement our display
+  milliseconds -= valueToDecrement;
 
   if(milliseconds <= 0){
     milliseconds += 1000;
@@ -101,15 +117,23 @@ function decrementChrono(){
     hour -= 1;
   }
 
-  String($("#ms").text(milliseconds)).padStart(2, "0");
-  String($("#s").text(second)).padStart(2, "0");
-  String($("#m").text(minute)).padStart(2, "0");
-  String($("#h").text(hour)).padStart(2, "0");
+  // Increment our real chronometer
+  chronoValue = incrementChronoValue(chronoValue, chronoInterval);
+
+  $("#ms").text(String(milliseconds).padStart(3, "0"));
+  $("#s").text(String(second).padStart(2, "0"));
+  $("#m").text(String(minute).padStart(2, "0"));
+  $("#h").text(String(hour).padStart(2, "0"));
 }
 
+function incrementChronoValue(chronometreReference, intervalToUpdate){
+  chronometreReference += intervalToUpdate;
 
+  return chronometreReference;
+}
 
 // Definition and Initialization of variables
 
 var intervalID = null;
 var chronoValue = 0; // Value in milliseconds
+var chronoInterval = 20; // Value to wait between each interval in chronometer
