@@ -1,8 +1,8 @@
 {
   "editor.tabSize": 2,
   "editor.fontSize": 20,
-  "window.zoomLevel": -1,
-  "workbench.colorTheme": "Andromeda",
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Material Theme Ocean High Contrast",
   "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",
@@ -17,5 +17,8 @@
     "showInEditorTitle": true,
     "showInEditorTitleMenu": true,
   },
-  "liveServer.settings.CustomBrowser": "chrome"
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.port": 5501,
+  "phpserver.browser": "chrome",
+  "phpserver.phpPath": "C:\\php-8.2.5\\php.exe"
 }
