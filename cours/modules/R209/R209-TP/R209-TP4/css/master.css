@@ -1,0 +1,38 @@
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#work-root {
+  text-align: center;
+}
+
+#part-2-holder, #part-2-map-holder {
+  /*The div holding all the work of the second part
+  of the TP. It is a flex container centered vertically and
+  horizontally. Its size should be 80% of the viewport's size.
+  */
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 600px;
+  margin: auto;
+}
+
+#part-2-holder > div {
+  margin: 5px;
+  width: max-content;
+}
+
+#map {
+  border: 1px solid red;
+  width: 800px;
+  height: 600px;
+}

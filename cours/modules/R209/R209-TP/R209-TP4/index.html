@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="js/leaflet-1.7.1/leaflet.css">
+  <title>R209-TP4</title>
+</head>
+
+<body>
+
+  <div id="work-root">
+    <div id="part-1">
+      <h3>Nombre de vélos: <span id="velos-nbr"></span></h3>
+      <div id="part-1-content">
+        <div>Date: <span id="date" class="bold"></span></div>
+        <div>Longitude: <span id="lon" class="bold"></span></div>
+        <div>Lattitude: <span id="lat" class="bold"></span></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div id="part-2">
+      <h3>Nombre de points: <span id="pts-nbr" class="bold"></span></h3>
+      <div id="part-2-holder"></div>
+      <div id="part-2-map-holder">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="js/leaflet-1.7.1/leaflet.js"></script>
+<script>
+
+  //////////////////////////////////////////////////////////////
+  //
+  // 1 - Données issues d'un service WEB de comptage de vélos
+  //
+  //////////////////////////////////////////////////////////////
+
+  // Test the 1st way of fetching data using $.ajax
+  $.ajax({
+    // URL to Fetch
+    url: "http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json.php",
+    // DataType we're waiting and will be returned
+    dataType: "json"
+  }).done(function (jsonObject) {
+    // As it's only some test to prove we can do it
+    // Only log the response JSON object in the console
+    console.log("Ajax OK: " + JSON.stringify(jsonObject));
+  }).fail(function () {
+    // If it failed just say it. ^-^
+    console.log("Ajax Error !!!");
+  });
+
+  // Test the 2nd way of fetching data using $.getJSON
+  $.getJSON("http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json.php", function (data) {
+    // We got it, then log it
+    console.log("JQuery.getJSON: " + JSON.stringify(data));
+
+    // As we do need to use one of the three fetching methods
+    // to write on the first section about one specific point
+    $("#velos-nbr").text(data["intensity"]);
+    $("#date").text(data["dateObserved"]);
+    $("#lon").text(data["location"]["coordinates"][0]);
+    $("#lat").text(data["location"]["coordinates"][1]);
+  });
+
+  // Test the 3rd way of fetching data using the native Fetch API
+  fetch("http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json.php")
+    .then(response => response.json())
+    .then(jsonObject => { console.log("Fetch OK: " + JSON.stringify(jsonObject)); })
+    .catch(error => { console.log("Erreur Fetch..." + error) });
+
+  //////////////////////////////////////////////////////////////
+  //
+  // 2 - Affichage dynamique sur une carte
+  //
+  //////////////////////////////////////////////////////////////
+
+  // Let's create our map with leafletJS
+  function initMap(){
+    let mapOptions = {
+      center: montpellier,
+      zoom: 12
+    }
+    let layerOptions = {
+      attribution: '&copy; OpenStreetMap France',
+      minZoom: 1,
+      maxZoom: 20
+    }
+    var map = new L.map('map', mapOptions);
+    var layer = new L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', layerOptions);
+
+    map.addLayer(layer);
+    L.marker(iut)
+    .addTo(map)
+    .bindPopup("IUT de Béziers <br> <a href='https://iutbeziers.fr/'>Site web</a>")
+    L.control.scale().addTo(map)
+
+    return map;
+  }
+
+  var montpellier = new L.latLng(43.6109200, 3.8772300)
+  var iut = new L.latLng(43.346831, 3.222286);
+
+  window.onload = function () {
+    map = initMap();
+  }
+
+  // Let's fetch our data
+  fetch("http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json-2.php")
+    .then(response => response.json())
+    .then(jsonObject => {
+      var featuresLength = jsonObject["features"].length;
+
+      console.log(featuresLength);
+
+      // Let's add the number of points retrieved
+      $("#pts-nbr").text(featuresLength);
+
+
+
+      // For each point, let's create their DOM elements
+      for (let i = 0; i < featuresLength; i++){
+
+        // Create a section on page for each element
+        createPointElementOnPage(jsonObject["features"][i], i);
+
+        // Create a Point on map for each element
+        createPointElementOnMap(jsonObject["features"][i], i);
+      }
+
+    })
+    .catch(error => {
+      console.log("Erreur Fetch: ", error);
+    });
+
+async function createPointElementOnMap(currentFeature, currentIndex){
+  // Create a latLng object with the latitude and longitude
+  var currentFeatureCoordinates = new L.latLng(currentFeature["properties"]["Latitude"], currentFeature["properties"]["Longitude"]);
+
+  // Work with "N° Série" if "N° Sér_1" is null
+  if (!currentFeature["properties"]["N° Sér_1"]) {
+    var currentFeatureReference = currentFeature["properties"]["N° Série"];
+  } else {
+    var currentFeatureReference = currentFeature["properties"]["N° Sér_1"];
+  }
+
+  // Create the icon we'll use to note our Feature
+  const currentFeatureIcon = L.icon({
+    iconUrl: "./src/img/cbMkrRed.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 0]
+  });
+
+  // Fetch Our local PHP file
+  fetch("http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json-2.php?ref="+currentFeatureReference)
+    .then(response => response.json())
+    .then(jsonObject => {
+      // Log for reference
+      console.log("Feature " + currentFeatureReference + ": " + jsonObject["intensity"]);
+
+      // Set anonymous function-wide variable
+      // just to better understand what we're dealing with
+      var currentFeatureCount = jsonObject["intensity"];
+
+      // Create the HTML DOM tree used in the Popup
+      var currentFeaturePopupHolder = document.createElement("div");
+      var currentFeaturePopupHeader = document.createElement("h4");
+
+      // Create the DOM tree related to the content
+      var currentFeaturePopupContentHolder = document.createElement("p");
+      var currentFeaturePopupContentData = document.createElement("span");
+
+      // Set up our contentData span with the count
+      $(currentFeaturePopupContentData).addClass("bold");
+      $(currentFeaturePopupContentData).text(currentFeatureCount);
+
+      // Set up our contentHolder span with the left text then the span
+      $(currentFeaturePopupContentHolder).text("Nombre de vélos: ")
+      $(currentFeaturePopupContentData).appendTo(currentFeaturePopupContentHolder);
+
+      // Set up our PopupHeader
+      $(currentFeaturePopupHeader).text("Point de comptage: " + currentFeatureReference);
+
+      // Append our DOM tree 
+      $(currentFeaturePopupHeader).appendTo(currentFeaturePopupHolder);
+      $(currentFeaturePopupContentHolder).appendTo(currentFeaturePopupHolder);
+
+      // Create the marker and its Popup
+      L.marker(currentFeatureCoordinates, 
+        {
+          icon: currentFeatureIcon 
+        })
+        .addTo(map)
+        .bindPopup(currentFeaturePopupHolder.outerHTML);
+    })
+    .catch(error => {
+      console.log("Erreur Fetch on element n°", currentIndex, ":", currentFeatureReference, ":", error);
+    })
+}
+
+function createPointElementOnPage(currentFeature, currentIndex){
+
+  // Create a content holder element, which will be append
+  // to our root div
+  var contentHolder = document.createElement("div");
+
+  // Set up the holder element
+  contentHolder.setAttribute("id", `point-${currentIndex}`);
+
+  // Create the line corresponding to the point ID
+  var pointIDHolder = document.createElement("div")
+  var pointIDData = document.createElement("span")
+
+  // Set up the line content
+  pointIDHolder.innerText = "Point " + currentIndex + ": ";
+  pointIDData.innerText = currentFeature["properties"]["N° Série"];
+
+  // Create the line corresponding to the point longitude
+  var pointLonHolder = document.createElement("div")
+  var pointLonData = document.createElement("span")
+
+  // Set up the line content
+  pointLonHolder.innerText = "Longitude " + currentIndex + ": ";
+  pointLonData.innerText = currentFeature["properties"]["Longitude"];
+
+  // Create the line corresponding to the point latitude
+  var pointLatHolder = document.createElement("div")
+  var pointLatData = document.createElement("span")
+
+  // Set up the line content
+  pointLatHolder.innerText = "Latitude " + currentIndex + ": ";
+  pointLatData.innerText = currentFeature["properties"]["Latitude"];
+
+  // Create the HR DOM element to create a distinction between each point
+  var sectionBreaker = document.createElement("hr");
+
+  // Add some CSS on the span elements
+  $([pointIDData, pointLonData, pointLatData]).addClass("bold");
+
+  // Append Data spans to their holder div
+  $(pointLatData).appendTo(pointLatHolder);
+  $(pointLonData).appendTo(pointLonHolder);
+  $(pointIDData).appendTo(pointIDHolder);
+
+  // Firstly, add our HR element to our section
+  $(sectionBreaker).appendTo(contentHolder)
+
+  // Then, append the holder div to our section root DOM element
+  $(pointIDHolder).appendTo(contentHolder);
+  $(pointLonHolder).appendTo(contentHolder);
+  $(pointLatHolder).appendTo(contentHolder);
+
+  $("#part-2-holder").append(contentHolder)
+}
+
+</script>
+</html>
