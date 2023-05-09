@@ -21,8 +21,9 @@
       <textarea name="" id="text-points"></textarea>
     </div>
   </div>
-  <script src="leaflet-1.7.1/leaflet.js"></script>
-  <script type="text/javascript">
+</body>
+<script src="leaflet-1.7.1/leaflet.js"></script>
+<script type="text/javascript">
   function initMap() {
     let mapOptions = {center: iut, zoom: 17};
     let layerOptions = {attribution: '(c) OpenStreetMap France', minZoom: 1, maxZoom: 20};
@@ -86,6 +87,7 @@
         .on("drag", function(evt){
           document.getElementById("current-position").innerHTML = evt.latlng;
         })
+
       markerHolder.addLayer(userMarker);
       markerHolder.addTo(map);
     })
@@ -116,10 +118,12 @@
       markerHolder.eachLayer(function(layer){
         markerHolder.removeLayer(layer);
       })
+
       if (lastLine != null) {
         coordsHistory.removeLayer(lastLine);
         lastLine = null;
       }
+
     })
 
     document.getElementById("wipe-mess").addEventListener("click", ()=> {
@@ -151,5 +155,4 @@
     initMap();
   };
 </script>
-</body>
 </html>
