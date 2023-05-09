@@ -11,15 +11,44 @@
   $statusCode = null;
 
   if (is_null($reference)) {
-    @shell_exec("curl -o ./data2.json 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_MMM_GeolocCompteurs.geojson'");
-    $r = @file_get_contents('.\data2.json');
-    echo($r)?$r:http_response_code(404);
+        //URL of targeted site  
+    $url = "https://data.montpellier3m.fr/sites/default/files/ressources/MMM_MMM_GeolocCompteurs.geojson";  
+    $ch = curl_init();  
+
+    // set URL and other appropriate options  
+    curl_setopt($ch, CURLOPT_URL, $url);  
+    curl_setopt($ch, CURLOPT_HEADER, 0);  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+
+    // grab URL and pass it to the browser  
+
+    $output = curl_exec($ch);  
+
+    echo($output)?$output:http_response_code(404);
+
+    // close curl resource, and free up system resources  
+    curl_close($ch);
     exit(0);
   } else {
     $path = "./temp/". $reference .".json";
-    @shell_exec("pwsh ./curl-me.ps1 ". $reference ."");
-    $r = @file_get_contents($path);
-    echo($r)?$r:http_response_code(404);
+
+    //URL of targeted site  
+    $url = "https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_". $reference .".json";  
+    $ch = curl_init();  
+
+    // set URL and other appropriate options  
+    curl_setopt($ch, CURLOPT_URL, $url);  
+    curl_setopt($ch, CURLOPT_HEADER, 0);  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+
+    // grab URL and pass it to the browser  
+
+    $output = curl_exec($ch);  
+
+    echo($output)?$output:http_response_code(404);
+
+    // close curl resource, and free up system resources  
+    curl_close($ch);  
     exit(0);
   }
 ?>

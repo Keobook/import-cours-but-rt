@@ -47,7 +47,7 @@
   // Test the 1st way of fetching data using $.ajax
   $.ajax({
     // URL to Fetch
-    url: "http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json.php",
+    url: "./json.php",
     // DataType we're waiting and will be returned
     dataType: "json"
   }).done(function (jsonObject) {
@@ -60,7 +60,7 @@
   });
 
   // Test the 2nd way of fetching data using $.getJSON
-  $.getJSON("http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json.php", function (data) {
+  $.getJSON("./json.php", function (data) {
     // We got it, then log it
     console.log("JQuery.getJSON: " + JSON.stringify(data));
 
@@ -73,7 +73,7 @@
   });
 
   // Test the 3rd way of fetching data using the native Fetch API
-  fetch("http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json.php")
+  fetch("./json.php")
     .then(response => response.json())
     .then(jsonObject => { console.log("Fetch OK: " + JSON.stringify(jsonObject)); })
     .catch(error => { console.log("Erreur Fetch..." + error) });
@@ -85,7 +85,7 @@
   //////////////////////////////////////////////////////////////
 
   // Let's create our map with leafletJS
-  function initMap(){
+  function initMap() {
     let mapOptions = {
       center: montpellier,
       zoom: 12
@@ -100,8 +100,8 @@
 
     map.addLayer(layer);
     L.marker(iut)
-    .addTo(map)
-    .bindPopup("IUT de Béziers <br> <a href='https://iutbeziers.fr/'>Site web</a>")
+      .addTo(map)
+      .bindPopup("IUT de Béziers <br> <a href='https://iutbeziers.fr/'>Site web</a>")
     L.control.scale().addTo(map)
 
     return map;
@@ -115,7 +115,7 @@
   }
 
   // Let's fetch our data
-  fetch("http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json-2.php")
+  fetch("https://r207.borelly.net/~u22203995/R209-TP4/json-2.php")
     .then(response => response.json())
     .then(jsonObject => {
       var featuresLength = jsonObject["features"].length;
@@ -125,10 +125,8 @@
       // Let's add the number of points retrieved
       $("#pts-nbr").text(featuresLength);
 
-
-
       // For each point, let's create their DOM elements
-      for (let i = 0; i < featuresLength; i++){
+      for (let i = 0; i < featuresLength; i++) {
 
         // Create a section on page for each element
         createPointElementOnPage(jsonObject["features"][i], i);
@@ -142,7 +140,7 @@
       console.log("Erreur Fetch: ", error);
     });
 
-  async function createPointElementOnMap(currentFeature, currentIndex){
+  async function createPointElementOnMap(currentFeature, currentIndex) {
     // Create a latLng object with the latitude and longitude
     var currentFeatureCoordinates = new L.latLng(currentFeature["properties"]["Latitude"], currentFeature["properties"]["Longitude"]);
 
@@ -161,7 +159,7 @@
     });
 
     // Fetch Our local PHP file
-    fetch("http://localhost:3000/cours/modules/R209/R209-TP/R209-TP4/json-2.php?ref="+currentFeatureReference)
+    fetch("https://r207.borelly.net/~u22203995/R209-TP4/json-2.php?ref=" + currentFeatureReference)
       .then(response => response.json())
       .then(jsonObject => {
         // Log for reference
@@ -195,9 +193,9 @@
         $(currentFeaturePopupContentHolder).appendTo(currentFeaturePopupHolder);
 
         // Create the marker and its Popup
-        L.marker(currentFeatureCoordinates, 
+        L.marker(currentFeatureCoordinates,
           {
-            icon: currentFeatureIcon 
+            icon: currentFeatureIcon
           })
           .addTo(map)
           .bindPopup(currentFeaturePopupHolder.outerHTML);
@@ -207,7 +205,7 @@
       })
   }
 
-  function createPointElementOnPage(currentFeature, currentIndex){
+  function createPointElementOnPage(currentFeature, currentIndex) {
 
     // Create a content holder element, which will be append
     // to our root div
@@ -263,4 +261,5 @@
   }
 
 </script>
+
 </html>
