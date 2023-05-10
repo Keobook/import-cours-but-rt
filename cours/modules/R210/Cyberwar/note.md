@@ -20,6 +20,9 @@ C. What can be the motives for hacking ?
 
   the motives for hacking its many as is movement of panic, halt to the global market, confidential information and then sell it to an opposite party or other
 
+D. How does cyberwar change the face of warfare ?Explain in your own words. 
+
+  cyberwar is changing the way war is waged, no more battlefields but more and more important consequences, and more and more disinformation. cyberwar concerns everyone. it is also more annonymous we can only make assumptions about the intention.
 
 ----
 
