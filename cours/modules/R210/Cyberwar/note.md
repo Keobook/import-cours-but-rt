@@ -33,6 +33,21 @@ E. In your opinion, how important is it to develop digital citizenship and respo
 
   In my opinion, the subject of developing digital citizenship and responsibility is a major and primary subject and issue to address because if our society is going the way it currently is, we can foresee the digital side of our life to be growing and be nearly indistinguishable. It's then necessary to develop awareness about this growing side of our life.
 
+
+----
+
+## oral
+
+----
+
+This is France 7 News. It's half past 5 on Thursday the 25th of March. Good morning. This is a news briefing with Harvey Lakerb.
+– A massive cyber-attack has been launched on federal agencies in the United States. We expect a statement to be issued by the President soon.The attack is significant and continuing. We don't know the full extent of the hacking campaign so
+far. US officials say the sophisticated attack may come from Russia.
+– We speak to Logan Perry, whose computer was targeted by the attack. He will tell us more about its impact. Mister Perry, can you tell us how you found out about the
+hacking ? …
+
+
+
 ----
 
 ## Copyright &copy; Alexis Opolka, Lucas Simpol Augeray 2023 - All Rights Reserved
