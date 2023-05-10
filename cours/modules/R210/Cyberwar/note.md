@@ -24,6 +24,10 @@ D. How does cyberwar change the face of warfare ?Explain in your own words.
 
   cyberwar is changing the way war is waged, no more battlefields but more and more important consequences, and more and more disinformation. cyberwar concerns everyone. it is also more annonymous we can only make assumptions about the intention.
 
+E. In your opinion, how important is it to develop digital citizenship and responsibility?
+
+  In my opinion, the subject of developing digital citizenship and responsibility is a major and primary subject and issue to address because if our society is going the way it currently is, we can foresee the digital side of our life to be growing and be nearly indistinguishable. It's then necessary to develop awareness about this growing side of our life.
+
 ----
 
 ## Copyright &copy; Alexis Opolka, Lucas Simpol Augeray 2023 - All Rights Reserved
