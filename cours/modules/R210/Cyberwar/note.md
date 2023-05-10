@@ -41,7 +41,7 @@ E. In your opinion, how important is it to develop digital citizenship and respo
 ----
 
 - This is France 7 News. It's Wednesday the 10th of March. Good-afternoon. This is a news briefing with Alexis Opolka.
-- A massive cyber-attack has been launched on **lieu a metrre**. __We expect a statement to be issued by the President soon__.The attack is significant and continuing. We don't know the full extent of the hacking campaign so far. **été** officials say the sophisticated attack may come from **par qui**.
+- A massive cyber-attack has been launched on **EDF's systems**. __We expect a statement to be issued by the President soon__.The attack is significant and continuing. We don't know the full extent of the hacking campaign so far but what we know for sure is it targeted the electrical gridline, more specifically our Nuclear reactors. **France** officials say the sophisticated attack may come from **China**.
 - We speak to Logan Perry, whose computer was targeted by the attack. He will tell us more about its impact. Mister Perry, can you tell us how you found out about the
 hacking ? …
 
