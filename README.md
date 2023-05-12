@@ -44,6 +44,11 @@ If the copyright / license is not respected, please either open an [issue](https
 
 As the maintainer I think every copyright, license or contribution should be listed in order to acknowledge the work of everyone, please write it in the section under.
 
+## Issues and Pull Requests
+
+If you think there are issues within some code or classes, please open an issue and I'll take a look at it with pleasure.  
+It's even better if you're able to come up with a fix to some issues and open a pull request. :smile:
+
 ## Hall of Fame
 
 | Nature | file / folder in question | holder (on the date of upload) |
