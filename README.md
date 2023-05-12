@@ -5,7 +5,7 @@
 The repository used to store all my classes and class-related documents such as scripts and others.
 
 It also uses [GIT LFS](https://git-lfs.com/) (Large File Storage) system but the storage is not unlimited.
-If you add binary files, please do only if it's under ~100 mB per file.
+If you add binary files, please do only if it's under ~100 MB per file.
 
 ## Install and setup
 
