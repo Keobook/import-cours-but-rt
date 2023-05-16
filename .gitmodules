@@ -29,3 +29,7 @@
 [submodule "cours/sae/sae-21/"]
 	path = cours/sae/sae-21/
 	url = git@github.com:alexis-opolka/sae-21.git
+
+[submodule "cours/sae/sae-23/Mon-Banzaii"]
+	path = cours/sae/sae-23/Mon-Banzaii
+	url = git@github.com:alexis-opolka/sae-23.git
