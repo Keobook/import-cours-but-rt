@@ -14,6 +14,11 @@ temp/*
 *.log
 save*-*-*.txt
 *.out
+
+### Audio files - to not register if not otherwise explicitly said (aka git added specificly)
+*.m4a
+*.wav
+
 ### LaTeX files - to be ignored
 *.aux
 *.fdb_latexmk
