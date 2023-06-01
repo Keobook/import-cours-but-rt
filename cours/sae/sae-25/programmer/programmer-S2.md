@@ -19,23 +19,107 @@
 
 ### En étant à l’écoute des besoins du client et des différents acteurs impliqués
 
-lorem ipsum
+J'ai pu et dû, de nombreuses fois, être à l'écoute des besoins
+d'un client, qu'il soit interne ou externe, et de différents acteurs
+impliqués dans un projet.  
+Dans le cadre de la SAE-23, j'ai dû être à l'écoute des besoins
+de mon binôme, qui était aussi le client interne du projet,
+et des besoins requis par le cahier des charges.
+
+J'ai donc dû adapater mon travail en fonction de ces besoins,
+que ce soit au niveau de la conception, du développement ou
+encore des fonctionnalités développées.  
+A plusieurs reprises, j'ai dû modifier des fonctionnalités,
+les étoffer ou les réduire afin qu'elles correspondent aux
+besoins de mon binôme et du cahier des charges.
+
+Plusieurs outils m'ont permis de communiquer avec eux, tels que:
+
+- Discord
+- Slack
+- Services mails
 
 ### En utilisant une approche rigoureuse et méthodique (démarche scientifique)
 
-lorem ipsum
+Afin de pouvoir programmer, ou toute autre tâche nécessitant
+de la méthodologie et une démarche scientifique, il est important
+d'aborder le problème de manière rigoureuse et méthodique.
+
+Dans le cadre de la SAE-21, j'ai dû développer un réseau
+pour une entreprise, en prenant en compte les besoins
+de l'entreprise, une DMZ, le réseau FAI et des sites distants.  
+Afin de s'assurer de ne pas perdre le fil de la conception,
+j'ai créé un schéma réseau avant de commencer le montage réseau
+sur Cisco Packet Tracer.
+
+![sae21-schema-reseau](../../sae-21/src/img/schema-reseau.drawio.svg)
+
+Ayant déjà préparé le schéma réseau et les accès de chacuns (par Groupes),
+j'ai pu commencer le montage, et par la suite, faire les tests
+me permettant de valider ou non, le bon fonctionnment de mon réseau.  
+Cependant, avoir une approche rigoureuse et méthodique ne suffit pas.
+Dans le cas de Cisco Packet Tracer, je me suis vu confronté
+à des limitions propes à l'outil, qui m'ont obligé à revoir
+mon schéma réseau de manière incrémentale et itérative afin
+d'obtenir un réseau fonctionnel.
+
 
 ### En choisissant les outils et l’environnement de développement adaptés
 
-lorem ipsum
+De part mon expérience, j'ai pu apprendre à utiliser de nombreux
+outils et environnements de développement.
+
+Dans le cadre étudiant, du BUT R&T, j'ai pu utiliser des outils
+et des environnements de développement tels que [GitHub](https://github.com), [Visual Studio Code](https://code.visualstudio.com),
+[Visual Studio](https://visualstudio.microsoft.com), [GitKraken](https://gitkraken.com) ou d'autres encore.
+
+Par exemple, pour la SAE-23, vu que j'ai dû développer une application web contenant une API en TypeScript et NextJS, j'ai utilisé:
+
+- GitHub pour stocker le code source en ligne
+- GitHub Projects pour gérer les tâches à effectuer
+- Visual Studio Code pour développer l'application
+- GitKraken et Git pour contrôler les versions du code source
+- Docker pour build et lancer l'application build
+- Postman pour développer et tester l'API
+- ESLint pour vérifier la syntaxe du code source
+
+Dans d'autres cadres et dans d'autres projets, j'ai pu utiliser
+beaucoup d'autres outils et environnements de développement
+tel que [GitLab](https://gitlab.com), [BitBucket](https://bitbucket.org), [AWS](https://aws.amazon.com), [GCP](https://console.cloud.google.com), [Azure DevOps](https://dev.azure.com), etc.
+
+Ce qui m'a permis d'apprendre les fonctionnalités de base de
+ces outils et environnements de développement, mais aussi
+de me sentir à l'aise avec l'idée d'être confronté à un nouvel
+outil.
 
 ### En intégrant les problématiques de sécurité
 
-En développant le site pour l'association Petits Papiers d'Architecture,
-j'ai dû implanter ce que l'on appelle des Linter qui sont appellés avant d'envoyer le code sur le dépôt GitHub
-afin d'éviter des erreurs de syntaxe puisque l'environnement de développement
-(accessible à l'adresse: [dev.petitspapiersdarchitecture.fr](http://dev.petitspapiersdarchitecture.fr))
-se compile et est publié à chaque nouveau push sur le dépôt.
+La sécurité est un élément essentiel dans le développement d'une
+application, qu'elle soit interne ou externe.
+
+Dans le cadre de la SAE-23, j'ai dû développer une application web
+qui permettait de gérer et de suivre les données récoltées par
+les Banzaii. Il était donc important d'avoir une gestion des
+comptes utilisateurs et de leurs permissions.
+
+A cela, s'ajoute le système d'authentification qui ne doit pas
+transmettre les données de l'utilisateur, notamment le mot de passe,
+en clair. Et encore d'autres problématiques de sécurité liées à l'accès de l'API, à l'accès des pages, etc.
+
+J'ai donc dû mettre en place un système d'authentification et de 
+double authentification prenant en compte les problématiques de
+sécurité qu'une application unipage peut avoir.  
+J'ai aussi dû mettre en place une gestion des droits d'accès
+et d'affichages de certains éléments de l'application.  
+Qui, dans le cas de la SAE-23 et du fait que ce soit une 
+application démonstrative, n'est pas complètement poussée
+notamment dû au court lapse de temps donné entre le début
+du projet et son rendu, ne me permettant pas, ainsi qu'à
+mon binôme, d'obtenir un résultat convenable ainsi que la
+prise en compte et la mise en place de solutions pour
+différents problèmes qu'ils soient techniques, sécuritaires
+ou autres.
+
 
 ## Apprentissages critiques
 
@@ -135,7 +219,11 @@ Je peux citer les plus connus qui sont GitHub, GitLab et BitBucket.
 
 Etant utilisateur de GitHub depuis 2019-2020, j'ai eu l'occasion
 d'utiliser GitHub que ce soit pour des projets scolaires tels que
-la [SAE-15](https://github.com/alexis-opolka/sae-15-data/), la [SAE-12](https://github.com/alexis-opolka/sae-12/), la [SAE-21](https://github.com/alexis-opolka/sae-21/) ou encore simplement pour [mes
+la [SAE-15](https://github.com/alexis-opolka/sae-15-data/), la [SAE-12](https://github.com/alexis-opolka/sae-12/), la [SAE-21](https://github.com/alexis-opolka/sae-21/), la [SAE-23](https://github.com/alexis-opolka/Mon-Banzaii/) ou encore simplement pour [mes
 cours](https://github.com/alexis-opolka/import-cours-but-rt/).  
 J'ai aussi eu l'occasion d'utiliser GitHub pour des projets personnels ou pour contribuer à des projets open-source tels
 que [Ren'Py](https://github.com/renpy/renpy), [Code OSS](https://github.com/microsoft/vscode/), la [documentation GitHub](https://github.com/github/docs/), etc.
+
+Vous pouvez par exemple voir ci-dessous, comment la SAE-23 a été organisée de manière collaborative en utilisant les GitHub Projects.
+
+![sae23-github-boards](./src/sae-23-boards.png)
