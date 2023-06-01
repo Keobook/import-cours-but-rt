@@ -52,7 +52,7 @@ Afin de s'assurer de ne pas perdre le fil de la conception,
 j'ai créé un schéma réseau avant de commencer le montage réseau
 sur Cisco Packet Tracer.
 
-![sae21-schema-reseau](../../sae-21/src/img/schema-reseau.drawio.svg)
+![![sae-21-schema-reseau](https://github.com/alexis-opolka/sae-21/blob/36e6dd09c139da16aab8125776bcb87db5509d24/src/img/schema-reseau.drawio.svg)](../../sae-21/src/img/schema-reseau.drawio.svg)
 
 Ayant déjà préparé le schéma réseau et les accès de chacuns (par Groupes),
 j'ai pu commencer le montage, et par la suite, faire les tests
@@ -150,8 +150,8 @@ Je vais donc qualifier les langages de balisage tel que `HTML, XML, XHTML`,
 les langages de style tel que `CSS, SCSS`,
 et les langages de programmation tel que `JavaScript et TypeScript`
 comme étant des langages de front-end.  
-A contrario, je vais qualifier les langages PHP, JavaScript avec NodeJS,
-les langages de bases de données comme MySQL, PostgreSQL, Flux (de InfluxDB), etc.
+A contrario, je vais qualifier les langages `PHP`, `JavaScript` avec `NodeJS`,
+les langages de bases de données comme `MySQL`, `PostgreSQL`, `Flux (de InfluxDB)`, etc.
 comme étant des langages de back-end.
 
 Aux langages, je peux y ajouter les frameworks et les librairies qui, eux,
@@ -160,7 +160,6 @@ Pour n'en citer qu'une infime partie :
 
 - Pour les framework, nous avons `ReactJS`, `VueJS`.
 - Pour les librairies, nous avons `JQuery`, `Bootstrap`, `Leaflet`.
-
 
 En ce qui concerne les serveurs web, je peux citer les deux majoritaires
 du marché étant `Apache` et `Nginx`.  
@@ -185,6 +184,35 @@ de travailler directement en Flux (le langage d'InfluxDB) au lieu d'avoir
 Malgré cet inconvénient (et travail en plus), le fait d'avoir déjà tout normalisé dans un format précis et d'une manière déterminée
 a permis, à mon binôme et à moi, d'importer les données récoltées
 dans la base de données pour ensuite sortir des graphes.
+
+Dans le cas de la SAE-23, j'ai dû travailler avec des données au format JSON
+où l'on avait des données qui étaient séparées en plusieurs fichiers et qui
+devaient contenir un historique des données.
+
+Si l'on prend par exemple les données considérées comme externes, j'avais une
+structure équivalente à celle ci-dessous:
+
+```json
+{
+  "id": "<ID-du-Banzaii>",
+  "data": [
+    {
+      "type": "<Type-de-donnée>",
+      "description": "<Description-des-données>",
+      "timeline": [
+        {
+          "value": "<valeur>",
+          "timestamp": "<timestamp>"
+        },
+        {
+          "value": "<valeur>",
+          "timestamp": "<timestamp>"
+        }
+      ]
+    }
+  ]
+}
+```
 
 ### S’intégrer dans un environnement propice au développement et au travail collaboratif
 
@@ -212,7 +240,6 @@ Il a donc un focus sur le code avec un logiciel de gestion de
 version, la possibilité de créer des tickets (aussi appelés issues)
 où la discussion peut se faire à part du code, un système de labels,
 etc.
-
 
 Il existe plusieurs environnements qui sont propices au développement et au travail collaboratif.  
 Je peux citer les plus connus qui sont GitHub, GitLab et BitBucket.  
