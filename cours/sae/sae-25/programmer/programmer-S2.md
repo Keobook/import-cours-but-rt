@@ -14,6 +14,8 @@
     - [Adapter le format de stockage et de transport des données au besoin de l’application](#adapter-le-format-de-stockage-et-de-transport-des-données-au-besoin-de-lapplication)
     - [S’intégrer dans un environnement propice au développement et au travail collaboratif](#sintégrer-dans-un-environnement-propice-au-développement-et-au-travail-collaboratif)
 
+> **Note**:  
+> Augmenter la taille des sections et les lier entre elles
 
 ## Composantes essentielles
 
@@ -52,7 +54,8 @@ Afin de s'assurer de ne pas perdre le fil de la conception,
 j'ai créé un schéma réseau avant de commencer le montage réseau
 sur Cisco Packet Tracer.
 
-![![sae-21-schema-reseau](https://github.com/alexis-opolka/sae-21/blob/36e6dd09c139da16aab8125776bcb87db5509d24/src/img/schema-reseau.drawio.svg)](../../sae-21/src/img/schema-reseau.drawio.svg)
+
+![sae21-schema-reseau](../../sae-21/src/img/schema-reseau.drawio.svg)
 
 Ayant déjà préparé le schéma réseau et les accès de chacuns (par Groupes),
 j'ai pu commencer le montage, et par la suite, faire les tests
