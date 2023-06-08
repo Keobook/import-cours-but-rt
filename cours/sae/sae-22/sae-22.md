@@ -46,5 +46,24 @@ Durnat cette SAE, nous effectuerons:
     - Supports d'enregistrement / stockage
     - Restitution des signaux
 
+## TDs
+
+### TD-2
+
+1111
+1101
+0111
+0110
+1010
+1101
+1010
+0011
+0000
+0011
+1000
+1001
+0100
+0010
+0110
 
 ## Copyright &copy; 2023 Alexis Opolka - All Rights Reserved
