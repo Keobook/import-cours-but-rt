@@ -16,6 +16,10 @@
 	path = cours/modules/R208/R208-TP/tp2-json-alexis-opolka
 	url = git@github.com:IUT-Beziers/tp2-json-alexis-opolka.git
 
+[submodule "cours/modules/R202/R202-TD/R202-TD6/tpdocker"]
+	path = cours/modules/R202/R202-TD/R202-TD6/tpdocker
+	url = git@github.com:pushou/tpdocker.git
+
 ### SAE-related submodules
 
 [submodule "cours/sae/sae-12/sae12-full-admin-right-alexis-opolka"]

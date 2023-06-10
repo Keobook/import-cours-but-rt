@@ -1,0 +1,6 @@
+FROM debian:ao
+
+RUN apt-get update && apt-get upgrade -y  && apt-get install -y iputils-ping traceroute
+
+ENTRYPOINT ["/bin/ping"]
+CMD ["www.iutbeziers.fr", "-c", "4"]
