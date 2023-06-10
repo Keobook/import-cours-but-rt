@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rapport-etude-stage-2e-annee.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="rapport-d%C3%A9tude-sur-les-diff%C3%A9rentes-possibilit%C3%A9s-pour-le-stage-de-but-rt2">Rapport d'étude sur les différentes possibilités pour le stage de BUT RT2</h1>
+<h2 id="pr%C3%A9face">Préface</h2>
+<p>Alors que la fin de la première année s'approche à grands pas,
+il m'est nécessaire de commencer à réfléchir sur les différentes
+possibilités de stages pour la deuxième année du BUT RT.<br>
+Notamment en ce qui va concerner les démarches qu'il va falloir
+effectuer peu importe l'option choisie au final.</p>
+<p>Ce rapport est là pour me permettre de réfléchir sur les
+différentes possibilités qui s'offrent à moi, et d'en peser les
+avantages et les inconvénients d'un point de vue subjectif et
+objectif en terme de la formation actuelle (BUT RT) et de la
+formation à laquelle j'aspire (Ingénieur DevOps).</p>
+<p>Ce rapport est aussi présent pour me permettre d'approfondir
+chaque possibilité et d'en définir les contours, les objectifs,
+les acteurs et les moyens à mettre en oeuvre pour y parvenir.</p>
+<p>Enfin, ce rapport a pour but d'être partagé avec différents acteurs
+dont je juge l'avis important et / ou intéressant afin d'obtenir
+des retours et des conseils sur les différentes possibilités
+et sur l'entierté du rapport.</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Les possibilités de stage incluant un départ à l'étranger
+seront préférées, d'un point de vue personnel, de par mon
+ambition de partir à l'étranger durant mes études supérieures.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Aucun nom ne sera cité dans ce rapport, par soucis de confidentialité.</p>
+</blockquote>
+<h2 id="sommaire">Sommaire</h2>
+<ul>
+<li><a href="#rapport-d%C3%A9tude-sur-les-diff%C3%A9rentes-possibilit%C3%A9s-pour-le-stage-de-but-rt2">Rapport d'étude sur les différentes possibilités pour le stage de BUT RT2</a>
+<ul>
+<li><a href="#pr%C3%A9face">Préface</a></li>
+<li><a href="#sommaire">Sommaire</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#les-stages-en-entreprise">Les stages en entreprise</a>
+<ul>
+<li><a href="#le-stage-en-entreprise-en-france">Le stage en entreprise en France</a></li>
+<li><a href="#le-stage-en-entreprise-%C3%A0-l%C3%A9tranger">Le stage en entreprise à l'étranger</a></li>
+</ul>
+</li>
+<li><a href="#les-stages-entrepreunariaux">Les stages entrepreunariaux</a>
+<ul>
+<li><a href="#le-stage-entrepreunarial-en-france">Le stage entrepreunarial en France</a></li>
+<li><a href="#le-stage-entrepreunarial-%C3%A0-l%C3%A9tranger">Le stage entrepreunarial à l'étranger</a>
+<ul>
+<li><a href="#pr%C3%A9requis">Prérequis</a></li>
+<li><a href="#objectifs">Objectifs</a></li>
+<li><a href="#les-acteurs">Les acteurs</a></li>
+<li><a href="#les-d%C3%A9marches-%C3%A0-effectuer">Les démarches à effectuer</a></li>
+<li><a href="#la-pertinence">La pertinence</a></li>
+<li><a href="#les-avantages-et-inconv%C3%A9nients">Les avantages et inconvénients</a></li>
+<li><a href="#la-forme-et-le-fond-du-rapport-de-stage">La forme et le fond du rapport de stage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#annexes">Annexes</a>
+<ul>
+<li><a href="#erasmus-for-young-entrepreneurs">Erasmus For Young Entrepreneurs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Le stage de deuxième année est un stage de 9 semaines commençant,
+en se basant sur celui effectué durant l'année universitaire
+2022-2023, du 1er Février au 3 Avril. On se basera ainsi sur
+ce même calendrier.</p>
+<p>De mon point de vue, il y a quatres possibilités pour ce stage que
+l'on peut classer en deux catégories :</p>
+<ul>
+<li>Les stages en entreprise
+<ul>
+<li><a href="#le-stage-en-entreprise-en-france">Le stage en entreprise en France</a></li>
+<li><a href="#le-stage-en-entreprise-%C3%A0-l%C3%A9tranger">Le stage en entreprise à l'étranger</a></li>
+</ul>
+</li>
+<li>Les stages entrepreunariaux
+<ul>
+<li><a href="#le-stage-entrepreunarial-en-france">Le stage entrepreunarial en France</a></li>
+<li><a href="#le-stage-entrepreunarial-%C3%A0-l%C3%A9tranger">Le stage entrepreunarial à l'étranger</a></li>
+</ul>
+</li>
+</ul>
+<p>Pour chacune de ces possibilités, on va définir plusieurs éléments:</p>
+<ul>
+<li>Les prérequis</li>
+<li>Les objectifs</li>
+<li>Les acteurs</li>
+<li>Les démarches à effectuer</li>
+<li>La pertinence</li>
+<li>Les avantages et inconvénients</li>
+<li>La forme et le fond du rapport de stage</li>
+</ul>
+<h2 id="les-stages-en-entreprise">Les stages en entreprise</h2>
+<h3 id="le-stage-en-entreprise-en-france">Le stage en entreprise en France</h3>
+<h3 id="le-stage-en-entreprise-%C3%A0-l%C3%A9tranger">Le stage en entreprise à l'étranger</h3>
+<h2 id="les-stages-entrepreunariaux">Les stages entrepreunariaux</h2>
+<h3 id="le-stage-entrepreunarial-en-france">Le stage entrepreunarial en France</h3>
+<h3 id="le-stage-entrepreunarial-%C3%A0-l%C3%A9tranger">Le stage entrepreunarial à l'étranger</h3>
+<p>Cette possibilité englobe le fait de travailler sur mon projet
+entrepreunarial (sous mon statut d'Etudiant-Entrepreneur) et de
+partir à l'étranger.</p>
+<p>Il se ferait en participant au programme <a href="https://www.erasmus-entrepreneurs.eu/">Erasmus For Young Entrepreneurs</a>,
+programme de l'Union Européenne permettant à des entrepreneurs, en devenir
+ou ayant récemment lancé leur activité (ayant fondé son entreprise depuis
+moins de 3 ans), de partir à l'étranger pour travailler en collaboration
+avec un autre entrepreneur dis &quot;expérimenté&quot; (ayant fondé son entreprise
+depuis plus de 3 ans).</p>
+<p>Ce n'est pas à proprement parler un &quot;stage&quot;, on parle plutôt d'un
+&quot;échange&quot; entre deux entrepreneurs. Cependant, cela ne veut pas dire
+qu'aucune expérience professionnelle ne sera acquise, on parle bien
+d'un échange entre deux entrepreneurs, ce qui implique que le séjour
+se passe dans un contexte professionnel.</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Le guide du programme Erasmus For Young Entrepreneurs est disponible
+en annexe. Voir <a href="#Erasmus-For-Young-Entrepreneurs">ici</a></p>
+</blockquote>
+<h4 id="pr%C3%A9requis">Prérequis</h4>
+<p>Pour pouvoir participer au programme, il faut remplir plusieurs
+conditions, à savoir :</p>
+<ul>
+<li>
+<p>Être un entrepreneur avec un projet d'entreprise ou une entreprise
+fondée et en activité depuis moins de 3 ans.</p>
+<p>Dans le cas d'un projet d'entreprise, il faut montrer de son
+sérieux et de sa viabilité. Il faut donc avoir un business plan
+construit et cohérent, une idée qui soit considérée comme viable.</p>
+</li>
+<li>
+<p>Montrer une motivation et une volonté de s'investir dans le projet
+de l'entrepreneur d'accueil tout comme dans le programme européen.</p>
+</li>
+<li>
+<p>Être prêt à lever des fonds supplémentaire pour financer les couts
+du séjour à l'étranger s'ils dépassent la bourse accordée par la
+commission européenne.</p>
+</li>
+</ul>
+<p>Dans mon cas, je remplis les conditions de la volonté et de, si besoin,
+la capacité à lever des fonds supplémentaires pour financer le séjour.<br>
+Cependant, je ne remplis par encore, de mon point de vue et explicitement,
+la condition d'un business plan viable et construit. C'est un point qui sera
+à travailler très prochainement que ce soit si cette possibilité est choisie
+ou simplement pour l'avancée stable et viable de mon projet entrepreunarial.</p>
+<h4 id="objectifs">Objectifs</h4>
+<p>Les objectifs de ce programme et d'en faire mon stage de deuxième année
+sont multiples et s'entrecroisent entre le projet entrepreunarial et
+la formation actuelle et future.</p>
+<p>Dans un premier temps, il y a l'objectif de faire avancer mon projet
+entrepreunarial et de le faire avancer de manière significative durant
+la deuxième année du BUT RT.</p>
+<p>Ensuite, il y a l'objectif d'acquérir de l'expérience professionnelle
+dans le domaine de l'entrepreunariat, de la gestion d'entreprise et
+de projets, sans oublier de l'expérience professionnelle dans le domaine
+des réseaux et télécommunications en passant par le développement Cloud
+et l'administration de systèmes et de réseaux.</p>
+<p>Enfin, il y a l'objectif d'obtenir de l'expérience à l'international
+afin de pouvoir développer mes compétences linguistiques et culturelles
+et d'acquérir des &quot;softs skills&quot; tel que la capacité d'adaptation et
+la capacité à travailler dans un contexte international.<br>
+Compétences dont je recherche l'acquisition et le développement
+dans le cadre de mon projet personnel, professionnel et entrepreunarial.</p>
+<p>On peut noter qu'il existe un objectif tertiaire qui est celui
+d'aggrandir mon réseau professionnel et personnel avec des pères
+entrepreneurs et / ou dans le domaine de l'informatique, incluant
+mais non limité aux réseaux et télécommunication et au développement
+cloud.</p>
+<h4 id="les-acteurs">Les acteurs</h4>
+<p>Le programme Erasmsus For Young Entrepreneurs est un programme
+incluant plusieurs acteurs comprenant :</p>
+<ul>
+<li>Le nouvel entrepreneur (NE)</li>
+<li>L'entrepreneur d'accueil (HE)</li>
+<li>L'organisme intermédiaire du nouvel entrepreneur (IO -&gt; NE)</li>
+<li>L'organisme intermédiaire de l'entrepreneur d'accueil (IO -&gt; HE)</li>
+<li>Le bureau de support local (SO)</li>
+</ul>
+<p>Dans le cas où je participerais au programme durant ma période de
+stage, il faudrait compter en plus de ces acteurs, l'IUT où tout
+du moins le département RT, le Pépite LR et le responsable entrepreunariat
+affilié à mon projet et indiqué dans mon dossier d'Etudiant-Entrepreneur.</p>
+<p>On peut se poser la question de l'égibilité des acteurs que je viens de
+citer plus haut. Je considère que chacun d'entre eux est éligible à être
+mis au courant de ma participation au programme et de mon projet de stage
+entrepreunarial à l'étranger.</p>
+<p>En effet, dans le cas de l'IUT / département RT, il s'agit de mon établissement
+d'étude et de formation actuel. Il est donc normal qu'il soit au courant de
+cette action et qu'il puisse donner son avis sur la pertinence de celle-ci
+vis-à-vis de ma formation en plus que cela se déroulerait durant ma période
+de stage.</p>
+<p>Dans le cas du Pépite LR, il s'agit de l'organisme qui délivre mon statut
+d'Etudiant-Entrepreneur et qui m'accompagne dans mon projet entrepreunarial
+jusqu'à l'étape de l'incubation. Il est donc important qu'il soit au courant
+de cette action si je souhaite la réaliser sous mon statut d'Etudiant-Entrepreneur.</p>
+<p>Dans le cas du responsable entrepreunariat affilié à mon projet, il s'agit
+de la personne qui est mis au courant des avancées de mon projet et qui
+amène les premiers retours et conseils sur celui-ci, en plus de faire
+la liaison entre mon projet et l'IUT. Il est donc crucial qu'il soit tenu
+au courant de cette action si je souhaite concilier mon projet entrepreunarial
+et ma formation lors du programme.</p>
+<h4 id="les-d%C3%A9marches-%C3%A0-effectuer">Les démarches à effectuer</h4>
+<h4 id="la-pertinence">La pertinence</h4>
+<h4 id="les-avantages-et-inconv%C3%A9nients">Les avantages et inconvénients</h4>
+<h4 id="la-forme-et-le-fond-du-rapport-de-stage">La forme et le fond du rapport de stage</h4>
+<h2 id="annexes">Annexes</h2>
+<h3 id="erasmus-for-young-entrepreneurs">Erasmus For Young Entrepreneurs</h3>
+<iframe src="\others\etude-stage-2e-annee\src\Programme Guide EN, Update Mar 2023.pdf" height="200" width="200">
+  Your Browser doesn't support Frames.
+</iframe>
+
+</body>
+</html>
