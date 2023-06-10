@@ -1,0 +1,1 @@
+INSERT INTO external_data (path,created,last_modified ) VALUES ('/database/external/data.json', '113131612161', '113131612161');

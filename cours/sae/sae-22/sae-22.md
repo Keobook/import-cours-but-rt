@@ -66,4 +66,13 @@ Durnat cette SAE, nous effectuerons:
 0010
 0110
 
+$\alpha = CT = \frac{C}{f}$ où $C$ est la célérité.  
+portable: 1800 MHz.
+
+P(db) = 10log(P), P en W
+      = 27 dB
+
+P(dBm)  = 10log(P), en mW
+        = 57 dBm
+
 ## Copyright &copy; 2023 Alexis Opolka - All Rights Reserved

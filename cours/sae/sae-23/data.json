@@ -1,0 +1,30 @@
+{
+  "id": "001",
+  "data": [
+    {
+      "type": "temperature",
+      "description": "Temperature (in °C) in the current Banzaii",
+      "timeline": [
+        {
+          "value": "768",
+          "timestamp": "113131612161"
+        },
+        {
+          "value": "522",
+          "timestamp": "113131612587"
+        }
+      ]
+    },
+    {
+      "type": "humidity",
+      "description": "Humidity (in %) in the current Banzaii",
+      "timeline": [
+        {
+          "value": "20",
+          "timestamp": "113131612161"
+        }
+      ]
+    }
+
+  ]
+}
