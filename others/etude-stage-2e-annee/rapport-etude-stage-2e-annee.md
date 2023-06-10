@@ -1,3 +1,10 @@
+---
+
+author: "Alexis Opolka"
+recipients: ["M. Haddab", "M.Borelly", "M. Pujas", "M. Cucala"]
+
+---
+
 # Rapport d'étude sur les différentes possibilités pour le stage de BUT RT2
 
 ## Préface
