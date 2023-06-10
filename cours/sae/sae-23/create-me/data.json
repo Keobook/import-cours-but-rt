@@ -1,0 +1,1055 @@
+{
+    "id": "001",
+    "data": [
+        {
+            "type": "temperature",
+            "description": "Temperature (in \u00b0C) in the current Banzaii",
+            "timeline": [
+                {
+                    "value": "25",
+                    "timestamp": "113131612161"
+                },
+                {
+                    "value": "23",
+                    "timestamp": "113131612166"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612171"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612176"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612181"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612186"
+                },
+                {
+                    "value": "18",
+                    "timestamp": "113131612191"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612196"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612201"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612206"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612211"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612216"
+                },
+                {
+                    "value": "23",
+                    "timestamp": "113131612221"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612226"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612231"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612236"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612241"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612246"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612251"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612256"
+                },
+                {
+                    "value": "18",
+                    "timestamp": "113131612261"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612266"
+                },
+                {
+                    "value": "23",
+                    "timestamp": "113131612271"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612276"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612281"
+                },
+                {
+                    "value": "23",
+                    "timestamp": "113131612286"
+                },
+                {
+                    "value": "18",
+                    "timestamp": "113131612291"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612296"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612301"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612306"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612311"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612316"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612321"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612326"
+                },
+                {
+                    "value": "18",
+                    "timestamp": "113131612331"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612336"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612341"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612346"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612351"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612356"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612361"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612366"
+                },
+                {
+                    "value": "23",
+                    "timestamp": "113131612371"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612376"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612381"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612386"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612391"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612396"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612401"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612406"
+                },
+                {
+                    "value": "18",
+                    "timestamp": "113131612411"
+                },
+                {
+                    "value": "18",
+                    "timestamp": "113131612416"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612421"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612426"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612431"
+                },
+                {
+                    "value": "19",
+                    "timestamp": "113131612436"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612441"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612446"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612451"
+                },
+                {
+                    "value": "19",
+                    "timestamp": "113131612456"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612461"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612466"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612471"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612476"
+                },
+                {
+                    "value": "19",
+                    "timestamp": "113131612481"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612486"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612491"
+                },
+                {
+                    "value": "19",
+                    "timestamp": "113131612496"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612501"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612506"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612511"
+                },
+                {
+                    "value": "19",
+                    "timestamp": "113131612516"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612521"
+                },
+                {
+                    "value": "23",
+                    "timestamp": "113131612526"
+                },
+                {
+                    "value": "25",
+                    "timestamp": "113131612531"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612536"
+                },
+                {
+                    "value": "19",
+                    "timestamp": "113131612541"
+                },
+                {
+                    "value": "24",
+                    "timestamp": "113131612546"
+                },
+                {
+                    "value": "18",
+                    "timestamp": "113131612551"
+                },
+                {
+                    "value": "23",
+                    "timestamp": "113131612556"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612561"
+                },
+                {
+                    "value": "22",
+                    "timestamp": "113131612566"
+                },
+                {
+                    "value": "21",
+                    "timestamp": "113131612571"
+                },
+                {
+                    "value": "19",
+                    "timestamp": "113131612576"
+                },
+                {
+                    "value": "20",
+                    "timestamp": "113131612581"
+                },
+                {
+                    "value": "23",
+                    "timestamp": "113131612586"
+                }
+            ]
+        },
+        {
+            "type": "humidity",
+            "description": "Humidity (in %) in the current Banzaii",
+            "timeline": [
+                {
+                    "value": "59",
+                    "timestamp": "113131612161"
+                },
+                {
+                    "value": "46",
+                    "timestamp": "113131612166"
+                },
+                {
+                    "value": "43",
+                    "timestamp": "113131612171"
+                },
+                {
+                    "value": "50",
+                    "timestamp": "113131612176"
+                },
+                {
+                    "value": "43",
+                    "timestamp": "113131612181"
+                },
+                {
+                    "value": "46",
+                    "timestamp": "113131612186"
+                },
+                {
+                    "value": "44",
+                    "timestamp": "113131612191"
+                },
+                {
+                    "value": "57",
+                    "timestamp": "113131612196"
+                },
+                {
+                    "value": "49",
+                    "timestamp": "113131612201"
+                },
+                {
+                    "value": "46",
+                    "timestamp": "113131612206"
+                },
+                {
+                    "value": "45",
+                    "timestamp": "113131612211"
+                },
+                {
+                    "value": "45",
+                    "timestamp": "113131612216"
+                },
+                {
+                    "value": "45",
+                    "timestamp": "113131612221"
+                },
+                {
+                    "value": "40",
+                    "timestamp": "113131612226"
+                },
+                {
+                    "value": "52",
+                    "timestamp": "113131612231"
+                },
+                {
+                    "value": "54",
+                    "timestamp": "113131612236"
+                },
+                {
+                    "value": "46",
+                    "timestamp": "113131612241"
+                },
+                {
+                    "value": "42",
+                    "timestamp": "113131612246"
+                },
+                {
+                    "value": "41",
+                    "timestamp": "113131612251"
+                },
+                {
+                    "value": "51",
+                    "timestamp": "113131612256"
+                },
+                {
+                    "value": "58",
+                    "timestamp": "113131612261"
+                },
+                {
+                    "value": "47",
+                    "timestamp": "113131612266"
+                },
+                {
+                    "value": "50",
+                    "timestamp": "113131612271"
+                },
+                {
+                    "value": "58",
+                    "timestamp": "113131612276"
+                },
+                {
+                    "value": "52",
+                    "timestamp": "113131612281"
+                },
+                {
+                    "value": "43",
+                    "timestamp": "113131612286"
+                },
+                {
+                    "value": "40",
+                    "timestamp": "113131612291"
+                },
+                {
+                    "value": "59",
+                    "timestamp": "113131612296"
+                },
+                {
+                    "value": "54",
+                    "timestamp": "113131612301"
+                },
+                {
+                    "value": "45",
+                    "timestamp": "113131612306"
+                },
+                {
+                    "value": "56",
+                    "timestamp": "113131612311"
+                },
+                {
+                    "value": "52",
+                    "timestamp": "113131612316"
+                },
+                {
+                    "value": "41",
+                    "timestamp": "113131612321"
+                },
+                {
+                    "value": "57",
+                    "timestamp": "113131612326"
+                },
+                {
+                    "value": "41",
+                    "timestamp": "113131612331"
+                },
+                {
+                    "value": "42",
+                    "timestamp": "113131612336"
+                },
+                {
+                    "value": "56",
+                    "timestamp": "113131612341"
+                },
+                {
+                    "value": "48",
+                    "timestamp": "113131612346"
+                },
+                {
+                    "value": "48",
+                    "timestamp": "113131612351"
+                },
+                {
+                    "value": "44",
+                    "timestamp": "113131612356"
+                },
+                {
+                    "value": "59",
+                    "timestamp": "113131612361"
+                },
+                {
+                    "value": "59",
+                    "timestamp": "113131612366"
+                },
+                {
+                    "value": "57",
+                    "timestamp": "113131612371"
+                },
+                {
+                    "value": "47",
+                    "timestamp": "113131612376"
+                },
+                {
+                    "value": "43",
+                    "timestamp": "113131612381"
+                },
+                {
+                    "value": "60",
+                    "timestamp": "113131612386"
+                },
+                {
+                    "value": "60",
+                    "timestamp": "113131612391"
+                },
+                {
+                    "value": "55",
+                    "timestamp": "113131612396"
+                },
+                {
+                    "value": "59",
+                    "timestamp": "113131612401"
+                },
+                {
+                    "value": "58",
+                    "timestamp": "113131612406"
+                },
+                {
+                    "value": "45",
+                    "timestamp": "113131612411"
+                },
+                {
+                    "value": "53",
+                    "timestamp": "113131612416"
+                },
+                {
+                    "value": "51",
+                    "timestamp": "113131612421"
+                },
+                {
+                    "value": "59",
+                    "timestamp": "113131612426"
+                },
+                {
+                    "value": "47",
+                    "timestamp": "113131612431"
+                },
+                {
+                    "value": "56",
+                    "timestamp": "113131612436"
+                },
+                {
+                    "value": "57",
+                    "timestamp": "113131612441"
+                },
+                {
+                    "value": "56",
+                    "timestamp": "113131612446"
+                },
+                {
+                    "value": "47",
+                    "timestamp": "113131612451"
+                },
+                {
+                    "value": "42",
+                    "timestamp": "113131612456"
+                },
+                {
+                    "value": "43",
+                    "timestamp": "113131612461"
+                },
+                {
+                    "value": "53",
+                    "timestamp": "113131612466"
+                },
+                {
+                    "value": "43",
+                    "timestamp": "113131612471"
+                },
+                {
+                    "value": "48",
+                    "timestamp": "113131612476"
+                },
+                {
+                    "value": "58",
+                    "timestamp": "113131612481"
+                },
+                {
+                    "value": "49",
+                    "timestamp": "113131612486"
+                },
+                {
+                    "value": "44",
+                    "timestamp": "113131612491"
+                },
+                {
+                    "value": "49",
+                    "timestamp": "113131612496"
+                },
+                {
+                    "value": "58",
+                    "timestamp": "113131612501"
+                },
+                {
+                    "value": "40",
+                    "timestamp": "113131612506"
+                },
+                {
+                    "value": "51",
+                    "timestamp": "113131612511"
+                },
+                {
+                    "value": "49",
+                    "timestamp": "113131612516"
+                },
+                {
+                    "value": "54",
+                    "timestamp": "113131612521"
+                },
+                {
+                    "value": "53",
+                    "timestamp": "113131612526"
+                },
+                {
+                    "value": "45",
+                    "timestamp": "113131612531"
+                },
+                {
+                    "value": "45",
+                    "timestamp": "113131612536"
+                },
+                {
+                    "value": "50",
+                    "timestamp": "113131612541"
+                },
+                {
+                    "value": "52",
+                    "timestamp": "113131612546"
+                },
+                {
+                    "value": "50",
+                    "timestamp": "113131612551"
+                },
+                {
+                    "value": "43",
+                    "timestamp": "113131612556"
+                },
+                {
+                    "value": "58",
+                    "timestamp": "113131612561"
+                },
+                {
+                    "value": "59",
+                    "timestamp": "113131612566"
+                },
+                {
+                    "value": "52",
+                    "timestamp": "113131612571"
+                },
+                {
+                    "value": "59",
+                    "timestamp": "113131612576"
+                },
+                {
+                    "value": "44",
+                    "timestamp": "113131612581"
+                },
+                {
+                    "value": "55",
+                    "timestamp": "113131612586"
+                }
+            ]
+        },
+        {
+            "type": "light",
+            "description": "Light (in lum) in the current Banzaii",
+            "timeline": [
+                {
+                    "value": "591",
+                    "timestamp": "113131612161"
+                },
+                {
+                    "value": "366",
+                    "timestamp": "113131612166"
+                },
+                {
+                    "value": "298",
+                    "timestamp": "113131612171"
+                },
+                {
+                    "value": "452",
+                    "timestamp": "113131612176"
+                },
+                {
+                    "value": "311",
+                    "timestamp": "113131612181"
+                },
+                {
+                    "value": "212",
+                    "timestamp": "113131612186"
+                },
+                {
+                    "value": "577",
+                    "timestamp": "113131612191"
+                },
+                {
+                    "value": "258",
+                    "timestamp": "113131612196"
+                },
+                {
+                    "value": "725",
+                    "timestamp": "113131612201"
+                },
+                {
+                    "value": "315",
+                    "timestamp": "113131612206"
+                },
+                {
+                    "value": "931",
+                    "timestamp": "113131612211"
+                },
+                {
+                    "value": "764",
+                    "timestamp": "113131612216"
+                },
+                {
+                    "value": "893",
+                    "timestamp": "113131612221"
+                },
+                {
+                    "value": "584",
+                    "timestamp": "113131612226"
+                },
+                {
+                    "value": "206",
+                    "timestamp": "113131612231"
+                },
+                {
+                    "value": "249",
+                    "timestamp": "113131612236"
+                },
+                {
+                    "value": "201",
+                    "timestamp": "113131612241"
+                },
+                {
+                    "value": "760",
+                    "timestamp": "113131612246"
+                },
+                {
+                    "value": "923",
+                    "timestamp": "113131612251"
+                },
+                {
+                    "value": "663",
+                    "timestamp": "113131612256"
+                },
+                {
+                    "value": "859",
+                    "timestamp": "113131612261"
+                },
+                {
+                    "value": "593",
+                    "timestamp": "113131612266"
+                },
+                {
+                    "value": "904",
+                    "timestamp": "113131612271"
+                },
+                {
+                    "value": "455",
+                    "timestamp": "113131612276"
+                },
+                {
+                    "value": "790",
+                    "timestamp": "113131612281"
+                },
+                {
+                    "value": "270",
+                    "timestamp": "113131612286"
+                },
+                {
+                    "value": "280",
+                    "timestamp": "113131612291"
+                },
+                {
+                    "value": "267",
+                    "timestamp": "113131612296"
+                },
+                {
+                    "value": "292",
+                    "timestamp": "113131612301"
+                },
+                {
+                    "value": "902",
+                    "timestamp": "113131612306"
+                },
+                {
+                    "value": "148",
+                    "timestamp": "113131612311"
+                },
+                {
+                    "value": "981",
+                    "timestamp": "113131612316"
+                },
+                {
+                    "value": "458",
+                    "timestamp": "113131612321"
+                },
+                {
+                    "value": "737",
+                    "timestamp": "113131612326"
+                },
+                {
+                    "value": "896",
+                    "timestamp": "113131612331"
+                },
+                {
+                    "value": "669",
+                    "timestamp": "113131612336"
+                },
+                {
+                    "value": "411",
+                    "timestamp": "113131612341"
+                },
+                {
+                    "value": "993",
+                    "timestamp": "113131612346"
+                },
+                {
+                    "value": "722",
+                    "timestamp": "113131612351"
+                },
+                {
+                    "value": "463",
+                    "timestamp": "113131612356"
+                },
+                {
+                    "value": "439",
+                    "timestamp": "113131612361"
+                },
+                {
+                    "value": "651",
+                    "timestamp": "113131612366"
+                },
+                {
+                    "value": "913",
+                    "timestamp": "113131612371"
+                },
+                {
+                    "value": "879",
+                    "timestamp": "113131612376"
+                },
+                {
+                    "value": "548",
+                    "timestamp": "113131612381"
+                },
+                {
+                    "value": "872",
+                    "timestamp": "113131612386"
+                },
+                {
+                    "value": "575",
+                    "timestamp": "113131612391"
+                },
+                {
+                    "value": "339",
+                    "timestamp": "113131612396"
+                },
+                {
+                    "value": "443",
+                    "timestamp": "113131612401"
+                },
+                {
+                    "value": "673",
+                    "timestamp": "113131612406"
+                },
+                {
+                    "value": "590",
+                    "timestamp": "113131612411"
+                },
+                {
+                    "value": "947",
+                    "timestamp": "113131612416"
+                },
+                {
+                    "value": "413",
+                    "timestamp": "113131612421"
+                },
+                {
+                    "value": "207",
+                    "timestamp": "113131612426"
+                },
+                {
+                    "value": "165",
+                    "timestamp": "113131612431"
+                },
+                {
+                    "value": "227",
+                    "timestamp": "113131612436"
+                },
+                {
+                    "value": "925",
+                    "timestamp": "113131612441"
+                },
+                {
+                    "value": "103",
+                    "timestamp": "113131612446"
+                },
+                {
+                    "value": "937",
+                    "timestamp": "113131612451"
+                },
+                {
+                    "value": "264",
+                    "timestamp": "113131612456"
+                },
+                {
+                    "value": "538",
+                    "timestamp": "113131612461"
+                },
+                {
+                    "value": "388",
+                    "timestamp": "113131612466"
+                },
+                {
+                    "value": "732",
+                    "timestamp": "113131612471"
+                },
+                {
+                    "value": "661",
+                    "timestamp": "113131612476"
+                },
+                {
+                    "value": "335",
+                    "timestamp": "113131612481"
+                },
+                {
+                    "value": "730",
+                    "timestamp": "113131612486"
+                },
+                {
+                    "value": "935",
+                    "timestamp": "113131612491"
+                },
+                {
+                    "value": "317",
+                    "timestamp": "113131612496"
+                },
+                {
+                    "value": "421",
+                    "timestamp": "113131612501"
+                },
+                {
+                    "value": "477",
+                    "timestamp": "113131612506"
+                },
+                {
+                    "value": "661",
+                    "timestamp": "113131612511"
+                },
+                {
+                    "value": "998",
+                    "timestamp": "113131612516"
+                },
+                {
+                    "value": "437",
+                    "timestamp": "113131612521"
+                },
+                {
+                    "value": "880",
+                    "timestamp": "113131612526"
+                },
+                {
+                    "value": "961",
+                    "timestamp": "113131612531"
+                },
+                {
+                    "value": "966",
+                    "timestamp": "113131612536"
+                },
+                {
+                    "value": "451",
+                    "timestamp": "113131612541"
+                },
+                {
+                    "value": "433",
+                    "timestamp": "113131612546"
+                },
+                {
+                    "value": "236",
+                    "timestamp": "113131612551"
+                },
+                {
+                    "value": "808",
+                    "timestamp": "113131612556"
+                },
+                {
+                    "value": "273",
+                    "timestamp": "113131612561"
+                },
+                {
+                    "value": "976",
+                    "timestamp": "113131612566"
+                },
+                {
+                    "value": "595",
+                    "timestamp": "113131612571"
+                },
+                {
+                    "value": "878",
+                    "timestamp": "113131612576"
+                },
+                {
+                    "value": "923",
+                    "timestamp": "113131612581"
+                },
+                {
+                    "value": "920",
+                    "timestamp": "113131612586"
+                }
+            ]
+        }
+    ]
+}
