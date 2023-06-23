@@ -39,7 +39,7 @@ Plusieurs outils m'ont permis de communiquer avec eux, tels que:
 
 - Discord
 - Slack
-- Services mails
+- Services mails (Gmail / Zimbra)
 
 ### En utilisant une approche rigoureuse et méthodique (démarche scientifique)
 
@@ -54,7 +54,6 @@ Afin de s'assurer de ne pas perdre le fil de la conception,
 j'ai créé un schéma réseau avant de commencer le montage réseau
 sur Cisco Packet Tracer.
 
-
 ![sae21-schema-reseau](../../sae-21/src/img/schema-reseau.drawio.svg)
 
 Ayant déjà préparé le schéma réseau et les accès de chacuns (par Groupes),
@@ -65,7 +64,6 @@ Dans le cas de Cisco Packet Tracer, je me suis vu confronté
 à des limitions propes à l'outil, qui m'ont obligé à revoir
 mon schéma réseau de manière incrémentale et itérative afin
 d'obtenir un réseau fonctionnel.
-
 
 ### En choisissant les outils et l’environnement de développement adaptés
 
