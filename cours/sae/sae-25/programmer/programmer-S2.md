@@ -40,6 +40,7 @@ Plusieurs outils m'ont permis de communiquer avec eux, tels que:
 - Discord
 - Slack
 - Services mails (Gmail / Zimbra)
+- GitHub
 
 ### En utilisant une approche rigoureuse et méthodique (démarche scientifique)
 
@@ -78,11 +79,20 @@ Par exemple, pour la SAE-23, vu que j'ai dû développer une application web con
 
 - GitHub pour stocker le code source en ligne
 - GitHub Projects pour gérer les tâches à effectuer
-- Visual Studio Code pour développer l'application
+- Visual Studio Code en tant qu'IDE
 - GitKraken et Git pour contrôler les versions du code source
-- Docker pour build et lancer l'application build
+
+  > **Note**:  
+  > GitKraken est une interface graphique pour Git
+  > qui, d'après moi, permet dans certaines situations
+  > de mieux comprendre les conflits et de les résoudre.
+
+- Docker pour build et lancer l'application construite
 - Postman pour développer et tester l'API
 - ESLint pour vérifier la syntaxe du code source
+
+Plus récemment, dans le cadre de la SAE-24 je travaillais
+dans une équipeé
 
 Dans d'autres cadres et dans d'autres projets, j'ai pu utiliser
 beaucoup d'autres outils et environnements de développement
