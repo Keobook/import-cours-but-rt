@@ -1,7 +1,7 @@
 ---
 
 author: "Alexis Opolka"
-recipients: ["M. Haddab", "M.Borelly", "M. Pujas", "M. Cucala"]
+recipients: ["M. Haddab", "M. Borelly", "M. Pujas", "M. Cucala"]
 
 ---
 
@@ -47,16 +47,34 @@ et sur l'entierté du rapport.
   - [Les stages en entreprise](#les-stages-en-entreprise)
     - [Le stage en entreprise en France](#le-stage-en-entreprise-en-france)
     - [Le stage en entreprise à l'étranger](#le-stage-en-entreprise-à-létranger)
+      - [Sous-sommaire du stage en entreprise à l'étranger](#sous-sommaire-du-stage-en-entreprise-à-létranger)
+      - [Prérequis du stage en entreprise à l'étranger](#prérequis-du-stage-en-entreprise-à-létranger)
+      - [Objectifs du stage en entreprise à l'étranger](#objectifs-du-stage-en-entreprise-à-létranger)
+      - [Les acteurs du stage en entreprise à l'étranger](#les-acteurs-du-stage-en-entreprise-à-létranger)
+      - [Les démarches à effectuer pour le stage en entreprise à l'étranger](#les-démarches-à-effectuer-pour-le-stage-en-entreprise-à-létranger)
+      - [La pertinence du stage en entreprise à l'étranger](#la-pertinence-du-stage-en-entreprise-à-létranger)
+      - [Les avantages et inconvénients du stage en entreprise à l'étranger](#les-avantages-et-inconvénients-du-stage-en-entreprise-à-létranger)
+      - [La forme et le fond du rapport de stage en entreprise à l'étranger](#la-forme-et-le-fond-du-rapport-de-stage-en-entreprise-à-létranger)
   - [Les stages entrepreunariaux](#les-stages-entrepreunariaux)
     - [Le stage entrepreunarial en France](#le-stage-entrepreunarial-en-france)
+      - [Sous-sommaire du stage entrepreunarial en France](#sous-sommaire-du-stage-entrepreunarial-en-france)
+      - [Prérequis du stage entrepreunarial en France](#prérequis-du-stage-entrepreunarial-en-france)
+      - [Objectifs du stage entrepreunarial en France](#objectifs-du-stage-entrepreunarial-en-france)
+      - [Les acteurs du stage entrepreunarial en France](#les-acteurs-du-stage-entrepreunarial-en-france)
+      - [Les démarches à effectuer pour le stage entrepreunarial en France](#les-démarches-à-effectuer-pour-le-stage-entrepreunarial-en-france)
+      - [La pertinence du stage entrepreunarial en France](#la-pertinence-du-stage-entrepreunarial-en-france)
+      - [Les avantages et inconvénients du stage entrepreunarial en France](#les-avantages-et-inconvénients-du-stage-entrepreunarial-en-france)
+      - [La forme et le fond du rapport de stage entrepreunarial en France](#la-forme-et-le-fond-du-rapport-de-stage-entrepreunarial-en-france)
     - [Le stage entrepreunarial à l'étranger](#le-stage-entrepreunarial-à-létranger)
-      - [Prérequis](#prérequis)
-      - [Objectifs](#objectifs)
-      - [Les acteurs](#les-acteurs)
-      - [Les démarches à effectuer](#les-démarches-à-effectuer)
-      - [La pertinence](#la-pertinence)
-      - [Les avantages et inconvénients](#les-avantages-et-inconvénients)
-      - [La forme et le fond du rapport de stage](#la-forme-et-le-fond-du-rapport-de-stage)
+      - [Sous-sommaire du stage entrepreunarial à l'étranger](#sous-sommaire-du-stage-entrepreunarial-à-létranger)
+      - [Prérequis du stage entrepreunarial à l'étranger](#prérequis-du-stage-entrepreunarial-à-létranger)
+      - [Objectifs du stage entrepreunarial à l'étranger](#objectifs-du-stage-entrepreunarial-à-létranger)
+      - [Les acteurs du stage entrepreunarial à l'étranger](#les-acteurs-du-stage-entrepreunarial-à-létranger)
+      - [Les démarches à effectuer pour le stage entrepreunarial à l'étranger](#les-démarches-à-effectuer-pour-le-stage-entrepreunarial-à-létranger)
+      - [La pertinence du stage entrepreunarial à l'étranger](#la-pertinence-du-stage-entrepreunarial-à-létranger)
+      - [Les avantages et inconvénients du stage entrepreunarial à l'étranger](#les-avantages-et-inconvénients-du-stage-entrepreunarial-à-létranger)
+      - [La forme et le fond du rapport de stage entrepreunarial à l'étranger](#la-forme-et-le-fond-du-rapport-de-stage-entrepreunarial-à-létranger)
+  - [Copyright © 2023 Alexis Opolka - All Rights Reserved](#copyright--2023-alexis-opolka---all-rights-reserved)
   - [Annexes](#annexes)
 
 
@@ -93,11 +111,176 @@ Pour chacune de ces possibilités, on va définir plusieurs éléments:
 
 ### Le stage en entreprise à l'étranger
 
+#### Sous-sommaire du stage en entreprise à l'étranger
+
+- Le stage en entreprise à l'étranger
+  - [Sous-sommaire](#sous-sommaire-du-stage-en-entreprise-à-létranger)
+  - [Prérequis](#prérequis-du-stage-en-entreprise-à-létranger)
+  - [Objectifs](#objectifs-du-stage-en-entreprise-à-létranger)
+  - [Les acteurs](#les-acteurs-du-stage-en-entreprise-à-létranger)
+  - [Les démarches](#les-démarches-à-effectuer-pour-le-stage-en-entreprise-à-létranger)
+  - [La pertinence](#la-pertinence-du-stage-en-entreprise-à-létranger)
+  - [Les avantages et inconvénients](#les-avantages-et-inconvénients-du-stage-en-entreprise-à-létranger)
+  - [La forme et le fond du rapport](#la-forme-et-le-fond-du-rapport-de-stage-en-entreprise-à-létranger)
+
+#### Prérequis du stage en entreprise à l'étranger
+#### Objectifs du stage en entreprise à l'étranger
+#### Les acteurs du stage en entreprise à l'étranger
+#### Les démarches à effectuer pour le stage en entreprise à l'étranger
+#### La pertinence du stage en entreprise à l'étranger
+#### Les avantages et inconvénients du stage en entreprise à l'étranger
+#### La forme et le fond du rapport de stage en entreprise à l'étranger
+
 ## Les stages entrepreunariaux
 
 ### Le stage entrepreunarial en France
 
+#### Sous-sommaire du stage entrepreunarial en France
+
+- Le stage entrepreunarial en France
+  - [Sous-sommaire](#sous-sommaire-du-stage-entrepreunarial-en-france)
+  - [Prérequis](#prérequis-du-stage-entrepreunarial-en-france)
+  - [Les objectifs](#objectifs-du-stage-entrepreunarial-en-france)
+  - [Les acteurs](#les-acteurs-du-stage-entrepreunarial-en-france)
+  - [Les démarches](#les-démarches-à-effectuer-pour-le-stage-entrepreunarial-en-france)
+  - [La pertinence](#la-pertinence-du-stage-entrepreunarial-en-france)
+  - [Les avantages et inconvénients](#les-avantages-et-inconvénients-du-stage-entrepreunarial-en-france)
+  - [La forme et le fond du rapport](#la-forme-et-le-fond-du-rapport-de-stage-entrepreunarial-en-france)
+
+Cette possibilité englobe le fait de travailler sur mon projet
+entrepreunarial (sous mon statut d'Etudiant-Entrepreneur) et de
+rester en France, voir même au sein de l'IUT.
+
+> **Note**:  
+> Vous pouvez retrouver en [annexe](#annexes) l'attestation de substitution de stage.
+
+#### Prérequis du stage entrepreunarial en France
+
+Pour pouvoir être éligible à un stage entrepreunarial, plusieurs
+prérequis sont nécessaires, à savoir:
+
+- Obtenir le Statut National d'Etudiant-Entrepreneur (SNEE ou SN2E)
+
+Le fait d'obtenir le SNEE est un prérequis pour rendre la substitution
+du stage en entreprise par un stage entrepreunarial possible et surtout
+que les crédits ECTS soient valides et reconnus.
+
+La substitution du stage, dès qu'elle est possible, doit être en accord
+avec le responsable de la formation initiale afin qu'elle puisse être
+mise en place.
+
+#### Objectifs du stage entrepreunarial en France
+
+Les objectifs de ce stage et d'en faire mon stage de deuxième année
+sont multiples mais peuvent se résumer en l'envie de faire avancer
+mon projet entrepreunarial et de le faire avancer de manière significative.  
+Cela implique de le faire avancer sur plusieurs aspects tels que le plan
+technique, le plan financier et le plan humain.
+
+Obtenir des retours et des conseils sur mon projet entrepreunarial
+de la part de professionnels et de personnes du domaine dans lequel
+je souhaite évoluer.
+
+Faire évoluer mon projet en concordance avec mes attentes et mes
+objectifs personnels et professionnels tout en restant en lien avec
+mes études.
+
+#### Les acteurs du stage entrepreunarial en France
+
+Les acteurs du stage entrepreunarial en France peuvent se résumer
+en trois acteurs principaux:
+
+- L'étudiant entrepreuneur
+- Le responsable entrepreunariat affilié au projet et à l'étudiant
+- Le Pépite LR
+
+On peut penser ajouter l'IUT de Béziers si le stage se déroule
+au sein de celui-ci.
+
+#### Les démarches à effectuer pour le stage entrepreunarial en France
+
+Les démarches à effectuer pour ce stage ne sont pas nombreuses
+et peuvent se résumer en une étape:
+
+- Obtenir un accord tri-partite entre l'étudiant, son référent entrepreunarial
+  et l'établissement d'étude, en l'occurence l'IUT de Béziers.
+
+Il sera donc nécessaire de convenir d'un rendez-vous, comme conseillé
+dans l'attestation de substitution de stage du Pépite LR, entre l'étudiant,
+le responsable de la formation initiale et le responsable entrepreunariat
+affilié au projet et à l'étudiant.  
+Cette étape peut, bien évidemment, prendre plusieurs formes.  
+On peut imaginer un rendez-vous où seulement l'étudiant et le responsable
+entrepreunariat pourrait être organisé au préalable du rendez-vous avec
+le responsable de la formation initiale.
+
+> **Note**:  
+> Les étapes nécessaires à l'accord et à la validation de la substitution
+> peuvent varier d'une situation à une autre mais un accord tri-partite
+> reste nécessaire, d'après moi.
+
+Le plus important est d'obtenir un accord tri-partite qui va venir
+définir les modalités du stage entrepreunarial et qui va permettre
+la faisabilité de celui-ci.
+
+Il faudra définir les attentes de l'étudiant et ses objectifs,
+les attentes du responsable de la formation initiale et les objectifs,
+qu'ils soient en lien avec la formation ou non.  
+Il est important de tenter au maximum de concilier les attentes et
+les objectifs de la formation et du projet entrepreunarial afin
+de donner une fondation nécessaire à la notation de ce stage.
+
+Il faudra aussi définir les modalités du stage, à savoir, l'interval
+de prises de contact ainsi que leur fréquence et la forme des échanges.  
+Il est aussi nécessaire de définir la notation ainsi que le lieu du stage
+et des horaires requises.
+
+#### La pertinence du stage entrepreunarial en France
+
+Le stage entrepreunarial en France est une possibilité qui me semble
+pertinente pour plusieurs raisons, la première étant celle de pouvoir
+travailler sur mon projet entrepreunarial ce qui n'est pas moindre.
+
+Ce stage pourrait résulter en une avancée significative de mon projet
+voir même aboutir à la création de mon entreprise ou tout du moins
+arriver jusqu'à l'étape de l'incubation.
+
+Sur un plan professionnel, le stage entrepreunarial ajoute une expérience
+notable dans la gestion de projet et l'entrepreunariat, domaines à ne pas
+négliger.
+
+#### Les avantages et inconvénients du stage entrepreunarial en France
+
+Les avantages de cette possibilité sont:
+
+- Avancée du projet entrepreunarial au niveau technique, financier et humain
+- Collaboration avec l'IUT de Béziers lors du stage et du projet
+
+Les inconvénients de cette possibilité sont:
+
+- Risque de ne pas pouvoir concilier les compétences relative à la formation et le projet
+  entrepreunarial
+- Aspect stage à l'étranger non présent
+
+#### La forme et le fond du rapport de stage entrepreunarial en France
+
+La forme et le fond du rapport de stage entrepreunarial en France
+sera conditionné par les modalités du stage définies lors de l'accord
+tri-partite requis et effectué avant le début de la période du stage.
+
 ### Le stage entrepreunarial à l'étranger
+
+#### Sous-sommaire du stage entrepreunarial à l'étranger
+
+- Le stage entrepreunarial à l'étranger
+  - [Sous-sommaire](#sous-sommaire-du-stage-entrepreunarial-à-létranger)
+  - [Prérequis](#prérequis-du-stage-entrepreunarial-à-létranger)
+  - [Les Objectifs](#objectifs-du-stage-entrepreunarial-à-létranger)
+  - [Les acteurs](#les-acteurs-du-stage-entrepreunarial-à-létranger)
+  - [Les démarches](#les-démarches-à-effectuer-pour-le-stage-entrepreunarial-à-létranger)
+  - [La pertinence](#la-pertinence-du-stage-entrepreunarial-à-létranger)
+  - [Les avantages et inconvénients](#les-avantages-et-inconvénients-du-stage-entrepreunarial-à-létranger)
+  - [La forme et le fond du rapport](#la-forme-et-le-fond-du-rapport-de-stage-entrepreunarial-à-létranger)
 
 Cette possibilité englobe le fait de travailler sur mon projet
 entrepreunarial (sous mon statut d'Etudiant-Entrepreneur) et de
@@ -120,7 +303,13 @@ se passe dans un contexte professionnel.
 > Le guide du programme Erasmus For Young Entrepreneurs est disponible
 > en annexe. Voir [ici](#Erasmus-For-Young-Entrepreneurs)
 
-#### Prérequis
+> **Note**:  
+> Le suivi d'un professeur référent lors de cette possibilité est à
+> définir. Il est possible que cela soit le responsable entrepreunariat
+> affilié à mon projet, dans ce cas, il faudra en définir les modalités
+> telles que la fréquence des échanges et la forme de ceux-ci avec lui.
+
+#### Prérequis du stage entrepreunarial à l'étranger
 
 Pour pouvoir participer au programme, il faut remplir plusieurs
 conditions, à savoir :
@@ -146,7 +335,7 @@ la condition d'un business plan viable et construit. C'est un point qui sera
 à travailler très prochainement que ce soit si cette possibilité est choisie
 ou simplement pour l'avancée stable et viable de mon projet entrepreunarial.
 
-#### Objectifs
+#### Objectifs du stage entrepreunarial à l'étranger
 
 Les objectifs de ce programme et d'en faire mon stage de deuxième année
 sont multiples et s'entrecroisent entre le projet entrepreunarial et
@@ -175,7 +364,7 @@ entrepreneurs et / ou dans le domaine de l'informatique, incluant
 mais non limité aux réseaux et télécommunication et au développement
 cloud.
 
-#### Les acteurs
+#### Les acteurs du stage entrepreunarial à l'étranger
 
 Le programme Erasmsus For Young Entrepreneurs est un programme
 incluant plusieurs acteurs comprenant :
@@ -191,13 +380,13 @@ stage, il faudrait compter en plus de ces acteurs, l'IUT où tout
 du moins le département RT, le Pépite LR et le responsable entrepreunariat
 affilié à mon projet et indiqué dans mon dossier d'Etudiant-Entrepreneur.
 
-On peut se poser la question de l'égibilité des acteurs que je viens de
+On peut se poser la question de l'éligibilité des acteurs que je viens de
 citer plus haut. Je considère que chacun d'entre eux est éligible à être
 mis au courant de ma participation au programme et de mon projet de stage
 entrepreunarial à l'étranger.
 
 En effet, dans le cas de l'IUT / département RT, il s'agit de mon établissement
-d'étude et de formation actuel. Il est donc normal qu'il soit au courant de
+d'étude et de formation actuel. Il est donc primoordial qu'il soit au courant de
 cette action et qu'il puisse donner son avis sur la pertinence de celle-ci
 vis-à-vis de ma formation en plus que cela se déroulerait durant ma période
 de stage.
@@ -214,7 +403,7 @@ la liaison entre mon projet et l'IUT. Il est donc crucial qu'il soit tenu
 au courant de cette action si je souhaite concilier mon projet entrepreunarial
 et ma formation lors du programme.
 
-#### Les démarches à effectuer
+#### Les démarches à effectuer pour le stage entrepreunarial à l'étranger
 
 Les démarches à effectuer pour participer au programme Erasmus For Young
 Entrepreneurs (EYE) sont nombreuses et peuvent varier en longueur et en complexité
@@ -276,7 +465,7 @@ le séjour à l'étranger auprès du ministère des affaires étrangères.
 > ou s'il est préférable de choisir un organisme intermédiaire
 > plus éloigné mais peut-être plus adapté.
 
-#### La pertinence
+#### La pertinence du stage entrepreunarial à l'étranger
 
 D'un point de vue subjectif, je pense que participer au programme
 EYE serait une expérience nouvelle et grandement enrichissante.  
@@ -307,7 +496,7 @@ avec les attentes d'un stage en entreprise et que cela ne soit
 qu'un stage entrepreunarial sans qu'il me soit possible de valider
 l'exercice d'une compétence professionnelle liée à ma formation.
 
-#### Les avantages et inconvénients
+#### Les avantages et inconvénients du stage entrepreunarial à l'étranger
 
 Les avantages de cette possibilité sont:
 
@@ -321,7 +510,7 @@ Les inconvénients de cette possibilité sont:
 - Risque de ne pas pouvoir concilier les compétences relative à la formation et le programme EYE
 - Aspect stage en entreprise non garanti
 
-#### La forme et le fond du rapport de stage
+#### La forme et le fond du rapport de stage entrepreunarial à l'étranger
 
 Dans ce cas, le rapport de stage transmis à l'IUT serait différent
 d'un rapport de stage classique. Il faut aussi compter le rapport
@@ -342,32 +531,42 @@ leur pertinence et leur réalisation.
 
 Sur la forme, je pense que trois parties seront nécessaires et seraient:
 
-- la présentation de l'entreprise d'accueil et le contexte du séjour.
+- La présentation de l'entreprise d'accueil et le contexte du séjour.
 
   Un besoin de contextualiser le séjour sous la forme d'un échange
-  dans le cadre du programme EYE, est, d'après moi, nécessaire.
+  dans le cadre du programme EYE, est, d'après moi, nécessaire.  
+  Vu que j'aurais participé à la gestion de l'entreprise et / ou
+  à la gestion de projets, il me semble nécessaire d'y faire
+  référence et de démontrer le savoir acquis durant cet échange.
 
 - Une synthèse des actions misent en place durant le séjour et
   des postes occupés.
 
-  Il faudra sûrement y diviser en sous-parties
+  Il faudra sûrement y diviser en sous-parties,
   si les actions ne sont pas liées entre elles par un fil conducteur.  
-  Un exemple serait de d'abord parler des tâches liées à la formation,
-  si elles sont présentes, puis de parler des tâches liées à l'entrepreunariat.
+  A des fins illustratives, on peut imaginer parler des tâches liées
+  à la formation, si elles sont présentes,
+  puis de parler des tâches liées à l'entrepreunariat.
 
 - Un regard critique de l'échange et de l'expérience acquise.
 
   Il faudra sûrement parler des attentes présentes avant le séjour
-  et de les comparer avec ce qui a été effectué durant pour finir
-  sur un bilan de quelques jours après. Bien sûr, on peut se douter
-  que quelques jours ne suffiront pas à avoir un regard critique et
-  ayant assez de recul sur l'expérience afin d'obtenir un rapport
-  réellement pertinent et intéressant, mais par soucis de temps,
-  il faudra sûrement se contenter de cela.
+  et de les comparer avec ce qui a été effectué durant celui-ci pour
+  finir sur un bilan de quelques jours après.  
+  Bien sûr, on peut se douter que quelques jours ne suffiront pas
+  à avoir un regard critique et ayant assez de recul sur l'expérience
+  afin d'obtenir un rapport réellement pertinent et intéressant,
+  mais par soucis de temps, il faudra sûrement se contenter de cela.
+
+  On peut penser demander le rapport de stage considéré comme complet
+  au bout de quelques mois après le séjour, afin d'obtenir un avis
+  critique plus pertinent et plus mature.
 
 > **Note**:  
 > D'autres parties pourraient être ajoutées à posteriori, si leur
 > pertinence est jugée nécessaire.
+
+## Copyright &copy; 2023 Alexis Opolka - All Rights Reserved
 
 ## Annexes
 
