@@ -25,6 +25,9 @@ save*-*-*.txt
 *.fls
 *.gz
 
+### Git related files
+.gitignore
+
 ## Here is the entire repository of the VS files used on a projet in C++
 
 ## Folders
@@ -34,12 +37,11 @@ cours/modules/R111/R111-TD/src/code-sample-cpp/Release/*
 cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/*
 
 ## Repository-wide absolute paths of files to be ignored
-## Files
+### Files
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.sln
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.vcxproj
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.vcxproj.filters
 cours/modules/R111/R111-TD/src/code-sample-cpp/code-sample-cpp.vcxproj.user
-cours/sae/sae-11/histoire-jade-07.11.2022.pdf
 cours/modules/R111/R111-TP/Algorithmes-Alexis-Kenzo.docx
 
 cours/modules/R107/R107-TP/R107-TP5/r107-tp5-opolka-alexis/r107-tp5-opolka-alexis.ipynb
@@ -51,8 +53,10 @@ cours/modules/R208/R208-TP/R208-TP1/src/instant/instant_2023.xml
 cours/modules/R208/R208-TP/R208-TP1/src/instant/instant_2022.xml
 cours/modules/R208/R208-TP/R208-TP1/src/instant/instant.xml
 cours/modules/R208/R208-TD/R208-TD2/src/eve.json
-.gitignore
-cours/modules/R209/R209-TP/R209-TP4/temp/
 cours/sae/sae-23/src/cb-SAE23-1A-2022-2023-2-pdfjam.pdf
 
+### Folders
+cours/modules/R209/R209-TP/R209-TP4/temp/
+
+## System-wide paths to be ignored
 C:/Users/alexi/AppData/Local/Temp/gitpod_ssh_config-11400-RmoSF3z6o2dB
