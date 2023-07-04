@@ -5,7 +5,6 @@
 - L'objectif est de valider des "compétences"
 - Lien avec le Portfolio
 
-
 ## Etudes à réaliser
 
 Durnat cette SAE, nous effectuerons:
@@ -24,8 +23,6 @@ Durnat cette SAE, nous effectuerons:
   - [ ] Compte rendu écrit du TP
 - [ ] Général
   - [ ] DS sur table (écrit)
-
-
 
 ### Etude 1 : Numérisation et restitution des signaux
 
