@@ -17,7 +17,7 @@ effectuer peu importe l'option choisie au final.
 
 Ce rapport est là pour me permettre de réfléchir sur les
 différentes possibilités qui s'offrent à moi, et d'en peser les
-avantages et les inconvénients d'un point de vue subjectif et 
+avantages et les inconvénients d'un point de vue subjectif et
 objectif en terme de la formation actuelle (BUT RT) et de la
 formation à laquelle j'aspire (Ingénieur DevOps).  
 
@@ -35,8 +35,13 @@ et sur l'entierté du rapport.
 > seront préférées, d'un point de vue personnel, de par mon
 > ambition de partir à l'étranger durant mes études supérieures.
 
+&nbsp;
+
 > **Note**:  
-> Aucun nom ne sera cité dans ce rapport, par soucis de confidentialité.
+> Aucun nom ne sera cité dans ce rapport, par soucis de confidentialité
+> et par envie de rendre ce rapport plus général afin d'en faire l'équivalent
+> d'un guide pour tous ceux qui, un jour, se trouveraient dans une situation
+> équivalente à la mienne.
 
 ## Sommaire
 
@@ -76,12 +81,12 @@ et sur l'entierté du rapport.
       - [La forme et le fond du rapport de stage entrepreunarial à l'étranger](#la-forme-et-le-fond-du-rapport-de-stage-entrepreunarial-à-létranger)
   - [Copyright © 2023 Alexis Opolka - All Rights Reserved](#copyright--2023-alexis-opolka---all-rights-reserved)
   - [Annexes](#annexes)
-
+    - [Erasmus For Young Entrepreneurs](#erasmus-for-young-entrepreneurs)
 
 ## Introduction
 
 Le stage de deuxième année est un stage de 9 semaines commençant,
-en se basant sur celui effectué durant l'année universitaire 
+en se basant sur celui effectué durant l'année universitaire
 2022-2023, du 1er Février au 3 Avril. On se basera ainsi sur
 ce même calendrier.
 
@@ -123,12 +128,27 @@ Pour chacune de ces possibilités, on va définir plusieurs éléments:
   - [Les avantages et inconvénients](#les-avantages-et-inconvénients-du-stage-en-entreprise-à-létranger)
   - [La forme et le fond du rapport](#la-forme-et-le-fond-du-rapport-de-stage-en-entreprise-à-létranger)
 
+Cette possibilité englobe le fait de travailler en entreprise et de
+partir à l'étranger.  
+Elle peut rencontrer le programme Erasmus+ afin d'obtenir une bourse
+pour couvrir en partie ou en totalité les coûts du séjour.
+
 #### Prérequis du stage en entreprise à l'étranger
+
+Pour pouvoir faire son stage à l'étranger, les prérequis sont, à savoir:
+
+- 
+
 #### Objectifs du stage en entreprise à l'étranger
+
 #### Les acteurs du stage en entreprise à l'étranger
+
 #### Les démarches à effectuer pour le stage en entreprise à l'étranger
+
 #### La pertinence du stage en entreprise à l'étranger
+
 #### Les avantages et inconvénients du stage en entreprise à l'étranger
+
 #### La forme et le fond du rapport de stage en entreprise à l'étranger
 
 ## Les stages entrepreunariaux
@@ -156,8 +176,7 @@ rester en France, voir même au sein de l'IUT.
 
 #### Prérequis du stage entrepreunarial en France
 
-Pour pouvoir être éligible à un stage entrepreunarial, plusieurs
-prérequis sont nécessaires, à savoir:
+Pour pouvoir être éligible à un stage entrepreunarial, il faut:
 
 - Obtenir le Statut National d'Etudiant-Entrepreneur (SNEE ou SN2E)
 
@@ -178,8 +197,8 @@ Cela implique de le faire avancer sur plusieurs aspects tels que le plan
 technique, le plan financier et le plan humain.
 
 Obtenir des retours et des conseils sur mon projet entrepreunarial
-de la part de professionnels et de personnes du domaine dans lequel
-je souhaite évoluer.
+de la part de professionnels ainsi que de chercheurs et de personnes
+du domaine dans lequel je souhaite évoluer.
 
 Faire évoluer mon projet en concordance avec mes attentes et mes
 objectifs personnels et professionnels tout en restant en lien avec
@@ -192,7 +211,7 @@ en trois acteurs principaux:
 
 - L'étudiant entrepreuneur
 - Le responsable entrepreunariat affilié au projet et à l'étudiant
-- Le Pépite LR
+- Le Pépite
 
 On peut penser ajouter l'IUT de Béziers si le stage se déroule
 au sein de celui-ci.
@@ -206,7 +225,7 @@ et peuvent se résumer en une étape:
   et l'établissement d'étude, en l'occurence l'IUT de Béziers.
 
 Il sera donc nécessaire de convenir d'un rendez-vous, comme conseillé
-dans l'attestation de substitution de stage du Pépite LR, entre l'étudiant,
+dans l'attestation de substitution de stage du Pépite, entre l'étudiant,
 le responsable de la formation initiale et le responsable entrepreunariat
 affilié au projet et à l'étudiant.  
 Cette étape peut, bien évidemment, prendre plusieurs formes.  
@@ -301,7 +320,9 @@ se passe dans un contexte professionnel.
 
 > **Note**:  
 > Le guide du programme Erasmus For Young Entrepreneurs est disponible
-> en annexe. Voir [ici](#Erasmus-For-Young-Entrepreneurs)
+> en annexe. Voir [ici](#erasmus-for-young-entrepreneurs)
+
+&nbsp;
 
 > **Note**:  
 > Le suivi d'un professeur référent lors de cette possibilité est à
@@ -377,7 +398,7 @@ incluant plusieurs acteurs comprenant :
 
 Dans le cas où je participerais au programme durant ma période de
 stage, il faudrait compter en plus de ces acteurs, l'IUT où tout
-du moins le département RT, le Pépite LR et le responsable entrepreunariat
+du moins le département RT, le Pépite LR (Languedoc-Roussillon) et le responsable entrepreunariat
 affilié à mon projet et indiqué dans mon dossier d'Etudiant-Entrepreneur.
 
 On peut se poser la question de l'éligibilité des acteurs que je viens de
@@ -456,6 +477,8 @@ le séjour à l'étranger auprès du ministère des affaires étrangères.
 > de ne pas buter sur un problème de timing et de se retrouver
 > à avoir la finition du dossier et de l'échange quelques semaines
 > avant le début du stage.
+
+&nbsp;
 
 > **Note**:  
 > Il faut aussi approfondir la recherche sur les organismes
@@ -570,3 +593,6 @@ Sur la forme, je pense que trois parties seront nécessaires et seraient:
 
 ## Annexes
 
+### Erasmus For Young Entrepreneurs
+
+$[Erasmus For Young Entrepreneurs Program](./src/Programme%20Guide%20EN%2C%20Update%20Mar%202023.pdf)

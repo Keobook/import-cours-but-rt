@@ -2,8 +2,8 @@
   "editor.tabSize": 2,
   "editor.fontSize": 20,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Night Rider",
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.colorTheme": "Alt Catppuccin Mocha",
+  "workbench.iconTheme": "vs-seti",
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",
   "github.copilot.advanced": {
@@ -25,4 +25,5 @@
     "editor.defaultFormatter": "ms-python.autopep8"
   },
   "python.formatting.provider": "none"
+  "phpserver.phpPath": "C:\\php-8.2.5\\php.exe",
 }

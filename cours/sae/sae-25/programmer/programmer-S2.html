@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>programmer-S2.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="programmer---portfolio-s2">Programmer - Portfolio S2</h1>
+<ul>
+<li><a href="#programmer---portfolio-s2">Programmer - Portfolio S2</a>
+<ul>
+<li><a href="#composantes-essentielles">Composantes essentielles</a>
+<ul>
+<li><a href="#en-%C3%A9tant-%C3%A0-l%C3%A9coute-des-besoins-du-client-et-des-diff%C3%A9rents-acteurs-impliqu%C3%A9s">En étant à l’écoute des besoins du client et des différents acteurs impliqués</a></li>
+<li><a href="#en-utilisant-une-approche-rigoureuse-et-m%C3%A9thodique-d%C3%A9marche-scientifique">En utilisant une approche rigoureuse et méthodique (démarche scientifique)</a></li>
+<li><a href="#en-choisissant-les-outils-et-lenvironnement-de-d%C3%A9veloppement-adapt%C3%A9s">En choisissant les outils et l’environnement de développement adaptés</a></li>
+<li><a href="#en-int%C3%A9grant-les-probl%C3%A9matiques-de-s%C3%A9curit%C3%A9">En intégrant les problématiques de sécurité</a></li>
+</ul>
+</li>
+<li><a href="#apprentissages-critiques">Apprentissages critiques</a>
+<ul>
+<li><a href="#utiliser-un-syst%C3%A8me-informatique-et-ses-outils">Utiliser un système informatique et ses outils</a></li>
+<li><a href="#lire-comprendre-ex%C3%A9cuter-corriger-et-modifier-un-programme">Lire, comprendre, exécuter, corriger et modifier un programme</a></li>
+<li><a href="#comprendre-et-traduire-un-algorithme-dans-un-langage-et-pour-un-environnement-donn%C3%A9">Comprendre et traduire un algorithme, dans un langage et pour un environnement donné</a></li>
+<li><a href="#conna%C3%AEtre-larchitecture-et-les-technologies-dun-site-web">Connaître l’architecture et les technologies d’un site Web</a></li>
+<li><a href="#adapter-le-format-de-stockage-et-de-transport-des-donn%C3%A9es-au-besoin-de-lapplication">Adapter le format de stockage et de transport des données au besoin de l’application</a></li>
+<li><a href="#sint%C3%A9grer-dans-un-environnement-propice-au-d%C3%A9veloppement-et-au-travail-collaboratif">S’intégrer dans un environnement propice au développement et au travail collaboratif</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="composantes-essentielles">Composantes essentielles</h2>
+<ul>
+<li>
+<details>
+<summary>
+<h3 id="en-%C3%A9tant-%C3%A0-l%C3%A9coute-des-besoins-du-client-et-des-diff%C3%A9rents-acteurs-impliqu%C3%A9s">En étant à l’écoute des besoins du client et des différents acteurs impliqués</h3>
+</summary>
+<p>Être à l'écoute des besoins de différents acteurs, qu'ils soient un client,
+une équipe interne ou externe, revient</p>
+<p>J'ai pu et dû, de nombreuses fois, être à l'écoute des besoins
+d'un client, qu'il soit interne ou externe, et de différents acteurs
+impliqués dans un projet.<br>
+Dans le cadre de la SAE-23, j'ai dû être à l'écoute des besoins
+de mon binôme, qui était aussi le client interne du projet,
+et des besoins requis par le cahier des charges.</p>
+<p>J'ai donc dû adapater mon travail en fonction de ces besoins,
+que ce soit au niveau de la conception, du développement ou
+encore des fonctionnalités développées.<br>
+A plusieurs reprises, j'ai dû modifier des fonctionnalités,
+les étoffer ou les réduire afin qu'elles correspondent aux
+besoins de mon binôme et du cahier des charges.</p>
+<p>Plusieurs outils m'ont permis de communiquer avec eux, tels que:</p>
+<ul>
+<li>Discord</li>
+<li>Slack</li>
+<li>Services mails (Gmail / Zimbra)</li>
+<li>GitHub</li>
+</ul>
+<p>Dans le cadre de la SAE-24, j'ai du travailler avec les attentes de l'IUT pour le Festival
+du Festival ainsi que ses contraintes, mais aussi avec les contraintes et spécificités de la
+SAE afin de ne pas être hors sujet sans oublier mon binôme et l'autre binôme avec qui on travaillait
+en collaboration.</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+<a href="#programmer---portfolio-s2">Remonter au sommaire</a></p>
+</blockquote>
+</details>
+</li>
+<li>
+<details>
+<summary>
+<h3 id="en-utilisant-une-approche-rigoureuse-et-m%C3%A9thodique-d%C3%A9marche-scientifique">En utilisant une approche rigoureuse et méthodique (démarche scientifique)</h3>
+</summary>
+<p>Afin de pouvoir programmer, ou toute autre tâche nécessitant
+de la méthodologie et une démarche scientifique, il est important
+d'aborder le problème de manière rigoureuse et méthodique.</p>
+<p>Dans le cadre de la SAE-21, j'ai dû développer un réseau
+pour une entreprise, en prenant en compte les besoins
+de l'entreprise, une DMZ, le réseau FAI et des sites distants.<br>
+Afin de s'assurer de ne pas perdre le fil de la conception,
+j'ai créé un schéma réseau avant de commencer le montage réseau
+sur Cisco Packet Tracer.</p>
+<p><img src="../../sae-21/src/img/schema-reseau.drawio.svg" alt="sae21-schema-reseau"></p>
+<p>Ayant déjà préparé le schéma réseau et les accès de chacuns (par Groupes),
+j'ai pu commencer le montage, et par la suite, faire les tests
+me permettant de valider ou non, le bon fonctionnment de mon réseau.<br>
+Cependant, avoir une approche rigoureuse et méthodique ne suffit pas.
+Dans le cas de Cisco Packet Tracer, je me suis vu confronté
+à des limitions propes à l'outil, qui m'ont obligé à revoir
+mon schéma réseau de manière incrémentale et itérative afin
+d'obtenir un réseau fonctionnel.</p>
+</details>
+</li>
+</ul>
+<h3 id="en-choisissant-les-outils-et-lenvironnement-de-d%C3%A9veloppement-adapt%C3%A9s">En choisissant les outils et l’environnement de développement adaptés</h3>
+<p>De part mon expérience, j'ai pu apprendre à utiliser de nombreux
+outils et environnements de développement.</p>
+<p>Dans le cadre étudiant, du BUT R&amp;T, j'ai pu utiliser des outils
+et des environnements de développement tels que <a href="https://github.com">GitHub</a>, <a href="https://code.visualstudio.com">Visual Studio Code</a>,
+<a href="https://visualstudio.microsoft.com">Visual Studio</a>, <a href="https://gitkraken.com">GitKraken</a> ou d'autres encore.</p>
+<p>Par exemple, pour la SAE-23, vu que j'ai dû développer une application web contenant une API en TypeScript et NextJS, j'ai utilisé:</p>
+<ul>
+<li>
+<p>GitHub pour stocker le code source en ligne</p>
+</li>
+<li>
+<p>GitHub Projects pour gérer les tâches à effectuer</p>
+</li>
+<li>
+<p>Visual Studio Code en tant qu'IDE</p>
+</li>
+<li>
+<p>GitKraken et Git pour contrôler les versions du code source</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+GitKraken est une interface graphique pour Git
+qui, d'après moi, permet dans certaines situations
+de mieux comprendre les conflits et de les résoudre.<br>
+Leur Git Graph est l'un des plus notables de GitKraken.</p>
+</blockquote>
+</li>
+<li>
+<p>Docker pour build et lancer l'application construite</p>
+</li>
+<li>
+<p>Postman pour développer et tester l'API</p>
+</li>
+<li>
+<p>ESLint pour vérifier la syntaxe du code source</p>
+</li>
+</ul>
+<p>Plus récemment, dans le cadre de la SAE-24 et du projet pour le
+Festival du Fantastique de Béziers je travaillais dans une équipe
+de 4 mais on était séparés en deux équipes de 2.</p>
+<p>J'ai alors utilisé les GitHub Projects et on a mis en commun notre
+travail sur GitHub dans un dépôt de l'organisation de l'IUT
+permettant ainsi la capacité du projet à survivre la SAE ainsi
+que la tracabilité des efforts menés dans le cas que ce n'était
+pas qu'un simple projet fait durant les études avec le seul
+objectif d'accomplir la tâche donnée par un professeur mais
+c'était / et l'est un projet avec l'objectif d'être mis en place
+lors d'un évenement organisé par l'IUT.</p>
+<p>Dans d'autres cadres et dans d'autres projets, j'ai pu utiliser
+beaucoup d'autres outils et environnements de développement
+tel que <a href="https://gitlab.com">GitLab</a>, <a href="https://bitbucket.org">BitBucket</a>, <a href="https://aws.amazon.com">AWS</a>, <a href="https://console.cloud.google.com">GCP</a>, <a href="https://dev.azure.com">Azure DevOps</a>, etc.</p>
+<p>Ce qui m'a permis d'apprendre les fonctionnalités de base de
+ces outils et environnements de développement, mais aussi
+de me sentir à l'aise avec l'idée d'être confronté à un nouvel
+outil, que ce soit dans le cadre universitaire, personnel ou encore
+professionnel.</p>
+<h3 id="en-int%C3%A9grant-les-probl%C3%A9matiques-de-s%C3%A9curit%C3%A9">En intégrant les problématiques de sécurité</h3>
+<p>La sécurité est un élément essentiel dans le développement d'une
+application, qu'elle soit interne ou externe.</p>
+<p>Dans le cadre de la SAE-23, j'ai dû développer une application web
+qui permettait de gérer et de suivre les données récoltées par
+les Banzaii. Il était donc important d'avoir une gestion des
+comptes utilisateurs et de leurs permissions.</p>
+<p>A cela, s'ajoute le système d'authentification qui ne doit pas
+transmettre les données de l'utilisateur, notamment le mot de passe,
+en clair. Et encore d'autres problématiques de sécurité liées à l'accès de l'API, à l'accès des pages, etc.</p>
+<p>J'ai donc dû mettre en place un système d'authentification et de
+double authentification prenant en compte les problématiques de
+sécurité qu'une application unipage peut avoir.<br>
+J'ai aussi dû mettre en place une gestion des droits d'accès
+et d'affichages de certains éléments de l'application.<br>
+Qui, dans le cas de la SAE-23 et du fait que ce soit une
+application démonstrative, n'est pas complètement poussée
+notamment dû au court lapse de temps donné entre le début
+du projet et son rendu, ne me permettant pas, ainsi qu'à
+mon binôme, d'obtenir un résultat convenable ainsi que la
+prise en compte et la mise en place de solutions pour
+différents problèmes qu'ils soient techniques, sécuritaires
+ou autres.</p>
+<h2 id="apprentissages-critiques">Apprentissages critiques</h2>
+<h3 id="utiliser-un-syst%C3%A8me-informatique-et-ses-outils">Utiliser un système informatique et ses outils</h3>
+<p>lorem ipsum</p>
+<h3 id="lire-comprendre-ex%C3%A9cuter-corriger-et-modifier-un-programme">Lire, comprendre, exécuter, corriger et modifier un programme</h3>
+<p>lorem ipsum</p>
+<h3 id="comprendre-et-traduire-un-algorithme-dans-un-langage-et-pour-un-environnement-donn%C3%A9">Comprendre et traduire un algorithme, dans un langage et pour un environnement donné</h3>
+<p>lorem ipsum</p>
+<h3 id="conna%C3%AEtre-larchitecture-et-les-technologies-dun-site-web">Connaître l’architecture et les technologies d’un site Web</h3>
+<p>L'architecture d'un site web se compose principalement de deux éléments :</p>
+<ul>
+<li>Le front-end</li>
+<li>Le back-end</li>
+</ul>
+<p>Bien souvent, le front-end caractérise tout ce qui va se passer sur le client.<br>
+Le back-end caractérise, quant à lui, tout ce qui va se passer que ce soit sur
+les serveurs ou au niveau de l'infrastruture.</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+De la définition que j'ai du back-end et du front-end, ce qui les différencie est
+là où le code est executé / compilé. C'est à dire qu'un langage comme le PHP
+où on peut développer une interface Front-End mais vu que le code PHP est
+exécuté sur un serveur et non sur le client, il est caractérisé comme back-end
+puisque ensuite c'est un code HTML qui est ressorti et c'est ce code qui sera
+executé coté client.</p>
+</blockquote>
+<blockquote>
+<p><strong>Notes</strong>:<br>
+Pour plus de détails sur la manière dont je comprends et j'en ai la définition,
+je vous redirige vers cet <a href="https://en.wikipedia.org/wiki/Frontend_and_backend">article</a> wikipedia
+et plus spécialement la section <a href="https://en.wikipedia.org/wiki/Frontend_and_backend#Web_development_as_an_example">Web development as an example</a>
+qui précise et catégorise approximativement de la même manière la différence entre
+backend et frontend.</p>
+</blockquote>
+<p>Je vais donc qualifier les langages de balisage tel que <code>HTML, XML, XHTML</code>,
+les langages de style tel que <code>CSS, SCSS</code>,
+et les langages de programmation tel que <code>JavaScript et TypeScript</code>
+comme étant des langages de front-end.<br>
+A contrario, je vais qualifier les langages <code>PHP</code>, <code>JavaScript</code>,
+les langages de bases de données comme <code>MySQL</code>, <code>PostgreSQL</code>, <code>InfluxQL</code>,<code>Flux (de InfluxDB)</code>, etc.
+comme étant des langages de back-end.</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Le JavaScript (JS) a capacité à être classé en tant que langage back-end
+comme langage front-end de par les framework et libraires associées.</p>
+</blockquote>
+<p>Aux langages, je peux y ajouter les frameworks et les librairies qui, eux,
+sont bien plus nombreux.<br>
+Pour n'en citer qu'une infime partie :</p>
+<ul>
+<li>Pour les framework, nous avons <code>NextJS</code>, <code>VueJS</code>.</li>
+<li>Pour les librairies, nous avons <code>ReactJS</code>, <code>JQuery</code>, <code>Bootstrap</code>, <code>Leaflet</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Pour plus de détails sur comment différencier une librairie ou un framework
+je conseille cette <a href="https://stackoverflow.com/a/15600924/13025136">réponse</a>
+sur SO qui contient, en plus des explications, un schéma indiquant la logique
+derrière la différentiation d'un framework à une librairie.</p>
+</blockquote>
+<p>En ce qui concerne les serveurs web, je peux citer les deux majoritaires
+du marché étant <code>Apache</code>, <code>Nginx</code> et <code>NodeJS</code>.</p>
+<p>En soit, je considère l'architecture d'un site web comme ceci :</p>
+<p><img src="./src/schema-architecture-website.drawio.svg" alt="schema-architecture-website"></p>
+<p>On retrouve ce schéma notamment dans les <a href="https://en.wikipedia.org/wiki/Edge_computing">infrastructures Edge</a> où la
+situation géographique des serveurs est un facteur pris en compte dans
+le déploiement et la mise en production.<br>
+En plus de cela, il y a une notion entre serveur principal (couche Cloud) et secondaire
+(couche Edge Node) où les informations émises par un client ne sont pas forcémment (voir rarement)
+remontées au serveur principal mais sont remontées au serveur secondaire
+en charge de la région où l'on observera ensuite une synchronisation du
+serveur principal avec le serveur secondaire (souvent avec des flux
+montants et descendants).</p>
+<p>Dans différents cadres j'ai été amené à développer un site web, que
+ce soit dans le cadre universitaire avec la <a href="https://github.com/alexis-opolka/mon-banzaii/">SAE-23</a>
+où j'ai dû développer une application client permettant de lire des données récoltées
+dans une base de donnée et de pouvoir intéragir sur le nombre de Banzaiis,
+la <a href="https://github.com/iut-beziers/ffb-rfid/tree/client-web/apps/ffb-watcher/">SAE-24</a> où
+j'ai du créer une interface utilisateur ayant le rôle d'inductrice d'informations
+nécessaires dans le système utilisé ultérieurement ou
+la <a href="https://github.com/alexis-opolka/alexis-opolka.github.io">SAE-14</a> où
+j'ai du créer mon site web de présentation (que j'appelle aussi Portfolio).</p>
+<ul>
+<li>
+<p>Dans la SAE-23, j'ai eu à prendre en compte les caractéristiques du
+projet et ses contraintes afin de les transformer en besoins techniques
+et choisir les bonnes technologies. A savoir que les contraintes de temps
+ont été aussi prises en compte, ce qui a fait que je suis parti sur un
+stack comprenant:</p>
+<ul>
+<li>
+<p>NextJS
+Le framework nous permettant de développer en une seule distribution
+un coté serveur et un coté client tout en faisant du ReactJS.</p>
+<p>Je l'ai choisi notamment dû au besoin de développer tout un service
+de simple authentification à partir de <em>presque</em> rien aussi dit
+<code>from scratch</code> car il n'existe aucune librairie, à ma connaissance,
+nous permettant d'avoir un système d'authentificaton qui interragit
+avec la SGBD MySQL sous NodeJS et plus particulièrement ReactJS.
+Ainsi donc, j'ai du développer le système d'authentification en
+Typescript (afin de typer les entrées et sorties) du coté client
+et serveur.</p>
+</li>
+<li>
+<p>Bootstrap / TailWindCSS</p>
+<p>J'ai choisi Bootstrap de par le fait que la librairie simplifie
+le prototypage avec des classes déjà prêtes et que l'on qu'à assembler.</p>
+<p>TailWindCSS vient de base avec l'application par défaut NextJS
+et mon binôme avait déjà commencé à l'utiliser, j'ai donc
+décidé de le garder et j'ai fait attention à ce que les
+deux librairies ne s'entrecroisent pas dans les déclarations
+de classes CSS pour chaque composant.</p>
+</li>
+<li>
+<p>Next-UI</p>
+<p>La simplification de certains composants ReactJS
+et l'ajout de thèmes (même si le système n'est pas encore
+totalement implémenté).</p>
+</li>
+<li>
+<p>React-Hook-Form</p>
+<p>Une librairie qui est dédiée aux formulaires en utilisant les
+hooks ReactJS et empêche un nombre de rendus excessifs.</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+ReactJS &quot;re-render&quot; certains éléments sans même qu'il y ait besoin
+et crée ainsi une charge exécutive excédentaire par rapport au
+réel besoin logique (et logiciel) de ce que l'on fait.<br>
+D'où l'importance des librairies comme <code>React-Hook-form</code> qui
+sont dédiées à l'optimisation de la charge exécutive de certains
+composants.</p>
+</blockquote>
+</li>
+<li>
+<p>ChartJS</p>
+<p>Une librairie très pratique lorsque il est question de faire
+des graphiques dans une application ReactJS.</p>
+</li>
+<li>
+<p>Minidenticons</p>
+<p>Une librairie trouvée sur GitHub qui permet de générer des avatars
+utilisateurs en fonction de leur pseudo.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+J'omets toutes les dépendances <em>techniques</em> du projet comme les wrapper
+et les dépendances des dépendances. Seules sont citées plus hauts les
+librairies / framework ayant fait l'objet d'un choix arbitraire.</p>
+</blockquote>
+</li>
+<li>
+<p>Dans le cas de la SAE-24, vu que l'on travaillait avec des objets connectés
+et qu'ils communiquaient en LoRa, les spécificités ont été différentes d'une
+application client sans compter l'importance des données traitées par l'interface
+web en plus du fait que l'interface se trouvait en entrée du système.</p>
+<p>Je suis alors plus parti sur un site unipage (ReactJS) avec comme SGBD InfluxDB
+permettant d'obtenir toute la charge de calcul pour l'interface faite par le client
+et laisser la puissance de calcul du serveur pour le SGBD afin de minimiser la charge
+exécutive globale.</p>
+<p>Le choix d'InfluxDB s'est rapidement posé comme une évidence de par le contexte
+du projet et de la construction de notre base de donnée (BDD) et nos interactions
+avec elle.<br>
+Pour être plus précis, on avait besoin d'une interaction rapide, de
+multiples interactions successives et tout ça dans un lapse de temps plutôt court
+considérant que le client est à l'entrée du système et que l'on est obligé de faire en sorte
+que ce ne soit pas un point venant restreindre le flux du système.<br>
+Ainsi, la capacité d'InfluxDB à renvoyer que ce dont on a besoin sans avoir à charger
+toute une table / rangée de donnée est un point positif notable, en plus
+du fait que l'on pense InfluxDB quand on fait de l'IoT, ou AWS.</p>
+</li>
+<li>
+<p>Dans le cadre professionnel / associatif, j'ai eu et j'ai à développer l'infrastructure réseau
+et le site web. Le site web est actuellement à portée nationale mais à vocation à
+se développer au niveau international.</p>
+<p>Ses spécificités sont simples car il s'agit en premier d'un site vitrine et n'a pas
+besoin d'un système d'utilisateurs / d'authentification et donc de routes sécurisées.
+A contrario, vu qu'il représente l'association et ses projets il a des besoins tout
+spécifiques à l'image.</p>
+<p>C'est à dire qu'il est nécessaire d'avoir une redondance physique et technique,
+je me suis alors dirigé sur du IaaS (Infrastructure as a Service)
+où le site web se trouve être une application NextJS et est &quot;build / served&quot; par l'hébergeur,
+<a href="https://digitalocean.com">DigitalOcean</a>.<br>
+On compte deux environnements de travail, l'environnement de production,
+<a href="https://petitspapiersdarchitecture.fr">petitspapiersdarchitecture.fr</a>, et
+l'environnement de développement, <a href="https://dev.petitspapiersdarchitecture.fr">dev.petitspapiersdarchitecture.fr</a>.<br>
+L'environnement de production est l'environnement &quot;stable&quot;, il n'est mis à jour que manuellement à partir de la branche
+<code>master</code> du dépôt GitHub alors que l'environnement de développement est instable et est sensible à la casse, il est déployé
+automatiquement à partir de la branche <code>develop</code> dès qu'un commit a été enregistré.</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Le dépôt GitHub en question est celui de l'organisation <a href="https://github.com/Petits-Papiers-Architecture">Petits Papiers D'architecture</a>,
+il est pour l'heure en privé, il n'est alors pas possible d'y accéder sans faire partie de l'organisation GitHub.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Le choix d'avoir l'application compilée par DigitalOcean me permet de réduire la charge de la gestion entière de l'infrastructure
+mais je garde un contrôle sur la région des déploiments.<br>
+C'est notamment dû au fait que je suis la seule personne au sein de l'association ayant les compétences requises pour gérer
+l'infrastructure et le déploiement des applications.</p>
+</blockquote>
+<p>En plus de cela, vu que le projet à vocation d'être
+international, je suis parti sur une infrastructure Edge qui a des avantages notables en
+termes de scalabilité, efficacité et expérience utilisateur où l'emplacement géographique
+des serveurs joue un rôle clé dans l'équation globale.</p>
+</li>
+</ul>
+<p>A partir de ce que j'ai pu montrer ci-dessus, je pense être capable de comprendre, concevoir et
+définir l'architecture d'un site web selon les besoins spécifiques des applications ou des circonstances
+y compris le temps dédié à la tâche.</p>
+<h3 id="adapter-le-format-de-stockage-et-de-transport-des-donn%C3%A9es-au-besoin-de-lapplication">Adapter le format de stockage et de transport des données au besoin de l’application</h3>
+<p>Le format de stockage et de transport peuvent être différents selon les circonstances
+et les différents besoins. On peut très bien se retrouver avec du XML ou du CSV en stockage
+et du JSON en transport.</p>
+<p>Au moment où l'on interragit avec des données, qu'elles soient internes ou externes,</p>
+<p>Lors de la SAE-15, je devais créer un programme qui permettait de
+récolter des données sur l'API de la ville de Montpellier afin de pouvoir
+analyser et interpréter les données d'occupations des parkings à voitures
+et vélos de la ville.</p>
+<p>Pour ce faire, je devais récupérer les données au format XML et en GBFS.<br>
+J'ai donc préféré, avec mon binôme, d'utiliser le format CSV qui nous permettait
+facilement d'enregistrer en plus des données la date et l'heure de la requête
+effectuée et d'ainsi construire un historique des données.</p>
+<p>Ce n'est que plus tard, où je me suis penché sur l'analyse de données en utilisant
+InfluxDB et Grafana que je me suis rendu compte qu'il était plus préférable
+de travailler directement en Flux (le langage d'InfluxDB) au lieu d'avoir
+à tout transformer en CSV puis y traduire en Flux.</p>
+<p>Malgré cet inconvénient (et travail en plus), le fait d'avoir déjà tout normalisé dans un format précis et d'une manière déterminée
+a permis, à mon binôme et à moi, d'importer les données récoltées
+dans la base de données pour ensuite sortir des graphes.</p>
+<p>Dans le cas de la SAE-23, j'ai dû travailler avec des données au format JSON
+où l'on avait des données qui étaient séparées en plusieurs fichiers et qui
+devaient contenir un historique des données.</p>
+<p>Si l'on prend par exemple les données considérées comme externes, j'avais une
+structure équivalente à celle ci-dessous:</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"&lt;ID-du-Banzaii&gt;"</span>,
+  <span class="hljs-attr">"data"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"&lt;Type-de-donnée&gt;"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"&lt;Description-des-données&gt;"</span>,
+      <span class="hljs-attr">"timeline"</span>: [
+        {
+          <span class="hljs-attr">"value"</span>: <span class="hljs-string">"&lt;valeur&gt;"</span>,
+          <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"&lt;timestamp&gt;"</span>
+        },
+        {
+          <span class="hljs-attr">"value"</span>: <span class="hljs-string">"&lt;valeur&gt;"</span>,
+          <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"&lt;timestamp&gt;"</span>
+        }
+      ]
+    }
+  ]
+}
+</div></code></pre>
+<h3 id="sint%C3%A9grer-dans-un-environnement-propice-au-d%C3%A9veloppement-et-au-travail-collaboratif">S’intégrer dans un environnement propice au développement et au travail collaboratif</h3>
+<p>Avant tout, on se doit de définir qu'est-ce qu'un environnement
+propice au développement puis qu'est-ce qu'un environnement propice
+au travail collaboratif.</p>
+<p>D'après moi, un environnement propice au développement est un
+environnement qui permet à un développeur ou à une équipe
+de pouvoir se concentrer sur le code en s'occupant des points
+sensibles et/ou techniques de tous projets.<br>
+C'est à dire que l'environnement doit notamment avoir un logiciel
+de gestion de version, un focus sur la codebase, un environnement
+de build et de déploiement, la possibilité de faire du CI/CD.</p>
+<p>Un environnement propice au travail collaboratif, de ce que j'en
+pense, doit permettre de discuter sur des problèmes dans des fils
+de discussion dédiés, un système de tickets, un système afin
+de pouvoir trier et catégoriser les informations.</p>
+<p>Ainsi, d'après moi, un environnement propice au développement
+et au travail collaboratif doit avoir l'ensemble des points
+cité ci-dessus, ou du moins, la majorité.<br>
+Il a donc un focus sur le code avec un logiciel de gestion de
+version, la possibilité de créer des tickets (aussi appelés issues)
+où la discussion peut se faire à part du code, un système de labels,
+etc.</p>
+<p>Il existe plusieurs environnements qui sont propices au développement et au travail collaboratif.<br>
+Je peux citer les plus connus qui sont GitHub, GitLab et BitBucket.</p>
+<p>Etant utilisateur de GitHub depuis 2019-2020, j'ai eu l'occasion
+d'utiliser GitHub que ce soit pour des projets scolaires tels que
+la <a href="https://github.com/alexis-opolka/sae-15-data/">SAE-15</a>, la <a href="https://github.com/alexis-opolka/sae-12/">SAE-12</a>,
+la <a href="https://github.com/alexis-opolka/sae-21/">SAE-21</a>, la <a href="https://github.com/alexis-opolka/Mon-Banzaii/">SAE-23</a>
+ou encore simplement pour <a href="https://github.com/alexis-opolka/import-cours-but-rt/">mes cours</a>.<br>
+J'ai aussi eu l'occasion d'utiliser GitHub pour des projets personnels ou pour contribuer à des projets open-source tels
+que <a href="https://github.com/renpy/renpy">Ren'Py</a>, <a href="https://github.com/microsoft/vscode/">Code OSS</a>, la <a href="https://github.com/github/docs/">documentation GitHub</a>, etc.</p>
+<p>Vous pouvez par exemple voir ci-dessous, comment la SAE-23 a été organisée de manière collaborative en utilisant les GitHub Projects.</p>
+<p><img src="./src/sae-23-boards.png" alt="sae23-github-boards"></p>
+
+</body>
+</html>
