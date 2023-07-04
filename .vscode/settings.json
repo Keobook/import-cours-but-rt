@@ -20,5 +20,9 @@
   "liveServer.settings.CustomBrowser": "chrome",
   "liveServer.settings.port": 5501,
   "phpserver.browser": "chrome",
-  "phpserver.phpPath": "C:\\php-8.2.5\\php.exe"
+  "phpserver.phpPath": "C:\\php-8.2.5\\php.exe",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
 }
