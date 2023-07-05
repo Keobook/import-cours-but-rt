@@ -43,6 +43,8 @@ et sur l'entierté du rapport.
 > d'un guide pour tous ceux qui, un jour, se trouveraient dans une situation
 > équivalente à la mienne.
 
+<div class="page" />
+
 ## Sommaire
 
 - [Rapport d'étude sur les différentes possibilités pour le stage de BUT RT2](#rapport-détude-sur-les-différentes-possibilités-pour-le-stage-de-but-rt2)
@@ -83,6 +85,8 @@ et sur l'entierté du rapport.
   - [Annexes](#annexes)
     - [Erasmus For Young Entrepreneurs](#erasmus-for-young-entrepreneurs)
 
+<div class="page" />
+
 ## Introduction
 
 Le stage de deuxième année est un stage de 9 semaines commençant,
@@ -109,6 +113,8 @@ Pour chacune de ces possibilités, on va définir plusieurs éléments:
 - La pertinence
 - Les avantages et inconvénients
 - La forme et le fond du rapport de stage
+
+<div class="page" />
 
 ## Les stages en entreprise
 
@@ -137,19 +143,57 @@ pour couvrir en partie ou en totalité les coûts du séjour.
 
 Pour pouvoir faire son stage à l'étranger, les prérequis sont, à savoir:
 
-- 
+- obtenir une convention de stage respectant les modalités du conseil d'étude de sa formation
+- obtenir l'accord du conseil d'étude pour effectuer le stage à l'étranger
+
+Dans le cas où l'on veut être éligible à la bourse Erasmus+, il faut effectuer un stage ayant une durée
+égale ou supérieure à 2 mois (ou 8 semaines) et inférieure à 12 mois par cycle d'études.
+
+> **Note**:  
+> Pour plus d'informations, voir le site d'[Erasmus+](https://info.erasmusplus.fr/).
 
 #### Objectifs du stage en entreprise à l'étranger
 
+Les objectifs d'effectuer un stage en entreprise à l'étranger peuvent être multiples.
+
+En l'occurence, il y a l'objectif d'obtenir de l'expérience à l'international en concordance avec
+mon projet personnel et professionnel afin d'améliorer que ce soit mes "soft skills"
+et mes "hard skills" ou d'en assurer la maîtrise dans un contexte international.
+
+En objectif tertiaire, il existe l'objectif d'agrandir mon réseau professionnel et personnel afin de commencer
+à créer un réseau international.
+
+En plus "commun", il y a l'objectif naturel d'un stage en entreprise étant d'acquérir de l'expérience dans le
+milieu professionnel de notre formation.  
+Tout comme l'objectif naturel d'aller vivre et de travailler dans un pays étranger qui est
+de découvrir et d'apprendre de la culture du pays afin de pouvoir grandir intellectuellement et culturellement
+de cette expérience.
+
 #### Les acteurs du stage en entreprise à l'étranger
 
+Les acteurs d'un stage sont principalement:
+
+- L'étudiant
+- L'entreprise où le stage sera effectué
+- Le centre de formation (ici l'IUT)
+
+On pourrait être tentés d'ajouter Erasmus dans le cas où l'on demande une bourse
+mais il se trouve que l'interlocateur qui s'occupe de ces démarches est le service
+international du centre de formation.
+
 #### Les démarches à effectuer pour le stage en entreprise à l'étranger
+
+Les démarches à effectuer pour le stage en entreprise à l'étranger sont plus nombreuses
+et demandent d'être débutées en avance comparées aux démarches d'un stage en France.
+
 
 #### La pertinence du stage en entreprise à l'étranger
 
 #### Les avantages et inconvénients du stage en entreprise à l'étranger
 
 #### La forme et le fond du rapport de stage en entreprise à l'étranger
+
+<div class="page" />
 
 ## Les stages entrepreunariaux
 
@@ -380,7 +424,7 @@ Compétences dont je recherche l'acquisition et le développement
 dans le cadre de mon projet personnel, professionnel et entrepreunarial.
 
 On peut noter qu'il existe un objectif tertiaire qui est celui
-d'aggrandir mon réseau professionnel et personnel avec des pères
+d'agrandir mon réseau professionnel et personnel avec des pairs
 entrepreneurs et / ou dans le domaine de l'informatique, incluant
 mais non limité aux réseaux et télécommunication et au développement
 cloud.
