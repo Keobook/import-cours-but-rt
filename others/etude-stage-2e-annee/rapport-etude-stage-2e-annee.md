@@ -186,7 +186,6 @@ international du centre de formation.
 Les démarches à effectuer pour le stage en entreprise à l'étranger sont plus nombreuses
 et demandent d'être débutées en avance comparées aux démarches d'un stage en France.
 
-
 #### La pertinence du stage en entreprise à l'étranger
 
 #### Les avantages et inconvénients du stage en entreprise à l'étranger
