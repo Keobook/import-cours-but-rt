@@ -185,10 +185,23 @@ international du centre de formation.
 
 Les démarches à effectuer pour le stage en entreprise à l'étranger sont plus nombreuses
 et demandent d'être débutées en avance comparées aux démarches d'un stage en France.
+Notamment que ce soit sur la convention, l'assurance complémentaire ou la déclaration du
+séjour auprès du ministère des affaire étrangères.
 
-Il faut obtenir une convention de stage 
+Le plus long va principalement être les demandes de bourses et la signature de la convention
+de stage du fait du nombre d'acteurs engagés. Par là, j'entends le fait du nombre de services
+et de personnes pour chaque interaction ce qui amène à un allongement des délais.
 
 #### La pertinence du stage en entreprise à l'étranger
+
+Le stage en entreprise à sa propre pertinence quant à le faire à l'étranger,
+je pense que toute expérience à l'étranger permet à chacun de développer
+ses capacités d'adaptation que ce soit au niveau de la langue ou que ce
+soit au niveau de la culture et de la manière de travailler.
+
+En plus, il permettrait de confronter mes compétences acquises lors de la formation
+en France à un marché professionnel à l'étranger et ainsi grandir au niveau
+professionnel et personnel.
 
 #### Les avantages et inconvénients du stage en entreprise à l'étranger
 
