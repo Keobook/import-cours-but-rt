@@ -147,7 +147,7 @@ Pour pouvoir faire son stage à l'étranger, les prérequis sont, à savoir:
 - obtenir l'accord du conseil d'étude pour effectuer le stage à l'étranger
 
 Dans le cas où l'on veut être éligible à la bourse Erasmus+, il faut effectuer un stage ayant une durée
-égale ou supérieure à 2 mois (ou 8 semaines) et inférieure à 12 mois par cycle d'études.
+égale ou supérieure à 2 mois (ou 8 semaines) et inférieure à 12 mois par cycle d'études (bac+3, bac+5, etc.).
 
 > **Note**:  
 > Pour plus d'informations, voir le site d'[Erasmus+](https://info.erasmusplus.fr/).
@@ -163,8 +163,8 @@ et mes "hard skills" ou d'en assurer la maîtrise dans un contexte international
 En objectif tertiaire, il existe l'objectif d'agrandir mon réseau professionnel et personnel afin de commencer
 à créer un réseau international.
 
-En plus "commun", il y a l'objectif naturel d'un stage en entreprise étant d'acquérir de l'expérience dans le
-milieu professionnel de notre formation.  
+En plus "commun", il y a l'objectif naturel d'un stage en entreprise qui est d'acquérir de l'expérience dans le
+milieu professionnel de sa formation.  
 Tout comme l'objectif naturel d'aller vivre et de travailler dans un pays étranger qui est
 de découvrir et d'apprendre de la culture du pays afin de pouvoir grandir intellectuellement et culturellement
 de cette expérience.
@@ -186,6 +186,7 @@ international du centre de formation.
 Les démarches à effectuer pour le stage en entreprise à l'étranger sont plus nombreuses
 et demandent d'être débutées en avance comparées aux démarches d'un stage en France.
 
+Il faut obtenir une convention de stage 
 
 #### La pertinence du stage en entreprise à l'étranger
 
