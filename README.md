@@ -36,13 +36,33 @@ Now you're ready to code ! Happy to count you onboard ! :smile:
 This repository was made in order to store school documents during my bachelor and help my comrades with the ressources acessible online.  
 Following this, it's important to be sure to respect any copyright / license linked to any media sent / stored in this repository.  
 
+Since the repository is licensed under the [Unlicense license](./LICENSE) every licensed work that isn't coming from
+one of the collaborators needs to be written down with its license or copyright in the [Hall of Fame](#hall-of-fame) section.
+
+You may come accross files that contains Copyrights, even from me, even though the repository is released into the public domain.  
+No worries! It's simply written at the end of files in order
+to know who wrote the content inside the file.
+
+If you're a contributor who writes, or contributes to a file:
+
+- Either write your copyright this way if you're the sole author of the content:
+
+  ```html
+  Copyright &copy; <YEAR> <COPYRIGHT-HOLDER> - All Rights Reserved
+  ```
+
+  or write it this way, including the source of the content, if you're using content written by someone else:
+
+  ```html
+  Copyright &copy; <YEAR> <COPYRIGHT-HOLDER> - Some Rights Reserved
+  ```
+
+- If you're adding content in a file, please add your name to the copyright.
+- If you're fixing or slightly modifying content, don't add your name to the copyright, I'll make sure it appears. :wink:
+
 ### If you're the holder of the copyright of a document stored in this repository
 
 If the copyright / license is not respected, please either open an [issue](https://github.com/alexis-opolka/import-cours-but-rt/issues) or contact me [here](mailto:alexis-opolka.pro@protonmail.com)
-
-### If you're a contributor and uploaded a document under a certain copyright or license
-
-As the maintainer I think every copyright, license or contribution should be listed in order to acknowledge the work of everyone, please write it in the section under.
 
 ## Issues and Pull Requests
 
