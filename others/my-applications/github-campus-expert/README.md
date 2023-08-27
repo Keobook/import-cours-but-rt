@@ -14,7 +14,7 @@
     ```txt
     I am a Student-Entrepreneur (https://www.enseignementsup-recherche.gouv.fr/fr/statut-national-etudiant-entrepreneur-46412)
     and I am currently the Co-President of a non-profit association called Heimdall consisting of pro-active members of the student
-    life on the student campus of Béziers.
+    life on the student campus of Béziers, France.
     It aims to revitalize the current campus with cultural activities, workshops and conferences.
     It also aims to close the gap between the professionals and the students by supporting student initiatives and making
     companies closer to students. Its duration is set at 50 years starting from the day of its declaration, it is currently
@@ -27,6 +27,8 @@
     such activities and there is a number of students that are missing those.
     ```
 
+   <div style="page-break-after: always"></div>
+
    - Share details about the events your community have organized in the past year. Please provide links to your community's online presence where we can further explore its activities and initiatives.
 
     ```txt
@@ -37,8 +39,10 @@
 
     Here is the link of the instagram of the current student association: https://www.instagram.com/aeiutbeziers/
     It is one of the communities we want to help grow and complement in the areas they are
-    lacking or struggling to get a correct foothold to start stable and inclusive actions troughout the student campus.
+    lacking or struggling to get a correct foothold to start stable and more inclusive actions troughout the student campus.
     ```
+
+   <div style="page-break-after: always"></div>
 
    - Can you tell us about a time when you took the lead in your community to address a challenge? Please share the outcome, and how you would leverage your experience and the resources provided by the GitHub Campus Experts program to handle current or future obstacles.
 
@@ -48,17 +52,20 @@
     resignations and short mandates of the people in charge of the association. I decided to apply to the function of President
     and was successfully elected at the position. Following two years of work, the student association was more stable and less
     prompt to people resignating from their position one or two months after being elected and there was a clear distinction
-    between both organisations on what each one had to do. Moreover, the association, during my mandate, gained an administrative
+    between both organisations on what each one had to do. Moreover, the association, during my mandate, gained an administrative and financial
     stability and was able to make events and proceed with certain projects during the COVID-19 pandemic in France.
 
 
     I would leverage my experience and the resources provided by the GitHub Campus Experts program to handle the current necessity
-    of introducing intelectual events open to anyone, support student initiatives through workshops or any appropriate form of support.
+    of introducing intelectual events open to anyone, support student initiatives through workshops or any appropriate form of support,
+    as well as empowering students in an inclusive community.
     At the time I'm writing this application, at my initiative, I have nearly finished preparing workshops and conferences on Git, GitHub
-    Projects and GitHub Actions made for beginner and intermediate levels. I am sure, since most people studying in an IT cursus either
-    uses GitHub or at least knows the company, being able to have resources provided by GitHub will help create the momentum and
+    Projects and GitHub Actions made for beginner and intermediate levels. Since most people studying in an IT cursus either
+    uses GitHub or at least knows of the company, the resources provided by GitHub will be of great help in creating the momentum and
     the interest required to tackle the most important issues in the span of two years, at most.
     ```
+
+   <div style="page-break-after: always"></div>
 
 3. ## Other programs
 
