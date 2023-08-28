@@ -39,7 +39,7 @@
 
     Here is the link of the instagram of the current student association: https://www.instagram.com/aeiutbeziers/
     It is one of the communities we want to help grow and complement in the areas they are
-    lacking or struggling to get a correct foothold to start stable and more inclusive actions troughout the student campus.
+    lacking or struggling to get a correct foothold to start stable and more inclusive actions throughout the student campus.
     ```
 
    <div style="page-break-after: always"></div>
@@ -47,22 +47,21 @@
    - Can you tell us about a time when you took the lead in your community to address a challenge? Please share the outcome, and how you would leverage your experience and the resources provided by the GitHub Campus Experts program to handle current or future obstacles.
 
     ```txt
-    While I was in High-School, there was a clear need of separation between the student association and the Student Life Council
-    (or "Conseil de la Vie Lycéenne" in french), furthermore the student association, at that time, was unstable due to multiple
-    resignations and short mandates of the people in charge of the association. I decided to apply to the function of President
-    and was successfully elected at the position. Following two years of work, the student association was more stable and less
-    prompt to people resignating from their position one or two months after being elected and there was a clear distinction
-    between both organisations on what each one had to do. Moreover, the association, during my mandate, gained an administrative and financial
-    stability and was able to make events and proceed with certain projects during the COVID-19 pandemic in France.
+      While I was in High-School, there was a clear need of separation between the student association and the Student Life Council,
+      furthermore the student association, at that time, was unstable due to multiple resignations and short mandates of the people in charge of the association.
+      I decided to apply to the function of President and was successfully elected at the position.
+      Following two years of work, the student association was more stable and less prompt to people resigning from their position one or two months
+      after being elected and there was a clear distinction between both organisations.
+      Moreover, the association, during my mandate, gained an administrative and financial stability
+      and was able to make events and proceed with certain projects during the COVID-19 pandemic in France.
 
-
-    I would leverage my experience and the resources provided by the GitHub Campus Experts program to handle the current necessity
-    of introducing intelectual events open to anyone, support student initiatives through workshops or any appropriate form of support,
-    as well as empowering students in an inclusive community.
-    At the time I'm writing this application, at my initiative, I have nearly finished preparing workshops and conferences on Git, GitHub
-    Projects and GitHub Actions made for beginner and intermediate levels. Since most people studying in an IT cursus either
-    uses GitHub or at least knows of the company, the resources provided by GitHub will be of great help in creating the momentum and
-    the interest required to tackle the most important issues in the span of two years, at most.
+      I would leverage my experience and the resources provided by the GitHub Campus Experts program to handle the current necessity of introducing intellectual events open to anyone,
+      support student initiatives through workshops or any appropriate form of support, as well as empowering students in an inclusive community.
+      At the time I'm writing this application, at my initiative, I have nearly finished preparing workshops and conferences on Git,
+      GitHub Projects and GitHub Actions made for beginner and intermediate levels.
+      Since most people studying in an IT cursus either uses GitHub or at least knows of the company,
+      the resources provided by GitHub will be of great help in creating the momentum and the interest
+      required to tackle the most important issues in the span of two years, at most.
     ```
 
    <div style="page-break-after: always"></div>
