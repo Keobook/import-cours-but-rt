@@ -1,4 +1,4 @@
-# Studies
+# Research
 
 ## About
 
