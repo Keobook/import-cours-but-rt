@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R305-TP2.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="r305-tp2---transmission-en-bande-de-base">R305-TP2 - Transmission en bande de base</h1>
+<ul>
+<li>
+<p>Rappeler la relation entre la rapidité de modulation R et la fréquence de l'horloge:</p>
+<p>$$R = \frac{1}{\text{ITE}} = \frac{1}{T_H}= f_H$$</p>
+</li>
+</ul>
+<h2 id="partie-1-code-nrz-unipolaire">Partie 1: Code NRZ Unipolaire</h2>
+<p>Voici notre montage:</p>
+<p><img src="./src/TP2/montage.jpg" alt="p1-montage"></p>
+<ol>
+<li>
+<h3 id="densit%C3%A9-spectrale-de-puissance">Densité spectrale de puissance</h3>
+<ul>
+<li>
+<p>Observer le signal en temporel et retrouver le codage du 0 et du 1.<br>
+En particulier, donner les valeurs des niveaux haut et bas</p>
+<p>Les valeurs:</p>
+<ul>
+<li>1: +5V</li>
+<li>0: 0V</li>
+</ul>
+<p><img src="./src/TP2/nrz-uni-ttl.jpg" alt="p1-1-nrz-uni-ttl"></p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Le signal jaune est notre signal NRZ Unipolaire et
+le signal bleu est notre horloge.</p>
+</blockquote>
+</li>
+<li>
+<p>Relever la densité spectrale de ce code.</p>
+<p>La densité spectrale de ce code est:</p>
+<p><img src="./src/TP2/p1-1-densite-spectrale.jpg" alt="p1-1-densite-spectrale"></p>
+</li>
+<li>
+<p>Repérer les fréquences caractéristiques (fréquences pour lesquelles la densité spectrale est nulle ou celles qui correspondent à un maximum);<br>
+on les exprimera en fonction de la fréquence d'horloge (ou de R).</p>
+<ul>
+<li>Pour $f_H = R$, on constate qu'il n'y a pas de puissance, donc $D = 0$.</li>
+<li>Pour $f_H = 0$, on constate qu'il y a beaucoup de puissance.</li>
+</ul>
+</li>
+<li>
+<p>Quelle est l’amplitude de la densité spectrale pour $f = f_H$  de ce code ?</p>
+<p>L'amplitude de la densité spectrale pour $f = f_H$ est nulle.</p>
+</li>
+<li>
+<p>Pourra-t-on alors reconstituer l'horloge en réception ?<br>
+Pouvait-on prévoir ce résultat ?</p>
+<p>On ne pourra donc pas reconstituer l'horloge en réception car nous
+n'avons pas de puissance transmise à R.</p>
+<p>On pouvait prévoir ce résultat car c'est une des particularités du code <a href="../R305.md#code-nrz-unipolaire">NRZ Unipolaire</a>.</p>
+</li>
+<li>
+<p>Quelle est la largeur du premier lobe ?<br>
+Pour la suite, on confondra la largeur du premier lobe et l’occupation spectrale du code.</p>
+<p>La largeur du premier lobe est de $R$.</p>
+</li>
+<li>
+<p>Augmenter progressivement la rapidité de modulation (de 50 000 Bd à 100 000 Bd).<br>
+On conservera la même échelle des fréquences sur l'oscilloscope.<br>
+Que devient l'occupation spectrale du signal codé ?</p>
+<p>Lorsque l'on augmente la rapidité de modulation de 50k à 100k, on constate
+une augmentation de l'occupation spectrale du signal codé.</p>
+<ul>
+<li>
+<p>OS par rapidité de modulation:</p>
+<ul>
+<li>
+<p>50k:</p>
+<p><img src="./src/TP2/p1-1-densite-spectrale.jpg" alt="nrz-uni-50k-os"></p>
+</li>
+<li>
+<p>100k:</p>
+<p><img src="./srcTP2/../src/TP2/nrz-uni-100k-densite-spectrale.jpg" alt="nrz-uni-100k-os"></p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+On constate que lorsque l'on double la rapidité de modulation,
+l'OS[^1] double à son tour, comme.</p>
+</blockquote>
+<p>[^1]: L'occupation Spectrale</p>
+</li>
+<li>
+<p>On prend maintenant R = 20 000 Bd, que se passe-t-il ?<br>
+Conclure.</p>
+<p>L'OS[^1] a diminué, on a donc une relation entre la rapidité de modulation
+et l'OS du signal.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Montrer vos résultats à l'enseignant (contrôle 1).</p>
+</blockquote>
+<ul>
+<li>
+<p>Pour le code NRZ unipolaire, que vaut la valeur moyenne du signal lorsque l’on transmet exactement autant de 0 que de 1 ?<br>
+Que vaut-elle pour un signal aléatoire ?</p>
+<p>Dans notre cas, si l'on transmet autant de 0 que de 1, la valeur
+moyenne du signal sera de $2.5V$.</p>
+<p>Dans le cas d'un signal aléatoire, la valeur moyenne vaudra: $\frac{v_{max} + v_{min}}{2}$.</p>
+</li>
+<li>
+<p>Cette valeur moyenne peut-elle être nulle pour un signal transportant de l'information ?</p>
+<p>Si un signal transporte de l'information, la valeur moyenne ne pourra pas être nulle.</p>
+</li>
+<li>
+<p>Comment se traduit ce résultat sur la densité spectrale du code ? Soyez précis.</p>
+<p>On obtient une raie à $f = 0$.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Montrer vos résultats à l'enseignant (contrôle 2).</p>
+</blockquote>
+</li>
+<li>
+<h3 id="etude-%C3%A0-travers-un-canal">Etude à travers un canal</h3>
+<p>On change donc de montage:</p>
+<p><img src="./src/TP2/p1-2-montage.jpg" alt="p1-2-montage"></p>
+<ul>
+<li>
+<p>Pour le code <a href="../R305.md#code-nrz-unipolaire"><strong>NRZ unipolaire</strong></a> et avec une rapidité de modulation R = 50 000 Bd ;<br>
+observer et relever la densité spectrale des signaux en entrée et en sortie du canal-filtre lorsque l’on envoie un signal aléatoire.</p>
+<ul>
+<li>
+<p>En entrée du canal:</p>
+<p><img src="./src/TP2/p1-1-densite-spectrale.jpg" alt="p1-2-os-entree-canal"></p>
+</li>
+<li>
+<p>En sortie du canal:</p>
+<p><img src="./src/TP2/p1-2-densite-spectrale-signal-sortie-canal.jpg" alt="p1-2-os-sortie-canal"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Observer maintenant l’allure temporelle du signal en entrée et en sortie du canal.</p>
+<ul>
+<li>
+<p>En entrée du canal:</p>
+<p><img src="./src/TP2/nrz-uni-ttl.jpg" alt="p1-2-singal-entree-canal"></p>
+</li>
+<li>
+<p>En sortie du canal:</p>
+<p><img src="./src/TP2/p1-2-signal-sortie-canal.jpg" alt="p1-2-signal-sortie-canal"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Augmenter petit à petit la rapidité de modulation R et observer à la fois la densité spectrale du signal en sortie du canal et l’allure temporelle.<br>
+Que se passe-t-il ?</p>
+<p>Lorsque l'on augmente la rapidité de modulation:</p>
+<ul>
+<li>
+<p>Pour la densité spectrale en sortie du canal:</p>
+<p>L'OS[^1] augmente, comme vu précédemment.</p>
+<ul>
+<li>
+<p>A 50k:</p>
+<p><img src="./src/TP2/p1-2-densite-spectrale-signal-sortie-canal.jpg" alt="p1-2-densite-sortie-canal-50k"></p>
+</li>
+<li>
+<p>A 100k:</p>
+<p><img src="./src/TP2/p1-2-densite-sortie-canal-100k.jpg" alt="p1-2-densite-sortie-canal-100k"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Pour l'allure temporelle en sortie du canal:</p>
+<p>On constate que l'ITE diminue, du fait de l'augmentation de $R$.</p>
+<ul>
+<li>
+<p>A 50k:</p>
+<p><img src="./src/TP2/p1-2-signal-sortie-canal.jpg" alt="p1-2-signal-sortie-50k"></p>
+</li>
+<li>
+<p>A 100k:</p>
+<p><img src="./src/TP2/p1-2-signal-sortie-canal-100k.jpg" alt="p1-2-signal-sortie-100k"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Si l'on considère qu'il faut au moins conserver le premier lobe entièrement, quelle sera la rapidité maximale pour qu'un signal codé en NRZ unipolaire « passe » correctement à travers ce canal ?</p>
+<p>La rapidité maximale sera de 60 kBd, car notre filtre passe bande va jusqu'à 60 kHz.</p>
+</li>
+<li>
+<p>Cette hypothèse vous semble-t-elle correcte au vu des observations précédentes ?</p>
+<p>Si l'on dépasse 60 kHz, on obtient un lobe qui n'est plus
+assez précis pour que l'on puisse caractériser cela de lobe du signal, comme disponible ci-dessous.</p>
+<ul>
+<li>
+<p>Le lobe à 60 kHz:</p>
+<p><img src="./src/TP2/p1-2-densite-sortie-canal-60k.jpg" alt="p1-2-os-sortie-canal-60k"></p>
+</li>
+<li>
+<p>Le lobe à 100 kHz:</p>
+<p><img src="./src/TP2/p1-2-densite-sortie-canal-100k.jpg" alt="p1-2-os-sortie-canal-100k"></p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Montrer vos résultats à l'enseignant (contrôle 3).</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="partie-2-code-manchester">Partie 2: Code Manchester</h2>
+<p>On a ce nouveau montage:</p>
+<p><img src="./src/TP2/p2-1-montage.jpg" alt="p2-1-montage"></p>
+<ol>
+<li>
+<h3 id="densit%C3%A9-spectrale">Densité spectrale</h3>
+<ul>
+<li>
+<p>Observer le signal en temporel et retrouver le codage du 0 et du 1.</p>
+<p><img src="./src/TP2/p2-1-manchester.jpg" alt="p2-1-manchester"></p>
+</li>
+<li>
+<p>Relever la densité spectrale de ce code ; on essaiera de prendre la même échelle que dans la première partie.</p>
+<p><img src="./src/TP2/p2-1-densite-spectrale-manchester.jpg" alt="p2-1-os-manchester"></p>
+</li>
+<li>
+<p>Repérer les fréquences caractéristiques (fréquences pour lesquelles la densité spectrale est nulle ou celles qui correspondent à un maximum);<br>
+on les exprimera en fonction de la fréquence d'horloge (ou de R).</p>
+<ul>
+<li>Pour $f_H = R$, on constate qu'il y a beaucoup de puissance.</li>
+<li>Pour $f_H = 0$, on constate qu'il n'y a pas de puissance.</li>
+</ul>
+</li>
+<li>
+<p>Quelle est l’amplitude de la densité spectrale pour f = fH  de ce code ?<br>
+Pourra-t-on alors reconstituer l'horloge en réception ?</p>
+<p>Lorsque $f = f_H$, nous avons de la puissance, ainsi donc
+nous serons capable de reconstituer l'horloge du signal
+en réception.</p>
+</li>
+<li>
+<p>Quelle est la largeur du premier lobe ?</p>
+<p>Le premier lobe a une largeur de $2R$.</p>
+</li>
+<li>
+<p>Pour le code Manchester, que vaut la valeur moyenne du signal lorsque l’on transmet exactement autant de 0 que de 1 ?<br>
+Que vaut-elle pour un signal aléatoire ?</p>
+<p>Si l'on transmet autant de 0 que de 1, nous obtenons une valeur
+moyenne qui est nulle.</p>
+<p>Dans le cas d'un signal aléatoire, la valeur moyenne sera égale à: $\frac{v_{max} - v_{min}}{2}$.</p>
+<p>Dans le cas d'un signal aléatoire, la valeur moyenne sera tout de même nulle.</p>
+<blockquote>
+<p><strong>Note</strong>:<br>
+On met $v_{max} - v_{min}$ car on a une alternance entre fronts montants et descendants.</p>
+</blockquote>
+</li>
+<li>
+<p>Comment se traduit ce résultat sur la densité spectrale du code ?</p>
+<p>L'OS[^1] est plus grande.</p>
+</li>
+<li>
+<p>En comparant avec les résultats obtenus pour le NRZ unipolaire, quel est l’avantage du code Manchester ?<br>
+Son inconvénient ?</p>
+<p>L'avantage du <a href="../R305.md#biphase-bipolaire-manchester">code Manchester</a> est qu'à la réception,
+on peut reconstituer l'horloge du signal.</p>
+<p>Son inconvénient est sont OS[^1] qui est plus grande que
+le NRZ Unipolaire.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Montrer vos résultats à l'enseignant (contrôle 4).</p>
+</blockquote>
+</li>
+<li>
+<h3 id="etude-%C3%A0-travers-un-canal">Etude à travers un canal</h3>
+<ul>
+<li>
+<p>Avec une rapidité de modulation R = 50 000 Bd ;<br>
+observer et relever la densité spectrale des signaux en entrée et en sortie du canal-filtre lorsque l’on envoie un signal aléatoire.</p>
+<ul>
+<li>
+<p>En entrée:</p>
+<p><img src="./src/TP2/p2-1-densite-spectrale-manchester.jpg" alt=""></p>
+</li>
+<li>
+<p>En sortie:</p>
+<p><img src="./src/TP2/p2-2-densite-spectrale-sortie-canal.jpg" alt=""></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Observer maintenant l’allure temporelle des signaux en entrée et en sortie du canal.</p>
+<ul>
+<li>
+<p>En entrée:</p>
+<p><img src="./src/TP2/p2-1-manchester.jpg" alt=""></p>
+</li>
+<li>
+<p>En sortie:</p>
+<p><img src="./src/TP2/p2-2-signal-sortie-canal.jpg" alt=""></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Que remarque-t-on par rapport au code précédent ?<br>
+Pouvait-on prévoir ce résultat ?<br>
+Pourquoi ?</p>
+<p>Le signal en sortie est beaucoup plus déformé que pour le NRZ Unipolaire.</p>
+<p>Nous pouvions prévoir que le signal allait être déformé car
+son OS[^1] est supérieure à $R$, ainsi donc notre canal n'est
+pas capable de recevoir le signal dans son intégralité.</p>
+</li>
+<li>
+<p>En considérant toujours qu'il faut au moins conserver le premier lobe entièrement, quelle sera la rapidité maximale pour qu'un signal codé en Manchester « passe » correctement à travers ce canal ?</p>
+<p>Il faut que notre rapidité de modulation soit à 30 kHz afin
+que le signal passe correctement dû au fait que l'OS[^1]
+du code Manchester, qui est de $2R$ soit égal à la limite
+de notre canal actuel, c'est à dire 60 KHz.</p>
+<p><img src="./src/TP2/p2-2-signal-30k.jpg" alt=""></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Montrer vos résultats à l'enseignant (contrôle 5).</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="partie-3-synth%C3%A8se">Partie 3: Synthèse</h2>
+<p>Les canaux:</p>
+<p><img src="./src/TP2/canaux.png" alt="p3-canaux"></p>
+<ul>
+<li>
+<p>En vous aidant des résultats précédents;<br>
+pour les canaux 1 et 2, pour les codes NRZ  Unipolaire et
+Manchester, proposer une rapidité de modulation qui pourrait être utilisée sans que le signal reçu ne soit trop dégradé</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>canal 1</th>
+<th>canal 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NRZ Unipolaire</td>
+<td>10k</td>
+<td>20k</td>
+</tr>
+<tr>
+<td>Manchester</td>
+<td>5k</td>
+<td>10k</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Quel problème supplémentaire pose le canal 3 ?</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>canal 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NRZ Uni</td>
+<td>NON, car à $f_H = 0$ pas de puissance</td>
+</tr>
+<tr>
+<td>Manchester</td>
+<td>10k</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Si on rajoute qu'il est nécessaire de reconstruire l'horloge en réception, quel code peut-on utiliser ?<br>
+Avec quelle rapidité de modulation ?</p>
+<p>On ne peut utiliser que le code Manchester avec une rapidité de modulation de 10k.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Montrer vos résultats à l'enseignant (contrôle 6).</p>
+</blockquote>
+<h2 id="partie-4-un-autre-code">Partie 4: Un autre code</h2>
+<ul>
+<li>
+<p>Trouver le codage du  NRZ-M (codage du 0 et du 1);<br>
+On visualisera en concordance de temps la tension correspondant au code NRZ-M et celle correspond au code NRZ unipolaire (pour connaître la suite de bits).</p>
+</li>
+<li>
+<p>Relever sa densité spectrale. D'après la courbe obtenue, est-ce un code « intéressant » ?<br>
+Pourquoi ?</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>:<br>
+Faire valider les réponses par l'enseignant (contrôle 7).</p>
+</blockquote>
+<h2 id="copyright-%C2%A9-2023-alexis-opolka-mathys-domergue---all-rights-reserved">Copyright © 2023 Alexis Opolka, Mathys Domergue - All Rights Reserved</h2>
+
+</body>
+</html>

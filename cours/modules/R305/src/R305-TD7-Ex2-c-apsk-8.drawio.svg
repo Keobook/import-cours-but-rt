@@ -1,0 +1,24 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="272px" height="251px" viewBox="-0.5 -0.5 272 251" content="&lt;mxfile&gt;&lt;diagram id=&quot;l0K-JM__ocM3Wgk1ge6r&quot; name=&quot;Page-1&quot;&gt;7VlNs9ogFP01bh0+8rns873XbjrTGRddU4MmUwwO4lP760sMSSCJY0aTmL7pxpEDXODcw+VCZnixPX0VZBd/5xFlMwSi0wy/zhCCoaN+M+CcAx7KyxuRRLpJBSyTP1SDQKOHJKJ7q6HknMlkZ4MrnqZ0JS2MCMGPdrM1Z/aoO7KhDWC5IqyJ/kwiGedogPwK/0aTTVyMDL0wr9mSorFeyT4mET8aEH6b4YXgXOb/tqcFZRl1BS95v/crteXEBE1lpw56yh+EHfTi9MTkuVit4Ic0olkHOMMvxziRdLkjq6z2qLyrsFhuma5eJ4wtOOPi0hf/glG0BgrfS8F/U6MGAh+HysaLngAVkp6urgKW3ChJUb6lUpxVE90BhZpOLSesi8fKOcjXWGw4BrkaJFoQm9J0xZn6o2lrpxDdZpCm0ZdMdqqU8pTajO0lEbJWnVugUUOGNUbUKPwgVkUr3M6SQYPbwkKBCcqITD7sIduY0SP84ImaTOkEBzhz37P8gHzXtpLPVnc0ZXnbFq6ZUqxtqGyYunirXHsnB+LJODB8pv8U6Rbh0AP3Oc/1aobcwVzndHAdY+pYoLcjF9nv8rNinZyyaNdHYMJ1KmAzMsEWl8Ie4pI7cW6cut5G5MabODcN3YTjcdMhI5iWbkbkprAxgbMCBjmWB9NPfX7UDfV3foRT1zqqH6Ujav3RxLa7rk0NwyuMjCTi8Ebu0jmD9cAcAAjVDStwXccHft3uHAI3BIGDPd/xQjSUxCGcuMZx8ESNd0kgx4nnLeH8/33uPsV3udA9NaqDmuJb3isGU3yXa0H/UT34PEp2bd+hwZKT4F+TsT+ijLtkbiMl4m1JzFP1jntLYhrp53BBe1C1m6/S2tkR2cflo3YPuwE7/jy0k7ywQswtAZ058Fq2hYE/9B7d5Y46aSaDWogtUgWDRKdl9zg9xJVygxtcqXiw1MVuceSCvSfZIK/Zt49mIFKIUX9f3DG+F1ksPho8Gul4X3teFasPW3nz6uMgfvsL&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="0" y="0" width="270" height="250" rx="37.5" ry="37.5" fill="#b1ddf0" stroke="#10739e" pointer-events="all"/>
+        <path d="M 114.99 100 L 114.76 5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 140 125 L 270 125" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="75" cy="85" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <ellipse cx="155" cy="85" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <ellipse cx="75" cy="165" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <ellipse cx="155" cy="165" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 172.03 125 L 130 125" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="135" cy="125" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 0 125 L 90 125" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="95" cy="125" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 115 140 L 115 110" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="115" cy="105" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 114.76 245 L 114.99 150" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="115" cy="145" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 90 125 L 57.97 125" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="115" cy="125" rx="57.03000000000001" ry="57.03000000000001" fill="none" stroke="rgb(0, 0, 0)" stroke-dasharray="3 3" pointer-events="all"/>
+        <ellipse cx="115" cy="125" rx="20" ry="20" fill="none" stroke="rgb(0, 0, 0)" stroke-dasharray="3 3" pointer-events="all"/>
+        <path d="M 95 125 L 90 125" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    </g>
+</svg>

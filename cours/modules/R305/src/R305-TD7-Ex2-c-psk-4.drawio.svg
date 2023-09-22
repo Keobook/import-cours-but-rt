@@ -1,0 +1,12 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="322px" height="242px" viewBox="-0.5 -0.5 322 242" content="&lt;mxfile&gt;&lt;diagram id=&quot;1lYXVZvr6XnX_XNlJ7WZ&quot; name=&quot;Page-1&quot;&gt;3ZZdb4MgFIZ/jfcK/XCXa9dtN0uW9GLXRE+VBMUgrXa/fjhARW1mlqXrdmPg9ZwD73NU9PA2q58EKdIXHgPzkB/XHn7wEArxnbo2wlkLCAVaSASNtdQT9vQdjOgb9UhjKJ1AyTmTtHDFiOc5RNLRiBC8csMOnLmrFiSBkbCPCBurbzSWqbGF1p3+DDRJ7crByhjOiA02TsqUxLzqSXjn4a3gXOpRVm+BNewsF533eOFuuzEBuZyTgHTCibCj8Wb2Jc/WrEpQXNVkU6VUwr4gUXOnUp1VWiozpmaBGpKy0LAPtAZVf2Nqg5BQX9xf0LpWTwvwDKQ4qxCTgC0o86SEZlp12IOV0dI+cisS0+qkLd3RUAMDZBoOvnE4i5ULJwgm6EzB+QE2ixtng/HvsVn+MTbIvx6b1Y2zGb5T12SznsEmj++bA0zNcp6Dy0NHQzw6vL403zO3nDBnNQGMSHpyy085Niu8cqoW7tj6A7bhAFrJjyICk9U/tb4otBjUkUQkIEd1Pvm3rme1JPznLWnR2c/k8Nyc25Ll8CwaFvp2T9S0+x/S4d1PJd59AA==&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <ellipse cx="160" cy="120" rx="80" ry="80" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <ellipse cx="225" cy="75" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <ellipse cx="95" cy="75" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <ellipse cx="95" cy="165" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <ellipse cx="225" cy="165" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 160 240 L 160 0" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 0 120 L 320 120" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="292px" height="242px" viewBox="-0.5 -0.5 292 242" content="&lt;mxfile&gt;&lt;diagram id=&quot;1lYXVZvr6XnX_XNlJ7WZ&quot; name=&quot;Page-1&quot;&gt;1VjRcqIwFP0aXneAEKqPXbfbvnSmMz70OWNuITOBMCEK9us3NEGIUdfRtbK+SA6Xm3vPOUnQAC2K9lmSKn8VFHgQh7QN0K8gjqM4SvVXh2wNguLQAJlk1AYNwJJ9ggX7sDWjUDuBSgiuWOWCK1GWsFIORqQUjRv2Ibg7a0Uy8IDlinAffWdU5QadxQ8D/gIsy/uZo3Ru7hSkD7ad1DmhohlB6ClACymEMldFuwDekdfzYp77feTurjAJpTrnAVvxhvC17c3WpbZ9s1DSx44zPSpFqcGfuSq4HkX60p/PlgDUodDO/gyiACW3OqAZiMOWjHzEWY9J4ESxjUs8sfplu3S7Gd4E05XEofVaEto81mnxA3ZT1GItV2CfGhP1l0RoL48iMgPl5dEXo64H6EuGw5LMrpSk1qWovdtHZTLt2xYnpZxm3CE8wsmPGbpMvDTaz3Uz9aLoVivK1GgbmpRUu+37GL3n6oTTQ5qHwyc5SzZNLtmOwqouoL5S2PQMXTnXJ1CnZ5MzBcuKfC2tRh+Crsakrsyx9MFaoKdE34BU0J7UuN+gvPVixyMPRAc80GOH5HboOmX6a4+Ri/es1F8baFJrI8HTWhsXOB9N3fmzOzr/bqc18p2Pp+X8+X/vfDxx52Pv4P1G58/v5XzsO39ar64Y/SPnf+N7azJ1q3ubwM2srofDD3BD5fA3Bnr6Aw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <path d="M 80 240 L 80 0" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 250 120 L 290 120" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 0 120 L 120 120" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="125" cy="120" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 130 120 L 160 120" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="165" cy="120" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 170 120 L 200 120" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="205" cy="120" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 210 120 L 240 120" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <ellipse cx="245" cy="120" rx="5" ry="5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+    </g>
+</svg>
