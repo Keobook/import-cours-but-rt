@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        xmin=0, xmax=1.5,
+        ymin=-2, ymax=1,
+        axis lines=middle,
+        ytick distance=0.5
+      ]
+      \path[name path=xaxis] (\pgfkeysvalueof{/pgfplots/xmin}, 0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
+      \addplot +[mark=none] coordinates {(0.25, -1.57) (0.25, 0)};
+      \addplot +[mark=none] coordinates {(0.75, -1.57) (0.75, 0)};
+      \addplot +[mark=none] coordinates {(1.25, -1.57) (1.25, 0)};
+    \end{axis}
+  \end{tikzpicture}
+\end{figure}
+\end{document}
