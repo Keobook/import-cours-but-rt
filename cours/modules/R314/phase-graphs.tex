@@ -11,15 +11,13 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        xmin=0, xmax=1.5,
-        ymin=-2, ymax=1,
+        xmin=0, xmax=120,
+        ymin=-2, ymax=4,
         axis lines=middle,
         ytick distance=0.5
       ]
       \path[name path=xaxis] (\pgfkeysvalueof{/pgfplots/xmin}, 0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
-      \addplot +[mark=none] coordinates {(0.25, -1.57) (0.25, 0)};
-      \addplot +[mark=none] coordinates {(0.75, -1.57) (0.75, 0)};
-      \addplot +[mark=none] coordinates {(1.25, -1.57) (1.25, 0)};
+      \addplot +[mark=none] coordinates {(100, \sqrt{13}) (0.25, 0)};
     \end{axis}
   \end{tikzpicture}
 \end{figure}
