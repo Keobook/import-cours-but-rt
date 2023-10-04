@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "p1"
+version = "0.1.0"
+description = ""
+authors = ["alexis-opolka <alexis.opolka@proton.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+ipython = "^8.16.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

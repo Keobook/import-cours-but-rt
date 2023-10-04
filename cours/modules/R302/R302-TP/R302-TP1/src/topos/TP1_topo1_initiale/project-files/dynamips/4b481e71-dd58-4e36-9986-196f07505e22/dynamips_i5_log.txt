@@ -1,0 +1,22 @@
+Sep 11 15:58:25.270 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Sep 11 15:58:25.270 HYPERVISOR: Started on IP = localhost, TCP port = 48677.
+Sep 11 15:58:25.281 HYPERVISOR: exec_cmd: hypervisor version 
+Sep 11 15:58:25.281 HYPERVISOR: exec_cmd: hypervisor working_dir /media/data/IUT/M3102/TP_finaux/TP2021/TP1_topo1_initiale/TP1_topo1_initiale-2/project-files/dynamips 
+Sep 11 15:58:25.281 GENERAL: working_dir=/media/data/IUT/M3102/TP_finaux/TP2021/TP1_topo1_initiale/TP1_topo1_initiale-2/project-files/dynamips
+Sep 11 15:58:25.281 HYPERVISOR: exec_cmd: hypervisor working_dir /media/data/IUT/M3102/TP_finaux/TP2021/TP1_topo1_initiale/TP1_topo1_initiale-2/project-files/dynamips/4b481e71-dd58-4e36-9986-196f07505e22 
+Sep 11 15:58:25.281 GENERAL: working_dir=/media/data/IUT/M3102/TP_finaux/TP2021/TP1_topo1_initiale/TP1_topo1_initiale-2/project-files/dynamips/4b481e71-dd58-4e36-9986-196f07505e22
+Sep 11 15:58:25.281 HYPERVISOR: exec_cmd: vm create R5 5 c3600 
+Sep 11 15:58:25.281 VM: VM R5 created.
+Sep 11 15:58:25.282 HYPERVISOR: exec_cmd: vm set_con_tcp_port R5 5004 
+Sep 11 15:58:25.282 HYPERVISOR: exec_cmd: c3600 get_mac_addr R5 
+Sep 11 15:58:25.282 HYPERVISOR: exec_cmd: vm get_status R5 
+Sep 11 15:58:25.282 HYPERVISOR: exec_cmd: vm set_idle_pc R5 0x604f5184 
+Sep 11 15:58:25.283 HYPERVISOR: exec_cmd: vm set_ios R5 /home/lucile/GNS3/images/IOS/c3640-jk9s-mz.124-16.image 
+Sep 11 15:58:25.283 HYPERVISOR: exec_cmd: c3600 set_mac_addr R5 cc05.11e9.0000 
+Sep 11 15:58:25.283 HYPERVISOR: exec_cmd: vm set_nvram R5 256 
+Sep 11 15:58:25.283 HYPERVISOR: exec_cmd: vm set_ram R5 192 
+Sep 11 15:58:25.284 HYPERVISOR: exec_cmd: vm get_status R5 
+Sep 11 15:58:25.284 HYPERVISOR: exec_cmd: vm slot_add_binding R5 0 0 NM-1FE-TX 
+Sep 11 15:58:26.504 HYPERVISOR: exec_cmd: nio create_udp udp-8aacd8de-b1f2-4494-91e7-2f2fb1d47dae 10028 127.0.0.1 10029 
+Sep 11 15:58:26.720 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 0 0 udp-8aacd8de-b1f2-4494-91e7-2f2fb1d47dae 
+Sep 11 15:58:26.720 HYPERVISOR: exec_cmd: vm get_status R5 

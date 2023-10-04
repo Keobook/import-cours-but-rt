@@ -1,0 +1,32 @@
+Sep 11 15:58:25.192 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Sep 11 15:58:25.192 HYPERVISOR: Started on IP = localhost, TCP port = 48073.
+Sep 11 15:58:25.204 HYPERVISOR: exec_cmd: hypervisor version 
+Sep 11 15:58:25.204 HYPERVISOR: exec_cmd: hypervisor working_dir /media/data/IUT/M3102/TP_finaux/TP2021/TP1_topo1_initiale/TP1_topo1_initiale-2/project-files/dynamips 
+Sep 11 15:58:25.204 GENERAL: working_dir=/media/data/IUT/M3102/TP_finaux/TP2021/TP1_topo1_initiale/TP1_topo1_initiale-2/project-files/dynamips
+Sep 11 15:58:25.204 HYPERVISOR: exec_cmd: hypervisor working_dir /media/data/IUT/M3102/TP_finaux/TP2021/TP1_topo1_initiale/TP1_topo1_initiale-2/project-files/dynamips/2a84785e-00f2-4afd-9209-3bf2f03f4f3b 
+Sep 11 15:58:25.204 GENERAL: working_dir=/media/data/IUT/M3102/TP_finaux/TP2021/TP1_topo1_initiale/TP1_topo1_initiale-2/project-files/dynamips/2a84785e-00f2-4afd-9209-3bf2f03f4f3b
+Sep 11 15:58:25.204 HYPERVISOR: exec_cmd: vm create R3 3 c3600 
+Sep 11 15:58:25.204 VM: VM R3 created.
+Sep 11 15:58:25.205 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5002 
+Sep 11 15:58:25.205 HYPERVISOR: exec_cmd: c3600 get_mac_addr R3 
+Sep 11 15:58:25.205 HYPERVISOR: exec_cmd: vm get_status R3 
+Sep 11 15:58:25.205 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x604f5184 
+Sep 11 15:58:25.206 HYPERVISOR: exec_cmd: vm set_ios R3 /home/lucile/GNS3/images/IOS/c3640-jk9s-mz.124-16.image 
+Sep 11 15:58:25.206 HYPERVISOR: exec_cmd: c3600 set_mac_addr R3 cc03.11c9.0000 
+Sep 11 15:58:25.206 HYPERVISOR: exec_cmd: vm set_nvram R3 256 
+Sep 11 15:58:25.207 HYPERVISOR: exec_cmd: vm set_ram R3 192 
+Sep 11 15:58:25.207 HYPERVISOR: exec_cmd: vm get_status R3 
+Sep 11 15:58:25.207 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 0 NM-1FE-TX 
+Sep 11 15:58:25.207 HYPERVISOR: exec_cmd: vm get_status R3 
+Sep 11 15:58:25.208 HYPERVISOR: exec_cmd: vm slot_add_binding R3 1 0 NM-1FE-TX 
+Sep 11 15:58:25.208 HYPERVISOR: exec_cmd: vm get_status R3 
+Sep 11 15:58:25.208 HYPERVISOR: exec_cmd: vm slot_add_binding R3 2 0 NM-1FE-TX 
+Sep 11 15:58:25.606 HYPERVISOR: exec_cmd: nio create_udp udp-ca8ff6e2-f299-4ede-893c-27157f0da197 10004 127.0.0.1 10005 
+Sep 11 15:58:25.829 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 0 udp-ca8ff6e2-f299-4ede-893c-27157f0da197 
+Sep 11 15:58:25.830 HYPERVISOR: exec_cmd: vm get_status R3 
+Sep 11 15:58:26.456 HYPERVISOR: exec_cmd: nio create_udp udp-61113734-a527-4cca-b82b-4ead4108b648 10022 127.0.0.1 10023 
+Sep 11 15:58:26.457 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 1 0 udp-61113734-a527-4cca-b82b-4ead4108b648 
+Sep 11 15:58:26.458 HYPERVISOR: exec_cmd: vm get_status R3 
+Sep 11 15:58:26.764 HYPERVISOR: exec_cmd: nio create_udp udp-c91a9a77-9056-492b-8664-97ec16cd0210 10032 127.0.0.1 10033 
+Sep 11 15:58:26.765 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 2 0 udp-c91a9a77-9056-492b-8664-97ec16cd0210 
+Sep 11 15:58:26.765 HYPERVISOR: exec_cmd: vm get_status R3 
