@@ -6,6 +6,7 @@ cours/modules/R111/R111-TD/out/test/*
 test/*
 temp/*
 */temp/*
+__pycache__
 
 ## Files
 ~$*.*
@@ -14,6 +15,8 @@ temp/*
 *.log
 save*-*-*.txt
 *.out
+*.lock
+*.whl
 
 ### Audio files - to not register if not otherwise explicitly said (aka git added specificly)
 *.m4a
