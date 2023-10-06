@@ -28,7 +28,7 @@
   ],
   "markdownConverter.DestinationPattern": "${workspaceFolder}/${dirname}/out/${basename}.${extension}",
   "markdownConverter.Assets.StyleSheets": {
-    "${workspaceFolder}/others/style-sheets/markdown.css": "Default",
+    "others/style-sheets/markdown.css": "Default",
     "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css": "Include"
   },
   "markdownConverter.Assets.Scripts": {
