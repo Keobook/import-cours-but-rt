@@ -1,0 +1,65 @@
+Oct 08 23:43:26.208 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Oct 08 23:43:26.208 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 39971.
+Oct 08 23:43:26.214 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 08 23:43:26.215 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_localpref_initiale/project-files/dynamips 
+Oct 08 23:43:26.215 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_localpref_initiale/project-files/dynamips
+Oct 08 23:43:26.215 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_localpref_initiale/project-files/dynamips/080dd0f0-b49a-4503-b3c9-a7836009aadc 
+Oct 08 23:43:26.215 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_localpref_initiale/project-files/dynamips/080dd0f0-b49a-4503-b3c9-a7836009aadc
+Oct 08 23:43:26.215 HYPERVISOR: exec_cmd: vm create R1 1 c3600 
+Oct 08 23:43:26.215 VM: VM R1 created.
+Oct 08 23:43:26.215 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5007 
+Oct 08 23:43:26.215 HYPERVISOR: exec_cmd: c3600 get_mac_addr R1 
+Oct 08 23:43:26.216 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 08 23:43:26.216 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x604f5184 
+Oct 08 23:43:26.224 HYPERVISOR: exec_cmd: vm set_ios R1 /home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image 
+Oct 08 23:43:26.224 HYPERVISOR: exec_cmd: c3600 set_mac_addr R1 cc01.0a74.0000 
+Oct 08 23:43:26.224 HYPERVISOR: exec_cmd: vm set_nvram R1 256 
+Oct 08 23:43:26.224 HYPERVISOR: exec_cmd: vm set_ram R1 192 
+Oct 08 23:43:26.225 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 08 23:43:26.225 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 NM-1FE-TX 
+Oct 08 23:43:26.225 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 08 23:43:26.225 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 NM-1FE-TX 
+Oct 08 23:43:26.225 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 08 23:43:26.225 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 NM-1FE-TX 
+Oct 08 23:43:26.225 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 08 23:43:26.226 HYPERVISOR: exec_cmd: vm slot_add_binding R1 3 0 NM-1FE-TX 
+Oct 08 23:43:28.525 HYPERVISOR: exec_cmd: nio create_udp udp-869c21f8-2cf7-41a1-b824-2e6b49eb3c96 10080 127.0.0.1 10081 
+Oct 08 23:43:28.741 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 0 udp-869c21f8-2cf7-41a1-b824-2e6b49eb3c96 
+Oct 08 23:43:28.741 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 08 23:43:28.823 HYPERVISOR: exec_cmd: nio create_udp udp-808e29a6-360a-4abe-b22f-ef64d6634782 10088 127.0.0.1 10089 
+Oct 08 23:43:28.824 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 2 0 udp-808e29a6-360a-4abe-b22f-ef64d6634782 
+Oct 08 23:43:28.824 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 08 23:45:06.244 HYPERVISOR: exec_cmd: vm create Ghost 0 c3600 
+Oct 08 23:45:06.245 VM: VM Ghost created.
+Oct 08 23:45:06.245 HYPERVISOR: exec_cmd: vm set_ios Ghost /home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image 
+Oct 08 23:45:06.246 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Oct 08 23:45:06.246 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_localpref_initiale/project-files/dynamips/c3640-jk9s-mz.124-16.image-192.ghost 
+Oct 08 23:45:06.246 HYPERVISOR: exec_cmd: vm set_ram Ghost 192 
+Oct 08 23:45:06.246 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Oct 08 23:45:06.253 HYPERVISOR: exec_cmd: vm set_config Ghost configs/i0_startup-config.cfg 
+Oct 08 23:45:06.253 HYPERVISOR: exec_cmd: vm start Ghost 
+Oct 08 23:45:06.632 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Oct 08 23:45:06.632 HYPERVISOR: exec_cmd: vm stop Ghost 
+Oct 08 23:45:06.700 VM: VM Ghost shutdown.
+Oct 08 23:45:06.701 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Oct 08 23:45:06.702 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Oct 08 23:45:06.702 VM: VM Ghost destroyed.
+Oct 08 23:45:06.703 HYPERVISOR: exec_cmd: vm set_ghost_status R1 2 
+Oct 08 23:45:06.704 HYPERVISOR: exec_cmd: vm set_ghost_file R1 /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_localpref_initiale/project-files/dynamips/c3640-jk9s-mz.124-16.image-192.ghost 
+Oct 08 23:45:06.705 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 08 23:45:06.706 HYPERVISOR: exec_cmd: vm set_config R1 configs/i1_startup-config.cfg 
+Oct 08 23:45:06.707 HYPERVISOR: exec_cmd: vm start R1 
+Oct 08 23:45:36.949 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 09 05:37:17.414 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 09 05:37:17.415 HYPERVISOR: exec_cmd: vm stop R1 
+Oct 09 05:37:17.524 VM: VM R1 shutdown.
+Oct 09 05:37:17.526 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 09 05:37:24.965 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 09 05:37:24.965 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 09 05:37:25.408 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 09 05:37:25.409 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 09 05:37:25.409 HYPERVISOR: exec_cmd: vm delete R1 
+Oct 09 05:37:25.410 VM: VM R1 destroyed.
+Oct 09 05:37:25.410 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 09 05:37:25.880 HYPERVISOR: Stopped.
+Oct 09 05:37:25.880 GENERAL: reset done.
