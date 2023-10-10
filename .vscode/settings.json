@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "editor.fontSize": 20,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Alt Catppuccin Frappé",
+  "workbench.colorTheme": "Alt Catppuccin Mocha",
   "workbench.iconTheme": "vs-seti",
   "keyboard.layout": "fr",
   "dateTime.timeZone": "Europe/Paris",
@@ -35,6 +35,17 @@
     "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js": "Default"
   },
   "markdownConverter.Parser.SystemParserEnabled": true,
+  "[markdown]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+  },
 
   "notebook.output.scrolling": true
 }
