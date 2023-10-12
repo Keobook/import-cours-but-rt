@@ -49,3 +49,6 @@
 [submodule "cours/sae/sae-24"]
 	path = cours/sae/sae-24
 	url = git@github.com:IUT-Beziers/ffb-rfid.git
+[submodule "cours/modules/R308/R308-TP/R308-TP4/tp4-final-alexis-opolka"]
+	path = cours/modules/R308/R308-TP/R308-TP4/tp4-final-alexis-opolka
+	url = git@github.com:IUT-Beziers/tp4-final-alexis-opolka.git
