@@ -54,4 +54,6 @@ IaC
 Capex --> Investissement --> Coûts fixes
 Lopex --> Coûts variables
 
+## [TD 1](./cloud-td1.md)
+
 ## Copyright &copy; 2023 Alexis Opolka - All Rights Reserved
