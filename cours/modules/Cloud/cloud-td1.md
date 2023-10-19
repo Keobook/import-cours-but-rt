@@ -386,4 +386,8 @@
             m6i.4xlarge,64 GiB,16,EBS only,Up to 12500 Megabit,0.856,624.88,NA
             ```
 
+            On peut voir que le fichier s'ouvre donc bien sur LibreOffice Calc:
+
+            ![cloud-td1-excel](./src/TD1/cloud-td1-excel.png)
+
 ## Copyright &copy; 2023 Alexis Opolka - All Rights Reserved
