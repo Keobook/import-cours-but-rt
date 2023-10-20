@@ -26,8 +26,18 @@ def write_data_to_file(filename: str, data: Dict):
   if not os.path.exists("./out/"):
     os.mkdir("./out/")
 
+  new_data = []
+
+  for key in data.keys():
+    for region in data[key].keys():
+      new_data.append(data[key][region])
+
   with open(f"./out/{filename}", "wt", encoding="utf-8") as fout:
     fout.write(json.dumps(data, indent=4))
+
+  with open(f"./out/{filename.replace(".json", "-jq.json")}", "wt", encoding="utf-8") as fout:
+    for data_dump in new_data:
+      fout.write(json.dumps(data_dump, indent=4))
 
 ### Question 1
 regions = ["us-east-1", "us-east-2", "eu-west-1"]
