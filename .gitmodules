@@ -52,3 +52,6 @@
 [submodule "cours/modules/R308/R308-TP/R308-TP4/tp4-final-alexis-opolka"]
 	path = cours/modules/R308/R308-TP/R308-TP4/tp4-final-alexis-opolka
 	url = git@github.com:IUT-Beziers/tp4-final-alexis-opolka.git
+[submodule "cours/modules/Cloud/TD1/ec2.shop"]
+	path = cours/modules/Cloud/TD1/ec2.shop
+	url = git@github.com:yeo/ec2.shop.git

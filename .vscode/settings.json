@@ -39,12 +39,13 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "off",
     "editor.quickSuggestions": {
       "comments": "off",
       "strings": "off",
       "other": "off"
     },
+    "editor.wrappingStrategy": "advanced"
   },
 
   "notebook.output.scrolling": true

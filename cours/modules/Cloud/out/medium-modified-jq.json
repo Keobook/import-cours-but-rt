@@ -1,0 +1,53 @@
+[
+    {
+        "InstanceType": "vt1.3xlarge",
+        "Memory": "24 GiB",
+        "VCPUS": 12,
+        "Storage": "EBS only",
+        "Network": "3125 Megabit",
+        "Cost": 0.73412,
+        "MonthlyPrice": 535.9076,
+        "SpotPrice": "NA"
+    },
+    {
+        "InstanceType": "vt1.24xlarge",
+        "Memory": "192 GiB",
+        "VCPUS": 96,
+        "Storage": "EBS only",
+        "Network": "25000 Megabit",
+        "Cost": 5.87294,
+        "MonthlyPrice": 4287.2462,
+        "SpotPrice": "NA"
+    },
+    {
+        "InstanceType": "vt1.6xlarge",
+        "Memory": "48 GiB",
+        "VCPUS": 24,
+        "Storage": "EBS only",
+        "Network": "6250 Megabit",
+        "Cost": 1.46824,
+        "MonthlyPrice": 1071.8152,
+        "SpotPrice": "NA"
+    },
+    {
+        "InstanceType": "t1.micro",
+        "Memory": "0.613 GiB",
+        "VCPUS": 1,
+        "Storage": "EBS only",
+        "Network": "Very Low",
+        "Cost": 0.02,
+        "MonthlyPrice": 14.6,
+        "SpotPrice": "NA"
+    }
+][
+    {
+        "InstanceType": "t2.micro",
+        "Memory": "1 GiB",
+        "VCPUS": 1,
+        "Storage": "EBS only",
+        "Network": "Low to Moderate",
+        "Cost": 0.0126,
+        "MonthlyPrice": 9.198,
+        "SpotPrice": "NA"
+    }
+]
