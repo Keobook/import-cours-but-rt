@@ -12,22 +12,21 @@
   \begin{tikzpicture}
     \begin{axis}[
         xmin=0, xmax=100,
-        ymin=0, ymax=150,
+        ymin=-pi, ymax=1,
         axis lines=middle,
         ytick distance=10
       ]
       \path[name path=xaxis] (\pgfkeysvalueof{/pgfplots/xmin}, 0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
-      \addplot +[mark=none] coordinates {(0, 50) (0, 0)};
-      \addplot +[mark=none] coordinates {(10, 141) (10, 0)};
-      \addplot +[mark=none] coordinates {(20, 125) (20, 0)};
-      \addplot +[mark=none] coordinates {(30, 35) (30, 0)};
-      \addplot +[mark=none] coordinates {(40, 17.7) (40, 0)};
-      \addplot +[mark=none] coordinates {(50, 8.4) (50, 0)};
-      \addplot +[mark=none] coordinates {(60, 3.95) (60, 0)};
-      \addplot +[mark=none] coordinates {(70, 1.4) (70, 0)};
-      \addplot +[mark=none] coordinates {(80, 1) (80, 0)};
-      \addplot +[mark=none] coordinates {(90, 0.875) (90, 0)};
-      \addplot +[mark=none] coordinates {(100, 0.7) (100, 0)};
+      \addplot +[mark=none] coordinates {(10, -0.17) (10, 0)};
+      \addplot +[mark=none] coordinates {(20, -2.79) (20, 0)};
+      \addplot +[mark=none] coordinates {(30, -3.02) (30, 0)};
+      \addplot +[mark=none] coordinates {(40, -3.1) (40, 0)};
+      \addplot +[mark=none] coordinates {(50, -3.12) (50, 0)};
+      \addplot +[mark=none] coordinates {(60, -pi) (60, 0)};
+      \addplot +[mark=none] coordinates {(70, -pi) (70, 0)};
+      \addplot +[mark=none] coordinates {(80, -pi) (80, 0)};
+      \addplot +[mark=none] coordinates {(90, -pi) (90, 0)};
+      \addplot +[mark=none] coordinates {(100, -pi) (100, 0)};
     \end{axis}
   \end{tikzpicture}
 \end{figure}
