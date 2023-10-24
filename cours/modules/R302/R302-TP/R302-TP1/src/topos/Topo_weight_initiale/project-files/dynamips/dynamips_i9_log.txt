@@ -1,0 +1,34 @@
+Oct 24 13:45:11.442 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Oct 24 13:45:11.442 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 44559.
+Oct 24 13:45:11.451 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 24 13:45:11.451 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips 
+Oct 24 13:45:11.451 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips
+Oct 24 13:45:11.451 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/b16d0c60-741a-40f4-b2da-21c817f2017b 
+Oct 24 13:45:11.451 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/b16d0c60-741a-40f4-b2da-21c817f2017b
+Oct 24 13:45:11.451 HYPERVISOR: exec_cmd: vm create R12 6 c3600 
+Oct 24 13:45:11.452 VM: VM R12 created.
+Oct 24 13:45:11.452 HYPERVISOR: exec_cmd: vm set_con_tcp_port R12 5007 
+Oct 24 13:45:11.452 HYPERVISOR: exec_cmd: c3600 get_mac_addr R12 
+Oct 24 13:45:11.452 HYPERVISOR: exec_cmd: vm get_status R12 
+Oct 24 13:45:11.452 HYPERVISOR: exec_cmd: vm set_idle_pc R12 0x604f5184 
+Oct 24 13:45:11.453 HYPERVISOR: exec_cmd: vm set_ios R12 /home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image 
+Oct 24 13:45:11.453 HYPERVISOR: exec_cmd: c3600 set_mac_addr R12 cc06.0ac8.0000 
+Oct 24 13:45:11.453 HYPERVISOR: exec_cmd: vm set_nvram R12 256 
+Oct 24 13:45:11.453 HYPERVISOR: exec_cmd: vm set_ram R12 192 
+Oct 24 13:45:11.453 HYPERVISOR: exec_cmd: vm get_status R12 
+Oct 24 13:45:11.454 HYPERVISOR: exec_cmd: vm slot_add_binding R12 0 0 NM-1FE-TX 
+Oct 24 13:45:11.454 HYPERVISOR: exec_cmd: vm set_con_tcp_port R12 5007 
+Oct 24 13:45:12.982 HYPERVISOR: exec_cmd: nio create_udp udp-8791ece3-c63b-41d4-a65b-7d4852c695ee 10040 127.0.0.1 10041 
+Oct 24 13:45:13.198 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 0 0 udp-8791ece3-c63b-41d4-a65b-7d4852c695ee 
+Oct 24 13:45:13.198 HYPERVISOR: exec_cmd: vm get_status R12 
+Oct 24 13:45:19.536 HYPERVISOR: exec_cmd: vm set_ghost_status R12 2 
+Oct 24 13:45:19.537 HYPERVISOR: exec_cmd: vm set_ghost_file R12 /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/c3640-jk9s-mz.124-16.image-192.ghost 
+Oct 24 13:45:19.537 HYPERVISOR: exec_cmd: vm get_status R12 
+Oct 24 13:45:19.537 HYPERVISOR: exec_cmd: vm set_config R12 configs/i6_startup-config.cfg 
+Oct 24 13:45:19.538 HYPERVISOR: exec_cmd: vm start R12 
+Oct 24 13:45:49.757 HYPERVISOR: exec_cmd: vm extract_config R12 
+Oct 24 14:16:19.828 HYPERVISOR: exec_cmd: vm extract_config R12 
+Oct 24 14:27:06.199 HYPERVISOR: exec_cmd: vm get_status R12 
+Oct 24 14:27:06.200 HYPERVISOR: exec_cmd: vm stop R12 
+Oct 24 14:27:06.282 VM: VM R12 shutdown.
+Oct 24 14:27:06.282 HYPERVISOR: exec_cmd: vm extract_config R12 

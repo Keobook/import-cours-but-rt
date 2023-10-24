@@ -1,0 +1,47 @@
+Oct 24 13:45:11.278 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Oct 24 13:45:11.278 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 51517.
+Oct 24 13:45:11.287 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 24 13:45:11.288 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips 
+Oct 24 13:45:11.288 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips
+Oct 24 13:45:11.288 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/0b7e9119-f525-4d86-b0e6-83f6e399cb5f 
+Oct 24 13:45:11.288 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/0b7e9119-f525-4d86-b0e6-83f6e399cb5f
+Oct 24 13:45:11.288 HYPERVISOR: exec_cmd: vm create R2 2 c3600 
+Oct 24 13:45:11.288 VM: VM R2 created.
+Oct 24 13:45:11.288 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5003 
+Oct 24 13:45:11.288 HYPERVISOR: exec_cmd: c3600 get_mac_addr R2 
+Oct 24 13:45:11.289 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 13:45:11.289 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x604f5184 
+Oct 24 13:45:11.289 HYPERVISOR: exec_cmd: vm set_ios R2 /home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image 
+Oct 24 13:45:11.289 HYPERVISOR: exec_cmd: c3600 set_mac_addr R2 cc02.0a84.0000 
+Oct 24 13:45:11.290 HYPERVISOR: exec_cmd: vm set_nvram R2 256 
+Oct 24 13:45:11.290 HYPERVISOR: exec_cmd: vm set_ram R2 192 
+Oct 24 13:45:11.290 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 13:45:11.290 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 NM-1FE-TX 
+Oct 24 13:45:11.290 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 13:45:11.290 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 NM-1FE-TX 
+Oct 24 13:45:11.291 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 13:45:11.291 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 NM-1FE-TX 
+Oct 24 13:45:11.291 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5003 
+Oct 24 13:45:11.778 HYPERVISOR: exec_cmd: nio create_udp udp-a0071141-75ca-4aec-95e7-06db0e5bbd6e 10010 127.0.0.1 10011 
+Oct 24 13:45:11.992 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-a0071141-75ca-4aec-95e7-06db0e5bbd6e 
+Oct 24 13:45:11.992 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 13:45:12.055 HYPERVISOR: exec_cmd: nio create_udp udp-66ad46e5-11b4-4072-a049-ec7da7428afb 10014 127.0.0.1 10015 
+Oct 24 13:45:12.056 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 2 0 udp-66ad46e5-11b4-4072-a049-ec7da7428afb 
+Oct 24 13:45:12.056 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 13:45:12.347 HYPERVISOR: exec_cmd: nio create_udp udp-7dc86fab-8055-42d6-b46a-0923f23380df 10020 127.0.0.1 10021 
+Oct 24 13:45:12.348 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-7dc86fab-8055-42d6-b46a-0923f23380df 
+Oct 24 13:45:12.348 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 13:45:19.297 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Oct 24 13:45:19.298 HYPERVISOR: exec_cmd: vm set_ghost_file R2 /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/c3640-jk9s-mz.124-16.image-192.ghost 
+Oct 24 13:45:19.298 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 13:45:19.299 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg 
+Oct 24 13:45:19.299 HYPERVISOR: exec_cmd: vm start R2 
+Oct 24 13:45:49.505 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 24 14:08:23.325 HYPERVISOR: exec_cmd: nio bind_filter udp-7dc86fab-8055-42d6-b46a-0923f23380df 2 capture 
+Oct 24 14:08:23.325 HYPERVISOR: exec_cmd: nio setup_filter udp-7dc86fab-8055-42d6-b46a-0923f23380df 2 en10mb /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/captures/R2_FastEthernet10_to_R3_FastEthernet00.pcap 
+Oct 24 14:16:49.575 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 24 14:27:06.041 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 14:27:06.042 HYPERVISOR: exec_cmd: vm stop R2 
+Oct 24 14:27:06.167 VM: VM R2 shutdown.
+Oct 24 14:27:06.168 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 24 14:27:06.172 HYPERVISOR: exec_cmd: nio unbind_filter udp-7dc86fab-8055-42d6-b46a-0923f23380df 2 
