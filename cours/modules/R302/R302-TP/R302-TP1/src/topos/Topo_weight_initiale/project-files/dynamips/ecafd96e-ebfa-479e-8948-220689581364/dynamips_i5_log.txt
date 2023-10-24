@@ -45,3 +45,12 @@ Oct 24 14:27:06.042 HYPERVISOR: exec_cmd: vm stop R2
 Oct 24 14:27:06.167 VM: VM R2 shutdown.
 Oct 24 14:27:06.168 HYPERVISOR: exec_cmd: vm extract_config R2 
 Oct 24 14:27:06.172 HYPERVISOR: exec_cmd: nio unbind_filter udp-7dc86fab-8055-42d6-b46a-0923f23380df 2 
+Oct 24 16:17:14.969 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 16:17:14.977 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 24 16:17:14.998 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 24 16:17:14.998 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 24 16:17:14.998 HYPERVISOR: exec_cmd: vm delete R2 
+Oct 24 16:17:14.998 VM: VM R2 destroyed.
+Oct 24 16:17:14.998 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 24 16:17:15.393 HYPERVISOR: Stopped.
+Oct 24 16:17:15.393 GENERAL: reset done.
