@@ -1,0 +1,51 @@
+Oct 24 13:45:11.318 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Oct 24 13:45:11.318 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 50833.
+Oct 24 13:45:11.327 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 24 13:45:11.328 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips 
+Oct 24 13:45:11.328 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips
+Oct 24 13:45:11.328 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/68bb5a34-e4e3-485a-a8fe-88093d1dbe05 
+Oct 24 13:45:11.328 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/68bb5a34-e4e3-485a-a8fe-88093d1dbe05
+Oct 24 13:45:11.328 HYPERVISOR: exec_cmd: vm create R3 3 c3600 
+Oct 24 13:45:11.329 VM: VM R3 created.
+Oct 24 13:45:11.329 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5004 
+Oct 24 13:45:11.329 HYPERVISOR: exec_cmd: c3600 get_mac_addr R3 
+Oct 24 13:45:11.329 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 13:45:11.329 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x604f5184 
+Oct 24 13:45:11.330 HYPERVISOR: exec_cmd: vm set_ios R3 /home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image 
+Oct 24 13:45:11.330 HYPERVISOR: exec_cmd: c3600 set_mac_addr R3 cc03.0a94.0000 
+Oct 24 13:45:11.330 HYPERVISOR: exec_cmd: vm set_nvram R3 256 
+Oct 24 13:45:11.330 HYPERVISOR: exec_cmd: vm set_ram R3 192 
+Oct 24 13:45:11.330 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 13:45:11.330 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 0 NM-1FE-TX 
+Oct 24 13:45:11.331 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 13:45:11.331 HYPERVISOR: exec_cmd: vm slot_add_binding R3 1 0 NM-1FE-TX 
+Oct 24 13:45:11.331 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5004 
+Oct 24 13:45:12.357 HYPERVISOR: exec_cmd: nio create_udp udp-5e735349-607d-4b63-b052-f92b8195336c 10022 127.0.0.1 10023 
+Oct 24 13:45:12.572 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 0 udp-5e735349-607d-4b63-b052-f92b8195336c 
+Oct 24 13:45:12.572 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 13:45:12.629 HYPERVISOR: exec_cmd: nio create_udp udp-cd2c33da-d785-4945-b05e-a0a8ef9e58a7 10026 127.0.0.1 10027 
+Oct 24 13:45:12.630 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 1 0 udp-cd2c33da-d785-4945-b05e-a0a8ef9e58a7 
+Oct 24 13:45:12.630 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 13:45:19.298 HYPERVISOR: exec_cmd: vm set_ghost_status R3 2 
+Oct 24 13:45:19.299 HYPERVISOR: exec_cmd: vm set_ghost_file R3 /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/c3640-jk9s-mz.124-16.image-192.ghost 
+Oct 24 13:45:19.299 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 13:45:19.300 HYPERVISOR: exec_cmd: vm set_config R3 configs/i3_startup-config.cfg 
+Oct 24 13:45:19.300 HYPERVISOR: exec_cmd: vm start R3 
+Oct 24 13:45:49.535 HYPERVISOR: exec_cmd: vm extract_config R3 
+Oct 24 14:07:53.557 HYPERVISOR: exec_cmd: nio bind_filter udp-cd2c33da-d785-4945-b05e-a0a8ef9e58a7 2 capture 
+Oct 24 14:07:53.557 HYPERVISOR: exec_cmd: nio setup_filter udp-cd2c33da-d785-4945-b05e-a0a8ef9e58a7 2 en10mb /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/captures/R3_FastEthernet10_to_R4_FastEthernet00.pcap 
+Oct 24 14:16:49.592 HYPERVISOR: exec_cmd: vm extract_config R3 
+Oct 24 14:27:06.042 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 14:27:06.042 HYPERVISOR: exec_cmd: vm stop R3 
+Oct 24 14:27:06.143 VM: VM R3 shutdown.
+Oct 24 14:27:06.143 HYPERVISOR: exec_cmd: vm extract_config R3 
+Oct 24 14:27:06.146 HYPERVISOR: exec_cmd: nio unbind_filter udp-cd2c33da-d785-4945-b05e-a0a8ef9e58a7 2 
+Oct 24 16:17:14.969 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 16:17:14.978 HYPERVISOR: exec_cmd: vm extract_config R3 
+Oct 24 16:17:15.068 HYPERVISOR: exec_cmd: vm get_status R3 
+Oct 24 16:17:15.069 HYPERVISOR: exec_cmd: vm extract_config R3 
+Oct 24 16:17:15.069 HYPERVISOR: exec_cmd: vm delete R3 
+Oct 24 16:17:15.069 VM: VM R3 destroyed.
+Oct 24 16:17:15.069 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 24 16:17:15.400 HYPERVISOR: Stopped.
+Oct 24 16:17:15.400 GENERAL: reset done.

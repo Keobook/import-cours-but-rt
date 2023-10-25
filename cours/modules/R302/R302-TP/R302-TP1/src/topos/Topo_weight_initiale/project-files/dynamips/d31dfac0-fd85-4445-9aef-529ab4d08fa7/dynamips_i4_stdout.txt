@@ -1,0 +1,45 @@
+C3600 'Ghost': generic_nvram_extract_config: Unknown error -61605
+Cisco Router Simulation Platform (version 0.2.23-amd64/Linux stable)
+Copyright (c) 2005-2011 Christophe Fillot.
+Build date: Oct  3 2023 23:26:46
+
+Log file: writing to dynamips_i4_log.txt
+Console binding address set to localhost
+Hypervisor TCP control server started (IP 127.0.0.1 port 48131).
+CPU0: carved JIT exec zone of 64 Mb into 2048 pages of 32 Kb.
+NVRAM is empty, setting config register to 0x2142
+C3600 instance 'Ghost' (id 0):
+  VM Status  : 0
+  RAM size   : 192 Mb
+  NVRAM size : 128 Kb
+  Chassis    : 3640
+  IOS image  : /home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image
+
+Loading ELF file '/home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image'...
+ELF entry point: 0x80008000
+
+C3600 'Ghost': starting simulation (CPU0 PC=0xffffffffbfc00000), JIT enabled.
+
+C3600 'Ghost': stopping simulation.
+CPU0: carved JIT exec zone of 64 Mb into 2048 pages of 32 Kb.
+NVRAM is empty, setting config register to 0x2142
+C3600 instance 'R1' (id 1):
+  VM Status  : 0
+  RAM size   : 192 Mb
+  NVRAM size : 256 Kb
+  Chassis    : 3640
+  IOS image  : /home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image
+
+Loading ELF file '/home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image'...
+ELF loading skipped, using a ghost RAM file.
+ELF entry point: 0x80008000
+
+C3600 'R1': starting simulation (CPU0 PC=0xffffffffbfc00000), JIT enabled.
+NIO udp-12f8f274-41eb-4cb0-a22b-4e3536a682bf: capturing to file '/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/captures/R1_FastEthernet00_to_R2_FastEthernet00.pcap'
+
+C3600 'R1': stopping simulation.
+NIO udp-12f8f274-41eb-4cb0-a22b-4e3536a682bf: ending packet capture.
+Hypervisor: closing control sockets.
+Hypervisor: closing remote client connections.
+Shutdown in progress...
+Shutdown completed.

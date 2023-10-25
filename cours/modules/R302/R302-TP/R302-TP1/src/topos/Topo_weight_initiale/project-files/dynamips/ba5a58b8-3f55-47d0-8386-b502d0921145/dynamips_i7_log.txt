@@ -1,0 +1,51 @@
+Oct 24 13:45:11.359 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Oct 24 13:45:11.359 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 55853.
+Oct 24 13:45:11.368 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 24 13:45:11.368 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips 
+Oct 24 13:45:11.368 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips
+Oct 24 13:45:11.368 HYPERVISOR: exec_cmd: hypervisor working_dir /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/d31dfac0-fd85-4445-9aef-529ab4d08fa7 
+Oct 24 13:45:11.368 GENERAL: working_dir=/home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/d31dfac0-fd85-4445-9aef-529ab4d08fa7
+Oct 24 13:45:11.368 HYPERVISOR: exec_cmd: vm create R4 4 c3600 
+Oct 24 13:45:11.369 VM: VM R4 created.
+Oct 24 13:45:11.369 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5005 
+Oct 24 13:45:11.369 HYPERVISOR: exec_cmd: c3600 get_mac_addr R4 
+Oct 24 13:45:11.369 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 13:45:11.369 HYPERVISOR: exec_cmd: vm set_idle_pc R4 0x604f5184 
+Oct 24 13:45:11.369 HYPERVISOR: exec_cmd: vm set_ios R4 /home/centaurus/GNS3/images/IOS/c3640-jk9s-mz.124-16.image 
+Oct 24 13:45:11.370 HYPERVISOR: exec_cmd: c3600 set_mac_addr R4 cc04.0aa4.0000 
+Oct 24 13:45:11.370 HYPERVISOR: exec_cmd: vm set_nvram R4 256 
+Oct 24 13:45:11.370 HYPERVISOR: exec_cmd: vm set_ram R4 192 
+Oct 24 13:45:11.370 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 13:45:11.370 HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 NM-1FE-TX 
+Oct 24 13:45:11.370 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 13:45:11.371 HYPERVISOR: exec_cmd: vm slot_add_binding R4 1 0 NM-1FE-TX 
+Oct 24 13:45:11.371 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5005 
+Oct 24 13:45:12.638 HYPERVISOR: exec_cmd: nio create_udp udp-8bd4d4a1-efec-4b80-b3ab-06f2eee309d3 10028 127.0.0.1 10029 
+Oct 24 13:45:12.852 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 0 0 udp-8bd4d4a1-efec-4b80-b3ab-06f2eee309d3 
+Oct 24 13:45:12.852 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 13:45:12.908 HYPERVISOR: exec_cmd: nio create_udp udp-302f4e1e-68c5-46a9-8da6-9eed3673c9a9 10032 127.0.0.1 10033 
+Oct 24 13:45:12.909 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 1 0 udp-302f4e1e-68c5-46a9-8da6-9eed3673c9a9 
+Oct 24 13:45:12.909 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 13:45:19.507 HYPERVISOR: exec_cmd: vm set_ghost_status R4 2 
+Oct 24 13:45:19.508 HYPERVISOR: exec_cmd: vm set_ghost_file R4 /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/dynamips/c3640-jk9s-mz.124-16.image-192.ghost 
+Oct 24 13:45:19.508 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 13:45:19.508 HYPERVISOR: exec_cmd: vm set_config R4 configs/i4_startup-config.cfg 
+Oct 24 13:45:19.508 HYPERVISOR: exec_cmd: vm start R4 
+Oct 24 13:45:49.735 HYPERVISOR: exec_cmd: vm extract_config R4 
+Oct 24 13:48:18.864 HYPERVISOR: exec_cmd: nio bind_filter udp-302f4e1e-68c5-46a9-8da6-9eed3673c9a9 2 capture 
+Oct 24 13:48:18.864 HYPERVISOR: exec_cmd: nio setup_filter udp-302f4e1e-68c5-46a9-8da6-9eed3673c9a9 2 en10mb /home/centaurus/Documents/depots/iut-related/import-cours-but-rt/cours/modules/R302/R302-TP/R302-TP1/src/topos/Topo_weight_initiale/project-files/captures/R4_FastEthernet10_to_R1_FastEthernet30.pcap 
+Oct 24 14:16:49.815 HYPERVISOR: exec_cmd: vm extract_config R4 
+Oct 24 14:27:06.148 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 14:27:06.148 HYPERVISOR: exec_cmd: vm stop R4 
+Oct 24 14:27:06.244 VM: VM R4 shutdown.
+Oct 24 14:27:06.245 HYPERVISOR: exec_cmd: vm extract_config R4 
+Oct 24 14:27:06.249 HYPERVISOR: exec_cmd: nio unbind_filter udp-302f4e1e-68c5-46a9-8da6-9eed3673c9a9 2 
+Oct 24 16:17:14.983 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 16:17:14.984 HYPERVISOR: exec_cmd: vm extract_config R4 
+Oct 24 16:17:15.395 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 24 16:17:15.396 HYPERVISOR: exec_cmd: vm extract_config R4 
+Oct 24 16:17:15.396 HYPERVISOR: exec_cmd: vm delete R4 
+Oct 24 16:17:15.396 VM: VM R4 destroyed.
+Oct 24 16:17:15.397 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 24 16:17:15.448 HYPERVISOR: Stopped.
+Oct 24 16:17:15.448 GENERAL: reset done.
