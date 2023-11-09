@@ -55,3 +55,6 @@
 [submodule "cours/modules/Cloud/TD1/ec2.shop"]
 	path = cours/modules/Cloud/TD1/ec2.shop
 	url = git@github.com:yeo/ec2.shop.git
+[submodule "cours/sae/sae-32/webapp"]
+	path = cours/sae/sae-32/webapp
+	url = git@github.com:alexis-opolka/livre-mon-colis.git

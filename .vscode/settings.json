@@ -35,6 +35,25 @@
     "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js": "Default"
   },
   "markdownConverter.Parser.SystemParserEnabled": true,
+  "markdownConverter.DateFormats": {
+    "iso": "dd-mm-yyyy",
+    "year": "yyyy",
+    "semi-long": "dd. MMMM yyyy",
+    "full": "dddd, dd. MMMM yyyy",
+    "extra": "dddd MMMM yyyy - dd/mm/yyyy"
+  },
+  "markdownConverter.Document.HeaderContent": {
+    "Left": "{{ Author }}",
+    "Center": "{{ Subject }}",
+    "Right": "{{ Company }}"
+  },
+  "markdownConverter.Document.FooterContent": {
+    "Left": "{{ ChangeDate }}",
+    "Right": "<span class=\"pageNumber\"></span>/<span class=\"totalPages\"></span>",
+    "Center": "Copyright &copy; {{ ChangeDate 'yyyy' }} {{ Author }} - {{ Copyright }}"
+  },
+  "markdownConverter.DefaultDateFormat": "iso",
+
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
