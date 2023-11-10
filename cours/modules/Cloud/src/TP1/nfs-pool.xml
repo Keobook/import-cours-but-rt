@@ -1,0 +1,11 @@
+<pool type="netfs">
+	<name>nfs-pool</name>
+	<source>
+		<host name="nfs-server" />
+		<dir path="/nfs" />
+		<format type='nfs' />
+	</source>
+	<target>
+		<path>:/nfs home/test/nfs</path>
+	</target>
+</pool>
