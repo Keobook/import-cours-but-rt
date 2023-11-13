@@ -710,4 +710,9 @@ kcli est un package Python qui p ermet d'automatiser la gestion des K-VMs.
     > kcli local create vm -P uefi=true -P start=false -P memory=20480 -P numcpus=16 -P disks=[50,50] -P nets=[default] empty-me
     > ```
 
+> **Note:**  
+> Voici des liens de documentation intéressants:
+>
+> - [libguestfs/virt-builder](https://libguestfs.org/virt-builder.1.html)
+
 ## Copyright &copy; 2023 Alexis Opolka - All Rights Reserved
