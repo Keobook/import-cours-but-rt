@@ -48,7 +48,7 @@ virt-install --name $server_name \
   --network default \
   --firstboot-command 'localectl set-keymap azerty' \
   --firstboot-command 'suder useradd -m -G wheel -p "test" test; chage -d 0 test' \
-  --firstboot-install nfs-utils \
+  --firstboot-install nfs-utils \ 
   --firstboot-command 'sudo systemctl enable --now nfs-server' \
   --firstboot-command 'sudo cat /proc/fs/nfsd/versions; sudo mkdir -p /srv/nfs4/{backups,www} /opt/backups/ /var/www/' \
   --firstboot-command 'sudo mount --bind /opt/backups /srv/nfs4/backups; sudo mount --bind /var/www /srv/nfs4/www; sudo exportfs -ra' \
