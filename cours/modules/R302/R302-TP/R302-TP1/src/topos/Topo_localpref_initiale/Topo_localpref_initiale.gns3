@@ -21,9 +21,9 @@
                 "drawing_id": "d4c08c98-5ca8-4f1e-a1f8-2ea0279ef6a1",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg width=\"108\" height=\"27\"><text font-family=\"Ubuntu\" font-size=\"12.0\" font-weight=\"bold\" fill=\"#110af8\" fill-opacity=\"1.0\">10.0.221.0/24</text></svg>",
-                "x": -200,
-                "y": -220,
+                "svg": "<svg width=\"110\" height=\"31\"><text font-family=\"Ubuntu\" font-size=\"12.0\" font-weight=\"bold\" fill=\"#110af8\" fill-opacity=\"1.0\">10.0.221.0/24</text></svg>",
+                "x": -77,
+                "y": -288,
                 "z": 2
             },
             {
@@ -873,6 +873,6 @@
     },
     "type": "topology",
     "variables": null,
-    "version": "2.2.43",
+    "version": "2.2.44.1",
     "zoom": 84
 }
