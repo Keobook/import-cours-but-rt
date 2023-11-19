@@ -58,3 +58,6 @@
 [submodule "cours/sae/sae-32/webapp"]
 	path = cours/sae/sae-32/webapp
 	url = git@github.com:alexis-opolka/livre-mon-colis.git
+[submodule "cours/modules/R309/R309-TP2"]
+	path = cours/modules/R309/R309-TP2
+	url = git@github.com:IUT-Beziers/r309-tp2-alexis-opolka.git
