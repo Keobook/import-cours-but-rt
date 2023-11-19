@@ -1,16 +1,27 @@
 #!/bin/env python3
 
 from os import PathLike
+import os
 from tkinter import (
-    Tk, Toplevel,
-    Canvas, Frame, Menu, Entry, Button,
+    Tk, Toplevel, ### Window Frames
+    Canvas, Frame, Menu, Entry, Button, ### In-App Frames
     N, E, S, W,  ### The Constants related to the positioning
-    Event as TkEvent,
-    StringVar,
-    filedialog as TkFileDialog
+    Event as TkEvent, ### Tkinter Events
+    StringVar, ### Tkinter vars
+    filedialog as TkFileDialog ### OS-dependant
 )
-from typing import Iterator, Self, Union, Callable, Tuple, List
-from PIL import ImageTk, Image
+from typing import Iterator, Union, Callable, Tuple, List
+
+### As PIL is now imported from its fork, Pillow
+### We need to check if the current Python executable
+try:
+    from PIL import ImageTk, Image
+except ImportError:
+    try:
+        os.system("pip3 install Pillow")
+    except Exception: ### Generic-based Exception
+        os.system("python3 -m pip --upgrade pip")
+        os.system("python3 -m pip install --upgrade Pillow")
 
 class NetApp(Tk):
     def __init__(self, name: str, base_size: Tuple[int, int], title: str = ""):
