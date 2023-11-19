@@ -1,6 +1,5 @@
 #!/bin/env python3
 
-import json
 from os import PathLike
 from tkinter import (
     Tk, Toplevel,
@@ -10,9 +9,8 @@ from tkinter import (
     StringVar,
     filedialog as TkFileDialog
 )
-from typing import Union, Callable, Tuple
+from typing import Iterator, Self, Union, Callable, Tuple, List
 from PIL import ImageTk, Image
-
 
 class NetApp(Tk):
     def __init__(self, name: str, base_size: Tuple[int, int], title: str = ""):
@@ -185,7 +183,7 @@ class NetApp(Tk):
 
         self.equipments[self.reverse_equipments[equipment_tag]] = None
 
-        ### Always set the last element on top
+        ### Always set the last element on the bottom layer
         self.playground.tag_lower(equipment_tag)
 
     def run(self):
@@ -224,7 +222,7 @@ class NetApp(Tk):
                     "item": new_equipment,
                     "canvas_id": canvas_tag,
                     "bindings": {},
-                    "dependencies": {"label": equipment_label, "links": {}},
+                    "dependencies": {"label": equipment_label, "links": []},
                 }
             }
         )
@@ -262,6 +260,22 @@ class NetApp(Tk):
 
         self.playground.moveto(dependent_label, x - difference_mouse_icon // 2, y + difference_mouse_icon)
 
+        dependent_links: List[NetworkLink] = dependencies["links"]
+        for i in range(0, len(dependent_links)):
+            link_object = dependent_links[i]
+            if link_object.start_equipment == self.focused_tag:
+                link_object.updateStartCoords(x, y)
+            elif link_object.end_equipment == self.focused_tag:
+                link_object.updateEndCoords(x, y)
+            else:
+                ### The current nearest tag is not one of the registered links
+                print("I'm in this else situation")
+
+            x1, y1 = link_object.start_coords
+            x2, y2 = link_object.end_coords
+
+            self.playground.coords(link_object.tag, x1, y1, x2, y2)
+
     ### Double clicks
     def deleteItem(self, event: TkEvent):
         x, y = event.x, event.y
@@ -269,6 +283,12 @@ class NetApp(Tk):
         selected_tag = self.playground.find_closest(x, y)[0]
         self.__prepareDeletionOfEquipment(selected_tag)
         self.playground.delete(selected_tag)
+
+    def deleteLink(self, event: TkEvent):
+        x, y = event.x, event.y
+
+        selected_link = self.playground.find_closest(x, y)[0]
+        self.playground.delete(selected_link)
 
     ### Right Clicks
     def popRightClickMenu(self, event: TkEvent):
@@ -316,11 +336,24 @@ class NetApp(Tk):
         ### the <KeyRelease> event and the call of this function
         ### so we should be able to safely use `self.focused_tag`.
 
-        if self.focused_tag != 0:
-            self.setEquipmentsLink(self.focused_tag, ending)
+        if not ending:
+            if self.focused_tag != 0:
+                self.setEquipmentsLink(self.focused_tag, ending)
+            else:
+                x, y = self.mouse_coords
+                self.setEquipmentsLink(self.playground.find_closest(x, y)[0], ending)
         else:
             x, y = self.mouse_coords
             self.setEquipmentsLink(self.playground.find_closest(x, y)[0], ending)
+
+    ### Hovers
+    def highlightTag(self, event: TkEvent):
+        x, y = event.x, event.y
+        self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="red")
+
+    def unhighlightTag(self, event: TkEvent):
+        x, y = event.x, event.y
+        self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="black")
 
     ### Setters
     def setEquipmentName(self, equipment_tag: int, name: str ):
@@ -340,21 +373,16 @@ class NetApp(Tk):
         self.playground.itemconfigure(equipment_tag, image=equipment_object.icon)
 
     def setEquipmentsLink(self, equipment_tag: int, ending: bool = False):
-        equipment_holder: dict = self.equipments[self.reverse_equipments[equipment_tag]]
-        _object: NetworkEquipment = equipment_holder["item"]
-        links: dict = equipment_holder["dependencies"]["links"]
+        links: dict = self.equipments[self.reverse_equipments[equipment_tag]]["dependencies"]["links"]
         x, y = self.mouse_coords
 
-        ### We're creating the visual link
-        link_id = self.playground.create_line(x, y, x, y)
 
         if self.current_link_state == "idle":
-            links.update({
-                _object.getLinksNumber(): {
-                    "id": link_id,
-                    "coords": (self.mouse_coords, (0, 0))
-                }
-            })
+            ### We're creating the visual link
+            link_id = self.playground.create_line(x, y, x, y)
+            self.playground.tag_lower(link_id)
+
+            links.append(NetworkLink(x, y, link_id, equipment_tag))
 
             self.current_link_state = "active"
             self.rightclick_menu.entryconfigure(2, label="Set link", command = lambda: self.handleLinkCreation(True))
@@ -362,21 +390,24 @@ class NetApp(Tk):
 
             ### We're binding the callback to the mouse movement
             self.link_binding = self.playground.bind("<Motion>", lambda event: self.setEquipmentsLink(self.current_link_root))
+            self.playground.bind("<Double-Button-1>", lambda event: self.deleteLink(event))
+            self.playground.tag_bind(link_id, "<Enter>", lambda event: self.highlightTag(event))
+            self.playground.tag_bind(link_id, "<Leave>", lambda event: self.unhighlightTag(event))
 
         elif self.current_link_state == "active":
-            old_object: NetworkEquipment = self.equipments[self.reverse_equipments[self.current_link_root]]["item"]
             old_links: dict = self.equipments[self.reverse_equipments[self.current_link_root]]["dependencies"]["links"]
-            old_link_id = old_links[old_object.getLinksNumber(getter=True)]["id"]
-            old_coords: Tuple = old_links[old_object.getLinksNumber(getter=True)]["coords"]
-            x, y = old_coords[0]
+            old_links_object: NetworkLink = old_links[-1]
+            x, y = old_links_object.start_coords
             x1, y1 = self.mouse_coords
 
-            old_links[old_object.getLinksNumber(True)]["coords"] = (old_coords[0], self.mouse_coords)
-            self.playground.coords(old_link_id, x, y, x1, y1)
-
+            self.playground.coords(old_links_object.tag, x, y, x1, y1)
 
             if ending:
-                print(f"Tags: {equipment_tag} & {self.current_link_root}")
+
+                old_links_object.setEndCoords(x1, y1, equipment_tag)
+
+                links.append(old_links_object)
+
                 self.current_link_state = "idle"
                 self.rightclick_menu.entryconfigure(2, label="Create link", command = lambda: self.handleLinkCreation())
                 self.current_link_root = 0
@@ -393,6 +424,55 @@ class NetApp(Tk):
     def export_png(self):
         print("Current playground exported into PNG!")
 
+class Coords:
+    def __init__(self, x = None, y = None):
+        if isinstance(x, tuple):
+            self.x = x[0]
+            self.y = x[0]
+            self.__list__ = [coord for coord in x]
+        else:
+            self.x = x
+            self.y = y
+            self.__list__ = [x, y]
+        self.__current__ = -1
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    def __sub__(self, coords: tuple):
+        x, y = coords
+        return int(x - self.x), int(y - self.y)
+
+    def __iter__(self) -> Iterator:
+        """Returns a built-in iterator.
+
+        Returns:
+            Iterator: The iterator used for reading the coordinates
+        """
+        return self.__list__.__iter__()
+    
+    def update(self, x: int, y: int):
+        self.x = x
+        self.y = y
+        self.__list__ = [x, y]
+
+class NetworkLink:
+    def __init__(self, x: int, y: int, canvas_tag: int, equipment_tag: int):
+        self.start_coords = Coords(x, y)
+        self.end_coords = None
+        self.tag = canvas_tag
+        self.start_equipment = equipment_tag
+        self.end_equipment = None
+
+    def setEndCoords(self, x: int, y: int, equipment_tag: int):
+        self.end_coords = Coords(x, y)
+        self.end_equipment = equipment_tag
+
+    def updateStartCoords(self, x: int, y: int):
+        self.start_coords.update(x, y)
+
+    def updateEndCoords(self, x: int, y: int):
+        self.end_coords.update(x, y)
 
 class PopUpMessage:
     def __init__(self, root_frame: NetApp, type: str):
@@ -417,8 +497,6 @@ class PopUpEntry:
     def close(self):
         self.toplevel.destroy()
         self.root.popup_entry_var = self.content.get()
-        
-
 
 class NetworkEquipment:
     supported_equipments = ["switch", "router", "pc", "mobile"]
