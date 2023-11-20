@@ -22,7 +22,6 @@ current_links = []
 def start_drawing(event: TkEvent):
   global current_links, start_coords
   x, y = event.x, event.y
-  widget: Canvas = event.widget
   if current_links == []:
     for segment in segmented_line(x, y, x, y):
       x0, x1, y0, y1 = segment
