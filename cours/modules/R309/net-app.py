@@ -1,9 +1,10 @@
 #!/bin/env python3
 
-from os import PathLike
-import os
+from os import (
+    PathLike, system, get_terminal_size
+)
 from tkinter import (
-    Tk, Toplevel, ### Window Frames
+    TclError, Tk, Toplevel, ### Window Frames
     Canvas, Frame, Menu, Entry, Button, ### In-App Frames
     N, E, S, W,  ### The Constants related to the positioning
     Event as TkEvent, ### Tkinter Events
@@ -12,16 +13,18 @@ from tkinter import (
 )
 from typing import Iterator, Union, Callable, Tuple, List
 
+from numpy import delete
+
 ### As PIL is now imported from its fork, Pillow
 ### We need to check if the current Python executable
 try:
     from PIL import ImageTk, Image
 except ImportError:
     try:
-        os.system("pip3 install Pillow")
+        system("pip3 install Pillow")
     except Exception: ### Generic-based Exception
-        os.system("python3 -m pip --upgrade pip")
-        os.system("python3 -m pip install --upgrade Pillow")
+        system("python3 -m pip --upgrade pip")
+        system("python3 -m pip install --upgrade Pillow")
 
 class NetApp(Tk):
     def __init__(self, name: str, base_size: Tuple[int, int], title: str = ""):
@@ -47,6 +50,9 @@ class NetApp(Tk):
         ### The mouse coordinates
         self.mouse_coords = (0, 0)
 
+        ### Ther term size
+        self.term_size_x, self.term_size_y = get_terminal_size()
+
         self.equipments = {}
         self.equipment_nbr = 0
         self.reverse_equipments = {}
@@ -70,6 +76,10 @@ class NetApp(Tk):
         self.current_link_state = "idle" ### Will either be 'idle' or 'active'
         self.current_link_root = 0
         self.link_binding = None
+        self.is_link_fragmented = False
+        ### ID-based dictionary, works the same way as self.reverse_equipments
+        ### (i.e. It's only used to retrieve elements from IDs)
+        self.links = {}
 
         ### Let's set the display
         self.mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
@@ -77,6 +87,14 @@ class NetApp(Tk):
 
         ### Bind some basics events to the root window
         self.bind("<Motion>", lambda event: self.__getMouseCoords(event))
+        self.bind("<KeyPress-Control_L>", lambda _: self.__setLinkSegmentation(True))
+        self.bind("<KeyPress-Control_R>", lambda _: self.__setLinkSegmentation(True))
+        self.bind("<KeyRelease-Control_L>", lambda _: self.__setLinkSegmentation(False))
+        self.bind("<KeyRelease-Control_R>", lambda _: self.__setLinkSegmentation(False))
+
+    def __setLinkSegmentation(self, value: bool):
+        print("IS_Fragmented is now:", value)
+        self.is_link_fragmented = value
 
     def __getMouseCoords(self, event: TkEvent):
         self.mouse_coords = (event.x, event.y)
@@ -178,7 +196,7 @@ class NetApp(Tk):
                 "right-click": {
                     "id": self.playground.tag_bind(equipment_tag, "<Button-3>", lambda event: self.popRightClickMenu(event)),
                     "command": self.popRightClickMenu,
-                },
+                }
             }
         )
 
@@ -200,7 +218,10 @@ class NetApp(Tk):
     def run(self):
         self.title(self.app_title)
         self.geometry(f"{self.x_size}x{self.y_size}")
-        self.mainloop()
+        try:
+            self.mainloop()
+        except KeyboardInterrupt:
+            self.destroy()
 
     def add_equipment(self, type) -> None:
         """Add the given equipment to the playground
@@ -274,6 +295,7 @@ class NetApp(Tk):
         dependent_links: List[NetworkLink] = dependencies["links"]
         for i in range(0, len(dependent_links)):
             link_object = dependent_links[i]
+
             if link_object.start_equipment == self.focused_tag:
                 link_object.updateStartCoords(x, y)
             elif link_object.end_equipment == self.focused_tag:
@@ -282,10 +304,7 @@ class NetApp(Tk):
                 ### The current nearest tag is not one of the registered links
                 print("I'm in this else situation")
 
-            x1, y1 = link_object.start_coords
-            x2, y2 = link_object.end_coords
-
-            self.playground.coords(link_object.tag, x1, y1, x2, y2)
+            link_object.update()
 
     ### Double clicks
     def deleteItem(self, event: TkEvent):
@@ -295,11 +314,17 @@ class NetApp(Tk):
         self.__prepareDeletionOfEquipment(selected_tag)
         self.playground.delete(selected_tag)
 
-    def deleteLink(self, event: TkEvent):
+    def deleteLink(self, event: TkEvent, fragmented: bool = False):
         x, y = event.x, event.y
 
         selected_link = self.playground.find_closest(x, y)[0]
-        self.playground.delete(selected_link)
+
+        if fragmented:
+            fragmented_link: NetworkLink = self.links[selected_link]
+            for segment_id in fragmented_link.segments:
+                self.playground.delete(segment_id)
+        else:
+            self.playground.delete(selected_link)
 
     ### Right Clicks
     def popRightClickMenu(self, event: TkEvent):
@@ -358,13 +383,27 @@ class NetApp(Tk):
             self.setEquipmentsLink(self.playground.find_closest(x, y)[0], ending)
 
     ### Hovers
-    def highlightTag(self, event: TkEvent):
+    def highlightTag(self, event: TkEvent, fragmented: bool = False):
         x, y = event.x, event.y
-        self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="red")
 
-    def unhighlightTag(self, event: TkEvent):
+        if fragmented:
+            link_obj: NetworkLink = self.links[self.playground.find_closest(x, y)[0]]
+            print("Link Object:", link_obj, link_obj.segments)
+            for segment_id in link_obj.segments:
+                print(f"Segment ID: {segment_id}")
+                self.playground.itemconfigure(segment_id, fill="red")
+        else:
+            self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="red")
+
+    def unhighlightTag(self, event: TkEvent, fragmented: bool = False):
         x, y = event.x, event.y
-        self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="black")
+
+        if fragmented:
+            link_obj: NetworkLink = self.links[self.playground.find_closest(x, y)[0]]
+            for segment_id in link_obj.segments:
+                self.playground.itemconfigure(segment_id, fill="black")
+        else:
+            self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="black")
 
     ### Setters
     def setEquipmentName(self, equipment_tag: int, name: str ):
@@ -387,35 +426,64 @@ class NetApp(Tk):
         links: dict = self.equipments[self.reverse_equipments[equipment_tag]]["dependencies"]["links"]
         x, y = self.mouse_coords
 
-
         if self.current_link_state == "idle":
-            ### We're creating the visual link
-            link_id = self.playground.create_line(x, y, x, y)
-            self.playground.tag_lower(link_id)
-
-            links.append(NetworkLink(x, y, link_id, equipment_tag))
+            print("IS_Fragmented:", self.is_link_fragmented)
+            current_link = NetworkLink(x, y, self.playground, equipment_tag, self.is_link_fragmented)
+            link_drawn = current_link.draw()
+            if isinstance(link_drawn, list):
+                self.links.update({
+                    key: current_link for key in link_drawn
+                })
+            else:
+                self.links.update({
+                    link_drawn: current_link
+                })
+            links.append(current_link)
 
             self.current_link_state = "active"
             self.rightclick_menu.entryconfigure(2, label="Set link", command = lambda: self.handleLinkCreation(True))
             self.current_link_root = equipment_tag
 
             ### We're binding the callback to the mouse movement
-            self.link_binding = self.playground.bind("<Motion>", lambda event: self.setEquipmentsLink(self.current_link_root))
-            self.playground.bind("<Double-Button-1>", lambda event: self.deleteLink(event))
-            self.playground.tag_bind(link_id, "<Enter>", lambda event: self.highlightTag(event))
-            self.playground.tag_bind(link_id, "<Leave>", lambda event: self.unhighlightTag(event))
+            self.link_binding = self.playground.bind("<Motion>", lambda _: self.setEquipmentsLink(self.current_link_root))
+            ### We're binding some other useful events
+            current_link.addBinding("<Double-Button-1>", lambda event: self.deleteLink(event), lambda event: self.deleteLink(event, True))
+            current_link.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
+            current_link.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
 
         elif self.current_link_state == "active":
+            print("IS_Fragmented:", self.is_link_fragmented)
             old_links: dict = self.equipments[self.reverse_equipments[self.current_link_root]]["dependencies"]["links"]
             old_links_object: NetworkLink = old_links[-1]
             x, y = old_links_object.start_coords
             x1, y1 = self.mouse_coords
 
-            self.playground.coords(old_links_object.tag, x, y, x1, y1)
+            if not old_links_object.setEndCoords(x1, y1, equipment_tag):
+                old_links_object.updateEndCoords(x1, y1)
+
+            old_links_object.updateFragmentationStatus(self.is_link_fragmented)
+            update = old_links_object.update()
+            if isinstance(update, list):
+                self.links.update({
+                    key: old_links_object for key in update
+                })
+            else:
+                self.links.update({
+                    update: old_links_object
+                })
 
             if ending:
-
-                old_links_object.setEndCoords(x1, y1, equipment_tag)
+                old_links_object.setEndCoords(x1, y1, equipment_tag, True)
+                old_links_object.updateFragmentationStatus(self.is_link_fragmented)
+                update = old_links_object.update()
+                if isinstance(update, list):
+                    self.links.update({
+                        key: old_links_object for key in update
+                    })
+                else:
+                    self.links.update({
+                        update: old_links_object
+                    })
 
                 links.append(old_links_object)
 
@@ -426,10 +494,13 @@ class NetApp(Tk):
                 ### We're unbinding the callback to the mouse movement
                 self.playground.unbind("<Motion>", self.link_binding)
 
+            old_links_object.addBinding("<Double-Button-1>", lambda event: self.deleteLink(event), lambda event: self.deleteLink(event, True))
+            old_links_object.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
+            old_links_object.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
+
         else:
             ### TODO: Create an Escape sequence to erase the current draft link
             pass
-
 
     ### Export area
     def export_png(self):
@@ -468,22 +539,201 @@ class Coords:
         self.__list__ = [x, y]
 
 class NetworkLink:
-    def __init__(self, x: int, y: int, canvas_tag: int, equipment_tag: int):
+    def __init__(self, x: int, y: int, canvas: Canvas, equipment_tag: int, fragmented: bool = False):
         self.start_coords = Coords(x, y)
         self.end_coords = None
-        self.tag = canvas_tag
+        self.tag = None
         self.start_equipment = equipment_tag
         self.end_equipment = None
 
-    def setEndCoords(self, x: int, y: int, equipment_tag: int):
-        self.end_coords = Coords(x, y)
-        self.end_equipment = equipment_tag
+        self.canvas = canvas
+        self.is_fragmented: bool = fragmented
+        self.segments = []
+
+        self.bindings = {}
+
+        self.term_size_x, self.term_size_y = get_terminal_size()
+
+        self.CTRL_LINK_SPACING = 30
+
+    def setEndCoords(self, x: int, y: int, equipment_tag: int, force: bool = False):
+        if not force:
+            if self.end_coords is None:
+                self.end_coords = Coords(x, y)
+                self.end_equipment = equipment_tag
+                return True
+            else:
+                return False
+        else:
+            self.end_coords = Coords(x, y)
+            self.end_equipment = equipment_tag
+            return True
 
     def updateStartCoords(self, x: int, y: int):
         self.start_coords.update(x, y)
 
     def updateEndCoords(self, x: int, y: int):
         self.end_coords.update(x, y)
+
+    def addBinding(self, event_to_bind: str, non_fragmented_call: Callable, fragmented_call: Callable = None):
+        if self.is_fragmented:
+            segment_binding = []
+            for segment_id in self.segments:
+                segment_binding.append([self.canvas.tag_bind(segment_id, event_to_bind, fragmented_call), non_fragmented_call, fragmented_call])
+        else:
+            segment_binding = [self.canvas.tag_bind(self.tag, event_to_bind, non_fragmented_call), non_fragmented_call, fragmented_call]
+
+        self.bindings.update({
+            event_to_bind: segment_binding
+        })
+
+    def removeBinding(self, event_to_unbind: str):
+        if self.is_fragmented:
+            for i in range(0, self.segments):
+                segment_id = self.segments[i]
+                segment_binding = self.bindings[event_to_unbind][i][0]
+
+                self.canvas.tag_unbind(segment_id, segment_binding)
+        else:
+            self.canvas.tag_unbind(self.tag, self.bindings[event_to_unbind])
+
+    def segmented_line(self, x0, y0, x1, y1):
+
+        ### Compute the absolute distance between the origin and the destination
+        dx: int = int(abs(x0 - x1))
+        dy: int = int(abs(y0 - y1))
+
+        ### Compute the theoric required number of segments from each absolute distance
+        ### based on the global constant `CTRL_LINK_SPACING`
+        nx = dx // self.CTRL_LINK_SPACING
+        ny = dy // self.CTRL_LINK_SPACING
+
+        ### Delta is our decisive number of segments we're gonna create.
+        ### We take the longest cut of either `nx` or `ny`.
+        ### We then compute the length of the segments.
+        delta = nx if nx > ny else ny
+        if delta != 0:
+            if delta == nx:
+                ny = delta
+                ny_length = dy // delta
+                nx_length = dx // delta
+            else:
+                nx = delta
+                nx_length = dx // delta
+                ny_length = dy // delta
+        else:
+            nx_length = 0
+            ny_length = 0
+
+        segments = []
+
+        print(f"\n{self.term_size_x*'-'}\n")
+
+        print(f"DX: {dx}, DY: {dy}, X-Segments: {nx}, Y-Segments: {ny}, X-Segments-Length: {nx_length}, Y-Segments-Length: {ny_length}, Delta: {delta}")
+
+        print(f"\n{self.term_size_x*'-'}\n")
+
+        ### We create the list of the segments with a rotation of x then y
+        for i in range(1, nx+1):
+            fragmented_segment_on_x = []
+            fragmented_segment_on_y = []
+            base_x_segment = []
+            base_y_segment = []
+
+            if x1 < x0:
+                fragmented_segment_on_x = [x0 - nx_length*(i-1), x0 - (nx_length*i)]
+                base_x_segment = [x0 - nx_length*(i-1), x0 - nx_length*(i-1)]
+                print(f"Turn n°{i}: x: {x0 - nx_length*(i-1)} -> {x0 - (nx_length*i)},", end=" ")
+            else:
+                fragmented_segment_on_x = [x0 + nx_length*(i-1), x0 + (nx_length*i)]
+                base_x_segment = [x0 + nx_length*(i-1), x0 + nx_length*(i-1)]
+                print(f"Turn n°{i}: x: {x0 + nx_length*(i-1)} -> {x0 + (nx_length*i)},", end=" ")
+
+            if y1 < y0:
+                fragmented_segment_on_y = [y0 - ny_length*(i-1), y0 - (ny_length*i)]
+                base_y_segment = [y0 - ny_length*i, y0 - ny_length*i]
+                print(f"y: {y0 - (ny_length*(i-1))} -> {y0 - (ny_length*i)}, old_coords: ({x0}/{y0}) -> ({x1}/{y1})")
+            else:
+                fragmented_segment_on_y = [y0 + ny_length*(i-1), y0 + (ny_length*i)]
+                base_y_segment = [y0 + ny_length*i, y0 + ny_length*i]
+                print(f"y: {y0 + (ny_length*(i-1))} -> {y0 + (ny_length*i)}, old_coords: ({x0}/{y0}) -> ({x1}/{y1})")
+
+            segments.append(fragmented_segment_on_x + base_y_segment)
+            segments.append(base_x_segment + fragmented_segment_on_y)
+
+        print("The segments:\n\n", segments)
+        return segments
+    
+    def draw(self):
+        x0, y0 = self.start_coords
+        if self.end_coords is not None:
+            x1, y1 = self.end_coords
+        else:
+            x1, y1 = x0, y0
+
+        if self.is_fragmented:
+            ### We have multiple x-only or y-only segments
+            ### from the start coordinates to the end coordinates
+            for segment in self.segmented_line(x0, y0, x1, y1):
+                x0, x1, y0, y1 = segment
+                line_id = self.canvas.create_line(x0, y0, x1, y1)
+                self.segments.append(line_id)
+                self.canvas.tag_lower(line_id)
+
+                for binding_key, binding_values in self.bindings.items():
+                    self.canvas.tag_bind(line_id, binding_key, binding_values[2])
+
+            return self.segments
+        else:
+            ### We have one direct diagonal link
+            self.tag = self.canvas.create_line(x0, y0, x1, y1)
+            self.canvas.tag_lower(self.tag)
+
+            for binding_key, binding_values in self.bindings.items():
+                self.canvas.tag_bind(self.tag, binding_key, binding_values[1])
+
+            return self.tag
+
+    def update(self):
+        x0, y0 = self.start_coords
+        x1, y1 = self.end_coords
+        if self.is_fragmented:
+            if self.tag is not None:
+                self.canvas.delete(self.tag)
+                self.tag = None
+            if self.segments != []:
+                for segment_id in self.segments:
+                    self.canvas.delete(segment_id)
+
+            for segment in self.segmented_line(x0, y0, x1, y1):
+                x0, x1, y0, y1 = segment
+                line_id = self.canvas.create_line(x0, y0, x1, y1)
+                self.segments.append(line_id)
+                self.canvas.tag_lower(line_id)
+
+                for binding_key, binding_values in self.bindings.items():
+                    print("Binding Values:", binding_values)
+                    self.canvas.tag_bind(line_id, binding_key, binding_values[2])
+
+            return self.segments
+
+        else:
+            if self.tag is not None:
+                self.canvas.coords(self.tag, x0, y0, x1, y1)
+            else:
+                if self.segments != []:
+                    for segment_id in self.segments:
+                        self.canvas.delete(segment_id)
+                self.tag = self.canvas.create_line(x0, y0, x1, y1)
+                self.canvas.tag_lower(self.tag)
+
+                for binding_key, binding_values in self.bindings.items():
+                    self.canvas.tag_bind(self.tag, binding_key, binding_values[1])
+
+            return self.tag
+
+    def updateFragmentationStatus(self, fragmentation_value: bool):
+        self.is_fragmented = fragmentation_value
 
 class PopUpMessage:
     def __init__(self, root_frame: NetApp, type: str):
