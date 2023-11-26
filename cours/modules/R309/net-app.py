@@ -1,10 +1,10 @@
 #!/bin/env python3
 
 from os import (
-    PathLike, system, get_terminal_size
+    PathLike, system, get_terminal_size, getcwd
 )
 from tkinter import (
-    TclError, Tk, Toplevel, ### Window Frames
+    Tk, Toplevel, ### Window Frames
     Canvas, Frame, Menu, Entry, Button, ### In-App Frames
     N, E, S, W,  ### The Constants related to the positioning
     Event as TkEvent, ### Tkinter Events
@@ -12,8 +12,6 @@ from tkinter import (
     filedialog as TkFileDialog ### OS-dependant
 )
 from typing import Iterator, Union, Callable, Tuple, List
-
-from numpy import delete
 
 ### As PIL is now imported from its fork, Pillow
 ### We need to check if the current Python executable
@@ -171,6 +169,12 @@ class NetApp(Tk):
         self.__createNewCommand(edit_menu, "Insert Router", lambda: self.add_equipment("router"))
         self.__createNewCommand(edit_menu, "Insert Laptop", lambda: self.add_equipment("pc"))
         self.__createNewCommand(edit_menu, "Insert Mobile", lambda: self.add_equipment("mobile"))
+
+        ### While menus are nice, hotkeys are better!
+        self.bind("<a>", lambda _: self.add_equipment("switch"))
+        self.bind("<e>", lambda _: self.add_equipment("router"))
+        self.bind("<q>", lambda _: self.add_equipment("pc"))
+        self.bind("<d>", lambda _: self.add_equipment("mobile"))
 
     def __configureEquipment(self, equipment_tag: int) -> None:
         """A private method to configure the equipment with the given tag.
@@ -385,6 +389,8 @@ class NetApp(Tk):
     ### Hovers
     def highlightTag(self, event: TkEvent, fragmented: bool = False):
         x, y = event.x, event.y
+
+        print(self.playground.find_closest(x, y)[0])
 
         if fragmented:
             link_obj: NetworkLink = self.links[self.playground.find_closest(x, y)[0]]
@@ -640,6 +646,9 @@ class NetworkLink:
             base_x_segment = []
             base_y_segment = []
 
+            ### We're fragmenting the creation of the segments
+            ### of X and Y and the corresponding base segments
+
             if x1 < x0:
                 fragmented_segment_on_x = [x0 - nx_length*(i-1), x0 - (nx_length*i)]
                 base_x_segment = [x0 - nx_length*(i-1), x0 - nx_length*(i-1)]
@@ -661,7 +670,6 @@ class NetworkLink:
             segments.append(fragmented_segment_on_x + base_y_segment)
             segments.append(base_x_segment + fragmented_segment_on_y)
 
-        print("The segments:\n\n", segments)
         return segments
     
     def draw(self):
@@ -712,7 +720,6 @@ class NetworkLink:
                 self.canvas.tag_lower(line_id)
 
                 for binding_key, binding_values in self.bindings.items():
-                    print("Binding Values:", binding_values)
                     self.canvas.tag_bind(line_id, binding_key, binding_values[2])
 
             return self.segments
@@ -779,7 +786,7 @@ class NetworkEquipment:
             raise ValueError("Unsupported Network Equipment")
         
         self.equipment = type
-        self.icon_path = f"./src/icons/{self.equipment}.png"
+        self.icon_path = self.__setIconPath(f"./src/icons/{self.equipment}.png")
         self.icon = ImageTk.PhotoImage(
             Image.open(self.icon_path, "r").resize(NetworkEquipment.icon_size)
         )
@@ -795,14 +802,50 @@ class NetworkEquipment:
         self.name = new_name
 
     def setIcon(self, new_icon: Union[str, PathLike]):
-        self.icon_path = new_icon
+        self.icon_path = self.__setIconPath(new_icon)
         self.icon = ImageTk.PhotoImage(Image.open(self.icon_path, "r").resize(NetworkEquipment.icon_size))
+
+    def __setIconPath(self, path: str) -> str:
+        """Private setter for the icon path
+
+        Args:
+            path (str): The relative path of the icon
+
+        Returns:
+            str: The absolute equivalent of the relative path
+        """
+        return absolute_path(path)
 
     ### Getters
     def getLinksNumber(self, getter = False):
         if not getter:
             self.links_nbr += 1
         return self.links_nbr
+
+def absolute_path(relative_path):
+  """A simple utility function to transform relative to absolute path.
+
+  Args:
+      relative_path (str): The relative path we're trying to get.
+
+  Returns:
+      str: The absolute path of our target.
+  """
+
+  absolute_cwd = getcwd()
+  current_path = "/cours/modules/R309/"
+
+  if absolute_cwd.endswith("import-cours-but-rt"):
+    ### We got the root of our current workspace, let's add the path from there
+    ### to come to our relative path
+    result = absolute_cwd + current_path + relative_path
+  else:
+    ### We should be deeper than the root of the workspace
+    ### so we don't need to add anything else
+    result = absolute_cwd + "/" + relative_path
+
+  return result
+
 
 if __name__ == "__main__":
     t = NetApp("test-app", (800, 800))
