@@ -308,7 +308,7 @@ class NetApp(Tk):
                 ### The current nearest tag is not one of the registered links
                 print("I'm in this else situation")
 
-            link_object.update()
+            link_object.update(self.links)
 
     ### Double clicks
     def deleteItem(self, event: TkEvent):
@@ -390,26 +390,33 @@ class NetApp(Tk):
     def highlightTag(self, event: TkEvent, fragmented: bool = False):
         x, y = event.x, event.y
 
-        print(self.playground.find_closest(x, y)[0])
+        try:
+            print(self.playground.find_closest(x, y)[0])
+            if fragmented:
+                link_obj: NetworkLink = self.links[self.playground.find_closest(x, y)[0]]
+                for segment_id in link_obj.segments:
+                    self.playground.itemconfigure(segment_id, fill="red")
+            else:
+                self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="red")
 
-        if fragmented:
-            link_obj: NetworkLink = self.links[self.playground.find_closest(x, y)[0]]
-            print("Link Object:", link_obj, link_obj.segments)
-            for segment_id in link_obj.segments:
-                print(f"Segment ID: {segment_id}")
-                self.playground.itemconfigure(segment_id, fill="red")
-        else:
-            self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="red")
+        except KeyError as err:
+            link_id: NetworkLink = self.playground.find_closest(x, y)[0]
+            print(f"KeyError Exception on Highlight: {err}", link_id, True if link_id in self.links else False)
+            print(f"\nself.links: \n{self.links}")
+            print("-"*self.term_size_x)
 
     def unhighlightTag(self, event: TkEvent, fragmented: bool = False):
         x, y = event.x, event.y
 
-        if fragmented:
-            link_obj: NetworkLink = self.links[self.playground.find_closest(x, y)[0]]
-            for segment_id in link_obj.segments:
-                self.playground.itemconfigure(segment_id, fill="black")
-        else:
-            self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="black")
+        try:
+            if fragmented:
+                link_obj: NetworkLink = self.links[self.playground.find_closest(x, y)[0]]
+                for segment_id in link_obj.segments:
+                    self.playground.itemconfigure(segment_id, fill="black")
+            else:
+                self.playground.itemconfigure(self.playground.find_closest(x, y)[0], fill="black")
+        except Exception as err:
+            print(f"Exception on Unhighlight: {err}")
 
     ### Setters
     def setEquipmentName(self, equipment_tag: int, name: str ):
@@ -435,15 +442,7 @@ class NetApp(Tk):
         if self.current_link_state == "idle":
             print("IS_Fragmented:", self.is_link_fragmented)
             current_link = NetworkLink(x, y, self.playground, equipment_tag, self.is_link_fragmented)
-            link_drawn = current_link.draw()
-            if isinstance(link_drawn, list):
-                self.links.update({
-                    key: current_link for key in link_drawn
-                })
-            else:
-                self.links.update({
-                    link_drawn: current_link
-                })
+            current_link.draw(self.links)
             links.append(current_link)
 
             self.current_link_state = "active"
@@ -467,29 +466,13 @@ class NetApp(Tk):
             if not old_links_object.setEndCoords(x1, y1, equipment_tag):
                 old_links_object.updateEndCoords(x1, y1)
 
-            old_links_object.updateFragmentationStatus(self.is_link_fragmented)
-            update = old_links_object.update()
-            if isinstance(update, list):
-                self.links.update({
-                    key: old_links_object for key in update
-                })
+            if not ending:
+                old_links_object.updateFragmentationStatus(self.is_link_fragmented)
+                old_links_object.update(self.links)
             else:
-                self.links.update({
-                    update: old_links_object
-                })
-
-            if ending:
                 old_links_object.setEndCoords(x1, y1, equipment_tag, True)
                 old_links_object.updateFragmentationStatus(self.is_link_fragmented)
-                update = old_links_object.update()
-                if isinstance(update, list):
-                    self.links.update({
-                        key: old_links_object for key in update
-                    })
-                else:
-                    self.links.update({
-                        update: old_links_object
-                    })
+                old_links_object.update(self.links)
 
                 links.append(old_links_object)
 
@@ -555,6 +538,7 @@ class NetworkLink:
         self.canvas = canvas
         self.is_fragmented: bool = fragmented
         self.segments = []
+        self.reverse_links_dict = None
 
         self.bindings = {}
 
@@ -585,9 +569,17 @@ class NetworkLink:
         if self.is_fragmented:
             segment_binding = []
             for segment_id in self.segments:
-                segment_binding.append([self.canvas.tag_bind(segment_id, event_to_bind, fragmented_call), non_fragmented_call, fragmented_call])
+                segment_binding.append({
+                    "id": self.canvas.tag_bind(segment_id, event_to_bind, fragmented_call),
+                    "non-fragmented-call": non_fragmented_call,
+                    "fragmented-call": fragmented_call,
+                })
         else:
-            segment_binding = [self.canvas.tag_bind(self.tag, event_to_bind, non_fragmented_call), non_fragmented_call, fragmented_call]
+            segment_binding = [{
+                "id": self.canvas.tag_bind(self.tag, event_to_bind, non_fragmented_call),
+                "non-fragmented-call": non_fragmented_call,
+                "fragmented-call": fragmented_call
+            }]
 
         self.bindings.update({
             event_to_bind: segment_binding
@@ -595,9 +587,9 @@ class NetworkLink:
 
     def removeBinding(self, event_to_unbind: str):
         if self.is_fragmented:
-            for i in range(0, self.segments):
+            for i in range(0, len(self.segments)):
                 segment_id = self.segments[i]
-                segment_binding = self.bindings[event_to_unbind][i][0]
+                segment_binding = self.bindings[event_to_unbind][0]["id"]
 
                 self.canvas.tag_unbind(segment_id, segment_binding)
         else:
@@ -672,7 +664,7 @@ class NetworkLink:
 
         return segments
     
-    def draw(self):
+    def draw(self, reverse_links_dict: dict) -> Union[int, list]:
         x0, y0 = self.start_coords
         if self.end_coords is not None:
             x1, y1 = self.end_coords
@@ -689,58 +681,133 @@ class NetworkLink:
                 self.canvas.tag_lower(line_id)
 
                 for binding_key, binding_values in self.bindings.items():
-                    self.canvas.tag_bind(line_id, binding_key, binding_values[2])
+                    self.canvas.tag_bind(line_id, binding_key, binding_values["fragmented-call"])
 
-            return self.segments
+                if self.setOrUpdateReverseLinksDict(reverse_links_dict):
+                    self.updateReverseLinksDict(line_id)
+
+            to_return: list = self.segments
         else:
             ### We have one direct diagonal link
             self.tag = self.canvas.create_line(x0, y0, x1, y1)
             self.canvas.tag_lower(self.tag)
 
             for binding_key, binding_values in self.bindings.items():
-                self.canvas.tag_bind(self.tag, binding_key, binding_values[1])
+                self.canvas.tag_bind(self.tag, binding_key, binding_values["non-fragmented-call"])
 
-            return self.tag
+            if self.setOrUpdateReverseLinksDict(reverse_links_dict):
+                self.updateReverseLinksDict(self.tag)
 
-    def update(self):
+            to_return: int = self.tag
+
+        return to_return
+
+    def update(self, reverse_links_dict: dict) -> Union[int, list]:
         x0, y0 = self.start_coords
         x1, y1 = self.end_coords
         if self.is_fragmented:
+            ### Cleaning the self.tag if we're moving from
+            ### direct + diagonal link to direct + segmented link
             if self.tag is not None:
-                self.canvas.delete(self.tag)
-                self.tag = None
-            if self.segments != []:
-                for segment_id in self.segments:
-                    self.canvas.delete(segment_id)
+                self.cleanDiagonalLinkContent()
 
+            ### Cleaning the self.segments and the current canvas IDs
+            ### if we were already segmented
+            if self.segments != []:
+                self.cleanSegmentedLinkContent()
+
+            ### We are regenerating the segments one by one
             for segment in self.segmented_line(x0, y0, x1, y1):
                 x0, x1, y0, y1 = segment
+
+                ### We're creating the line on the canvas then
+                ### lowering the tag to not lock user input on the link object
                 line_id = self.canvas.create_line(x0, y0, x1, y1)
-                self.segments.append(line_id)
                 self.canvas.tag_lower(line_id)
+                ### We're appending the line_id into the self.segments dictionnary
+                self.segments.append(line_id)
 
+                ### We're going through every binding element already created
+                ### for links to create a homogeneous set of segments
                 for binding_key, binding_values in self.bindings.items():
-                    self.canvas.tag_bind(line_id, binding_key, binding_values[2])
+                    self.canvas.tag_bind(line_id, binding_key, binding_values[0]["fragmented-call"])
 
-            return self.segments
+                if self.setOrUpdateReverseLinksDict(reverse_links_dict):
+                    self.updateReverseLinksDict(line_id)
+
+            to_return: list = self.segments
 
         else:
-            if self.tag is not None:
-                self.canvas.coords(self.tag, x0, y0, x1, y1)
-            else:
-                if self.segments != []:
-                    for segment_id in self.segments:
-                        self.canvas.delete(segment_id)
+            ### Well, what a surprise, we were working with a segmented link
+            ### Now, we need to clean the old link
+            if self.segments != []:
+                self.cleanSegmentedLinkContent()
+
                 self.tag = self.canvas.create_line(x0, y0, x1, y1)
                 self.canvas.tag_lower(self.tag)
 
                 for binding_key, binding_values in self.bindings.items():
-                    self.canvas.tag_bind(self.tag, binding_key, binding_values[1])
+                    self.canvas.tag_bind(self.tag, binding_key, binding_values["non-fragmented-call"])
 
-            return self.tag
+                if self.setOrUpdateReverseLinksDict(reverse_links_dict):
+                    self.updateReverseLinksDict(line_id)
+
+            elif self.tag is not None:
+                ### In fact, we were already a diagonal link
+                self.canvas.coords(self.tag, x0, y0, x1, y1)
+
+            to_return: int = self.tag
+        
+
+        return to_return
 
     def updateFragmentationStatus(self, fragmentation_value: bool):
         self.is_fragmented = fragmentation_value
+
+    def cleanDiagonalLinkContent(self) -> None:
+        """A simple utility to clean the content of a diagonal link.
+
+                CAUTION: The link should be verified before calling this function with:
+
+                    ```py
+                    if self.tag is not None:
+                        ...
+                    ```
+        """
+        self.canvas.delete(self.tag)
+        self.tag = None
+
+    def cleanSegmentedLinkContent(self) -> None:
+        """A simple utility to clean the content of a segmented link.
+        """
+        ### Firstly, we're unbinding all events from every element
+        for event in self.bindings.keys():
+            self.removeBinding(event)
+
+        for segment_id in self.segments:
+            self.canvas.delete(segment_id)
+
+            ### We're cleaning the current (internal & external) list of segments
+            ### Otherwise, we're risking load latency because of the size of the list
+            self.segments.remove(segment_id)
+            self.deleteFromReverseLinksDict(segment_id)
+
+    def setOrUpdateReverseLinksDict(self, reverse_dict: dict) -> bool:
+        if self.reverse_links_dict is not None:
+            if self.reverse_links_dict is not reverse_dict:
+                self.reverse_links_dict = reverse_dict
+        else:
+            self.reverse_links_dict = reverse_dict
+
+        return True
+
+    def updateReverseLinksDict(self, line_id: Union[str, int]) -> None:
+        self.reverse_links_dict.update({
+            line_id: self
+        })
+
+    def deleteFromReverseLinksDict(self, line_id: Union[str, int]) -> None:
+        self.reverse_links_dict.pop(line_id)
 
 class PopUpMessage:
     def __init__(self, root_frame: NetApp, type: str):
