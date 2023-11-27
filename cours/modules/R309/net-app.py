@@ -74,6 +74,7 @@ class NetApp(Tk):
         self.current_link_state = "idle" ### Will either be 'idle' or 'active'
         self.current_link_root = 0
         self.link_binding = None
+        self.escape_sequence = None
         self.is_link_fragmented = False
         ### ID-based dictionary, works the same way as self.reverse_equipments
         ### (i.e. It's only used to retrieve elements from IDs)
@@ -435,7 +436,7 @@ class NetApp(Tk):
 
         self.playground.itemconfigure(equipment_tag, image=equipment_object.icon)
 
-    def setEquipmentsLink(self, equipment_tag: int, ending: bool = False):
+    def setEquipmentsLink(self, equipment_tag: int, ending: bool = False, panicked: bool = False):
         links: dict = self.equipments[self.reverse_equipments[equipment_tag]]["dependencies"]["links"]
         x, y = self.mouse_coords
 
@@ -451,13 +452,17 @@ class NetApp(Tk):
 
             ### We're binding the callback to the mouse movement
             self.link_binding = self.playground.bind("<Motion>", lambda _: self.setEquipmentsLink(self.current_link_root))
+
             ### We're binding some other useful events
             current_link.addBinding("<Double-Button-1>", lambda event: self.deleteLink(event), lambda event: self.deleteLink(event, True))
             current_link.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
             current_link.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
 
+            ### We're binding an escape sequence to the whole app to escape any started work
+            self.escape_sequence = self.bind("<KeyPress-Escape>", lambda _: self.setEquipmentsLink(self.current_link_root, panicked=True))
+
+
         elif self.current_link_state == "active":
-            print("IS_Fragmented:", self.is_link_fragmented)
             old_links: dict = self.equipments[self.reverse_equipments[self.current_link_root]]["dependencies"]["links"]
             old_links_object: NetworkLink = old_links[-1]
             x, y = old_links_object.start_coords
@@ -487,9 +492,22 @@ class NetApp(Tk):
             old_links_object.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
             old_links_object.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
 
-        else:
-            ### TODO: Create an Escape sequence to erase the current draft link
-            pass
+        if panicked:
+            links_obj: NetworkLink = links[-1]
+            if links_obj.is_fragmented:
+                links_obj.cleanSegmentedLinkContent()
+            else:
+                links_obj.cleanDiagonalLinkContent()
+
+            self.current_link_state = "idle"
+            self.rightclick_menu.entryconfigure(2, label="Create link", command = lambda: self.handleLinkCreation())
+            self.current_link_root = 0
+
+            ### We're unbinding the callback to the mouse movement
+            self.playground.unbind("<Motion>", self.link_binding)
+            self.unbind("<KeyPress-Escape>", self.escape_sequence)
+            links.pop(-1)
+            del links_obj
 
     ### Export area
     def export_png(self):
@@ -593,7 +611,10 @@ class NetworkLink:
 
                 self.canvas.tag_unbind(segment_id, segment_binding)
         else:
-            self.canvas.tag_unbind(self.tag, self.bindings[event_to_unbind])
+            if self.tag is not None:
+                self.canvas.tag_unbind(self.tag, self.bindings[event_to_unbind])
+            else:
+                pass
 
     def segmented_line(self, x0, y0, x1, y1):
 
@@ -743,14 +764,17 @@ class NetworkLink:
             if self.segments != []:
                 self.cleanSegmentedLinkContent()
 
+                if self.tag is not None:
+                    self.cleanDiagonalLinkContent()
+
                 self.tag = self.canvas.create_line(x0, y0, x1, y1)
                 self.canvas.tag_lower(self.tag)
 
                 for binding_key, binding_values in self.bindings.items():
-                    self.canvas.tag_bind(self.tag, binding_key, binding_values["non-fragmented-call"])
+                    self.canvas.tag_bind(self.tag, binding_key, binding_values[0]["non-fragmented-call"])
 
                 if self.setOrUpdateReverseLinksDict(reverse_links_dict):
-                    self.updateReverseLinksDict(line_id)
+                    self.updateReverseLinksDict(self.tag)
 
             elif self.tag is not None:
                 ### In fact, we were already a diagonal link
@@ -775,6 +799,7 @@ class NetworkLink:
                     ```
         """
         self.canvas.delete(self.tag)
+        self.deleteFromReverseLinksDict(self.tag)
         self.tag = None
 
     def cleanSegmentedLinkContent(self) -> None:
@@ -789,7 +814,7 @@ class NetworkLink:
 
             ### We're cleaning the current (internal & external) list of segments
             ### Otherwise, we're risking load latency because of the size of the list
-            self.segments.remove(segment_id)
+            self.segments.pop(self.segments.index(segment_id))
             self.deleteFromReverseLinksDict(segment_id)
 
     def setOrUpdateReverseLinksDict(self, reverse_dict: dict) -> bool:
@@ -807,7 +832,8 @@ class NetworkLink:
         })
 
     def deleteFromReverseLinksDict(self, line_id: Union[str, int]) -> None:
-        self.reverse_links_dict.pop(line_id)
+        if line_id in self.reverse_links_dict.keys():
+            self.reverse_links_dict.pop(line_id)
 
 class PopUpMessage:
     def __init__(self, root_frame: NetApp, type: str):
