@@ -61,3 +61,6 @@
 [submodule "cours/modules/R309/R309-TP2"]
 	path = cours/modules/R309/R309-TP2
 	url = git@github.com:IUT-Beziers/r309-tp2-alexis-opolka.git
+[submodule "cours/sae/sae-31"]
+	path = cours/sae/sae-31
+	url = git@github.com:alexis-opolka/vert.git
