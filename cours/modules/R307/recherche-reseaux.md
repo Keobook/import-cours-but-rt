@@ -58,7 +58,7 @@ Copyright: All Rights Reserved
         Le sigle [GPON](https://www.tp-link.com/fr/blog/289/qu-est-ce-que-gpon-et-pourquoi-le-choisir-/) signifie la version
         "grand public" du PON (Passive Optical Network) qui fait partie des infrastructures P2MP, elle est aussi la version au Gigabit.
 
-        Un réseau GPON se compose de l'ONU (Optical Network Unit), l'ODN (Optical Distriution Network) et l'OLT (Optical Line Terminal).
+        Un réseau GPON se compose de l'ONU (Optical Network Unit), l'ODN (Optical Distribution Network) et l'OLT (Optical Line Terminal).
 
         Ci-dessous la structure typique d'un GPON:
 
@@ -167,7 +167,7 @@ Copyright: All Rights Reserved
 
         Chercher aussi ce qu’est un ONU et préciser sur le schéma où il sera.
 
-        - Un [ONU](https://www.tp-link.com/fr/blog/289/qu-est-ce-que-gpon-et-pourquoi-le-choisir-/) est l'Unité de de réseau optique (Optical Network Unit), il se situe au niveau du client mais juste avant le [CPE](https://www.tp-link.com/fr/blog/289/qu-est-ce-que-gpon-et-pourquoi-le-choisir-/).
+        - Un [ONU](https://www.tp-link.com/fr/blog/289/qu-est-ce-que-gpon-et-pourquoi-le-choisir-/) est l'Unité de réseau optique (Optical Network Unit), il se situe au niveau du client mais juste avant le [CPE](https://www.tp-link.com/fr/blog/289/qu-est-ce-que-gpon-et-pourquoi-le-choisir-/).
 
     1. Toujours dans le cas d’un réseau GPON, on considère une fibre qui arrive sur un SRO depuis
         le NRO. Quel est l’équipement qui va permettre à partir de cette fibre de desservir plusieurs PBO ?
@@ -262,7 +262,96 @@ Copyright: All Rights Reserved
     1. Dans quel type de situation la fibre multimode est-elle utilisée ?
         Trouver également les différentes qualités de fibres multimodes qui existent.
 
+        La fibre multimode sera utilisée durant des situations où [la communication se fait sur une courte distance](https://community.fs.com/fr/article/advantages-and-disadvantages-of-multimode-fiber.html).
+
 2. ## II - Spécifications télécoms du réseau GPON
+
+    1. Quels sont les débits nominaux possibles dans le sens descendant ? Dans le sens montant ?
+
+        - Sens Descendant: [1244.160 Mbits/s](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=3) et [2 488.320 Mbit/s](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=3)
+        - Sens Montant: [155.520 Mbit/s](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=3), [622.080 Mbit/s](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=3), [1 244.160 Mbit/s](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=3) et [2 488.320 Mbit/s](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=3)
+
+    1. En vous appuyant sur la question précédente, donner un exemple de transmission symétrique et de transmission asymétrique.
+
+        - En ce qui concerne la transmission symétrique, on peut qualifier la [conversation téléphonique](https://en.wikipedia.org/wiki/Telecommunications).
+        - En ce qui concerne la transmission asymétrique, on peut qualifier les systèmes de communications distribués tels que les talkie-walkie.
+
+    1. Quelle est la situation la plus fréquemment rencontrée ?
+
+        La situation la plus fréquemment rencontrée est la transmission asymétrique.
+
+    1. Quelles sont les deux méthodes possibles pour transmettre dans les deux sens ?
+
+        Pour transmettre dans les deux sens, on peut faire en sorte d'utiliser des
+        canaux de transmission différents.
+
+    1. Quelle est la méthode de codage des bits ? Qu’est-ce que cela signifie en termes de signal ?
+
+        La méthode de codage est du [NRZ](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#%5B%7B%22num%22%3A72%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C54%2C379%2C0%5D)
+        où le niveau haut est égal à 1 et le niveau bas est égal à 2.
+
+    1. Quelle est la plage de longueurs d’onde réservée au sens descendant ? Donner aussi la valeur médiane.
+        Calculer la bande de fréquences correspondante (en prenant un indice égal à 1).
+
+        Le sens descendant:
+
+        - Une fibre: [1480-1500 nm](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#%5B%7B%22num%22%3A72%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C54%2C240%2C0%5D)
+            - Valeur médiane: 1490 nm
+        - Deux fibres: [1260-1360 nm](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#%5B%7B%22num%22%3A72%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C54%2C240%2C0%5D)
+            - Valeur médiane: 1310 nm
+
+    1. Quelle est la plage de longueurs d’onde réservée au sens montant ? Donner aussi la valeur médiane.
+        Donner la bande de fréquences correspondante (en prenant un indice égal à 1).
+
+        Le sens montant:
+
+        - Deux fibres: [1260-1360 nm](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#%5B%7B%22num%22%3A72%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C54%2C151%2C0%5D)
+            - Valeur médiane: 1310 nm
+
+    1. Citer la norme qui définit les fibres qui peuvent être utilisées dans un réseau GPON (d’après la norme ITU-T G.984.2).
+
+        C'est la norme [G.652](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=16).
+
+    1. Ces fibres peuvent être du type SM, MM ou les deux ?
+
+        C'est du [SM](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#%5B%7B%22num%22%3A59%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C54%2C718%2C0%5D).
+
+    1. Dans la norme ITU-T G.984.2 on lit qu’en sortie de l’OLT, dans le sens descendant, l’ORL doit être d’au moins 32 dB.
+        Expliquer ce que cela veut dire. Soyez précis. Traduire le nombre en pourcentage de puissances.
+
+        Cela veut dire que pour avoir une perte minimale du retour Optique, [on doit recevoir plus de 32dB en entrée](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=16).
+
+    1. Quelle est la distance couverte maximale dans un réseau GPON ?
+
+        La distance maximale entre les points de S/R et R/S est de [20 km](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=16).
+
+    1. Il existe 3 classes d’atténuation, les classes A, B et C. Selon la classe, la plage d’atténuation n’est pas la même.
+        Noter les valeurs et expliquer ce qu’elles veulent dire.
+
+        - Classe A: [5-20](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=16)
+        - Classe B: [10-25](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=16)
+        - Classe C: [15-30](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=16)
+
+        Les classes d'atténuation sont présentes afin de différencier certains types de systèmes (voir [IUT-G.982](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.982-199611-I!!PDF-E&type=items) section 11.3).
+
+    1. Dans la norme ITU-T G.984.2 on lit par exemple les spécifications suivantes : en sortie de l’OLT, dans le sens descendant, et pour un débit de 1 244 Mbits/s.
+        Interpréter ce que ces données veulent dire (il n’est pas nécessaire de convertir en W).
+
+        Ces spécifications nous informent des cas spécifiques d'un lien, en l'occurence du lien sortant de l'OLT,
+        de son sens ainsi que son débit afin de s'assurer d'avoir une valeur hypothétique mais concrète
+        dans le sens que le lecteur sache de quelle valeur l'on parle et de pouvoir suivre correctement
+        les informations supplémentaires données.
+
+    1. Toujours dans le sens descendant et pour un débit de 1244 Mbits/s, lorsqu’on lit que la sensibilité minimum du récepteur (au niveau de l’ONU) est de -25 dBm, qu’est-ce que cela veut dire ?
+        Ici la conversion dans l’unité adéquate est demandée.
+
+    1. Définir le "Bit error ratio" (ne pas confondre avec le Bit error rate).
+        Comment doit-il être pour respecter la norme ?
+        Donner une réponse claire si vous avez compris.
+
+        C'est le "pourcentage" d'erreur et non sa fréquence d'apparition.  
+        Afin de [respecter la norme](https://moodle-but.iutbeziers.fr/moodle/pluginfile.php/30665/mod_resource/content/1/T-REC-G.984.2-201908-I!!PDF-E.pdf#page=18), il doit être inférieur à $10^{-10}$ et
+        est calculé en divisant le nombre de bits erronés au nombre de bits total.
 
 3. ## III - Perspectives d'évolution
 
