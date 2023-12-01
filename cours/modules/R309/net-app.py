@@ -795,7 +795,7 @@ class NetworkLink:
 
                     ```py
                     if self.tag is not None:
-                        ...
+                        self.cleanDiagonalLinkContent()
                     ```
         """
         self.canvas.delete(self.tag)
