@@ -437,33 +437,44 @@ class NetApp(Tk):
         self.playground.itemconfigure(equipment_tag, image=equipment_object.icon)
 
     def setEquipmentsLink(self, equipment_tag: int, ending: bool = False, panicked: bool = False):
-        links: dict = self.equipments[self.reverse_equipments[equipment_tag]]["dependencies"]["links"]
+        base: dict = self.equipments[self.reverse_equipments[equipment_tag]]
+        equipment: NetworkEquipment = base["item"]
+        links: dict = base["dependencies"]["links"]
         x, y = self.mouse_coords
 
         if self.current_link_state == "idle":
-            print("IS_Fragmented:", self.is_link_fragmented)
-            current_link = NetworkLink(x, y, self.playground, equipment_tag, self.is_link_fragmented)
-            current_link.draw(self.links)
-            links.append(current_link)
+            print(f"Equipment {equipment.name}:", equipment.isOpenToLinkCreation(), equipment.getLinksNumber(True), equipment.links)
+            if equipment.isOpenToLinkCreation():
+                current_link = NetworkLink(x, y, self.playground, equipment_tag, self.is_link_fragmented)
 
-            self.current_link_state = "active"
-            self.rightclick_menu.entryconfigure(2, label="Set link", command = lambda: self.handleLinkCreation(True))
-            self.current_link_root = equipment_tag
+                current_link.draw(self.links)
+                links.append(current_link)
 
-            ### We're binding the callback to the mouse movement
-            self.link_binding = self.playground.bind("<Motion>", lambda _: self.setEquipmentsLink(self.current_link_root))
+                ### We're adding this link to the links of the equipment
+                equipment.addLink(current_link)
 
-            ### We're binding some other useful events
-            current_link.addBinding("<Double-Button-1>", lambda event: self.deleteLink(event), lambda event: self.deleteLink(event, True))
-            current_link.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
-            current_link.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
+                self.current_link_state = "active"
+                self.rightclick_menu.entryconfigure(2, label="Set link", command = lambda: self.handleLinkCreation(True))
+                self.current_link_root = equipment_tag
 
-            ### We're binding an escape sequence to the whole app to escape any started work
-            self.escape_sequence = self.bind("<KeyPress-Escape>", lambda _: self.setEquipmentsLink(self.current_link_root, panicked=True))
+                ### We're binding the callback to the mouse movement
+                self.link_binding = self.playground.bind("<Motion>", lambda _: self.setEquipmentsLink(self.current_link_root))
+
+                ### We're binding some other useful events
+                current_link.addBinding("<Double-Button-1>", lambda event: self.deleteLink(event), lambda event: self.deleteLink(event, True))
+                current_link.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
+                current_link.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
+
+                ### We're binding an escape sequence to the whole app to escape any started work
+                self.escape_sequence = self.bind("<KeyPress-Escape>", lambda _: self.setEquipmentsLink(self.current_link_root, panicked=True))
+            else:
+                self.createCanvasLinksWarning(equipment.name)
 
 
         elif self.current_link_state == "active":
-            old_links: dict = self.equipments[self.reverse_equipments[self.current_link_root]]["dependencies"]["links"]
+            old_base: dict = self.equipments[self.reverse_equipments[self.current_link_root]]
+            old_equipment: NetworkEquipment = old_base["item"]
+            old_links: dict = old_base["dependencies"]["links"]
             old_links_object: NetworkLink = old_links[-1]
             x, y = old_links_object.start_coords
             x1, y1 = self.mouse_coords
@@ -475,22 +486,33 @@ class NetApp(Tk):
                 old_links_object.updateFragmentationStatus(self.is_link_fragmented)
                 old_links_object.update(self.links)
             else:
-                old_links_object.setEndCoords(x1, y1, equipment_tag, True)
-                old_links_object.updateFragmentationStatus(self.is_link_fragmented)
-                old_links_object.update(self.links)
+                end_equipment: NetworkEquipment = self.equipments[self.reverse_equipments[equipment_tag]]["item"]
+                print(f"End-Equipment {end_equipment.name}:", end_equipment.isOpenToLinkCreation(), end_equipment.getLinksNumber(True), end_equipment.links)
 
-                links.append(old_links_object)
+                if end_equipment is not old_equipment:
 
-                self.current_link_state = "idle"
-                self.rightclick_menu.entryconfigure(2, label="Create link", command = lambda: self.handleLinkCreation())
-                self.current_link_root = 0
+                    if end_equipment.isOpenToLinkCreation():
+                        end_equipment.addLink(old_links_object)
+                        old_links_object.setEndCoords(x1, y1, equipment_tag, True)
+                        old_links_object.updateFragmentationStatus(self.is_link_fragmented)
+                        old_links_object.update(self.links)
 
-                ### We're unbinding the callback to the mouse movement
-                self.playground.unbind("<Motion>", self.link_binding)
+                        links.append(old_links_object)
 
-            old_links_object.addBinding("<Double-Button-1>", lambda event: self.deleteLink(event), lambda event: self.deleteLink(event, True))
-            old_links_object.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
-            old_links_object.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
+                        self.current_link_state = "idle"
+                        self.rightclick_menu.entryconfigure(2, label="Create link", command = lambda: self.handleLinkCreation())
+                        self.current_link_root = 0
+
+                        ### We're unbinding the callback to the mouse movement
+                        self.playground.unbind("<Motion>", self.link_binding)
+                    else:
+                        self.createCanvasLinksWarning(end_equipment.name)
+                else:
+                    self.createCanvasSingularLinksWarning(end_equipment.name)
+
+            # old_links_object.addBinding("<Double-Button-1>", lambda event: self.deleteLink(event), lambda event: self.deleteLink(event, True))
+            # old_links_object.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
+            # old_links_object.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
 
         if panicked:
             links_obj: NetworkLink = links[-1]
@@ -506,8 +528,16 @@ class NetApp(Tk):
             ### We're unbinding the callback to the mouse movement
             self.playground.unbind("<Motion>", self.link_binding)
             self.unbind("<KeyPress-Escape>", self.escape_sequence)
-            links.pop(-1)
+            to_remove: NetworkLink = links.pop(-1)
+            equipment.removeLink(to_remove)
             del links_obj
+
+    ### PopUps Utils
+    def createCanvasLinksWarning(self, equipment_name: str):
+        CanvasPopUpWarning(self.playground, f"You have too many links on {equipment_name}!")
+    
+    def createCanvasSingularLinksWarning(self, equipment_name: str) -> None:
+        CanvasPopUpWarning(self.playground, f"You can't simply link {equipment_name} on itself!")
 
     ### Export area
     def export_png(self):
@@ -843,6 +873,12 @@ class PopUpMessage:
         
         root_frame.wait_window(self.popup.toplevel)
 
+class CanvasPopUpWarning:
+    def __init__(self, root_canvas: Canvas, text: str) -> None:
+        text_to_disappear = root_canvas.create_text(root_canvas.winfo_width() // 2, (10/100)*root_canvas.winfo_height(), text=text, fill="red")
+        root_canvas.after(1500, lambda: root_canvas.delete(text_to_disappear))
+
+
 class PopUpEntry:
     def __init__(self, root_frame: NetApp):
         self.root = root_frame
@@ -861,10 +897,11 @@ class PopUpEntry:
 
 class NetworkEquipment:
     supported_equipments = ["switch", "router", "pc", "mobile"]
+    four_links = supported_equipments[:2]
     icon_size = (64, 64)
     ids = {key: 0 for key in supported_equipments}
 
-    def __init__(self, type: str):
+    def __init__(self, type: str) -> None:
         """A simple class holding all the utils required to work
         with specific simulated network equipment inside a Tkinter Canvas.
 
@@ -890,13 +927,25 @@ class NetworkEquipment:
         self.name = f"{self.equipment}-{NetworkEquipment.ids[self.equipment]}"
         self.links_nbr = 0
 
+        if self.equipment in NetworkEquipment.four_links:
+            self.links_max_nbr = 4
+        else:
+            self.links_max_nbr = 1
+
+        ### We're dynamically creating a list containing the NetworkLink elements
+        self.links = [None for i in range(0, self.links_max_nbr)]
+
     ### Setters
-    def setName(self, new_name: str):
+    def setName(self, new_name: str) -> None:
         self.name = new_name
 
-    def setIcon(self, new_icon: Union[str, PathLike]):
+        return None
+
+    def setIcon(self, new_icon: Union[str, PathLike]) -> None:
         self.icon_path = self.__setIconPath(new_icon)
         self.icon = ImageTk.PhotoImage(Image.open(self.icon_path, "r").resize(NetworkEquipment.icon_size))
+
+        return None
 
     def __setIconPath(self, path: str) -> str:
         """Private setter for the icon path
@@ -908,14 +957,59 @@ class NetworkEquipment:
             str: The absolute equivalent of the relative path
         """
         return absolute_path(path)
+    
+    def addLink(self, link_object: NetworkLink) -> None:
+        """Simple utility that adds links objects to the internal list.
+        Should be used after:
+
+        ```py
+        if NetworkEquipment.isOpenToLinkCreation():
+            NetworkEquipment.addLink(NetworkLink)
+        ```
+
+        Args:
+            link_object (NetworkLink): The link object to add
+        """
+
+        self.links[self.links.index(None)] = link_object
+        self.getLinksNumber()
+
+        return None
+
+    def removeLink(self, link_object: NetworkLink) -> None:
+        """Simple utility that removes links objects to the internal list and decrements the counter.
+
+        Args:
+            link_object (NetworkLink): The link object to remove
+        """
+
+        self.links.pop(self.links.index(link_object))
+        self.links.append(None)
+        self.links_nbr -= 1
+
+        return None
 
     ### Getters
-    def getLinksNumber(self, getter = False):
+    def getLinksNumber(self, getter: bool = False) -> int:
         if not getter:
-            self.links_nbr += 1
+            if self.links_nbr+1 <= self.links_max_nbr:
+                self.links_nbr += 1
+            else:
+                return -1
         return self.links_nbr
+    
+    def isOpenToLinkCreation(self) -> bool:
+        """Is this current Equipment can add new link connections?
 
-def absolute_path(relative_path):
+        Returns:
+            bool: Either `True` or `False`
+        """
+        if self.links_nbr < self.links_max_nbr:
+            return True
+        else:
+            return False
+
+def absolute_path(relative_path: str) -> str:
   """A simple utility function to transform relative to absolute path.
 
   Args:
