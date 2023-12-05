@@ -274,7 +274,6 @@ class NetApp(Tk):
     ### Drag & Drop
     def startDragFocus(self, event: TkEvent):
         x, y = event.x, event.y
-        # print(f"coords=({x}/{y})")
 
         self.focused_tag = self.playground.find_closest(x, y)[0]
 
@@ -286,18 +285,21 @@ class NetApp(Tk):
         ### We're dividing by 2 the icon size to find the difference
         ### between the mouse position and the center of the icon.
         difference_mouse_icon = NetworkEquipment.icon_size[0] // 2
+        to_move_x = x - difference_mouse_icon
+        to_move_y = y - difference_mouse_icon
 
         self.playground.moveto(
-            self.focused_tag, x - difference_mouse_icon, y - difference_mouse_icon
+            self.focused_tag, to_move_x, to_move_y
         )
 
         ### After moving the icon, we need to go through its dependency list to move them
         dependencies = self.equipments[self.reverse_equipments[self.focused_tag]]["dependencies"]
         dependent_label = dependencies["label"]
 
-        self.playground.moveto(dependent_label, x - difference_mouse_icon // 2, y + difference_mouse_icon)
+        self.playground.moveto(dependent_label, x - (difference_mouse_icon // 2), y + difference_mouse_icon)
 
         dependent_links: List[NetworkLink] = dependencies["links"]
+
         for i in range(0, len(dependent_links)):
             link_object = dependent_links[i]
 
@@ -319,17 +321,36 @@ class NetApp(Tk):
         self.__prepareDeletionOfEquipment(selected_tag)
         self.playground.delete(selected_tag)
 
+        TODO: Remove both the text and the links
+
     def deleteLink(self, event: TkEvent, fragmented: bool = False):
         x, y = event.x, event.y
 
         selected_link = self.playground.find_closest(x, y)[0]
 
-        if fragmented:
-            fragmented_link: NetworkLink = self.links[selected_link]
-            for segment_id in fragmented_link.segments:
-                self.playground.delete(segment_id)
-        else:
-            self.playground.delete(selected_link)
+        # if fragmented:
+        #     fragmented_link: NetworkLink = self.links[selected_link]
+        #     for segment_id in fragmented_link.segments:
+        #         self.playground.delete(segment_id)
+        # else:
+        #     self.playground.delete(selected_link)
+
+            links_obj: NetworkLink = links[-1]
+            if links_obj.is_fragmented:
+                links_obj.cleanSegmentedLinkContent()
+            else:
+                links_obj.cleanDiagonalLinkContent()
+
+            self.current_link_state = "idle"
+            self.rightclick_menu.entryconfigure(2, label="Create link", command = lambda: self.handleLinkCreation())
+            self.current_link_root = 0
+
+            ### We're unbinding the callback to the mouse movement
+            self.playground.unbind("<Motion>", self.link_binding)
+            self.unbind("<KeyPress-Escape>", self.escape_sequence)
+            to_remove: NetworkLink = links.pop(-1)
+            equipment.removeLink(to_remove)
+            del links_obj
 
     ### Right Clicks
     def popRightClickMenu(self, event: TkEvent):
@@ -466,6 +487,8 @@ class NetApp(Tk):
                 current_link.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
 
                 ### We're binding an escape sequence to the whole app to escape any started work
+                ### We're binding to the root widget because it otherwise escapes the binding and is never
+                ### sent to the playground.
                 self.escape_sequence = self.bind("<KeyPress-Escape>", lambda _: self.setEquipmentsLink(self.current_link_root, panicked=True))
             else:
                 self.createCanvasLinksWarning(equipment.name)
@@ -510,10 +533,6 @@ class NetApp(Tk):
                 else:
                     self.createCanvasSingularLinksWarning(end_equipment.name)
 
-            # old_links_object.addBinding("<Double-Button-1>", lambda event: self.deleteLink(event), lambda event: self.deleteLink(event, True))
-            # old_links_object.addBinding("<Enter>", lambda event: self.highlightTag(event), lambda event: self.highlightTag(event, True))
-            # old_links_object.addBinding("<Leave>", lambda event: self.unhighlightTag(event), lambda event: self.unhighlightTag(event, True))
-
         if panicked:
             links_obj: NetworkLink = links[-1]
             if links_obj.is_fragmented:
@@ -535,7 +554,7 @@ class NetApp(Tk):
     ### PopUps Utils
     def createCanvasLinksWarning(self, equipment_name: str):
         CanvasPopUpWarning(self.playground, f"You have too many links on {equipment_name}!")
-    
+
     def createCanvasSingularLinksWarning(self, equipment_name: str) -> None:
         CanvasPopUpWarning(self.playground, f"You can't simply link {equipment_name} on itself!")
 
@@ -714,7 +733,7 @@ class NetworkLink:
             segments.append(base_x_segment + fragmented_segment_on_y)
 
         return segments
-    
+
     def draw(self, reverse_links_dict: dict) -> Union[int, list]:
         x0, y0 = self.start_coords
         if self.end_coords is not None:
@@ -756,6 +775,7 @@ class NetworkLink:
     def update(self, reverse_links_dict: dict) -> Union[int, list]:
         x0, y0 = self.start_coords
         x1, y1 = self.end_coords
+
         if self.is_fragmented:
             ### Cleaning the self.tag if we're moving from
             ### direct + diagonal link to direct + segmented link
@@ -811,7 +831,7 @@ class NetworkLink:
                 self.canvas.coords(self.tag, x0, y0, x1, y1)
 
             to_return: int = self.tag
-        
+
 
         return to_return
 
