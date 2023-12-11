@@ -72,3 +72,6 @@
 [submodule "cours/sae/sae-31"]
 	path = cours/sae/sae-31
 	url = git@github.com:alexis-opolka/vert.git
+[submodule "cours/sae/sae-34"]
+	path = cours/sae/sae-34
+	url = git@github.com:alexis-opolka/virtme.git

@@ -1,3 +1,10 @@
+---
+Author: Alexis Opolka
+Copyright: All Rights Reserved
+Subject: Spécialisation Cloud
+Company: IUT de Béziers
+---
+
 # BUT-RT2 - Spécialisation Cloud
 
 Cloud / On-Premise
@@ -101,8 +108,52 @@ IaC
 Capex --> Investissement --> Coûts fixes
 Lopex --> Coûts variables
 
-## [TD 1](./cloud-td1.md)
+## TDs
 
-## [TP 1](./cloud-td1.md)
+!!!include(./cloud-td1.md)!!!
 
-## Copyright &copy; 2023 Alexis Opolka - All Rights Reserved
+## TPs
+
+!!!include(./cloud-tp1.md)!!!
+
+!!!include(./cloud-tp2.md)!!!
+
+## Virtualisation
+
+- Deux parties:
+
+  - Processeur
+  - Hyperviseur
+
+Kernel-Space / User-Space
+
+Hyperviseur va traîter les requêtes Kernel-Space de la VM
+après les avoir reçues du CPU (qui les lui a transférées)
+
+On peut être de base en `VM_NON_ROOT`, dans le cas d'exécution `Kernel-Space`
+on fait une `VM_EXIT`[^1] puis on charge le contexte de l'hyperviseur.
+
+[^1]: Process qui va nous permettre de save le contexte de la VM puis de le quitter
+
+Afin d'utiliser des périphériques, on crée un buffer FIFO/FILO bi-directionnel permettant
+de transférer les paquets/instructions entre la VM et l'Hyperviseur.
+
+Sur KVM, le paquet permettant de créer les buffers, est `virt-io`,
+sur VmWare, c'est `VM Tools`.
+
+En ce qui concerne la mémoire, le processus ne connait qu'une adresse
+mémoire, elle est ensuite indexée dans une table `PT` (Patch Table) afin d'obtenir
+l'adresse physique.  
+Il existe une `TLB` afin de cacher le process et d'accélerer le tout.
+
+Dans le cas de la virtualisation, on translate cette notion vers l'hyperviseur,
+on utilise d'ailleurs le `IOMMU` dans ce process.
+
+En ce qui concerne les flux réseaux, sur les serveurs il existe les SRIOV
+(on virtualise les cartes réseaux). <-- Meilleures performances
+
+Avec NPAR, on peut diviser la bande passante.
+
+L'hyperviseur fait du Ballooning (Gonfler un "ballon" afin de récupérer de
+la RAM non utilisée par un process mais par un cache).  
+C'est conditionnel à l'inactivité d'une VM.

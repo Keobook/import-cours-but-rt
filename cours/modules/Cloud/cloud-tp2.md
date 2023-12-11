@@ -1,4 +1,11 @@
-# Cloud - Vagrant
+---
+Author:
+  - Alexis Opolka
+  - Enzo Cadière
+Subject: Cloud - Vagrant
+Company: IUT de Béziers
+Copyright: All Rights Reserved
+---
 
 1. ## I - Vagrant
 
@@ -12,13 +19,13 @@
           mkdir -p ~/vagrant/VM1
           ```
 
-      1. Placez-vous dans ce répertoire:
+      2. Placez-vous dans ce répertoire:
 
           ```sh
           cd ~/vagrant/VM1
           ```
 
-      1. Dans VM1, on tape:
+      3. Dans VM1, on tape:
 
           ```sh
           vagrant init ubuntu/xenial64
@@ -98,11 +105,11 @@
               default: /vagrant => /root/Vagrant/VM1
           ```
 
-      1. Démarrez la VM avec `vagrant up`
+      4. Démarrez la VM avec `vagrant up`
 
           Voir la partie précédente.
 
-      1. Pour se loguer sur la VM, on fait:
+      5. Pour se loguer sur la VM, on fait:
 
           ```sh
           vagrant ssh
@@ -138,7 +145,7 @@
                  link/ether 02:be:82:6b:cc:1d brd ff:ff:ff:ff:ff:ff
              ```
 
-      1. On se place dans le répertoire de la VM.
+      6. On se place dans le répertoire de la VM.
 
          - Quel est le type de disque ?
 
@@ -155,7 +162,7 @@
             Nous pouvons voir que la boxe Vagrant utilise du `VMDK` avec
             le provider `VirtualBox`.
 
-1. ## II - Vagrant Customisation VM et construction d'image
+2. ## II - Vagrant Customisation VM et construction d'image
 
     1. ### 2.1 Customisation de l'instance - Partie 1
 
@@ -177,7 +184,7 @@
             tous les commentaires du fichier afin d'obtenir que les commandes
             de configuration.
 
-         1. Editer le fichier Vagranfile et décommenter les lignes en rapport avec vm.provision :
+         2. Editer le fichier Vagranfile et décommenter les lignes en rapport avec vm.provision :
 
              Après avoir décommenter les lignes en question, nous obtenons maintenant:
 
@@ -191,7 +198,7 @@
              end
              ```
 
-         1. Prouvez que vous avez bien un serveur Web qui tourne dans la VM en montrant :
+         3. Prouvez que vous avez bien un serveur Web qui tourne dans la VM en montrant :
                1. Que le service apache2 est actif (quelle commande avez-vous tapé ?).
 
                    Pour savoir si le service est actif sous Ubuntu, on fait:
@@ -1482,5 +1489,3 @@
             ```
 
             La contrainte physique du serveur à prendre en compte dans le choix de n est son CPU ça RAM et son espace disque.
-
-## Copyright &copy; 2023 Alexis Opolka & Enzo Cadière - All Rights Reserved

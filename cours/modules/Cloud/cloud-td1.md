@@ -1,4 +1,9 @@
-# BUT-RT2 - Cloud - TD1 - Automatisation de la récupération des prix d'AWS
+---
+Author: Alexis Opolka
+Subject: Cloud - Automatisation de la récupération des prix d'AWS
+Company: IUT de Béziers
+Copyright: All Rights Reserved
+---
 
 1. ## Obtention des prix au format json des instances "COMPUTE" d'aws via curl
 
@@ -54,7 +59,7 @@
               write_data_to_file(filename, data)
               ```
 
-          1. Récupérez les prix des instances t1 et t2.micro de la region eu-west-1 sauvegardez les dans un fichier medium.json.
+          2. Récupérez les prix des instances t1 et t2.micro de la region eu-west-1 sauvegardez les dans un fichier medium.json.
 
               ```py
               import os
@@ -98,13 +103,13 @@
               write_data_to_file(filename, data)
               ```
 
-          1. à quoi correspondent les données extraites ?
+          3. à quoi correspondent les données extraites ?
 
               Les données extraites correspondent aux différentes informations
               utiles ou nécessaires afin d'estimer le coûts d'utilisation de telles machines
               dans le cloud.
 
-          1. Quel est la différence de prix au mois entre une m6a.48xlarge et une t1.micro ?
+          4. Quel est la différence de prix au mois entre une m6a.48xlarge et une t1.micro ?
 
               ```py
               ### Question 3
@@ -776,5 +781,3 @@
             On peut voir que le fichier s'ouvre donc bien sur LibreOffice Calc:
 
             ![cloud-td1-excel](./src/TD1/cloud-td1-excel.png)
-
-## Copyright &copy; 2023 Alexis Opolka - All Rights Reserved
