@@ -185,6 +185,22 @@ class NetworkLink:
         x0, y0 = self.start_coords
         x1, y1 = self.end_coords
 
+        ### First of all, we're going to verify the validity of the links position
+        start_pos = self.canvas.coords(self.start_equipment)
+        if self.end_equipment is not None:
+            end_pos = self.canvas.coords(self.end_equipment)
+        else:
+            ### Otherwise, pick by default the given coords
+            end_pos = (x1, y1)
+
+        ### If the start equipment position is different, update the start coords
+        if (x0, y0) != start_pos:
+            self.updateStartCoords(start_pos[0], start_pos[1])
+
+        ### If the end equipment is different, update the end coords
+        if (x1, y1) != end_pos:
+            self.updateEndCoords(end_pos[0], end_pos[1])
+
         if self.is_fragmented:
             ### Cleaning the self.tag if we're moving from
             ### direct + diagonal link to direct + segmented link

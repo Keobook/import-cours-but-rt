@@ -17,7 +17,7 @@ except ImportError:
 
 class NetworkEquipment:
     supported_equipments = ["switch", "router", "pc", "mobile"]
-    four_links = supported_equipments[:2]
+    four_links = supported_equipments[:2] ### Those are the equipments able to have a total of four links
     icon_size = (64, 64)
     ids = {key: 0 for key in supported_equipments}
 

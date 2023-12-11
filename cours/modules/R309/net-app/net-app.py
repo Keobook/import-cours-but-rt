@@ -1,7 +1,7 @@
 #!/bin/env python3
 
 from os import (
-    get_terminal_size, PathLike
+    get_terminal_size, PathLike, link
 )
 from tkinter import (
     Tk, Toplevel, ### Window Frames
@@ -160,16 +160,16 @@ class NetApp(Tk):
 
         ### Edit Menu
         edit_menu = self.__createNewMenu("Edit")
-        self.__createNewCommand(edit_menu, "Insert Switch", lambda: self.add_equipment("switch"))
-        self.__createNewCommand(edit_menu, "Insert Router", lambda: self.add_equipment("router"))
-        self.__createNewCommand(edit_menu, "Insert Laptop", lambda: self.add_equipment("pc"))
-        self.__createNewCommand(edit_menu, "Insert Mobile", lambda: self.add_equipment("mobile"))
+        self.__createNewCommand(edit_menu, "Insert Switch", lambda: self.addEquipment("switch"))
+        self.__createNewCommand(edit_menu, "Insert Router", lambda: self.addEquipment("router"))
+        self.__createNewCommand(edit_menu, "Insert Laptop", lambda: self.addEquipment("pc"))
+        self.__createNewCommand(edit_menu, "Insert Mobile", lambda: self.addEquipment("mobile"))
 
         ### While menus are nice, hotkeys are better!
-        self.bind("<a>", lambda _: self.add_equipment("switch"))
-        self.bind("<e>", lambda _: self.add_equipment("router"))
-        self.bind("<q>", lambda _: self.add_equipment("pc"))
-        self.bind("<d>", lambda _: self.add_equipment("mobile"))
+        self.bind("<a>", lambda _: self.addEquipment("switch"))
+        self.bind("<e>", lambda _: self.addEquipment("router"))
+        self.bind("<q>", lambda _: self.addEquipment("pc"))
+        self.bind("<d>", lambda _: self.addEquipment("mobile"))
 
     def __configureEquipment(self, equipment_tag: int) -> None:
         """A private method to configure the equipment with the given tag.
@@ -222,7 +222,7 @@ class NetApp(Tk):
         except KeyboardInterrupt:
             self.destroy()
 
-    def add_equipment(self, type) -> None:
+    def addEquipment(self, type) -> None:
         """Add the given equipment to the playground
 
         Args:
@@ -247,6 +247,7 @@ class NetApp(Tk):
             text=new_equipment.name,
         )
 
+        ### Update the main array with our internal equipment ID as key
         self.equipments.update(
             {
                 self.equipment_nbr: {
@@ -258,12 +259,10 @@ class NetApp(Tk):
             }
         )
 
+        ### Set a `reverse` array with the Canvas tag as key
         self.reverse_equipments.update({canvas_tag: self.equipment_nbr})
 
         self.__configureEquipment(canvas_tag)
-
-        with open("./entities.json", "wt", encoding="utf-8") as fout:
-            fout.write(f"{self.equipments}")
 
     ### Drag & Drop
     def startDragFocus(self, event: TkEvent):
@@ -287,53 +286,90 @@ class NetApp(Tk):
         )
 
         ### After moving the icon, we need to go through its dependency list to move them
-        dependencies = self.equipments[self.reverse_equipments[self.focused_tag]]["dependencies"]
-        dependent_label = dependencies["label"]
+        self.updateEquipmentDependencies(self.focused_tag, x = x, y = y, difference=difference_mouse_icon)
 
-        self.playground.moveto(dependent_label, x - (difference_mouse_icon // 2), y + difference_mouse_icon)
+    def updateEquipmentDependencies(self, equipment_id: int, x: int = 0, y:int = 0, difference: int = 0, state: str="update") -> None:
+        """Updates the equipment dependencies, both links and labels.
+        With the `state` parameter given to `deletion`, it can also delete the said equipment.
 
-        dependent_links: List[NetworkLink] = dependencies["links"]
+        Args:
+            equipment_id (int): The selected equipment ID or Tag.
+            x (int, optional): The x coordinate to update to. Defaults to 0.
+            y (int, optional): The y coordiante to update to. Defaults to 0.
+            difference (int, optional): If there is a difference to apply in the movement of the label. Defaults to 0.
+            state (str, optional): Controls the behavior of the update, can be either `update` or `deletion`. Defaults to "update".
+        """
 
-        for i in range(0, len(dependent_links)):
-            link_object = dependent_links[i]
+        if state != "deletion":
+            dependencies = self.equipments[self.reverse_equipments[equipment_id]]["dependencies"]
+            dependent_label = dependencies["label"]
 
-            if link_object.start_equipment == self.focused_tag:
-                link_object.updateStartCoords(x, y)
-            elif link_object.end_equipment == self.focused_tag:
-                link_object.updateEndCoords(x, y)
-            else:
-                ### The current nearest tag is not one of the registered links
-                print("I'm in this else situation")
+            self.playground.moveto(dependent_label, x - (difference // 2), y + difference)
 
-            link_object.update(self.links)
+            dependent_links: List[NetworkLink] = dependencies["links"]
+
+            for i in range(0, len(dependent_links)):
+                link_object = dependent_links[i]
+
+                if link_object.start_equipment == equipment_id:
+                    link_object.updateStartCoords(x, y)
+                elif link_object.end_equipment == equipment_id:
+                    link_object.updateEndCoords(x, y)
+                else:
+                    ### The current nearest tag is not one of the registered links
+                    print("I'm in this else situation")
+
+                link_object.update(self.links)
+        else: ### We're deleting the dependencies of the element
+            print("Dependency:", equipment_id, self.reverse_equipments[equipment_id], self.equipments[self.reverse_equipments[equipment_id]], self.equipments)
+            dependencies = self.equipments[self.reverse_equipments[equipment_id]]["dependencies"]
+            dependent_label: int = dependencies["label"]
+
+            self.playground.delete(dependent_label)
+
+            dependent_links: List[NetworkLink] = dependencies["links"]
+
+            for i in range(0, len(dependent_links)):
+                link_object: NetworkLink = dependent_links[i]
+
+                self.deleteLink(None, is_called_after_event_processing=True, link_id=link_object.tag)
+
 
     ### Double clicks
     def deleteItem(self, event: TkEvent):
         x, y = event.x, event.y
 
         selected_tag = self.playground.find_closest(x, y)[0]
+
+        self.updateEquipmentDependencies(selected_tag, state="deletion")
         self.__prepareDeletionOfEquipment(selected_tag)
         self.playground.delete(selected_tag)
 
-        # TODO: Remove both the text and the links
+    def deleteLink(self, event: TkEvent, is_called_after_event_processing: bool = False, link_id: int = 0):
 
-    def deleteLink(self, event: TkEvent, fragmented: bool = False):
-        x, y = event.x, event.y
+        if not is_called_after_event_processing:
+            x, y = event.x, event.y
 
-        selected_link = self.playground.find_closest(x, y)[0]
-
-        if fragmented:
-            fragmented_link: NetworkLink = self.links[selected_link]
-            for segment_id in fragmented_link.segments:
-                self.playground.delete(segment_id)
+            selected_link: int = self.playground.find_closest(x, y)[0]
         else:
-            self.playground.delete(selected_link)
+            selected_link: int = link_id
 
-            links_obj: NetworkLink = selected_link[-1]
-            if links_obj.is_fragmented:
-                links_obj.cleanSegmentedLinkContent()
-            else:
-                links_obj.cleanDiagonalLinkContent()
+        current_link: NetworkLink = self.links[selected_link]
+
+        if current_link.is_fragmented:
+            current_link.cleanSegmentedLinkContent()
+        else:
+            current_link.cleanDiagonalLinkContent()
+
+        ### We remove the link from the NetworkEquipment POV
+        current_holder: NetworkEquipment = self.equipments[self.reverse_equipments[current_link.start_equipment]]["item"]
+        current_holder.removeLink(current_link)
+
+        ### We should remove the link from the other side, too
+        remote_holder: NetworkEquipment = self.equipments[self.reverse_equipments[current_link.end_equipment]]["item"]
+        remote_holder.removeLink(current_link)
+
+        if not is_called_after_event_processing:
 
             self.current_link_state = "idle"
             self.rightclick_menu.entryconfigure(2, label="Create link", command = lambda: self.handleLinkCreation())
@@ -342,9 +378,7 @@ class NetApp(Tk):
             ### We're unbinding the callback to the mouse movement
             self.playground.unbind("<Motion>", self.link_binding)
             self.unbind("<KeyPress-Escape>", self.escape_sequence)
-            to_remove: NetworkLink = selected_link.pop(-1)
-            to_remove.removeLink(to_remove)
-            del links_obj
+        del current_link
 
     ### Right Clicks
     def popRightClickMenu(self, event: TkEvent):
@@ -392,15 +426,13 @@ class NetApp(Tk):
         ### the <KeyRelease> event and the call of this function
         ### so we should be able to safely use `self.focused_tag`.
 
-        if not ending:
-            if self.focused_tag != 0:
-                self.setEquipmentsLink(self.focused_tag, ending)
-            else:
-                x, y = self.mouse_coords
-                self.setEquipmentsLink(self.playground.find_closest(x, y)[0], ending)
+        x,y = self.mouse_coords
+        equipment_tag = self.playground.find_closest(x, y)[0]
+
+        if self.focused_tag == equipment_tag:
+            self.setEquipmentsLink(self.focused_tag, ending)
         else:
-            x, y = self.mouse_coords
-            self.setEquipmentsLink(self.playground.find_closest(x, y)[0], ending)
+            self.setEquipmentsLink(equipment_tag, ending)
 
     ### Hovers
     def highlightTag(self, event: TkEvent, fragmented: bool = False):
