@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /usr/bin/sh
 
 mkdir -p ./net-app/src/icons/alternatives/
 curl -O --output-dir ./net-app/ https://github.com/alexis-opolka/import-cours-but-rt/blob/master/cours/modules/R309/net-app/[net-app,network_equipment,network_link,utils,coords].py
