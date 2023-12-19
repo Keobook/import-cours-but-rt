@@ -128,3 +128,12 @@ class NetworkEquipment:
             return True
         else:
             return False
+
+    def updateMaxLinks(self, number: int):
+        """Updates the max number of links of this equipment
+
+        Args:
+            number (int): The number of max ports available
+        """
+
+        self.links_max_nbr = number

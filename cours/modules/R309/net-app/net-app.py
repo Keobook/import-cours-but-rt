@@ -7,10 +7,10 @@ from os import (
 import os
 from tkinter import (
     Tk, ### Window Frames
-    Canvas, Frame, Menu, Entry, Button, ### In-App Frames
+    Canvas, Frame, Menu, Entry, Button, Scale, ### In-App Frames
     N, E, S, W,  ### The Constants related to the positioning
     Event as TkEvent, ### Tkinter Events
-    StringVar, ### Tkinter vars
+    StringVar, IntVar, ### Tkinter vars
     filedialog as TkFileDialog ### OS-dependant
 )
 from typing import Union, Callable, Tuple, List
@@ -105,6 +105,7 @@ class NetApp(Tk):
         self.rightclick_menu.add_command(label="Change Name", command=lambda: self.handleChangeOfEquipmentName())
         self.rightclick_menu.add_command(label="Change Icon", command=lambda: self.handleChangeOfEquipmentIcon())
         self.rightclick_menu.add_command(label="Create Link", command=lambda: self.handleLinkCreation())
+        self.rightclick_menu.add_command(label="Change Ports", command=lambda: self.handleChangeOfEquipmentPorts())
 
     def __createNewMenu(self, title: str, return_title: bool = True) -> Union[Tuple[str, Menu], Menu]:
         """A private method to create a new menu and configure it internally.
@@ -468,24 +469,30 @@ class NetApp(Tk):
                 self.setEquipmentName(self.focused_tag, self.popup_entry_var)
             else:
                 ### The user changed equipment from the last interaction
-                self.setEquipmentName(self.focused_tag, self.popup_entry_var)
+                self.setEquipmentName(current_equipment, self.popup_entry_var)
+        else:
+            self.setEquipmentName(current_equipment, self.popup_entry_var)
 
     def handleChangeOfEquipmentIcon(self):
         ### The user shouldn't have changed of active tag between
         ### the <KeyRelease> event and the call of this function
         ### so we should be able to safely use `self.focused_tag`.
 
-        icon_path = TkFileDialog.askopenfilename()
+        x, y = self.mouse_coords
+        equipment_tag = self.playground.find_closest(x, y)[0]
 
-        if self.focused_tag != 0:
-          self.setEquipmentIcon(self.focused_tag, icon_path)
-        else:
-            ### Apparently, the user tried to rename before doing anything else
-            ### We can try to get the closest element of where the mouse currently is
+        try:
+            icon_path = TkFileDialog.askopenfilename()
 
-            x, y = self.mouse_coords
-
-            self.setEquipmentIcon(self.playground.find_closest(x, y)[0], icon_path)
+            if self.focused_tag != 0:
+                if self.focused_tag == equipment_tag:
+                    self.setEquipmentIcon(self.focused_tag, icon_path)
+                else:
+                    self.setEquipmentIcon(equipment_tag, icon_path)
+            else:
+                self.setEquipmentIcon(equipment_tag, icon_path)
+        except Exception:
+            pass
 
     def handleLinkCreation(self, ending: bool = False):
         ### The user shouldn't have changed of active tag between
@@ -501,6 +508,20 @@ class NetApp(Tk):
             self.setEquipmentsLink(self.focused_tag, ending)
         else:
             self.setEquipmentsLink(equipment_tag, ending)
+
+    def handleChangeOfEquipmentPorts(self):
+        x,y = self.mouse_coords
+        equipment_tag = self.playground.find_closest(x, y)[0]
+        equipment: NetworkEquipment = self.equipments[equipment_tag]["item"]
+
+        self.popup(self, "int-entry", self.mouse_coords, equipment.links_max_nbr, self.__deleteNetAppBindings, self.__createNetAppBindings, lambda number: self.setEquipmentsPortsNumber(equipment_tag, number))
+
+        ### We are still checking in case he acted on another equipment
+        ### than the last selected
+        if self.focused_tag == equipment_tag:
+            self.setEquipmentsPortsNumber(self.focused_tag, self.popup_entry_var)
+        else:
+            self.setEquipmentsPortsNumber(equipment_tag, self.popup_entry_var)
 
     ### Hovers
     def highlightTag(self, event: TkEvent, fragmented: bool = False):
@@ -536,6 +557,9 @@ class NetApp(Tk):
 
     ### Setters
     def setEquipmentName(self, equipment_tag: int, name: str):
+        if name == "":
+            name = "[EMPTY]"
+
         if equipment_tag not in self.reverse_equipments.keys():
             equipment_object: NetworkEquipment = self.equipments[equipment_tag]["item"]
         else:
@@ -651,6 +675,14 @@ class NetApp(Tk):
             equipment.removeLink(to_remove)
             del links_obj
 
+    def setEquipmentsPortsNumber(self, equipment_tag: int, ports_number: int):
+        if equipment_tag not in self.reverse_equipments:
+            equipment: NetworkEquipment = self.equipments[equipment_tag]["item"]
+        else:
+            equipment: NetworkEquipment = self.equipments[self.reverse_equipments[equipment_tag]]["item"]
+
+        equipment.updateMaxLinks(ports_number)
+
     ### Internal PopUps Utils
     def createCanvasLinksWarning(self, equipment_name: str):
         CanvasPopUpWarning(self.playground, f"You have too many links on {equipment_name}!")
@@ -702,6 +734,8 @@ class PopUpMessage:
 
         if type == "entry":
             self.popup = CanvasPopUpEntry(root_frame, root_frame.playground, mouse_position, *args, **kwargs)
+        elif type == "int-entry":
+            self.popup = CanvasPopUpIntEntry(root_frame, root_frame.playground, mouse_position, *args, **kwargs)
 
 class CanvasPopUpWarning:
     def __init__(self, root_canvas: Canvas, text: str) -> None:
@@ -765,7 +799,63 @@ class CanvasPopUpEntry:
     ### At the end, create the new hotkeys to let the user use them
     self.createBindings()
 
+class CanvasPopUpIntEntry:
+  def __init__(self, root_app: NetApp, root_frame: Canvas, mouse_position: Tuple[int, int], max: int, bindingsDown: Callable, bindingsUp: Callable, updatePortsNumber: Callable):
+    self.app = root_app
+    self.root = root_frame
+    self.var_linked = root_app.popup_entry_var
+
+    self.deleteBindings: Callable = bindingsDown
+    self.createBindings: Callable = bindingsUp
+    self.updateNumber: Callable = updatePortsNumber
+
+    self.width = self.root.winfo_width()
+    self.height = self.root.winfo_height()
+
+    self.x_pos, self.y_pos = mouse_position
+
+    self.frame = Frame(self.root, width=self.width, height=self.height)
+
+    self.content = IntVar(self.frame)
+
+    self.entry_widget = Scale(self.frame, from_=0, to=max, variable=self.content, background="grey", takefocus=True)
+    self.submit_button = Button(self.frame, text="Submit", command=lambda: self.close())
+
+    print("Current size inside child window:", self.width, self.height, self.entry_widget.winfo_width())
+
+    ### First of all, let's unbind the hotkeys to let the user type in the entry
+    self.deleteBindings()
+
+    self.frame.grid(column=0, row=0)
+    self.entry_widget.grid(column=0, row=0)
+    self.submit_button.grid(column=1, row=0)
+
+    self.entry_widget.focus()
+
+    self.toplevel = root_frame.create_window(self.x_pos, self.y_pos+10, window=self.frame, anchor="center")
+    self.root.update()
+
+
+  def close(self):
+    ### We're exporting the value out of this object
+    self.var_linked = self.content.get()
+    self.updateNumber(self.var_linked)
+
+    ### We're destroying the widgets
+    self.entry_widget.destroy()
+    self.submit_button.destroy()
+    self.frame.destroy()
+
+    ### We're deleting the StringVar
+    del self.content
+
+    ### We're deleting the canvas reference
+    self.root.delete(self.toplevel)
+
+    ### At the end, create the new hotkeys to let the user use them
+    self.createBindings()
+
 
 if __name__ == "__main__":
-    t = NetApp("test-app", (800, 800))
+    t = NetApp("Net-App", (800, 800))
     t.run()
