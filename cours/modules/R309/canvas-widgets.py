@@ -9,7 +9,7 @@ from tkinter import (
   Tk,
   Frame, Canvas, Button,
   StringVar,
-  N, S, E, W
+  E
 )
 
 from os import get_terminal_size
