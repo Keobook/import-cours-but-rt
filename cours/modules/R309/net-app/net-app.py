@@ -60,7 +60,7 @@ class NetApp(Tk):
         self.__setRightClickMenuAndActions()
 
         ### Let's configure the callable
-        self.popup = PopUpMessage
+        self.popup: PopUpMessage = PopUpMessage
         self.popup_entry_var = ""
 
         ### Let's configure the link states
@@ -165,10 +165,19 @@ class NetApp(Tk):
         self.__createNewCommand(edit_menu, "Insert Mobile", lambda: self.addEquipment("mobile"))
 
         ### While menus are nice, hotkeys are better!
+        self.__createNetAppBindings()
+
+    def __createNetAppBindings(self):
         self.bind("<a>", lambda _: self.addEquipment("switch"))
         self.bind("<e>", lambda _: self.addEquipment("router"))
         self.bind("<q>", lambda _: self.addEquipment("pc"))
         self.bind("<d>", lambda _: self.addEquipment("mobile"))
+
+    def __deleteNetAppBindings(self):
+        self.unbind("<a>")
+        self.unbind("<e>")
+        self.unbind("<q>")
+        self.unbind("<d>")
 
     def __configureEquipment(self, equipment_tag: int) -> None:
         """A private method to configure the equipment with the given tag.
@@ -177,8 +186,13 @@ class NetApp(Tk):
             equipment_tag (int): The canvas `tagOrId` of the equipment
         """
 
-        ### For the simplicity of use, we're duplicating the entries
+        ### Create the bindings of the equipment
+        self.__createBindingsOnEquipment(equipment_tag)
 
+        ### Always set the last element on top
+        self.playground.tag_raise(equipment_tag)
+
+    def __createBindingsOnEquipment(self, equipment_tag: int) -> None:
         self.equipments[self.equipment_nbr]["bindings"].update(
             {
                 "left-click": {
@@ -200,8 +214,33 @@ class NetApp(Tk):
             }
         )
 
-        ### Always set the last element on top
-        self.playground.tag_raise(equipment_tag)
+        ### For the simplicity of use, we're duplicating the entries
+        self.equipments[equipment_tag]["bindings"] = self.equipments[self.equipment_nbr]["bindings"]
+
+    def __deleteBindingsOfEquipment(self, equipment_tag: int) -> None:
+        self.equipments[self.equipment_nbr]["bindings"].update(
+            {
+                "left-click": {
+                    "id": self.playground.tag_unbind(equipment_tag, "<Button-1>"),
+                    "command": self.startDragFocus,
+                },
+                "left-click-motion": {
+                    "id": self.playground.tag_unbind(equipment_tag, "<B1-Motion>"),
+                    "command": self.endDragFocus,
+                },
+                "double-left-click": {
+                    "id": self.playground.tag_unbind(equipment_tag, "<Double-Button-1>"),
+                    "command": self.deleteItem,
+                },
+                "right-click": {
+                    "id": self.playground.tag_unbind(equipment_tag, "<Button-3>"),
+                    "command": self.popRightClickMenu,
+                }
+            }
+        )
+
+        ### For the simplicity of use, we're duplicating the entries
+        self.equipments[equipment_tag]["bindings"] = self.equipments[self.equipment_nbr]["bindings"]
 
     def __prepareDeletionOfEquipment(self, equipment_tag: int) -> None:
         """A private method to unconfigure the equipment with the given tag.
@@ -403,16 +442,15 @@ class NetApp(Tk):
         ### the <KeyRelease> event and the call of this function
         ### so we should be able to safely use `self.focused_tag`.
 
-        self.popup(self, "entry", self.mouse_coords)
+        x, y = self.mouse_coords
+        current_equipment = self.playground.find_closest(x, y)[0]
+
+        self.popup(self, "entry", self.mouse_coords, self.__deleteNetAppBindings, self.__createNetAppBindings, lambda name: self.setEquipmentName(current_equipment, name))
 
         if self.popup_entry_var == "":
             self.popup_entry_var = "[EMPTY]"
 
         if self.focused_tag != 0:
-
-            x, y = self.mouse_coords
-            current_equipment = self.playground.find_closest(x, y)[0]
-
 
             ### We are still checking in case he acted on another equipment
             ### than the last selected
@@ -485,9 +523,12 @@ class NetApp(Tk):
             print(f"Exception on Unhighlight: {err}")
 
     ### Setters
-    def setEquipmentName(self, equipment_tag: int, name: str ):
-        equipment_holder = self.reverse_equipments[equipment_tag]
-        equipment_object: NetworkEquipment = self.equipments[equipment_holder]["item"]
+    def setEquipmentName(self, equipment_tag: int, name: str):
+        if equipment_tag not in self.reverse_equipments.keys():
+            equipment_object: NetworkEquipment = self.equipments[equipment_tag]["item"]
+        else:
+            equipment_holder = self.reverse_equipments[equipment_tag]
+            equipment_object: NetworkEquipment = self.equipments[equipment_holder]["item"]
         equipment_object.setName(name)
 
         equipment_label = self.equipments[equipment_holder]["dependencies"]["label"]
@@ -613,10 +654,11 @@ class NetApp(Tk):
         print("Current playground exported into PNG!")
 
 class PopUpMessage:
-    def __init__(self, root_frame: NetApp, type: str, mouse_position: Tuple[int]):
+    def __init__(self, root_frame: NetApp, type: str, mouse_position: Tuple[int], *args, **kwargs):
         self.popup = None
+
         if type == "entry":
-            self.popup = CanvasPopUpEntry(root_frame.playground, mouse_position, root_frame.popup_entry_var)
+            self.popup = CanvasPopUpEntry(root_frame, root_frame.playground, mouse_position, *args, **kwargs)
 
 class CanvasPopUpWarning:
     def __init__(self, root_canvas: Canvas, text: str) -> None:
@@ -625,9 +667,14 @@ class CanvasPopUpWarning:
 
 
 class CanvasPopUpEntry:
-  def __init__(self, root_frame: Canvas, mouse_position: Tuple[int, int], variable_to_be_remembered: str):
+  def __init__(self, root_app: NetApp, root_frame: Canvas, mouse_position: Tuple[int, int], bindingsDown: Callable, bindingsUp: Callable, updateLabelName: Callable):
+    self.app = root_app
     self.root = root_frame
-    self.var_linked = variable_to_be_remembered
+    self.var_linked = root_app.popup_entry_var
+
+    self.deleteBindings: Callable = bindingsDown
+    self.createBindings: Callable = bindingsUp
+    self.updateName: Callable = updateLabelName
 
     self.width = self.root.winfo_width()
     self.height = self.root.winfo_height()
@@ -643,9 +690,14 @@ class CanvasPopUpEntry:
 
     print("Current size inside child window:", self.width, self.height, self.entry_widget.winfo_width())
 
+    ### First of all, let's unbind the hotkeys to let the user type in the entry
+    self.deleteBindings()
+
     self.frame.grid(column=0, row=0)
     self.entry_widget.grid(column=0, row=0)
     self.submit_button.grid(column=1, row=0)
+
+    self.entry_widget.focus()
 
     self.toplevel = root_frame.create_window(self.x_pos, self.y_pos+10, window=self.frame, anchor="center")
     self.root.update()
@@ -654,6 +706,7 @@ class CanvasPopUpEntry:
   def close(self):
     ### We're exporting the value out of this object
     self.var_linked = self.content.get()
+    self.updateName(self.var_linked)
 
     ### We're destroying the widgets
     self.entry_widget.destroy()
@@ -666,6 +719,8 @@ class CanvasPopUpEntry:
     ### We're deleting the canvas reference
     self.root.delete(self.toplevel)
 
+    ### At the end, create the new hotkeys to let the user use them
+    self.createBindings()
 
 
 if __name__ == "__main__":
