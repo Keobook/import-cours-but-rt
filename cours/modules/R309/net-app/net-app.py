@@ -177,6 +177,8 @@ class NetApp(Tk):
             equipment_tag (int): The canvas `tagOrId` of the equipment
         """
 
+        ### For the simplicity of use, we're duplicating the entries
+
         self.equipments[self.equipment_nbr]["bindings"].update(
             {
                 "left-click": {
@@ -258,6 +260,13 @@ class NetApp(Tk):
             }
         )
 
+        ### Create a duplicate entry with the same key as the reverse array
+        ### It should only be used at a last resort for us to pick equipment
+        ### data.
+        self.equipments.update({
+            canvas_tag: self.equipments[self.equipment_nbr]
+        })
+
         ### Set a `reverse` array with the Canvas tag as key
         self.reverse_equipments.update({canvas_tag: self.equipment_nbr})
 
@@ -300,25 +309,28 @@ class NetApp(Tk):
         """
 
         if state != "deletion":
-            dependencies = self.equipments[self.reverse_equipments[equipment_id]]["dependencies"]
-            dependent_label = dependencies["label"]
+            if equipment_id in self.reverse_equipments.keys():
+                dependencies = self.equipments[self.reverse_equipments[equipment_id]]["dependencies"]
+                dependent_label = dependencies["label"]
 
-            self.playground.moveto(dependent_label, x - (difference // 2), y + difference)
+                self.playground.moveto(dependent_label, x - (difference // 2), y + difference)
 
-            dependent_links: List[NetworkLink] = dependencies["links"]
+                dependent_links: List[NetworkLink] = dependencies["links"]
 
-            for i in range(0, len(dependent_links)):
-                link_object = dependent_links[i]
+                for i in range(0, len(dependent_links)):
+                    link_object = dependent_links[i]
 
-                if link_object.start_equipment == equipment_id:
-                    link_object.updateStartCoords(x, y)
-                elif link_object.end_equipment == equipment_id:
-                    link_object.updateEndCoords(x, y)
-                else:
-                    ### The current nearest tag is not one of the registered links
-                    print("I'm in this else situation")
+                    if link_object.start_equipment == equipment_id:
+                        link_object.updateStartCoords(x, y)
+                    elif link_object.end_equipment == equipment_id:
+                        link_object.updateEndCoords(x, y)
+                    else:
+                        ### The current nearest tag is not one of the registered links
+                        print("I'm in this else situation")
 
-                link_object.update(self.links)
+                    link_object.update(self.links)
+            else:
+                self.createCanvasEquipmentIDWarning(equipment_id)
         else: ### We're deleting the dependencies of the element
             print("Dependency:", equipment_id, self.reverse_equipments[equipment_id], self.equipments[self.reverse_equipments[equipment_id]], self.equipments)
             dependencies = self.equipments[self.reverse_equipments[equipment_id]]["dependencies"]
@@ -393,12 +405,17 @@ class NetApp(Tk):
 
         self.popup(self, "entry", self.mouse_coords)
 
+        if self.popup_entry_var == "":
+            self.popup_entry_var = "[EMPTY]"
+
         if self.focused_tag != 0:
 
             x, y = self.mouse_coords
             current_equipment = self.playground.find_closest(x, y)[0]
 
 
+            ### We are still checking in case he acted on another equipment
+            ### than the last selected
             if self.focused_tag == current_equipment:
                 self.setEquipmentName(self.focused_tag, self.popup_entry_var)
             else:
@@ -585,6 +602,12 @@ class NetApp(Tk):
     def createCanvasSingularLinksWarning(self, equipment_name: str) -> None:
         CanvasPopUpWarning(self.playground, f"You can't simply link {equipment_name} on itself!")
 
+    def createCanvasEquipmentIDWarning(self, equipment_id: int):
+        ### First of all, get the name of the equipment
+        equipment_with_issues: NetworkEquipment = self.equipments[equipment_id]["item"]
+        CanvasPopUpWarning(self.playground, f"Sorry but an unexpected issue has been raised with {equipment_with_issues.name}!")
+
+
     ### Export area
     def export_png(self):
         print("Current playground exported into PNG!")
@@ -593,7 +616,7 @@ class PopUpMessage:
     def __init__(self, root_frame: NetApp, type: str, mouse_position: Tuple[int]):
         self.popup = None
         if type == "entry":
-            self.popup = CanvasPopUpEntry(root_frame.playground, mouse_position)
+            self.popup = CanvasPopUpEntry(root_frame.playground, mouse_position, root_frame.popup_entry_var)
 
 class CanvasPopUpWarning:
     def __init__(self, root_canvas: Canvas, text: str) -> None:
@@ -602,8 +625,9 @@ class CanvasPopUpWarning:
 
 
 class CanvasPopUpEntry:
-  def __init__(self, root_frame: Canvas, mouse_position: Tuple[int, int]):
+  def __init__(self, root_frame: Canvas, mouse_position: Tuple[int, int], variable_to_be_remembered: str):
     self.root = root_frame
+    self.var_linked = variable_to_be_remembered
 
     self.width = self.root.winfo_width()
     self.height = self.root.winfo_height()
@@ -614,7 +638,7 @@ class CanvasPopUpEntry:
 
     self.content = StringVar(self.frame)
 
-    self.entry_widget = Entry(self.frame, textvariable=self.content, background="grey", width=50)
+    self.entry_widget = Entry(self.frame, textvariable=self.content, background="grey", width=50, takefocus=True)
     self.submit_button = Button(self.frame, text="Submit", command=lambda: self.close())
 
     print("Current size inside child window:", self.width, self.height, self.entry_widget.winfo_width())
@@ -629,7 +653,7 @@ class CanvasPopUpEntry:
 
   def close(self):
     ### We're exporting the value out of this object
-    self.root.popup_entry_var = self.content.get()
+    self.var_linked = self.content.get()
 
     ### We're destroying the widgets
     self.entry_widget.destroy()
