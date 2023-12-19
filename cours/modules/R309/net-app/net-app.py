@@ -1,8 +1,10 @@
 #!/bin/env python3
 
+from io import BytesIO
 from os import (
-    get_terminal_size, PathLike
+    get_terminal_size, PathLike, mkdir, system
 )
+import os
 from tkinter import (
     Tk, ### Window Frames
     Canvas, Frame, Menu, Entry, Button, ### In-App Frames
@@ -12,10 +14,13 @@ from tkinter import (
     filedialog as TkFileDialog ### OS-dependant
 )
 from typing import Union, Callable, Tuple, List
+from subprocess import call
+from PIL import Image, EpsImagePlugin
 
 ### Internal imports
 from network_equipment import NetworkEquipment
 from network_link import NetworkLink
+from utils import get_absolute_current_path
 
 
 class NetApp(Tk):
@@ -72,6 +77,10 @@ class NetApp(Tk):
         ### ID-based dictionary, works the same way as self.reverse_equipments
         ### (i.e. It's only used to retrieve elements from IDs)
         self.links = {}
+
+        ### Set the export-related variables
+        self.temp_export_file = self.app_title + ".eps"
+        self.final_export = self.app_title + ".png"
 
         ### Let's set the display
         self.mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
@@ -155,7 +164,8 @@ class NetApp(Tk):
 
         ### File Menu
         file_menu = self.__createNewMenu("File")
-        self.__createNewCommand(file_menu, "Export into PNG", self.export_png)
+        if os.name == "nt":
+            self.__createNewCommand(file_menu, "Export into PNG", self.export_png)
 
         ### Edit Menu
         edit_menu = self.__createNewMenu("Edit")
@@ -485,6 +495,8 @@ class NetApp(Tk):
         x,y = self.mouse_coords
         equipment_tag = self.playground.find_closest(x, y)[0]
 
+        ### We are still checking in case he acted on another equipment
+        ### than the last selected
         if self.focused_tag == equipment_tag:
             self.setEquipmentsLink(self.focused_tag, ending)
         else:
@@ -543,7 +555,10 @@ class NetApp(Tk):
         self.playground.itemconfigure(equipment_tag, image=equipment_object.icon)
 
     def setEquipmentsLink(self, equipment_tag: int, ending: bool = False, panicked: bool = False):
-        base: dict = self.equipments[self.reverse_equipments[equipment_tag]]
+        if equipment_tag not in self.reverse_equipments.keys():
+            base: dict = self.equipments[self.reverse_equipments[equipment_tag]]
+        else:
+            base: dict = self.equipments[equipment_tag]
         equipment: NetworkEquipment = base["item"]
         links: dict = base["dependencies"]["links"]
         x, y = self.mouse_coords
@@ -651,7 +666,35 @@ class NetApp(Tk):
 
     ### Export area
     def export_png(self):
-        print("Current playground exported into PNG!")
+
+        abs_path = get_absolute_current_path()
+
+        try:
+            if EpsImagePlugin.gs_windows_binary is not None:
+                eps = self.playground.postscript(colormode="color")
+                img = Image.open(BytesIO(bytes(eps, 'ascii')))
+                img.save(self.final_export)
+            else:
+                raise ValueError
+        except OSError:
+            ### We don't have the Ghostscript executable in our path
+            ### We're then going to downloading it, configuring it and retry once again
+
+            if not os.path.exists(f"{abs_path}bin/"):
+                mkdir(f"{abs_path}bin/")
+
+            system(f"cd {abs_path}bin/")
+
+            if os.name == "nt":
+                if not os.path.exists("./gs10021w64.exe"):
+                    call("pwsh -Command Invoke-WebRequest https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10021/gs10021w64.exe -OutFile ./gs10021w64.exe", shell=True)
+                    call("./gs10021w64.exe")
+
+                EpsImagePlugin.gs_windows_binary = "C:\\Program Files\\gs\\gs10.02.1\\bin\\gswin64c"
+
+            self.export_png()
+
+        self.createCanvasSuccessWarning("Current playground successfully exported into png!")
 
 class PopUpMessage:
     def __init__(self, root_frame: NetApp, type: str, mouse_position: Tuple[int], *args, **kwargs):

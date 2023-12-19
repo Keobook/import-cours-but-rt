@@ -19,5 +19,11 @@ def absolute_path(relative_path: str) -> str:
 
   return absolute_local_path + relative_path
 
+def get_absolute_current_path() -> str:
+  current_file_path = argv[0].replace("\\", "/") ### In case, we're on Windows, return the path in POSIX
+  absolute_local_path = "/".join(current_file_path.strip().split("/")[:-1]) + "/"
+
+  return absolute_local_path
+
 if __name__ == "__main__":
   print(absolute_path("./src/test.png"))
