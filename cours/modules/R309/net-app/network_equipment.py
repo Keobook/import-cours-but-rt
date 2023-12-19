@@ -117,7 +117,7 @@ class NetworkEquipment:
             else:
                 return -1
         return self.links_nbr
-    
+
     def isOpenToLinkCreation(self) -> bool:
         """Is this current Equipment can add new link connections?
 

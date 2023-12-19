@@ -1,10 +1,10 @@
 #!/bin/env python3
 
 from os import (
-    get_terminal_size, PathLike, link
+    get_terminal_size, PathLike
 )
 from tkinter import (
-    Tk, Toplevel, ### Window Frames
+    Tk, ### Window Frames
     Canvas, Frame, Menu, Entry, Button, ### In-App Frames
     N, E, S, W,  ### The Constants related to the positioning
     Event as TkEvent, ### Tkinter Events
@@ -27,7 +27,6 @@ class NetApp(Tk):
             name (str): The displayed name of the app
             base_size (Tuple[int, int]): The default size of the window
             title (str, optional): The title of the window. Defaults to `name`.
-
         """
         super().__init__(name, name)
 
@@ -392,17 +391,19 @@ class NetApp(Tk):
         ### the <KeyRelease> event and the call of this function
         ### so we should be able to safely use `self.focused_tag`.
 
-        self.popup(self, "entry")
+        self.popup(self, "entry", self.mouse_coords)
 
         if self.focused_tag != 0:
-          self.setEquipmentName(self.focused_tag, self.popup_entry_var)
-        else:
-            ### Apparently, the user tried to rename before doing anything else
-            ### We can try to get the closest element of where the mouse currently is
 
             x, y = self.mouse_coords
+            current_equipment = self.playground.find_closest(x, y)[0]
 
-            self.setEquipmentName(self.playground.find_closest(x, y)[0], self.popup_entry_var)
+
+            if self.focused_tag == current_equipment:
+                self.setEquipmentName(self.focused_tag, self.popup_entry_var)
+            else:
+                ### The user changed equipment from the last interaction
+                self.setEquipmentName(self.focused_tag, self.popup_entry_var)
 
     def handleChangeOfEquipmentIcon(self):
         ### The user shouldn't have changed of active tag between
@@ -577,7 +578,7 @@ class NetApp(Tk):
             equipment.removeLink(to_remove)
             del links_obj
 
-    ### PopUps Utils
+    ### Internal PopUps Utils
     def createCanvasLinksWarning(self, equipment_name: str):
         CanvasPopUpWarning(self.playground, f"You have too many links on {equipment_name}!")
 
@@ -589,12 +590,10 @@ class NetApp(Tk):
         print("Current playground exported into PNG!")
 
 class PopUpMessage:
-    def __init__(self, root_frame: NetApp, type: str):
+    def __init__(self, root_frame: NetApp, type: str, mouse_position: Tuple[int]):
         self.popup = None
         if type == "entry":
-            self.popup = PopUpEntry(root_frame)
-        
-        root_frame.wait_window(self.popup.toplevel)
+            self.popup = CanvasPopUpEntry(root_frame.playground, mouse_position)
 
 class CanvasPopUpWarning:
     def __init__(self, root_canvas: Canvas, text: str) -> None:
@@ -602,22 +601,46 @@ class CanvasPopUpWarning:
         root_canvas.after(1500, lambda: root_canvas.delete(text_to_disappear))
 
 
-class PopUpEntry:
-    def __init__(self, root_frame: NetApp):
-        self.root = root_frame
-        self.toplevel = Toplevel(root_frame)
-        self.content = StringVar(self.toplevel)
-        self.entry = Entry(self.toplevel, textvariable=self.content, takefocus=True)
-        self.submit_button = Button(self.toplevel, text="Submit", command=lambda: self.close())
+class CanvasPopUpEntry:
+  def __init__(self, root_frame: Canvas, mouse_position: Tuple[int, int]):
+    self.root = root_frame
 
-        self.toplevel.grid(None, None)
-        self.entry.grid(column=0, row=0)
-        self.submit_button.grid(column=0, row=1)
+    self.width = self.root.winfo_width()
+    self.height = self.root.winfo_height()
 
-    def close(self):
-        self.toplevel.destroy()
-        self.root.popup_entry_var = self.content.get()
+    self.x_pos, self.y_pos = mouse_position
 
+    self.frame = Frame(self.root, width=self.width, height=self.height)
+
+    self.content = StringVar(self.frame)
+
+    self.entry_widget = Entry(self.frame, textvariable=self.content, background="grey", width=50)
+    self.submit_button = Button(self.frame, text="Submit", command=lambda: self.close())
+
+    print("Current size inside child window:", self.width, self.height, self.entry_widget.winfo_width())
+
+    self.frame.grid(column=0, row=0)
+    self.entry_widget.grid(column=0, row=0)
+    self.submit_button.grid(column=1, row=0)
+
+    self.toplevel = root_frame.create_window(self.x_pos, self.y_pos+10, window=self.frame, anchor="center")
+    self.root.update()
+
+
+  def close(self):
+    ### We're exporting the value out of this object
+    self.root.popup_entry_var = self.content.get()
+
+    ### We're destroying the widgets
+    self.entry_widget.destroy()
+    self.submit_button.destroy()
+    self.frame.destroy()
+
+    ### We're deleting the StringVar
+    del self.content
+
+    ### We're deleting the canvas reference
+    self.root.delete(self.toplevel)
 
 
 

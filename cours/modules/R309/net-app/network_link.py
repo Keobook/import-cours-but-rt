@@ -89,6 +89,10 @@ class NetworkLink:
         ### We take the longest cut of either `nx` or `ny`.
         ### We then compute the length of the segments.
         delta = nx if nx > ny else ny
+
+        old_nx = nx
+        old_ny = ny
+
         if delta != 0:
             if delta == nx:
                 ny = delta
@@ -106,7 +110,7 @@ class NetworkLink:
 
         print(f"\n{self.term_size_x*'-'}\n")
 
-        print(f"DX: {dx}, DY: {dy}, X-Segments: {nx}, Y-Segments: {ny}, X-Segments-Length: {nx_length}, Y-Segments-Length: {ny_length}, Delta: {delta}")
+        print(f"DX: {dx}, DY: {dy}, X-Segments: {old_nx}, Y-Segments: {old_ny}, X-Segments-Length: {nx_length}, Y-Segments-Length: {ny_length}, Delta: {delta}")
 
         print(f"\n{self.term_size_x*'-'}\n")
 

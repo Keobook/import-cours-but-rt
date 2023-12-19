@@ -26,7 +26,7 @@ class Coords:
             Iterator: The iterator used for reading the coordinates
         """
         return self.__list__.__iter__()
-    
+
     def update(self, x: int, y: int):
         self.x = x
         self.y = y
