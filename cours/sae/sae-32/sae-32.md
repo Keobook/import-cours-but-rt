@@ -35,7 +35,26 @@ Pour pouvoir installer correctement l'application, vous devez avoir d'installé:
 - Docker
 - Git
 
+Il faut d'abord récupérer le script d'installation:
+
+```sh
+curl -O https://raw.githubusercontent.com/alexis-opolka/import-cours-but-rt/master/cours/sae/sae-32/install.sh; chmod +x ./install.sh
+```
+
 Vous pouvez ensuite lancer le script [./install.sh](./install.sh)
+
+Après cela, vous devez lancer les dépendences de l'application en faisant:
+
+```sh
+cd livre-mon-colis
+./run.sh
+```
+
+Vous pourrez donc maintenant accéder à:
+
+- L'interface WEB, [localhost:3000](http://localhost:3000)
+- L'API REST via FastAPI, [localhost:8000](http://localhost:8000)
+- L'interface de documentation dynamique et de test de FastAPI, [localhost:8000/docs](http://localhost:8000/docs#/)
 
 ## Commentaire
 
