@@ -53,8 +53,8 @@
 	path = cours/sae/sae-21/
 	url = git@github.com:alexis-opolka/sae-21.git
 
-[submodule "cours/sae/sae-23/Mon-Banzaii"]
-	path = cours/sae/sae-23/Mon-Banzaii
+[submodule "cours/sae/sae-23/mon-banzaii"]
+	path = cours/sae/sae-23/mon-banzaii
 	url = git@github.com:alexis-opolka/mon-banzaii.git
 
 [submodule "cours/sae/sae-24"]
