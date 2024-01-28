@@ -20,3 +20,4 @@ yarn
 
 cd ../
 curl -O https://raw.githubusercontent.com/alexis-opolka/import-cours-but-rt/master/cours/sae/sae-32/run.sh
+chmod +x run.sh
