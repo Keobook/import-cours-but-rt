@@ -11,10 +11,37 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
+footer {
+  font-size: smaller;
+}
+
 question {
   color: cornflowerblue;
 }
 
 error {
   color: red;
+}
+
+pagebreak {
+  width: 100%;
+  height: 100%;
+  page-break-after: always;
+}
+
+img[src*="#thumbnail"] {
+  width: 150px;
+  height: 100px;
+}
+
+.centerPercent {
+  width: 30%;
+}
+
+/*
+SAE 31 - Vert
+*/
+
+.sae31Vert {
+  color: #19dd69;
 }
