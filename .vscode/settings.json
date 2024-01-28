@@ -36,11 +36,12 @@
   },
   "markdownConverter.Parser.SystemParserEnabled": true,
   "markdownConverter.DateFormats": {
-    "iso": "dd-mm-yyyy",
+    "iso": "dd-MM-yyyy",
     "year": "yyyy",
     "semi-long": "dd. MMMM yyyy",
     "full": "dddd, dd. MMMM yyyy",
-    "extra": "dddd MMMM yyyy - dd/mm/yyyy"
+    "extra": "dddd MMMM yyyy - dd/MM/yyyy",
+    "date-month-year": "dddd MM yyyy"
   },
   "markdownConverter.Document.HeaderContent": {
     "Left": "{{ Author }}",
@@ -50,9 +51,10 @@
   "markdownConverter.Document.FooterContent": {
     "Left": "{{ ChangeDate }}",
     "Right": "<span class=\"pageNumber\"></span>/<span class=\"totalPages\"></span>",
-    "Center": "Copyright &copy; {{ ChangeDate 'yyyy' }} {{ Author }} - {{ Copyright }}"
+    "Center": "<span class\"centerPercent\"> Copyright &copy; {{ ChangeDate 'yyyy' }} {{ Author }} - {{ Copyright }} </span>",
   },
   "markdownConverter.DefaultDateFormat": "iso",
+  "markdownConverter.Document.HeaderFooterEnabled": true,
 
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -64,7 +66,7 @@
       "strings": "off",
       "other": "off"
     },
-    "editor.wrappingStrategy": "advanced"
+    "editor.wrappingStrategy": "advanced",
   },
 
   "notebook.output.scrolling": true

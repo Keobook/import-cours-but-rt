@@ -38,6 +38,7 @@ save*-*-*.txt
 cours/modules/R111/R111-TD/src/code-sample-cpp/Debug/*
 cours/modules/R111/R111-TD/src/code-sample-cpp/Release/*
 cours/modules/R111/R111-TD/src/code-sample-cpp/x64/Debug/*
+cours/modules/R309/net-app/bin/*
 
 ## Repository-wide absolute paths of files to be ignored
 ### Files
