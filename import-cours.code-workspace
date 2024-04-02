@@ -37,7 +37,7 @@
     "dateTime.timeZone": "Europe/Paris",
     "keyboard.layout": "fr",
 
-    "workbench.colorTheme": "Hacker X - Blue Hacker Theme",
+    "workbench.colorTheme": "Alt Catppuccin Frappé",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "liveServer.settings.multiRootWorkspaceName": "Import-Cours-BUT-RT1",
     "githubPullRequests.ignoredPullRequestBranches": [
