@@ -303,4 +303,3 @@ Débit $D = 0.1 Mbits/s$, on utilise le code `0011010110`
 
 1. On propose la méthode CDMA
 1. ($I_1 + C_1$) + ($I_2 + C_2$)
-
