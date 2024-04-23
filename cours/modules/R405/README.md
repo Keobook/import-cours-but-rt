@@ -263,21 +263,21 @@ StPushou\
 1. Commande AT
 
     1. Donner la syntaxe pour effectuer une commande différée répondant aux critères suivants:
-        1. A 3h10 du matin
+         1. A 3h10 du matin
 
-          ``
+             ``
 
-        2. A 3h10 de l'après-midi
+         2. A 3h10 de l'après-midi
 
-        3. Le 21 janvier 2048 à 5h27
+         3. Le 21 janvier 2048 à 5h27
 
-        4. Dans 20 min.
+         4. Dans 20 min.
 
-        5. Dans 3 jours
+         5. Dans 3 jours
 
-        6. Dans 3 jours et un mail est envoyé à l'utilisateur
+         6. Dans 3 jours et un mail est envoyé à l'utilisateur
 
-        7. A 3h10, lancer le script /home/user/script
+         7. A 3h10, lancer le script /home/user/script
     1. Quelle est la commande permettant de voir la liste des taches en attente ?
     1. Quelle est la commande permettant de supprimer une tache en attente ?
     1. Dans quel dossier sont stockées les taches en attente ?
@@ -285,9 +285,7 @@ StPushou\
 
 1. CRON
 
-# <center> AT et CRON
-
-## <center> AT
+## <center> AT </center>
 
 1) a) at 03:10 AM ou at 03:10
    b) at 03:10 PM ou at 15:10
@@ -300,7 +298,7 @@ StPushou\
 3) atrm id ou at -r id
 4) Le dossier est /var/spool/cron/
 
-## <center> CRON
+## <center> CRON </center>
 
 1) a) /var/spool/cron/crontabs
    b) heures : /etc/cron.hourly/
@@ -312,3 +310,7 @@ StPushou\
     e) run-parts execute les scripts se situant dans le dossier.
 
 2) a)
+
+## TD 3
+
+s

@@ -2,7 +2,11 @@
 
 Antennes 5G: FUll Dimension MIMO
 
+<details><summary>
+
 ## TD 1
+
+</summary>
 
 1. Niveau de réception GSM-DCS
    1. Quelle est la fréquence du signal ?
@@ -71,3 +75,31 @@ Antennes 5G: FUll Dimension MIMO
       $P_{R_3} = -102 dBm$
 
       ![reponse-question-9](./src/src/reponse-question-9.jpg)
+
+</details>
+<details>
+
+<summary>
+
+## TD 2
+
+</summary>
+
+1. ### Délais de propagation
+
+   $$
+
+      t_2 = \frac{d}{C} = 1.07 \mu s
+
+   $$
+
+2. ### TA en GSM/DCS
+
+$$
+
+{MS}_1 TA=5 \\
+{MS}_2 TA=9
+
+$$
+
+</details>

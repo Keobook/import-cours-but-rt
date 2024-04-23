@@ -304,3 +304,34 @@ Débit $D = 0.1 Mbits/s$, on utilise le code `0011010110`
 1. On propose la méthode CDMA
 1. ($I_1 + C_1$) + ($I_2 + C_2$)
 
+### Exercice 3
+
+Montrer que les codes $C_1$ et $C_2$ sont orthogonaux.
+
+- $C_1$: `+1+1-1-1+1+1-1-1`
+- $C_2$ `+1+1+1+1-1-1-1`
+
+> [!NOTE]
+> Pour qu'ils soient orthogonaux, il nous faut avoir un résultat égal à 0.
+
+### Exercice 4
+
+1. Quel est le débit en chips/s du signal après étalement ?
+
+    $D = 256 \times 30 000$  
+    $= 7680 kchips/s$
+
+2. Quelle est alors la durée d'un chip ?
+
+    $$
+        V = 4, n=2 \\
+        R = \frac{D}{2} = 3840 . 10^3 symbole / s
+    $$
+
+3. La modulation utilisée est une modulation Q-PSK.
+    Quelle est la rapidité de modulation du signal modulé ? Comment obtient-on un tle signal ?
+    Représenter le synoptique par un schéma-bloc.
+4. Représenter les spectres des signaux:
+   - $e(t)$ signal numérique initial;
+   - $s_e(t)$ signal étalé;
+   - $s_m(t)$ signal modulé;
