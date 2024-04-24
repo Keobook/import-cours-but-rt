@@ -300,17 +300,29 @@ StPushou\
 
 ## <center> CRON </center>
 
-1) a) /var/spool/cron/crontabs
-   b) heures : /etc/cron.hourly/
-      jours : /etc/cron.daily/
-      semaines : /etc/cron.weekly/
-      mois : /etc/cron.monthly/
-    c)utilisateur qui execute la commande
-    d)ils sont lancés à l'heure et la date précisé dans l'execution de la commande
-    e) run-parts execute les scripts se situant dans le dossier.
+1. ...
+   1. /var/spool/cron/crontabs
+   1. ...
 
-2) a)
+      | donnée   | répertoire        |
+      | -------- | ----------------- |
+      | heures   | /etc/cron.hourly  |
+      | jours    | /etc/cron.daily/  |
+      | semaines | /etc/cron.weekly/ |
+      | mois     | /etc/cron.monthly |
+
+   1. utilisateur qui execute la commande
+   1. ils sont lancés à l'heure et la date précisé dans l'execution de la commande
+   1. run-parts execute les scripts se situant dans le dossier.
+
+1. ...
 
 ## TD 3
 
-s
+...
+
+## TD 4
+
+## TP Ansible
+
+...
