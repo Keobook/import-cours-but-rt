@@ -7,8 +7,8 @@ N=10
 # On les mélange aléatoirement
 rng=np.random.default_rng(42)   # fixer la graine pour tester votre programme avec les mêmes données
 rng.shuffle(data,axis=1)
-age=data[0]
-salaire=data[1]
+age=rng.integers(low=20, high=40, size=N)
+salaire = 35000 + 250*age + rng.normal(0, 1000, size=N)
 
 # données d'entrainement (1ère moitié du dataset)
 age_tds=age[:int(N/2)]
@@ -22,13 +22,25 @@ salaire_test=salaire[int(N/2):]
 # On cherche les paramètre a0 et a1 qui minimise l'erreur de prédiction quadratique moyenne sur les données d'apprentissage (training dataset)
 # Utiliser la formule de stat pour calculer a0 et a1, les paramètres de la droite de régression
 
-#a1 = covariance / variance
-#a0 = y_moyen - a1 * x_moyen
+x_moyen = age.mean()
+y_moyen = salaire.mean()
+
+cov = np.sum((age - x_moyen) * (salaire - y_moyen))
+variance = np.sum((age - x_moyen)**2)
+
+a1 = cov / variance
+a0 = y_moyen - a1 * x_moyen
+
+print(variance, cov, a1)
 
 # Affichage de la droite du prédicteur
 x_values = np.array([age.min() - 1, age.max() + 1])
 y_values = a0 + a1 * x_values
 plt.plot(x_values, y_values, color='red', label="Estimateur")
+
+print(f"Defining the Y axis ticks as: {[int(np.floor(y_values.min())), int(np.floor(y_values.max())), int(np.floor((y_values.max()-y_values.min()) / 6))]}")
+
+plt.yticks(np.array([y_values.min(), y_values.max(), (y_values.max()-y_values.min()) / 6]))
 
 
 # Calculer l'erreur d'apprentissage (erreur quadratique moyenne)
