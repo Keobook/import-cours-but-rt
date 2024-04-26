@@ -410,18 +410,157 @@ sudo apt install jq jc
     Pour ouvrir la base de données Nushell, on fait:
 
     ```sh
+    open <base-de-donnees>.db
     ```
 
     > [!NOTE]
     > Pour plus d'informations sur les bases de données NuShell, voir [ici](https://www.nushell.sh/commands/categories/database.html).
 
+    > [!NOTE]
+    > Pour obtenir la base de données en question, veuillez vous rapprocher du cours Moodle ([moodle-but.iutbeziers.fr](https://moodle-but.iutbeziers.fr)).
+
 2. Récupérez son schéma.
     Quel est le nombre de table SQL dans cette base de données ?
 
-    s
+    Pour savoir le nombre de table SQL dans cette base de données, on peut faire:
+
+    ```sh
+    open sqlite-sakila.db | schema | get tables | columns
+    ```
+
+    Nous donnant:
+
+    ```sh
+    ╭────┬───────────────╮
+    │  0 │ actor         │
+    │  1 │ country       │
+    │  2 │ city          │
+    │  3 │ address       │
+    │  4 │ language      │
+    │  5 │ category      │
+    │  6 │ customer      │
+    │  7 │ film          │
+    │  8 │ film_actor    │
+    │  9 │ film_category │
+    │ 10 │ film_text     │
+    │ 11 │ inventory     │
+    │ 12 │ staff         │
+    │ 13 │ store         │
+    │ 14 │ payment       │
+    │ 15 │ rental        │
+    ╰────┴───────────────╯
+    ```
+
+    On peut donc dire qu'il y a 16 tables SQL dans cette base de données.
 
 3. Afficher la table "actor" avec NuShell.
+
+    Pour afficher la table `actor`, on fait:
+
+    ```sh
+    open sqlite-sakila.db | schema | get tables.actor
+    ```
+
+    nous donnant:
+
+    ```sh
+    ╭──────────────┬──────────────────────────────────────────────────────────────────╮
+    │              │ ╭───┬─────┬─────────────┬─────────────┬─────────┬─────────┬────╮ │
+    │ columns      │ │ # │ cid │    name     │    type     │ notnull │ default │ pk │ │
+    │              │ ├───┼─────┼─────────────┼─────────────┼─────────┼─────────┼────┤ │
+    │              │ │ 0 │ 0   │ actor_id    │ numeric     │ 1       │         │ 1  │ │
+    │              │ │ 1 │ 1   │ first_name  │ VARCHAR(45) │ 1       │         │ 0  │ │
+    │              │ │ 2 │ 2   │ last_name   │ VARCHAR(45) │ 1       │         │ 0  │ │
+    │              │ │ 3 │ 3   │ last_update │ TIMESTAMP   │ 1       │         │ 0  │ │
+    │              │ ╰───┴─────┴─────────────┴─────────────┴─────────┴─────────┴────╯ │
+    │              │ ╭───┬──────────────────────────┬─────────────┬────────╮          │
+    │ constraints  │ │ # │           name           │ column_name │ origin │          │
+    │              │ ├───┼──────────────────────────┼─────────────┼────────┤          │
+    │              │ │ 0 │ sqlite_autoindex_actor_1 │ actor_id    │ pk     │          │
+    │              │ ╰───┴──────────────────────────┴─────────────┴────────╯          │
+    │ foreign_keys │ [list 0 items]                                                   │
+    │              │ ╭───┬──────────────────────────┬─────────────┬───────╮           │
+    │ indexes      │ │ # │           name           │ column_name │ seqno │           │
+    │              │ ├───┼──────────────────────────┼─────────────┼───────┤           │
+    │              │ │ 0 │ sqlite_autoindex_actor_1 │ actor_id    │ 0     │           │
+    │              │ │ 1 │ idx_actor_last_name      │ last_name   │ 0     │           │
+    │              │ ╰───┴──────────────────────────┴─────────────┴───────╯           │
+    ╰──────────────┴──────────────────────────────────────────────────────────────────╯
+    ```
+
 4. Quel est le nombre d'acteurs (utilisez une requête SQL) ?
-5. Quel et le nimbre d'acteurs dont le nom commence par `N` ?
+
+    Pour savoir le nombre d'acteurs, on peut faire:
+
+    ```sh
+    open sqlite-sakila.db | query db "select * from actor" | length
+    ```
+
+    nous donnant:
+
+    ```sh
+    200
+    ```
+
+    Il y a donc 200 acteurs.
+
+5. Quel et le nombre d'acteurs dont le nom commence par `N` ?
+
+    On peut faire:
+
+    ```sh
+    open sqlite-sakila.db | query db "select * from actor" | sort-by last_name --natural | where {|e| $e.last_name | str starts-with --ignore-case 'p'}
+    ```
+
+    nous donnant:
+
+    ```sh
+    ╭────┬──────────┬────────────┬───────────┬─────────────────────╮
+    │  # │ actor_id │ first_name │ last_name │     last_update     │
+    ├────┼──────────┼────────────┼───────────┼─────────────────────┤
+    │  0 │       21 │ KIRSTEN    │ PALTROW   │ 2021-03-06 15:51:59 │
+    │  1 │       69 │ KENNETH    │ PALTROW   │ 2021-03-06 15:51:59 │
+    │  2 │       30 │ SANDRA     │ PECK      │ 2021-03-06 15:51:59 │
+    │  3 │       33 │ MILLA      │ PECK      │ 2021-03-06 15:51:59 │
+    │  4 │       87 │ SPENCER    │ PECK      │ 2021-03-06 15:51:59 │
+    │  5 │       73 │ GARY       │ PENN      │ 2021-03-06 15:51:59 │
+    │  6 │      133 │ RICHARD    │ PENN      │ 2021-03-06 15:52:00 │
+    │  7 │       88 │ KENNETH    │ PESCI     │ 2021-03-06 15:51:59 │
+    │  8 │      171 │ OLYMPIA    │ PFEIFFER  │ 2021-03-06 15:52:00 │
+    │  9 │       51 │ GARY       │ PHOENIX   │ 2021-03-06 15:51:59 │
+    │ 10 │       54 │ PENELOPE   │ PINKETT   │ 2021-03-06 15:51:59 │
+    │ 11 │       84 │ JAMES      │ PITT      │ 2021-03-06 15:51:59 │
+    │ 12 │       75 │ BURT       │ POSEY     │ 2021-03-06 15:51:59 │
+    │ 13 │       93 │ ELLEN      │ PRESLEY   │ 2021-03-06 15:51:59 │
+    ╰────┴──────────┴────────────┴───────────┴─────────────────────╯
+    ```
+
+    En ajoutant `length` après un nouveau pipe, on peut dire qu'il y a 14 acteurs avec un nom (de famille) commençant par `p`.
+
 6. Quelle est la taille cumulée des fichiers de votre user test ?
+
+    Etant sur une machine WSL, mon user test n'a actuellement aucun autre fichier que la base de donnée récupérée sur Moodle, soit `5.6 MiB`.
+
 7. Quel est le moteur du serveur web du site scodoc.iutbeziers.fr et sa version ?
+
+    Pour obtenir ce type d'informations, nous pouvons faire:
+
+    ```sh
+    http head https://scodoc.iutbeziers.fr
+    ```
+
+    nous donnant:
+
+    ```sh
+    ╭───┬──────────────┬───────────────────────────────╮
+    │ # │     name     │             value             │
+    ├───┼──────────────┼───────────────────────────────┤
+    │ 0 │ content-type │ text/html; charset=utf-8      │
+    │ 1 │ server       │ nginx/1.22.1                  │
+    │ 2 │ vary         │ Cookie                        │
+    │ 3 │ connection   │ keep-alive                    │
+    │ 4 │ date         │ Fri, 26 Apr 2024 16:02:29 GMT │
+    ╰───┴──────────────┴───────────────────────────────╯
+    ```
+
+    On peut donc dire que le moteur du serveur web du site `scodoc.iutbeziers.fr` est `Nginx` et sa version est `1.22.1`.
