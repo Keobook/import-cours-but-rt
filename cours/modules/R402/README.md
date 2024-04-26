@@ -335,3 +335,29 @@ Montrer que les codes $C_1$ et $C_2$ sont orthogonaux.
    - $e(t)$ signal numérique initial;
    - $s_e(t)$ signal étalé;
    - $s_m(t)$ signal modulé;
+
+## TP 1 - OFDM
+
+### Préparation
+
+1. Expliquer le principe de l’OFDM pour un signal numérique de débit 3 kbits/s utilisant 3 porteuses.  
+    On fera un schéma explicatif en s’appuyant sur le signal numérique 0 1 1 1 0 1 0 0 1 0 0 1 1
+
+    OFDM est principe où l'on transmet simultanément plusieurs symboles
+    en parallèle sur différentes porteuses
+
+    ![schema-preparation](./src/tp1/schema-preparation.jpg)
+
+1. Quel est alors le débit de chaque porteuse ?
+
+    $$
+        D_p = \frac{3 \times 10^{3}}{3} = 1 \text{ kbit/s}
+    $$
+
+1. Quel espace entre porteuses faut-il choisir si on utilise des modulations de valence 2 ? Pourquoi ?
+
+    $$
+        R = \frac{D_p}{n} \\
+        R = \frac{1 \times 10^3}{1} \\
+        R = 1 \text{ kBd}
+    $$
