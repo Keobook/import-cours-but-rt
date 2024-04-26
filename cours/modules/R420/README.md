@@ -28,3 +28,7 @@ soit
 
 \frac{d J}{d m} = \frac{-2}{N} \Epsilon_1^N x_k (y_k - (m x_k + b))
 $$
+
+## TP 1
+
+s
