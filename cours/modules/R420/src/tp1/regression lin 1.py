@@ -18,7 +18,7 @@ salaire_tds=salaire[:int(N/2)]
 age_test=age[int(N/2):]
 salaire_test=salaire[int(N/2):]
 
-# Modèle  salaire_prédit = a1*age+a0 
+# Modèle  salaire_prédit = a1*age+a0
 # On cherche les paramètre a0 et a1 qui minimise l'erreur de prédiction quadratique moyenne sur les données d'apprentissage (training dataset)
 # Utiliser la formule de stat pour calculer a0 et a1, les paramètres de la droite de régression
 
@@ -40,7 +40,7 @@ plt.plot(x_values, y_values, color='red', label="Estimateur")
 
 print(f"Defining the Y axis ticks as: {[int(np.floor(y_values.min())), int(np.floor(y_values.max())), int(np.floor((y_values.max()-y_values.min()) / 6))]}")
 
-plt.yticks(np.array([y_values.min(), y_values.max(), (y_values.max()-y_values.min()) / 6]))
+plt.yticks([100000, 1, 2, 3], [y_values.min(), y_values.max(), y_values.min()/2, y_values.max()/2])
 
 
 # Calculer l'erreur d'apprentissage (erreur quadratique moyenne)
